@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terra Loop builds integrated biotechnology systems that convert organic waste into clean energy, fertile soil, and measurable climate impact. Based in Brussels, Belgium." />
+  <title>Home | Terra Loop — Circular Economy Technology</title>
+  <style>
+    /* ============================================================
+       DESIGN TOKENS & RESET
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary-dark:  #1B3A2D;
+      --primary:       #2D6A4F;
+      --primary-light: #52B788;
+      --earth-brown:   #7F5539;
+      --earth-light:   #DDB892;
+      --neutral-900:   #1A1A1A;
+      --neutral-600:   #6B7280;
+      --neutral-200:   #E5E7EB;
+      --neutral-50:    #F9FAFB;
+      --white:         #FFFFFF;
+
+      --radius-sm:   8px;
+      --radius-md:   12px;
+      --radius-lg:   20px;
+      --transition:  all 0.3s ease;
+      --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md:   0 8px 25px rgba(0,0,0,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--neutral-900);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2rem);
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; }
+    h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; line-height: 1.2; }
+    h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+    p  { font-size: 1rem; line-height: 1.7; }
+
+    .text-small { font-size: 0.875rem; color: var(--neutral-600); }
+    .text-muted  { color: var(--neutral-600); }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+      text-decoration: none;
+      line-height: 1;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(45,106,79,0.35);
+      text-decoration: none;
+      color: var(--white);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.7);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--white);
+      transform: translateY(-1px);
+      text-decoration: none;
+      color: var(--white);
+    }
+    .btn-outline-green {
+      background: transparent;
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-outline-green:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    /* ============================================================
+       CARDS
+    ============================================================ */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid var(--neutral-200);
+    }
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    /* ============================================================
+       SECTION WRAPPER
+    ============================================================ */
+    .section {
+      padding-block: clamp(4rem, 8vw, 8rem);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-header p {
+      max-width: 640px;
+      margin-inline: auto;
+      margin-top: 1rem;
+      color: var(--neutral-600);
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ============================================================
+       FADE-IN ANIMATION (IntersectionObserver)
+    ============================================================ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(27, 58, 45, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: var(--transition);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 2rem;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-logo-mark {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--primary-light);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo-text span { color: var(--primary-light); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+    .nav-links a {
+      display: block;
+      padding: 8px 14px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.1); }
+
+    /* Dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a::after {
+      content: ' ▾';
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      background: var(--primary-dark);
+      border-radius: var(--radius-sm);
+      min-width: 220px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      overflow: hidden;
+      z-index: 100;
+    }
+    .dropdown-menu a {
+      padding: 10px 18px;
+      display: block;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.875rem;
+      font-weight: 400;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: var(--transition);
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: rgba(82,183,136,0.2); color: var(--white); }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+
+    .nav-cta {
+      background: var(--primary-light) !important;
+      color: var(--primary-dark) !important;
+      font-weight: 600 !important;
+      padding: 8px 18px !important;
+    }
+    .nav-cta:hover { background: var(--white) !important; }
+
+    /* Mobile nav */
+    .nav-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      aria-label: "Toggle navigation";
+    }
+    .nav-mobile-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--primary-dark);
+      z-index: 999;
+      padding: 2rem;
+      flex-direction: column;
+      gap: 1rem;
+      overflow-y: auto;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-close {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.75rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .mobile-nav-links { display: flex; flex-direction: column; gap: 0.25rem; margin-top: 1rem; }
+    .mobile-nav-links a {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+    }
+    .mobile-nav-links a:hover { color: var(--primary-light); }
+    .mobile-nav-links .sub-link {
+      padding-left: 1.25rem;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: flex; }
+    }
+
+    /* ============================================================
+       HERO SECTION
+    ============================================================ */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(45,106,79,0.45) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(27,58,45,0.6) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 100% at 50% 100%, rgba(82,183,136,0.08) 0%, transparent 60%),
+        linear-gradient(135deg, #0d2219 0%, #1B3A2D 40%, #142d22 100%);
+    }
+
+    /* Decorative SVG circles */
+    .hero-deco {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-deco svg {
+      position: absolute;
+      opacity: 0.07;
+    }
+    .hero-deco svg.circle-1 { top: 10%; right: 5%; width: 420px; animation: rotateSlow 40s linear infinite; }
+    .hero-deco svg.circle-2 { bottom: 5%; left: -80px; width: 320px; animation: rotateSlow 55s linear infinite reverse; }
+    .hero-deco svg.circle-3 { top: 50%; right: 20%; width: 200px; animation: rotateSlow 30s linear infinite; }
+
+    @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 100px;
+      padding-bottom: 6rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(82,183,136,0.15);
+      border: 1px solid rgba(82,183,136,0.3);
+      color: var(--primary-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+    }
+    .hero-badge svg { flex-shrink: 0; }
+    .hero h1 {
+      color: var(--white);
+      max-width: 780px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--primary-light);
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.75);
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .scroll-indicator span {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .scroll-chevron {
+      width: 24px; height: 24px;
+      border-right: 2px solid rgba(255,255,255,0.35);
+      border-bottom: 2px solid rgba(255,255,255,0.35);
+      transform: rotate(45deg);
+      animation: chevronBounce 1.8s ease-in-out infinite;
+    }
+    @keyframes chevronBounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+      50% { transform: rotate(45deg) translateY(6px); opacity: 1; }
+    }
+
+    /* ============================================================
+       MISSION SECTION
+    ============================================================ */
+    .mission-section {
+      background: var(--white);
+      padding-block: clamp(4rem, 8vw, 7rem);
+      text-align: center;
+    }
+    .mission-text {
+      max-width: 800px;
+      margin-inline: auto;
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      line-height: 1.75;
+      color: var(--neutral-900);
+      font-weight: 400;
+    }
+    .mission-text strong { color: var(--primary); font-weight: 600; }
+
+    /* ============================================================
+       SOLUTIONS GRID
+    ============================================================ */
+    .solutions-section {
+      background: var(--neutral-50);
+    }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .solution-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--neutral-200);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .solution-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      border-color: rgba(82,183,136,0.3);
+    }
+    .solution-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(82,183,136,0.15) 0%, rgba(45,106,79,0.1) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .solution-icon svg { color: var(--primary); }
+    .solution-card h3 { color: var(--neutral-900); }
+    .solution-card p { color: var(--neutral-600); font-size: 0.95rem; flex-grow: 1; }
+    .solution-card .learn-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .solution-card .learn-more:hover { gap: 0.7rem; text-decoration: none; }
+    .solution-card .learn-more svg { transition: var(--transition); }
+
+    /* ============================================================
+       CIRCULAR ECONOMY COMPARISON
+    ============================================================ */
+    .circular-section { background: var(--white); }
+    .circular-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .economy-column {
+      padding: 2.5rem;
+      border-radius: var(--radius-md);
+    }
+    .economy-column.linear {
+      background: var(--neutral-50);
+      border: 1px solid var(--neutral-200);
+    }
+    .economy-column.circular {
+      background: linear-gradient(135deg, rgba(45,106,79,0.06) 0%, rgba(82,183,136,0.08) 100%);
+      border: 1px solid rgba(82,183,136,0.25);
+    }
+    .economy-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .economy-column.linear .economy-title { color: var(--neutral-600); }
+    .economy-column.circular .economy-title { color: var(--primary); }
+
+    .flow-steps { display: flex; flex-direction: column; gap: 0; }
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .flow-step-box {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    .linear .flow-step-box {
+      background: var(--neutral-200);
+      color: var(--neutral-600);
+    }
+    .circular .flow-step-box {
+      background: rgba(82,183,136,0.15);
+      color: var(--primary-dark);
+    }
+    .flow-arrow {
+      display: flex;
+      justify-content: center;
+      padding: 4px 0;
+    }
+    .flow-arrow svg { opacity: 0.4; }
+    .linear .flow-arrow svg { color: var(--neutral-600); }
+    .circular .flow-arrow svg { color: var(--primary); opacity: 0.7; }
+
+    .flow-endpoint {
+      margin-top: 1.25rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .linear .flow-endpoint {
+      background: rgba(127,85,57,0.1);
+      color: var(--earth-brown);
+      border: 1px solid rgba(127,85,57,0.2);
+    }
+    .circular .flow-endpoint {
+      background: rgba(45,106,79,0.1);
+      color: var(--primary);
+      border: 1px solid rgba(45,106,79,0.2);
+    }
+
+    .circular-quote {
+      text-align: center;
+      max-width: 760px;
+      margin-inline: auto;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: var(--neutral-600);
+      font-style: italic;
+      line-height: 1.8;
+      padding-top: 2rem;
+      border-top: 1px solid var(--neutral-200);
+    }
+    .circular-quote strong { color: var(--neutral-900); font-style: normal; font-weight: 600; }
+
+    /* ============================================================
+       TRANSPARENCY BANNER
+    ============================================================ */
+    .transparency-section {
+      background: var(--neutral-50);
+      border-top: 1px solid var(--neutral-200);
+      border-bottom: 1px solid var(--neutral-200);
+    }
+    .transparency-inner {
+      max-width: 780px;
+      margin-inline: auto;
+      text-align: center;
+    }
+    .transparency-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      margin-right: 0.5rem;
+    }
+    .transparency-inner h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+    }
+    .transparency-inner p {
+      color: var(--neutral-600);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .site-footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.75);
+      padding-block: clamp(3rem, 6vw, 5rem);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand .nav-logo { margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.875rem; line-height: 1.7; margin-bottom: 0.75rem; }
+    .footer-brand .location {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul a {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--primary-light); }
+
+    .footer-contact p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+    .footer-contact a { color: var(--primary-light); }
+    .footer-contact a:hover { text-decoration: underline; }
+
+    .footer-vision p {
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+    }
+    .footer-vision p strong {
+      display: block;
+      font-style: normal;
+      color: var(--primary-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    .footer-bottom a { color: rgba(255,255,255,0.5); font-size: 0.8rem; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--primary-light); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .circular-grid { gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .solutions-grid { grid-template-columns: 1fr; }
+      .circular-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero h1 { font-size: clamp(2rem, 7vw, 3rem); }
+    }
+    @media (max-width: 375px) {
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="site-header" role="banner">
+    <nav class="container nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="Terra Loop home">
+        <div class="nav-logo-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/>
+            <path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="nav-logo-text">Terra<span>Loop</span></span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" aria-haspopup="true">Solutions</a>
+          <div class="dropdown-menu" role="menu">
+            <a href="food-waste-systems.html" role="menuitem">Food Waste Systems</a>
+            <a href="bio-toilet-solutions.html" role="menuitem">Bio-toilet Solutions</a>
+            <a href="dairy-farmers-system.html" role="menuitem">Dairy Farmers System</a>
+            <a href="buy-carbon.html" role="menuitem">Buy Carbon</a>
+          </div>
+        </li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" id="mobileClose" aria-label="Close navigation">✕</button>
+    <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="food-waste-systems.html" class="sub-link">— Food Waste Systems</a>
+      <a href="bio-toilet-solutions.html" class="sub-link">— Bio-toilet Solutions</a>
+      <a href="dairy-farmers-system.html" class="sub-link">— Dairy Farmers System</a>
+      <a href="buy-carbon.html" class="sub-link">— Buy Carbon</a>
+      <a href="technology.html">Technology</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="hero" id="hero" aria-label="Hero">
+      <!-- Decorative circles -->
+      <div class="hero-deco" aria-hidden="true">
+        <svg class="circle-1" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="160" stroke="#52B788" stroke-width="1.5" stroke-dasharray="8 6"/>
+          <circle cx="200" cy="200" r="120" stroke="#52B788" stroke-width="1" stroke-dasharray="4 10"/>
+          <circle cx="200" cy="200" r="80" stroke="#52B788" stroke-width="1.5"/>
+          <path d="M200 40 L214 70 L200 65 L186 70 Z" fill="#52B788"/>
+          <path d="M360 200 L330 186 L335 200 L330 214 Z" fill="#52B788"/>
+        </svg>
+        <svg class="circle-2" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="150" r="120" stroke="#52B788" stroke-width="1.5" stroke-dasharray="6 8"/>
+          <circle cx="150" cy="150" r="80" stroke="#2D6A4F" stroke-width="1" stroke-dasharray="3 12"/>
+          <circle cx="150" cy="150" r="40" stroke="#52B788" stroke-width="1.5"/>
+        </svg>
+        <svg class="circle-3" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="80" stroke="#52B788" stroke-width="1" stroke-dasharray="5 7"/>
+          <circle cx="100" cy="100" r="50" stroke="#52B788" stroke-width="1.5" stroke-dasharray="3 5"/>
+        </svg>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L8.5 5H13L9.5 7.5L11 11.5L7 9L3 11.5L4.5 7.5L1 5H5.5L7 1Z" fill="#52B788"/></svg>
+          Biotechnology · Circular Economy · Brussels
+        </div>
+        <h1>Green Technology for a <em>Circular Future</em></h1>
+        <p class="hero-sub">Turning organic waste into clean energy, fertile soil, and measurable climate impact.</p>
+        <div class="hero-ctas">
+          <a href="#solutions" class="btn btn-primary">Explore Solutions</a>
+          <a href="contact.html" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-chevron"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MISSION STATEMENT
+    ============================================================ -->
+    <section class="mission-section fade-in" aria-labelledby="mission-heading">
+      <div class="container">
+        <span class="section-label">Our Mission</span>
+        <p class="mission-text">
+          Food waste, sanitation gaps, agricultural inefficiency, and carbon emissions are not separate problems — they are symptoms of a <strong>linear economy</strong>. Terra Loop builds integrated biotechnology systems that address them as <strong>one connected challenge</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOUR CORE SOLUTIONS
+    ============================================================ -->
+    <section class="section solutions-section" id="solutions" aria-labelledby="solutions-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">What We Build</span>
+          <h2 id="solutions-heading">Four Systems. One Purpose.</h2>
+          <p>Purpose-built biotechnology for organic waste recovery, clean energy, and climate accountability.</p>
+        </div>
+        <div class="solutions-grid">
+          <!-- Card 1: Food Waste -->
+          <div class="solution-card fade-in fade-in-delay-1">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4C14 4 8 7 8 12C8 15.3 10.7 18 14 18C17.3 18 20 15.3 20 12C20 7 14 4 14 4Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M14 18V22" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 22H18" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M6 10C4 10 3 11.5 3 13C3 14.5 4 16 6 16" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M22 10C24 10 25 11.5 25 13C25 14.5 24 16 22 16" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Food Waste Systems</h3>
+              <p>Modular anaerobic digestion systems that convert organic waste into biogas and biofertiliser — designed for communities, schools, and eco-lodges.</p>
+            </div>
+            <a href="food-waste-systems.html" class="learn-more" aria-label="Learn more about Food Waste Systems">
+              Learn more
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- Card 2: Bio-toilet -->
+          <div class="solution-card fade-in fade-in-delay-2">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 3C16.5 7 17 9 17 11C17 13.8 15.7 16 14 16C12.3 16 11 13.8 11 11C11 9 11.5 7 14 3Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M8 14C8 14 6 15 6 17C6 19.2 7.8 21 10 21" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M20 14C20 14 22 15 22 17C22 19.2 20.2 21 18 21" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="14" cy="24" r="2" stroke="#2D6A4F" stroke-width="1.5"/>
+                <path d="M10 21Q14 23 18 21" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Bio-toilet Solutions</h3>
+              <p>Waterless sanitation systems designed for off-grid locations, converting human waste into energy — no sewage infrastructure required.</p>
+            </div>
+            <a href="bio-toilet-solutions.html" class="learn-more" aria-label="Learn more about Bio-toilet Solutions">
+              Learn more
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- Card 3: Dairy -->
+          <div class="solution-card fade-in fade-in-delay-3">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="13" cy="17" rx="8" ry="6" stroke="#2D6A4F" stroke-width="1.5"/>
+                <path d="M5 17C5 17 4 15 5 13C6 11 8 10 13 10C18 10 20 11 21 13C22 15 21 17 21 17" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M9 10C9 10 10 7 13 7C16 7 17 10 17 10" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M21 14C21 14 23 13 24 15C24.5 16 24 17 23 17" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M22 8C22 8 22 6 23 5C24 4.5 25 6 24.5 8" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Dairy Farmers System</h3>
+              <p>Small-scale biogas units purpose-built for dairy farmers with two or more cattle — converting daily waste into daily cooking gas and fertiliser.</p>
+            </div>
+            <a href="dairy-farmers-system.html" class="learn-more" aria-label="Learn more about Dairy Farmers System">
+              Learn more
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- Card 4: Carbon -->
+          <div class="solution-card fade-in fade-in-delay-4">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="10" r="5" stroke="#2D6A4F" stroke-width="1.5"/>
+                <text x="11.5" y="13.5" font-size="5" fill="#2D6A4F" font-family="sans-serif">CO₂</text>
+                <path d="M14 15V22" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 19L14 23L18 19" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 22H21" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Buy Carbon Credits</h3>
+              <p>Transparent, verified carbon offset purchases linked to real waste-to-energy projects — with clear documentation and measurable impact.</p>
+            </div>
+            <a href="buy-carbon.html" class="learn-more" aria-label="Learn more about Carbon Credits">
+              Learn more
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHY CIRCULAR ECONOMY
+    ============================================================ -->
+    <section class="section circular-section" aria-labelledby="circular-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Systems Thinking</span>
+          <h2 id="circular-heading">Linear vs. Circular Economy</h2>
+          <p>The difference is not philosophical — it is structural. One ends in waste; the other creates value.</p>
+        </div>
+
+        <div class="circular-grid fade-in">
+          <!-- Linear Economy -->
+          <div class="economy-column linear">
+            <div class="economy-title">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3L11 11M11 3L3 11" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Linear Economy
+            </div>
+            <div class="flow-steps">
+              <div class="flow-step">
+                <div class="flow-step-box">Extract</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Produce</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Consume</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Dispose</div>
+              </div>
+            </div>
+            <div class="flow-endpoint">⚠ Landfill · Pollution · Emissions</div>
+          </div>
+
+          <!-- Circular Economy -->
+          <div class="economy-column circular">
+            <div class="economy-title">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2C4.2 2 2 4.2 2 7C2 9.8 4.2 12 7 12C9.8 12 12 9.8 12 7" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/><path d="M10 4L12 7L14 4" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Circular Economy
+            </div>
+            <div class="flow-steps">
+              <div class="flow-step">
+                <div class="flow-step-box">Collect</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Process</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Recover</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Return</div>
+              </div>
+            </div>
+            <div class="flow-endpoint">✓ Energy · Nutrients · Carbon Value</div>
+          </div>
+        </div>
+
+        <blockquote class="circular-quote fade-in">
+          <strong>"The circular economy is not an aspiration — it is an engineering discipline."</strong><br>
+          Terra Loop builds the infrastructure to make it operational — at household scale, at farm scale, at community scale.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRANSPARENCY BANNER
+    ============================================================ -->
+    <section class="section transparency-section fade-in" aria-labelledby="transparency-heading">
+      <div class="container">
+        <div class="transparency-inner">
+          <span class="section-label"><span class="transparency-dot"></span>Where We Are</span>
+          <h2 id="transparency-heading">Built on Transparency</h2>
+          <p>
+            Terra Loop is in its early operational phase. Our systems are engineered, tested, and ready for deployment partnerships. We choose transparency because trust is built over years, not through slogans. We are actively building the partnerships that will bring these systems to the communities and sectors that need them most.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span class="nav-logo-text">Terra<span>Loop</span></span>
+          </a>
+          <p>Waste into value. Systems for a circular future.</p>
+          <p>Pioneering biotechnology for organic waste recovery, clean energy, and circular nutrient cycles.</p>
+          <div class="location">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5C2.5 7.25 6 11 6 11C6 11 9.5 7.25 9.5 4.5C9.5 2.57 7.93 1 6 1Z" stroke="currentColor" stroke-width="1"/><circle cx="6" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1"/></svg>
+            Brussels, Belgium
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="food-waste-systems.html">Food Waste Systems</a></li>
+            <li><a href="bio-toilet-solutions.html">Bio-toilet Solutions</a></li>
+            <li><a href="dairy-farmers-system.html">Dairy Farmers System</a></li>
+            <li><a href="buy-carbon.html">Buy Carbon</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact -->
+        <div class="footer-col footer-contact">
+          <h4>Contact</h4>
+          <p>
+            <a href="mailto:info@terraloop.be">info@terraloop.be</a>
+          </p>
+          <p>Brussels, Belgium<br>European Union</p>
+          <p style="margin-top:1rem;">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Terra Loop on LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="display:inline;vertical-align:middle;margin-right:6px"><rect x="1" y="1" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M5 7V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="5" cy="5" r="0.8" fill="currentColor"/><path d="M8 10C8 8.5 9 7.5 10.5 7.5C12 7.5 13 8.5 13 10V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 7.5V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              LinkedIn
+            </a>
+          </p>
+        </div>
+
+        <!-- Col 4: Vision Statement -->
+        <div class="footer-col footer-vision">
+          <h4>Our Purpose</h4>
+          <p>
+            <strong>Building circular systems</strong>
+            "Building circular systems for a resilient future — where organic waste becomes clean energy, fertile soil, and measurable climate value. From Brussels to communities worldwide."
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>© 2026 Terra Loop. All rights reserved.</p>
+        <div style="display:flex;gap:1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // --- Mobile Navigation Toggle ---
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileNav    = document.getElementById('mobileNav');
+    const mobileClose  = document.getElementById('mobileClose');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileNav.classList.add('open');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    });
+
+    mobileClose.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+
+    // Close on outside click
+    mobileNav.addEventListener('click', (e) => {
+      if (e.target === mobileNav) {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // --- Scroll Fade-in via IntersectionObserver ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // --- Smooth scroll for hero CTA ---
+    document.querySelector('a[href="#solutions"]').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('solutions').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // --- Header scroll shrink effect ---
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        header.style.background = 'rgba(27, 58, 45, 0.98)';
+      } else {
+        header.style.background = 'rgba(27, 58, 45, 0.96)';
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>
