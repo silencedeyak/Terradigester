@@ -76,18 +76,288 @@
     .breadcrumb span { color:rgba(255,255,255,0.3); font-size:0.8rem; }
     .breadcrumb .current { color:var(--primary-light); font-size:0.8rem; }
 
-    /* HOW IT WORKS */
-    .how-section { background:var(--neutral-50); }
-    .process-flow { display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:start; gap:0; margin-top:3rem; }
-    .process-step { display:flex; flex-direction:column; align-items:center; text-align:center; gap:1rem; padding:2rem 1.5rem; background:var(--white); border-radius:var(--radius-md); border:1px solid var(--neutral-200); box-shadow:var(--shadow-sm); transition:var(--transition); }
-    .process-step:hover { box-shadow:var(--shadow-md); transform:translateY(-4px); border-color:rgba(82,183,136,0.3); }
-    .process-num { width:36px; height:36px; border-radius:50%; background:var(--primary); color:var(--white); display:flex; align-items:center; justify-content:center; font-size:0.875rem; font-weight:700; flex-shrink:0; }
-    .process-icon { width:64px; height:64px; background:linear-gradient(135deg,rgba(82,183,136,0.15),rgba(45,106,79,0.1)); border-radius:16px; display:flex; align-items:center; justify-content:center; }
-    .process-step h3 { color:var(--primary-dark); }
-    .process-step p { font-size:0.9rem; color:var(--neutral-600); }
-    .process-connector { display:flex; align-items:center; justify-content:center; padding:0 1rem; padding-top:4rem; }
-    .process-connector svg { color:var(--primary-light); }
-    @media(max-width:768px){.process-flow{grid-template-columns:1fr;gap:1rem;}.process-connector{display:none;}.process-step{flex-direction:row;text-align:left;}}
+    /* ============================================================
+       HOW IT WORKS — ANIMATED 4-STEP DIAGRAM
+    ============================================================ */
+    .how-section {
+      background: var(--primary-dark);
+      overflow: hidden;
+      position: relative;
+    }
+    /* Subtle background texture */
+    .how-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 10% 50%, rgba(82,183,136,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 50%, rgba(45,106,79,0.1)  0%, transparent 55%);
+      pointer-events: none;
+    }
+    .how-section .section-label { color: var(--primary-light); }
+    .how-section .section-header h2 { color: var(--white); }
+    .how-section .section-header p  { color: rgba(255,255,255,0.55); }
+
+    /* ── Progress track bar ── */
+    .how-track {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 3rem auto 3.5rem;
+      max-width: 700px;
+      position: relative;
+      z-index: 2;
+    }
+    .how-track-btn {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      border: 2px solid rgba(82,183,136,0.3);
+      background: rgba(27,58,45,0.8);
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem; font-weight: 700;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .how-track-btn:hover {
+      border-color: var(--primary-light);
+      color: var(--primary-light);
+      background: rgba(82,183,136,0.12);
+    }
+    .how-track-btn.active {
+      border-color: var(--primary-light);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      box-shadow: 0 0 0 6px rgba(82,183,136,0.15), 0 0 24px rgba(82,183,136,0.4);
+      transform: scale(1.12);
+    }
+    .how-track-line {
+      flex: 1;
+      height: 2px;
+      background: rgba(82,183,136,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .how-track-line-fill {
+      position: absolute; top: 0; left: 0; bottom: 0;
+      background: var(--primary-light);
+      width: 0%;
+      transition: width 0.6s ease;
+    }
+
+    /* ── Main stage ── */
+    .how-stage {
+      position: relative;
+      z-index: 2;
+      min-height: 440px;
+    }
+    .how-panel {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+      animation: panelIn 0.55s cubic-bezier(.25,.8,.25,1) both;
+    }
+    .how-panel.active { display: grid; }
+
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateX(30px); }
+      to   { opacity: 1; transform: translateX(0);    }
+    }
+
+    /* ── Left: SVG illustration ── */
+    .how-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .how-svg-wrap {
+      width: clamp(200px, 35vw, 380px);
+      aspect-ratio: 1 / 1;
+      position: relative;
+    }
+    .how-svg-wrap svg { width: 100%; height: 100%; overflow: visible; }
+
+    /* ── Right: text ── */
+    .how-text { display: flex; flex-direction: column; gap: 1.5rem; }
+    .how-step-num {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .how-step-num .num-badge {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 1.1rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 20px rgba(82,183,136,0.4);
+      flex-shrink: 0;
+    }
+    .how-step-num .step-of {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .how-text h3 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .how-text h3 em { font-style: normal; color: var(--primary-light); }
+    .how-text p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.62);
+    }
+
+    /* Spec pills */
+    .how-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    .how-spec {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(82,183,136,0.1);
+      border: 1px solid rgba(82,183,136,0.25);
+      border-radius: 100px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--primary-light);
+    }
+    .how-spec svg { flex-shrink: 0; }
+
+    /* ── Step navigation arrows ── */
+    .how-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+    .how-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(82,183,136,0.1);
+      border: 1px solid rgba(82,183,136,0.25);
+      border-radius: 100px;
+      padding: 10px 22px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .how-nav-btn:hover {
+      background: rgba(82,183,136,0.18);
+      border-color: var(--primary-light);
+      color: var(--white);
+    }
+    .how-nav-btn:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+    .how-nav-btn.next {
+      background: var(--primary-light);
+      border-color: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+    .how-nav-btn.next:hover {
+      background: #3da570;
+      border-color: #3da570;
+      color: var(--white);
+    }
+
+    /* ── SVG animation utilities ── */
+
+    /* Floating organic waste particles */
+    @keyframes particleFall {
+      0%   { transform: translateY(-10px) rotate(0deg);   opacity: 0; }
+      20%  { opacity: 1; }
+      100% { transform: translateY(60px)  rotate(180deg); opacity: 0; }
+    }
+    .particle { animation: particleFall 2.2s ease-in infinite; }
+    .particle:nth-child(2) { animation-delay: 0.4s; }
+    .particle:nth-child(3) { animation-delay: 0.9s; }
+    .particle:nth-child(4) { animation-delay: 1.4s; }
+
+    /* Biogas bubbles rising */
+    @keyframes bubbleRise {
+      0%   { transform: translateY(0)    scale(1);    opacity: 0.8; }
+      100% { transform: translateY(-55px) scale(0.4); opacity: 0; }
+    }
+    .bubble { animation: bubbleRise 2.4s ease-out infinite; }
+    .bubble:nth-child(2) { animation-delay: 0.7s; }
+    .bubble:nth-child(3) { animation-delay: 1.4s; }
+
+    /* Flame flicker */
+    @keyframes flicker {
+      0%,100% { transform: scaleY(1)    scaleX(1);    }
+      25%      { transform: scaleY(1.08) scaleX(0.96); }
+      50%      { transform: scaleY(0.94) scaleX(1.04); }
+      75%      { transform: scaleY(1.05) scaleX(0.97); }
+    }
+    .flame { animation: flicker 1.5s ease-in-out infinite; transform-origin: bottom center; }
+
+    /* Liquid drip */
+    @keyframes drip {
+      0%   { transform: translateY(0);  opacity: 1; }
+      80%  { transform: translateY(30px); opacity: 0.7; }
+      100% { transform: translateY(40px); opacity: 0; }
+    }
+    .drip { animation: drip 2s ease-in infinite; }
+    .drip:nth-child(2) { animation-delay: 0.8s; }
+
+    /* Glow pulse on digester */
+    @keyframes digestGlow {
+      0%,100% { opacity: 0.3; r: 60; }
+      50%      { opacity: 0.65; r: 72; }
+    }
+    .digest-glow { animation: digestGlow 3s ease-in-out infinite; }
+
+    /* Path draw animation */
+    @keyframes drawPath {
+      from { stroke-dashoffset: 600; }
+      to   { stroke-dashoffset: 0;   }
+    }
+    .draw-path {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      animation: drawPath 1.4s ease forwards;
+    }
+
+    /* Plant grow */
+    @keyframes plantGrow {
+      from { transform: scaleY(0); transform-origin: bottom center; }
+      to   { transform: scaleY(1); transform-origin: bottom center; }
+    }
+    .plant-grow { animation: plantGrow 1s 0.3s ease both; }
+
+    /* ── Responsive ── */
+    @media(max-width: 768px) {
+      .how-panel { grid-template-columns: 1fr; gap: 2rem; }
+      .how-visual { order: 1; }
+      .how-text  { order: 2; }
+      .how-svg-wrap { width: clamp(180px, 65vw, 280px); }
+      .how-track { max-width: 320px; gap: 0; }
+      .how-track-btn { width: 42px; height: 42px; font-size: 0.75rem; }
+    }
+    @media(max-width: 375px) {
+      .how-nav { flex-direction: column; gap: 1rem; }
+      .how-nav-btn { width: 100%; justify-content: center; }
+    }
 
     /* SCENARIOS */
     .scenarios-section { background:var(--white); }
@@ -213,73 +483,336 @@
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="section how-section" aria-labelledby="how-heading">
+    <!-- ============================================================
+         HOW TERRA DIGESTER WORKS — ANIMATED 4-STEP DIAGRAM
+    ============================================================ -->
+    <section class="section how-section" id="how-it-works" aria-labelledby="how-heading">
       <div class="container">
+
+        <!-- Header -->
         <div class="section-header fade-in">
           <span class="section-label">The Process</span>
-          <h2 id="how-heading">How It Works</h2>
-          <p>Three stages — from organic waste input to clean energy and soil nutrients.</p>
+          <h2 id="how-heading" style="color:var(--white);">How Our Terra Digester<br>Systems Work</h2>
+          <p>Four stages — from organic waste input to clean cooking gas and bio-fertiliser.</p>
         </div>
-        <div class="process-flow">
-          <!-- Step 1 -->
-          <div class="process-step fade-in fade-in-delay-1">
-            <div class="process-num">1</div>
-            <div class="process-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <path d="M16 6C16 6 10 9 10 14C10 17.3 12.7 20 16 20" stroke="#2D6A4F" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M16 20C19.3 20 22 17.3 22 14C22 9 16 6 16 6Z" stroke="#52B788" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M12 26H20M14 20V26M18 20V26" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="24" cy="8" r="3" stroke="#52B788" stroke-width="1.5"/>
-                <path d="M24 5V3M24 11V13M27 8H29M21 8H19" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Feed</h3>
-            <p>Organic kitchen waste — fruit peels, vegetable scraps, food leftovers — is collected and fed into the digestion unit.</p>
-          </div>
-          <!-- Connector -->
-          <div class="process-connector" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 16H26M20 10L26 16L20 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <!-- Step 2 -->
-          <div class="process-step fade-in fade-in-delay-2">
-            <div class="process-num">2</div>
-            <div class="process-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <ellipse cx="16" cy="18" rx="10" ry="7" stroke="#2D6A4F" stroke-width="2"/>
-                <path d="M8 15C8 12 10 9 13 8" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round"/>
-                <path d="M24 15C24 12 22 9 19 8" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="12" cy="18" r="1.5" fill="#52B788"/>
-                <circle cx="16" cy="16" r="1.5" fill="#52B788"/>
-                <circle cx="20" cy="18" r="1.5" fill="#52B788"/>
-                <path d="M16 6C16 6 14 4 16 2C18 4 16 6 16 6Z" fill="#52B788"/>
-                <path d="M11 7C11 7 9 5 11 3C13 5 11 7 11 7Z" fill="#52B788" opacity="0.6"/>
-                <path d="M21 7C21 7 19 5 21 3C23 5 21 7 21 7Z" fill="#52B788" opacity="0.6"/>
-              </svg>
-            </div>
-            <h3>Digest</h3>
-            <p>Anaerobic microorganisms break down organic matter in an oxygen-free environment, producing biogas through a natural biochemical process.</p>
-          </div>
-          <!-- Connector -->
-          <div class="process-connector" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 16H26M20 10L26 16L20 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <!-- Step 3 -->
-          <div class="process-step fade-in fade-in-delay-3">
-            <div class="process-num">3</div>
-            <div class="process-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <path d="M16 4C14 8 13 11 13 14C13 16.8 14.3 19 16 19C17.7 19 19 16.8 19 14C19 11 18 8 16 4Z" stroke="#52B788" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M12 24H20" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round"/>
-                <path d="M8 28H24" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round"/>
-                <path d="M10 22C10 22 8 20 8 18H24C24 20 22 22 22 22" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 19V22" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Harvest</h3>
-            <p>The system outputs biogas — suitable for cooking and heating — alongside nutrient-rich biofertiliser for use in gardens and agriculture.</p>
-          </div>
+
+        <!-- Step progress track -->
+        <div class="how-track" role="tablist" aria-label="Process steps">
+          <button class="how-track-btn active" data-step="0" role="tab" aria-selected="true"  aria-controls="panel-0">1</button>
+          <div class="how-track-line"><div class="how-track-line-fill" id="line-0"></div></div>
+          <button class="how-track-btn"        data-step="1" role="tab" aria-selected="false" aria-controls="panel-1">2</button>
+          <div class="how-track-line"><div class="how-track-line-fill" id="line-1"></div></div>
+          <button class="how-track-btn"        data-step="2" role="tab" aria-selected="false" aria-controls="panel-2">3</button>
+          <div class="how-track-line"><div class="how-track-line-fill" id="line-2"></div></div>
+          <button class="how-track-btn"        data-step="3" role="tab" aria-selected="false" aria-controls="panel-3">4</button>
         </div>
+
+        <!-- Main stage: 4 panels -->
+        <div class="how-stage">
+
+          <!-- ══ STEP 1: Insert Waste ══ -->
+          <div class="how-panel active" id="panel-0" role="tabpanel">
+            <!-- SVG Illustration -->
+            <div class="how-visual" aria-hidden="true">
+              <div class="how-svg-wrap">
+                <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Background circle -->
+                  <circle cx="160" cy="160" r="148" fill="rgba(45,106,79,0.08)" stroke="rgba(82,183,136,0.15)" stroke-width="1.5"/>
+                  <circle cx="160" cy="160" r="115" fill="rgba(27,58,45,0.6)" stroke="rgba(82,183,136,0.1)" stroke-width="1"/>
+
+                  <!-- Inlet funnel / sink -->
+                  <rect x="110" y="80" width="100" height="8"  rx="4" fill="#7F5539" stroke="#DDB892" stroke-width="1"/>
+                  <path d="M118 88 L130 130 L190 130 L202 88 Z" fill="rgba(127,85,57,0.4)" stroke="#DDB892" stroke-width="1.5" stroke-linejoin="round"/>
+                  <!-- pipe down -->
+                  <rect x="148" y="130" width="24" height="50" rx="4" fill="rgba(45,106,79,0.5)" stroke="rgba(82,183,136,0.5)" stroke-width="1.5"/>
+                  <!-- connection to digester bag shape -->
+                  <path d="M130 180 Q100 195 95 220 Q90 248 160 252 Q230 248 225 220 Q220 195 190 180 Z" fill="rgba(20,43,30,0.85)" stroke="rgba(82,183,136,0.4)" stroke-width="2"/>
+                  <!-- TERRA DIGESTER label on bag -->
+                  <text x="160" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.35)" letter-spacing="1">TERRA DIGESTER</text>
+                  <!-- gas outlet pipe right -->
+                  <rect x="220" y="195" width="30" height="10" rx="3" fill="rgba(82,183,136,0.5)" stroke="rgba(82,183,136,0.6)" stroke-width="1"/>
+                  <!-- digestate outlet left -->
+                  <rect x="70"  y="205" width="28" height="10" rx="3" fill="rgba(127,85,57,0.6)"  stroke="#DDB892" stroke-width="1"/>
+                  <!-- gas tube up from right -->
+                  <line x1="245" y1="195" x2="245" y2="168" stroke="rgba(82,183,136,0.5)" stroke-width="4" stroke-linecap="round"/>
+
+                  <!-- Falling food waste particles -->
+                  <g>
+                    <ellipse class="particle" cx="155" cy="60" rx="5" ry="3" fill="#52B788" opacity="0.8"/>
+                    <ellipse class="particle" cx="168" cy="52" rx="3" ry="5" fill="#DDB892" opacity="0.7"/>
+                    <ellipse class="particle" cx="147" cy="55" rx="4" ry="3" fill="#7F5539" opacity="0.9"/>
+                    <circle  class="particle" cx="172" cy="62" r="3"         fill="#52B788" opacity="0.6"/>
+                  </g>
+
+                  <!-- Arrow showing direction of feed -->
+                  <path class="draw-path" d="M160 38 L160 70" stroke="#52B788" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+                  <path d="M153 66 L160 76 L167 66" fill="none" stroke="#52B788" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+                  <!-- Labels -->
+                  <text x="160" y="32" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">Organic waste input</text>
+                  <text x="265" y="180" text-anchor="start"  font-family="system-ui,sans-serif" font-size="10" fill="rgba(82,183,136,0.7)">Biogas</text>
+                  <text x="40"  y="213" text-anchor="start"  font-family="system-ui,sans-serif" font-size="10" fill="rgba(221,184,146,0.7)">Digestate</text>
+                </svg>
+              </div>
+            </div>
+            <!-- Text -->
+            <div class="how-text">
+              <div class="how-step-num">
+                <div class="num-badge">1</div>
+                <span class="step-of">Step 1 of 4</span>
+              </div>
+              <h3>Insert <em>Organic Waste</em></h3>
+              <p>Organic waste — food scraps, vegetable peels, fruit leftovers, kitchen residues — is fed into the Terra Digester via the stainless-steel inlet sink. No pre-treatment or sorting is required.</p>
+              <div class="how-specs">
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  No pre-treatment needed
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Stainless-steel inlet sink
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Daily feeding cycle
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ STEP 2: Anaerobic Digestion ══ -->
+          <div class="how-panel" id="panel-1" role="tabpanel">
+            <div class="how-visual" aria-hidden="true">
+              <div class="how-svg-wrap">
+                <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="160" cy="160" r="148" fill="rgba(45,106,79,0.08)" stroke="rgba(82,183,136,0.15)" stroke-width="1.5"/>
+                  <circle cx="160" cy="160" r="115" fill="rgba(27,58,45,0.6)"    stroke="rgba(82,183,136,0.1)"  stroke-width="1"/>
+
+                  <!-- Pulsing glow — digestion at work -->
+                  <circle class="digest-glow" cx="160" cy="175" r="68" fill="rgba(82,183,136,0.08)" stroke="rgba(82,183,136,0.2)" stroke-width="1"/>
+
+                  <!-- Digester bag body -->
+                  <path d="M80 160 Q75 200 80 225 Q90 255 160 258 Q230 255 240 225 Q245 200 240 160 Q220 145 160 140 Q100 145 80 160 Z"
+                        fill="rgba(20,43,30,0.9)" stroke="rgba(82,183,136,0.45)" stroke-width="2"/>
+
+                  <!-- Microorganism bubbles inside -->
+                  <g>
+                    <circle class="bubble" cx="130" cy="220" r="6"  fill="none" stroke="rgba(82,183,136,0.6)" stroke-width="1.5"/>
+                    <circle class="bubble" cx="160" cy="240" r="9"  fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="1.5"/>
+                    <circle class="bubble" cx="190" cy="215" r="5"  fill="none" stroke="rgba(82,183,136,0.7)" stroke-width="1.5"/>
+                  </g>
+
+                  <!-- Molecule dots — microorganism activity -->
+                  <circle cx="120" cy="195" r="4" fill="#52B788" opacity="0.6"/>
+                  <circle cx="145" cy="210" r="3" fill="#52B788" opacity="0.5"/>
+                  <circle cx="160" cy="200" r="5" fill="#52B788" opacity="0.7"/>
+                  <circle cx="178" cy="212" r="3" fill="#52B788" opacity="0.5"/>
+                  <circle cx="198" cy="196" r="4" fill="#52B788" opacity="0.6"/>
+                  <!-- Lines connecting molecules -->
+                  <line x1="120" y1="195" x2="145" y2="210" stroke="rgba(82,183,136,0.25)" stroke-width="1"/>
+                  <line x1="145" y1="210" x2="160" y2="200" stroke="rgba(82,183,136,0.25)" stroke-width="1"/>
+                  <line x1="160" y1="200" x2="178" y2="212" stroke="rgba(82,183,136,0.25)" stroke-width="1"/>
+                  <line x1="178" y1="212" x2="198" y2="196" stroke="rgba(82,183,136,0.25)" stroke-width="1"/>
+
+                  <!-- CH4 label inside -->
+                  <text x="160" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="700" fill="rgba(82,183,136,0.3)">CH₄</text>
+                  <text x="160" y="192" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9"  fill="rgba(82,183,136,0.4)">BIOGAS FORMING</text>
+
+                  <!-- Gas rising out of bag top -->
+                  <path class="draw-path" d="M160 140 L160 100 Q160 85 175 80" stroke="rgba(82,183,136,0.55)" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="176" cy="80" r="5" fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="1.5"/>
+
+                  <!-- Temp/O2 labels -->
+                  <text x="58"  y="165" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9"  fill="rgba(255,255,255,0.35)">O₂ free</text>
+                  <text x="262" y="165" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9"  fill="rgba(255,255,255,0.35)">35–40°C</text>
+                  <text x="160" y="275" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.3)" letter-spacing="1">TERRA DIGESTER</text>
+                </svg>
+              </div>
+            </div>
+            <div class="how-text">
+              <div class="how-step-num">
+                <div class="num-badge">2</div>
+                <span class="step-of">Step 2 of 4</span>
+              </div>
+              <h3>Anaerobic <em>Digestion Process</em></h3>
+              <p>Inside the sealed flexible membrane, anaerobic microorganisms break down organic matter in a completely oxygen-free environment. The biochemical process — running at 35–40°C — produces methane-rich biogas naturally.</p>
+              <div class="how-specs">
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Zero oxygen environment
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  35–40°C mesophilic range
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Methane-rich biogas output
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ STEP 3: Clean Cooking Gas ══ -->
+          <div class="how-panel" id="panel-2" role="tabpanel">
+            <div class="how-visual" aria-hidden="true">
+              <div class="how-svg-wrap">
+                <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="160" cy="160" r="148" fill="rgba(45,106,79,0.08)" stroke="rgba(82,183,136,0.15)" stroke-width="1.5"/>
+                  <circle cx="160" cy="160" r="115" fill="rgba(27,58,45,0.6)"    stroke="rgba(82,183,136,0.1)"  stroke-width="1"/>
+
+                  <!-- Gas pipe from digester (bottom) -->
+                  <rect x="148" y="230" width="24" height="50" rx="4" fill="rgba(45,106,79,0.5)" stroke="rgba(82,183,136,0.5)" stroke-width="1.5"/>
+                  <!-- Valve -->
+                  <rect x="138" y="252" width="44" height="14" rx="7" fill="rgba(82,183,136,0.3)" stroke="rgba(82,183,136,0.6)" stroke-width="1.5"/>
+                  <circle cx="160" cy="259" r="4" fill="#52B788" opacity="0.8"/>
+
+                  <!-- Gas pipe up to burner -->
+                  <rect x="154" y="160" width="12" height="72" rx="4" fill="rgba(82,183,136,0.35)" stroke="rgba(82,183,136,0.4)" stroke-width="1"/>
+                  <!-- Horizontal pipe to burner -->
+                  <rect x="126" y="152" width="68" height="12" rx="6" fill="rgba(82,183,136,0.4)" stroke="rgba(82,183,136,0.6)" stroke-width="1.5"/>
+
+                  <!-- Burner ring -->
+                  <ellipse cx="160" cy="148" rx="40" ry="10" fill="rgba(27,58,45,0.8)" stroke="rgba(82,183,136,0.5)" stroke-width="2"/>
+                  <ellipse cx="160" cy="146" rx="28" ry="7"  fill="rgba(27,58,45,0.9)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+
+                  <!-- Flames on burner -->
+                  <g class="flame">
+                    <path d="M148 143 Q146 134 150 128 Q152 134 148 143Z" fill="#52B788" opacity="0.9"/>
+                    <path d="M160 140 Q158 128 162 120 Q165 128 160 140Z" fill="#52B788"/>
+                    <path d="M172 143 Q170 133 174 127 Q176 133 172 143Z" fill="#52B788" opacity="0.9"/>
+                    <path d="M154 142 Q152 133 155 128 Q157 133 154 142Z" fill="#DDB892" opacity="0.7"/>
+                    <path d="M166 142 Q164 132 167 127 Q169 132 166 142Z" fill="#DDB892" opacity="0.7"/>
+                  </g>
+
+                  <!-- Cooking pot -->
+                  <ellipse cx="160" cy="108" rx="38" ry="10" fill="#1a3d2e" stroke="rgba(82,183,136,0.4)" stroke-width="1.5"/>
+                  <path d="M122 108 L122 88 Q122 76 160 76 Q198 76 198 88 L198 108" fill="#1a3d2e" stroke="rgba(82,183,136,0.4)" stroke-width="1.5"/>
+                  <ellipse cx="160" cy="88" rx="36" ry="8" fill="rgba(82,183,136,0.15)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+                  <!-- Steam from pot -->
+                  <path d="M148 76 Q145 65 149 58" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                  <path d="M160 74 Q157 62 161 54" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                  <path d="M172 76 Q169 65 173 58" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+                  <!-- CH4 label -->
+                  <text x="220" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="rgba(82,183,136,0.6)">Biogas</text>
+                  <text x="220" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9"  fill="rgba(82,183,136,0.4)">~60–70% CH₄</text>
+                  <!-- Arrow to burner -->
+                  <path d="M210 205 Q215 190 200 180" stroke="rgba(82,183,136,0.35)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+                </svg>
+              </div>
+            </div>
+            <div class="how-text">
+              <div class="how-step-num">
+                <div class="num-badge">3</div>
+                <span class="step-of">Step 3 of 4</span>
+              </div>
+              <h3>Clean <em>Cooking Gas</em> Generated Daily</h3>
+              <p>The biogas produced — containing approximately 60–70% methane — travels via a flexible pipe to your cooking burner or gas appliance. The system generates a renewable, clean-burning fuel every day, directly from your organic waste.</p>
+              <div class="how-specs">
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  60–70% methane content
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Daily renewable generation
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Standard gas burner compatible
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ STEP 4: Liquid Bio-fertiliser ══ -->
+          <div class="how-panel" id="panel-3" role="tabpanel">
+            <div class="how-visual" aria-hidden="true">
+              <div class="how-svg-wrap">
+                <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="160" cy="160" r="148" fill="rgba(45,106,79,0.08)" stroke="rgba(82,183,136,0.15)" stroke-width="1.5"/>
+                  <circle cx="160" cy="160" r="115" fill="rgba(27,58,45,0.6)"    stroke="rgba(82,183,136,0.1)"  stroke-width="1"/>
+
+                  <!-- Tap / valve outlet (left side of digester) -->
+                  <rect x="72"  y="175" width="40" height="14" rx="7" fill="rgba(127,85,57,0.7)" stroke="#DDB892" stroke-width="1.5"/>
+                  <circle cx="76" cy="182" r="6" fill="#7F5539" stroke="#DDB892" stroke-width="1"/>
+                  <!-- Pipe down from tap -->
+                  <rect x="86" y="186" width="10" height="40" rx="4" fill="rgba(127,85,57,0.5)" stroke="#DDB892" stroke-width="1"/>
+
+                  <!-- Collection container -->
+                  <path d="M68 228 L112 228 L118 280 L62 280 Z" fill="rgba(127,85,57,0.25)" stroke="#DDB892" stroke-width="1.5" stroke-linejoin="round"/>
+                  <!-- Liquid inside container (rising) -->
+                  <path d="M70 265 Q90 262 110 265 L115 280 L65 280 Z" fill="rgba(127,85,57,0.5)"/>
+                  <!-- Liquid ripple -->
+                  <path d="M72 265 Q90 261 108 265" stroke="#DDB892" stroke-width="1" fill="none" opacity="0.6"/>
+
+                  <!-- Drip drops -->
+                  <ellipse class="drip" cx="91" cy="224" rx="4"   ry="5.5" fill="#DDB892" opacity="0.8"/>
+                  <ellipse class="drip" cx="91" cy="210" rx="3"   ry="4.5" fill="#DDB892" opacity="0.5"/>
+
+                  <!-- Plant growing from fertilised soil (right side) -->
+                  <rect x="195" y="248" width="70" height="14" rx="4" fill="rgba(82,183,136,0.15)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+                  <!-- soil -->
+                  <ellipse cx="230" cy="248" rx="34" ry="6" fill="rgba(127,85,57,0.35)" stroke="rgba(127,85,57,0.4)" stroke-width="1"/>
+                  <!-- stem -->
+                  <line class="plant-grow" x1="230" y1="248" x2="230" y2="185" stroke="#52B788" stroke-width="3" stroke-linecap="round"/>
+                  <!-- leaves -->
+                  <g class="plant-grow">
+                    <path d="M230 220 Q215 210 210 195 Q225 196 230 220Z" fill="#52B788" opacity="0.9"/>
+                    <path d="M230 205 Q245 195 250 180 Q236 181 230 205Z" fill="#2D6A4F" opacity="0.9"/>
+                    <path d="M230 235 Q218 228 215 215 Q227 217 230 235Z" fill="#52B788" opacity="0.7"/>
+                  </g>
+                  <!-- Arrow from container to plant -->
+                  <path d="M118 260 Q160 250 195 252" stroke="rgba(82,183,136,0.35)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+                  <path d="M190 248 L196 252 L190 256" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                  <!-- Labels -->
+                  <text x="90"  y="295" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="rgba(221,184,146,0.7)">Bio-fertiliser</text>
+                  <text x="230" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="rgba(82,183,136,0.7)">Plant growth</text>
+                  <text x="160" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9"  fill="rgba(255,255,255,0.2)" letter-spacing="1">TERRA DIGESTER</text>
+                </svg>
+              </div>
+            </div>
+            <div class="how-text">
+              <div class="how-step-num">
+                <div class="num-badge">4</div>
+                <span class="step-of">Step 4 of 4</span>
+              </div>
+              <h3>Liquid <em>Bio-fertiliser</em> Output</h3>
+              <p>Alongside biogas, the anaerobic digestion process produces a nutrient-rich liquid digestate — a natural bio-fertiliser containing nitrogen, phosphorus, and potassium. It flows out via the outlet tap and can be applied directly to soil, gardens, and farmland.</p>
+              <div class="how-specs">
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  N–P–K rich digestate
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Direct soil application
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Zero synthetic fertiliser
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.how-stage -->
+
+        <!-- Prev / Next navigation -->
+        <div class="how-nav">
+          <button class="how-nav-btn prev" id="howPrev" disabled aria-label="Previous step">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Previous
+          </button>
+          <span id="howStepLabel" style="font-size:0.8rem;color:rgba(255,255,255,0.3);letter-spacing:0.08em;text-transform:uppercase;">Step 1 — Insert Waste</span>
+          <button class="how-nav-btn next" id="howNext" aria-label="Next step">
+            Next step
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
       </div>
     </section>
 
@@ -459,10 +992,136 @@
     mobileToggle.addEventListener('click',()=>{mobileNav.classList.add('open');document.body.style.overflow='hidden';});
     mobileClose.addEventListener('click',()=>{mobileNav.classList.remove('open');document.body.style.overflow='';});
     mobileNav.addEventListener('click',(e)=>{if(e.target===mobileNav){mobileNav.classList.remove('open');document.body.style.overflow='';}});
-    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
-    const header=document.querySelector('.site-header');
-    window.addEventListener('scroll',()=>{header.style.background=window.scrollY>60?'rgba(27,58,45,0.98)':'rgba(27,58,45,0.96)';},{passive:true});
+    // --- Scroll fade-in ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.style.background = window.scrollY > 60 ? 'rgba(27,58,45,0.98)' : 'rgba(27,58,45,0.96)';
+    }, { passive: true });
+
+    // ══════════════════════════════════════════════
+    //  HOW IT WORKS — interactive 4-step stepper
+    // ══════════════════════════════════════════════
+    const STEP_LABELS = [
+      'Step 1 — Insert Waste',
+      'Step 2 — Anaerobic Digestion',
+      'Step 3 — Clean Cooking Gas',
+      'Step 4 — Liquid Bio-fertiliser'
+    ];
+
+    let currentStep = 0;
+    let autoTimer   = null;
+    const TOTAL     = 4;
+    const AUTO_MS   = 5000; // auto-advance every 5 s
+
+    const panels      = document.querySelectorAll('.how-panel');
+    const trackBtns   = document.querySelectorAll('.how-track-btn');
+    const lineFills   = document.querySelectorAll('.how-track-line-fill');
+    const prevBtn     = document.getElementById('howPrev');
+    const nextBtn     = document.getElementById('howNext');
+    const stepLabel   = document.getElementById('howStepLabel');
+
+    function goToStep(n, fromAuto) {
+      // Clamp
+      n = Math.max(0, Math.min(TOTAL - 1, n));
+      if (n === currentStep && !fromAuto) return;
+
+      // Hide current panel
+      panels[currentStep].classList.remove('active');
+      trackBtns[currentStep].classList.remove('active');
+      trackBtns[currentStep].setAttribute('aria-selected', 'false');
+
+      // Fill track lines up to (and including) previous segments
+      lineFills.forEach((lf, i) => {
+        lf.style.width = i < n ? '100%' : '0%';
+      });
+
+      currentStep = n;
+
+      // Show new panel
+      panels[currentStep].classList.add('active');
+      trackBtns[currentStep].classList.add('active');
+      trackBtns[currentStep].setAttribute('aria-selected', 'true');
+
+      // Prev / Next buttons
+      prevBtn.disabled = currentStep === 0;
+      nextBtn.textContent = currentStep === TOTAL - 1 ? '↩ Restart' : 'Next step →';
+      stepLabel.textContent = STEP_LABELS[currentStep];
+
+      // Re-trigger SVG draw-path animations by cloning the SVG
+      const activePanel = panels[currentStep];
+      activePanel.querySelectorAll('.draw-path').forEach(el => {
+        const clone = el.cloneNode(true);
+        el.parentNode.replaceChild(clone, el);
+      });
+    }
+
+    // Track buttons
+    trackBtns.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        clearInterval(autoTimer);
+        goToStep(i);
+        startAuto();
+      });
+    });
+
+    // Prev button
+    prevBtn.addEventListener('click', () => {
+      clearInterval(autoTimer);
+      goToStep(currentStep - 1);
+      startAuto();
+    });
+
+    // Next button
+    nextBtn.addEventListener('click', () => {
+      clearInterval(autoTimer);
+      if (currentStep === TOTAL - 1) {
+        goToStep(0);
+      } else {
+        goToStep(currentStep + 1);
+      }
+      startAuto();
+    });
+
+    // Auto-advance when section is in view
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => {
+        goToStep(currentStep === TOTAL - 1 ? 0 : currentStep + 1, true);
+      }, AUTO_MS);
+    }
+
+    // Only auto-play once the section enters the viewport
+    const howSection = document.getElementById('how-it-works');
+    let autoStarted  = false;
+    const howObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !autoStarted) {
+          autoStarted = true;
+          startAuto();
+        }
+        if (!entry.isIntersecting) {
+          clearInterval(autoTimer);
+          autoStarted = false;
+        }
+      });
+    }, { threshold: 0.3 });
+    if (howSection) howObserver.observe(howSection);
+
+    // Keyboard navigation (left/right arrows)
+    document.addEventListener('keydown', (e) => {
+      const inView = howSection && howSection.getBoundingClientRect().top < window.innerHeight;
+      if (!inView) return;
+      if (e.key === 'ArrowRight') { clearInterval(autoTimer); goToStep(currentStep + 1); startAuto(); }
+      if (e.key === 'ArrowLeft')  { clearInterval(autoTimer); goToStep(currentStep - 1); startAuto(); }
+    });
+
+    // Initialise
+    goToStep(0, true);
   </script>
 </body>
 </html>
