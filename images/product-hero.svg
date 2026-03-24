@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 660" width="600" height="660">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3d2e"/>
+      <stop offset="100%" style="stop-color:#0d2118"/>
+    </linearGradient>
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D6A4F"/>
+      <stop offset="100%" style="stop-color:#1a3d2e"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d2118"/>
+      <stop offset="100%" style="stop-color:#162b1f"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#52B788;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#52B788;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="screenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#52B788;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#52B788;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="660" fill="url(#bodyGrad)" rx="0"/>
+
+  <!-- Ambient glow -->
+  <ellipse cx="300" cy="330" rx="250" ry="280" fill="url(#glowGrad)"/>
+  <ellipse cx="300" cy="180" rx="200" ry="160" fill="url(#screenGlow)"/>
+
+  <!-- Base platform -->
+  <rect x="100" y="560" width="400" height="40" rx="8" fill="#0d2118" stroke="#2D6A4F" stroke-width="1" opacity="0.8"/>
+  <rect x="120" y="554" width="360" height="12" rx="4" fill="#1a3d2e" stroke="#52B788" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Main body -->
+  <rect x="130" y="160" width="340" height="400" rx="20" fill="#142b1e" stroke="#2D6A4F" stroke-width="1.5"/>
+
+  <!-- Body gradient overlay -->
+  <rect x="130" y="160" width="340" height="400" rx="20" fill="none" stroke="#52B788" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Top dome / lid -->
+  <ellipse cx="300" cy="160" rx="170" ry="28" fill="url(#topGrad)" stroke="#52B788" stroke-width="1.5"/>
+  <ellipse cx="300" cy="155" rx="150" ry="20" fill="#2D6A4F" opacity="0.6"/>
+
+  <!-- Top handle -->
+  <rect x="270" y="128" width="60" height="30" rx="15" fill="#1a3d2e" stroke="#52B788" stroke-width="1.5"/>
+  <rect x="280" y="138" width="40" height="10" rx="5" fill="#52B788" opacity="0.4"/>
+
+  <!-- Main display screen -->
+  <rect x="165" y="195" width="270" height="160" rx="12" fill="url(#screenGrad)" stroke="#52B788" stroke-width="1.5"/>
+  <rect x="165" y="195" width="270" height="160" rx="12" fill="url(#screenGlow)"/>
+
+  <!-- Screen content: circular progress -->
+  <circle cx="240" cy="280" r="55" fill="none" stroke="#1a3d2e" stroke-width="8"/>
+  <circle cx="240" cy="280" r="55" fill="none" stroke="#52B788" stroke-width="5"
+    stroke-dasharray="276" stroke-dashoffset="69"
+    stroke-linecap="round"
+    transform="rotate(-90 240 280)"
+    filter="url(#glow)"/>
+  <text x="240" y="273" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#52B788">75%</text>
+  <text x="240" y="292" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">CYCLE</text>
+
+  <!-- Screen: right side stats -->
+  <text x="345" y="228" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" text-transform="uppercase">TEMP</text>
+  <text x="345" y="248" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="600" fill="#DDB892">58°C</text>
+  <line x1="315" y1="258" x2="375" y2="258" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="345" y="275" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">MOISTURE</text>
+  <text x="345" y="295" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="600" fill="#52B788">42%</text>
+  <line x1="315" y1="305" x2="375" y2="305" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="345" y="322" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">TIME LEFT</text>
+  <text x="345" y="342" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="rgba(255,255,255,0.7)">6h 24m</text>
+
+  <!-- Input hopper section -->
+  <rect x="160" y="380" width="280" height="100" rx="10" fill="#0d2118" stroke="#2D6A4F" stroke-width="1" opacity="0.9"/>
+  <text x="300" y="405" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="2">INPUT CHAMBER</text>
+  <!-- Loading indicator bars -->
+  <rect x="185" y="418" width="50" height="8" rx="4" fill="#1a3d2e" stroke="#52B788" stroke-width="0.5"/>
+  <rect x="185" y="418" width="38" height="8" rx="4" fill="#2D6A4F"/>
+  <text x="250" y="426" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">Food waste</text>
+  <rect x="185" y="434" width="50" height="8" rx="4" fill="#1a3d2e" stroke="#52B788" stroke-width="0.5"/>
+  <rect x="185" y="434" width="22" height="8" rx="4" fill="#7F5539"/>
+  <text x="250" y="442" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">Microorganism</text>
+  <rect x="185" y="450" width="50" height="8" rx="4" fill="#1a3d2e" stroke="#52B788" stroke-width="0.5"/>
+  <rect x="185" y="450" width="45" height="8" rx="4" fill="#52B788" opacity="0.6"/>
+  <text x="250" y="458" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">O₂ level</text>
+
+  <!-- Output / Compost tray -->
+  <rect x="145" y="498" width="310" height="50" rx="8" fill="#0a1f15" stroke="#52B788" stroke-width="1" opacity="0.7"/>
+  <text x="190" y="520" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.3)" letter-spacing="1.5">OUTPUT</text>
+  <rect x="185" y="527" width="180" height="6" rx="3" fill="#1a3d2e"/>
+  <rect x="185" y="527" width="130" height="6" rx="3" fill="#52B788" opacity="0.5"/>
+  <text x="375" y="532" font-family="system-ui,sans-serif" font-size="9" fill="#52B788">~2.4 kg</text>
+
+  <!-- Control buttons row -->
+  <circle cx="175" cy="548" r="10" fill="#1a3d2e" stroke="#52B788" stroke-width="1"/>
+  <circle cx="175" cy="548" r="5" fill="#52B788" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="205" cy="548" r="10" fill="#1a3d2e" stroke="#2D6A4F" stroke-width="1"/>
+  <circle cx="235" cy="548" r="10" fill="#1a3d2e" stroke="#2D6A4F" stroke-width="1"/>
+
+  <!-- Terra Loop branding on body -->
+  <text x="300" y="148" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="rgba(255,255,255,0.7)" letter-spacing="3">TERRA LOOP</text>
+
+  <!-- Side vents -->
+  <line x1="130" y1="240" x2="130" y2="260" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="130" y1="270" x2="130" y2="290" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+  <line x1="130" y1="300" x2="130" y2="320" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+
+  <line x1="470" y1="240" x2="470" y2="260" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="470" y1="270" x2="470" y2="290" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+  <line x1="470" y1="300" x2="470" y2="320" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Status LED strip at top of body -->
+  <rect x="200" y="170" width="200" height="3" rx="1.5" fill="#52B788" opacity="0.7" filter="url(#glow)"/>
+
+  <!-- Ground shadow -->
+  <ellipse cx="300" cy="598" rx="180" ry="12" fill="#000" opacity="0.5"/>
+</svg>
