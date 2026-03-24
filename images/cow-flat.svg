@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+
+  <!-- Background — same deep forest green as the original pig -->
+  <rect width="480" height="300" fill="#3A5544"/>
+
+  <!-- ══════════════════════════════════════════════════════
+       TERRA DIGESTER COW — flat fill cartoon (no outlines)
+       Same style as the pig: filled shapes only, zero strokes
+       on body, rounded geometry, squat wide proportions
+  ═══════════════════════════════════════════════════════ -->
+
+  <!-- TAIL — drawn first (behind body) -->
+  <!-- Rope section -->
+  <path d="M 108 178 C 88 168 72 148 78 128 C 84 110 72 100 62 90"
+        fill="none" stroke="#C9956A" stroke-width="6" stroke-linecap="round"/>
+  <!-- Tail tuft — cow's characteristic fluffy end -->
+  <ellipse cx="58"  cy="85"  rx="14" ry="10" fill="#C08050"/>
+  <ellipse cx="50"  cy="80"  rx="9"  ry="7"  fill="#A87040"/>
+  <ellipse cx="66"  cy="80"  rx="8"  ry="6"  fill="#A87040"/>
+  <ellipse cx="58"  cy="77"  rx="7"  ry="5"  fill="#906030"/>
+
+  <!-- BACK LEGS (behind body) -->
+  <rect x="132" y="210" width="36" height="68" rx="16" fill="#D4A574"/>
+  <rect x="182" y="210" width="36" height="68" rx="16" fill="#C9956A"/>
+  <!-- Hooves back -->
+  <rect x="132" y="252" width="36" height="28" rx="12" fill="#5A3520"/>
+  <rect x="182" y="252" width="36" height="28" rx="12" fill="#5A3520"/>
+  <!-- Hoof cleft detail (just a darker ellipse) -->
+  <ellipse cx="150" cy="278" rx="8" ry="3" fill="#4A2A15" opacity="0.5"/>
+  <ellipse cx="200" cy="278" rx="8" ry="3" fill="#4A2A15" opacity="0.5"/>
+
+  <!-- BODY — very wide, squat oval (same pig proportions: 3:2 ratio) -->
+  <ellipse cx="280" cy="175" rx="178" ry="108" fill="#D4A574"/>
+
+  <!-- BELLY — lighter underside -->
+  <ellipse cx="280" cy="228" rx="120" ry="50" fill="#E8C49A"/>
+
+  <!-- BLACK PATCHES — classic dairy cow markings (flat filled, no stroke) -->
+  <!-- Large left-side patch -->
+  <path d="M 132 118 C 152 85 205 90 225 122 C 238 144 222 178 196 182
+           C 168 186 118 166 118 142 C 116 132 124 122 132 118Z"
+        fill="#2A1508" opacity="0.85"/>
+  <!-- Neck/back patch -->
+  <path d="M 255 100 C 278 82 318 88 328 112 C 336 130 320 158 300 160
+           C 280 162 250 142 255 100Z"
+        fill="#2A1508" opacity="0.80"/>
+  <!-- Rump patch (right) -->
+  <path d="M 368 118 C 384 102 414 110 418 132 C 422 150 406 168 390 166
+           C 372 164 356 146 368 118Z"
+        fill="#2A1508" opacity="0.76"/>
+  <!-- Small belly accent -->
+  <path d="M 210 200 C 222 190 242 194 244 208 C 246 220 228 228 216 222
+           C 206 218 202 210 210 200Z"
+        fill="#2A1508" opacity="0.40"/>
+
+  <!-- UDDER — cow-specific, prominent pink, between back legs -->
+  <!-- Udder main dome -->
+  <ellipse cx="204" cy="268" rx="56" ry="32" fill="#E8AFA0"/>
+  <!-- Lobe separation shading -->
+  <ellipse cx="180" cy="274" rx="28" ry="20" fill="#EEBAAC"/>
+  <ellipse cx="228" cy="274" rx="28" ry="20" fill="#EEBAAC"/>
+  <!-- Teats — four rounded drops -->
+  <ellipse cx="170" cy="290" rx="7" ry="9"  fill="#D09080"/>
+  <ellipse cx="192" cy="295" rx="7" ry="9"  fill="#D09080"/>
+  <ellipse cx="216" cy="295" rx="7" ry="9"  fill="#D09080"/>
+  <ellipse cx="238" cy="290" rx="7" ry="9"  fill="#D09080"/>
+
+  <!-- FRONT LEGS -->
+  <rect x="326" y="250" width="36" height="48" rx="16" fill="#D4A574"/>
+  <rect x="376" y="250" width="36" height="48" rx="16" fill="#C9956A"/>
+  <!-- Hooves front -->
+  <rect x="326" y="280" width="36" height="20" rx="10" fill="#5A3520"/>
+  <rect x="376" y="280" width="36" height="20" rx="10" fill="#5A3520"/>
+
+  <!-- NECK — smooth connector -->
+  <ellipse cx="418" cy="148" rx="38" ry="52" fill="#D4A574"/>
+
+  <!-- HEAD — large round, slightly elevated -->
+  <circle cx="432" cy="100" r="72" fill="#D4A574"/>
+
+  <!-- FOREHEAD PATCH — dark marking typical of dairy cows -->
+  <path d="M 396 56 C 412 36 456 38 468 62 C 476 80 460 106 438 108
+           C 414 110 384 86 396 56Z"
+        fill="#2A1508" opacity="0.78"/>
+
+  <!-- EARS — wide, floppy, no outline (just layered fills) -->
+  <!-- Left ear outer -->
+  <ellipse cx="374" cy="54" rx="24" ry="14" fill="#D4A574" transform="rotate(-38 374 54)"/>
+  <!-- Left ear inner (pink canal) -->
+  <ellipse cx="374" cy="54" rx="14" ry="8"  fill="#E8B4A0" transform="rotate(-38 374 54)"/>
+  <!-- Right ear outer -->
+  <ellipse cx="490" cy="52" rx="24" ry="14" fill="#D4A574" transform="rotate(30 490 52)"/>
+  <!-- Right ear inner -->
+  <ellipse cx="490" cy="52" rx="14" ry="8"  fill="#E8B4A0" transform="rotate(30 490 52)"/>
+
+  <!-- HORNS — short, curved ivory (cow-specific) -->
+  <!-- Left horn -->
+  <path d="M 388 58 C 374 36 366 20 378 14 C 388 9 396 24 388 58Z"
+        fill="#EDE0A8"/>
+  <!-- Right horn -->
+  <path d="M 474 55 C 492 33 500 18 488 13 C 478 8 470 24 474 55Z"
+        fill="#EDE0A8"/>
+
+  <!-- MUZZLE — wide rectangular-oval (cow, not pig snout circle) -->
+  <ellipse cx="468" cy="118" rx="36" ry="26" fill="#C9956A"/>
+  <!-- Muzzle lighter center band -->
+  <ellipse cx="468" cy="118" rx="26" ry="19" fill="#D8AA80"/>
+  <!-- Nostrils — two wide kidney-shaped -->
+  <ellipse cx="458" cy="120" rx="8" ry="7"  fill="#7A4828"/>
+  <ellipse cx="478" cy="120" rx="8" ry="7"  fill="#7A4828"/>
+  <!-- Nostril subtle shine -->
+  <circle  cx="455" cy="117" r="2.5" fill="rgba(255,255,255,0.35)"/>
+  <circle  cx="475" cy="117" r="2.5" fill="rgba(255,255,255,0.35)"/>
+  <!-- Chin bump -->
+  <ellipse cx="468" cy="138" rx="18" ry="8"  fill="#C08050" opacity="0.5"/>
+
+  <!-- EYE — large, expressive, same teal iris as original pig -->
+  <!-- Eye white -->
+  <ellipse cx="406" cy="90"  rx="17" ry="14" fill="white"/>
+  <!-- Iris — same teal colour #3D8B7A as pig -->
+  <circle  cx="408" cy="92"  r="10"  fill="#3D8B7A"/>
+  <!-- Pupil -->
+  <circle  cx="409" cy="93"  r="6.5" fill="#181818"/>
+  <!-- Main shine -->
+  <circle  cx="404" cy="88"  r="3.2" fill="white"/>
+  <!-- Secondary shine -->
+  <circle  cx="412" cy="93"  r="1.5" fill="white" opacity="0.55"/>
+  <!-- Eyelid arc — same tan as body (no stroke, just a filled sliver) -->
+  <path d="M 390 82 C 400 74 422 76 424 86"
+        fill="#B87848" opacity="0.5"/>
+  <!-- Lashes — three small filled teardrop shapes -->
+  <ellipse cx="392" cy="79"  rx="2"  ry="4"  fill="#7A4828" transform="rotate(-20 392 79)"/>
+  <ellipse cx="404" cy="75"  rx="2"  ry="4"  fill="#7A4828" transform="rotate( -5 404 75)"/>
+  <ellipse cx="416" cy="77"  rx="2"  ry="4"  fill="#7A4828" transform="rotate( 15 416 77)"/>
+
+  <!-- MOUTH — gentle upward smile (same minimal line as pig) -->
+  <path d="M 454 132 C 462 140 476 140 484 132"
+        fill="none" stroke="#8B5030" stroke-width="3" stroke-linecap="round"/>
+
+</svg>
