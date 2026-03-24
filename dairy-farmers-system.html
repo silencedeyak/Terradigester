@@ -311,13 +311,17 @@
           <div class="farm-step-panel active" id="farm-panel-0" role="tabpanel" aria-labelledby="farm-btn-0">
             <div class="farm-svg-stage" aria-label="Illustration of loading cow manure into Terra Digester inlet">
               <svg viewBox="0 0 380 280" width="100%" height="100%" style="max-width:380px;" xmlns="http://www.w3.org/2000/svg">
-                <!-- Ground -->
-                <rect x="0" y="230" width="380" height="50" fill="rgba(82,183,136,0.08)" rx="4"/>
-                <line x1="0" y1="230" x2="380" y2="230" stroke="rgba(82,183,136,0.2)" stroke-width="1.5"/>
 
-                <!-- Cow — flat cartoon style (no outlines, filled shapes only) -->
-                <!-- Scale down from 480×300 viewBox to fit 190×119 in the scene -->
-                <g transform="translate(2,108) scale(0.395)" style="animation:cowRock 3.5s ease-in-out infinite;transform-origin:95px 60px;">
+                <!-- Ground line -->
+                <rect x="0" y="240" width="380" height="40" fill="rgba(82,183,136,0.07)" rx="4"/>
+                <line x1="0" y1="240" x2="380" y2="240" stroke="rgba(82,183,136,0.18)" stroke-width="1.5"/>
+
+                <!-- ══════════════════════════════════════════
+                     COW — small, left side, flat-fill cartoon
+                     Source viewBox 480×300, scale 0.22 → ~106×66
+                     Positioned bottom-left as context element
+                ════════════════════════════════════════════ -->
+                <g transform="translate(-4, 138) scale(0.22)" style="animation:cowRock 3.5s ease-in-out infinite;transform-origin:240px 150px;">
                   <!-- TAIL behind body -->
                   <path d="M 108 178 C 88 168 72 148 78 128 C 84 110 72 100 62 90" fill="none" stroke="#C9956A" stroke-width="6" stroke-linecap="round"/>
                   <ellipse cx="58" cy="85" rx="14" ry="10" fill="#C08050"/>
@@ -357,11 +361,11 @@
                   <!-- Forehead patch -->
                   <path d="M 396 56 C 412 36 456 38 468 62 C 476 80 460 106 438 108 C 414 110 384 86 396 56Z" fill="#2A1508" opacity="0.78"/>
                   <!-- Left ear -->
-                  <ellipse cx="374" cy="54" rx="24" ry="14" fill="#D4A574"  transform="rotate(-38 374 54)"/>
-                  <ellipse cx="374" cy="54" rx="14" ry="8"  fill="#E8B4A0"  transform="rotate(-38 374 54)"/>
+                  <ellipse cx="374" cy="54" rx="24" ry="14" fill="#D4A574" transform="rotate(-38 374 54)"/>
+                  <ellipse cx="374" cy="54" rx="14" ry="8"  fill="#E8B4A0" transform="rotate(-38 374 54)"/>
                   <!-- Right ear -->
-                  <ellipse cx="492" cy="52" rx="24" ry="14" fill="#D4A574"  transform="rotate(30 492 52)"/>
-                  <ellipse cx="492" cy="52" rx="14" ry="8"  fill="#E8B4A0"  transform="rotate(30 492 52)"/>
+                  <ellipse cx="492" cy="52" rx="24" ry="14" fill="#D4A574" transform="rotate(30 492 52)"/>
+                  <ellipse cx="492" cy="52" rx="14" ry="8"  fill="#E8B4A0" transform="rotate(30 492 52)"/>
                   <!-- Horns -->
                   <path d="M 388 58 C 374 36 366 20 378 14 C 388 9 396 24 388 58Z" fill="#EDE0A8"/>
                   <path d="M 474 55 C 492 33 500 18 488 13 C 478 8 470 24 474 55Z" fill="#EDE0A8"/>
@@ -372,7 +376,7 @@
                   <ellipse cx="478" cy="120" rx="8"  ry="7"  fill="#7A4828"/>
                   <circle  cx="455" cy="117" r="2.5" fill="rgba(255,255,255,0.35)"/>
                   <circle  cx="475" cy="117" r="2.5" fill="rgba(255,255,255,0.35)"/>
-                  <!-- Eye — teal iris matching original pig -->
+                  <!-- Eye -->
                   <ellipse cx="406" cy="90"  rx="17" ry="14" fill="white"/>
                   <circle  cx="408" cy="92"  r="10"  fill="#3D8B7A"/>
                   <circle  cx="409" cy="93"  r="6.5" fill="#181818"/>
@@ -386,51 +390,91 @@
                   <path d="M 454 132 C 462 140 476 140 484 132" fill="none" stroke="#8B5030" stroke-width="3" stroke-linecap="round"/>
                 </g>
 
-                <!-- Dung pile with falling particles -->
-                <g id="dung-group">
-                  <!-- Falling dung drops animated -->
-                  <circle cx="170" cy="190" r="6" fill="#7F5539" opacity="0.85" style="animation:dungDrop 1.6s ease-in-out infinite;"/>
-                  <circle cx="158" cy="175" r="4" fill="#7F5539" opacity="0.6" style="animation:dungDrop 1.6s ease-in-out infinite 0.4s;"/>
-                  <circle cx="178" cy="180" r="3" fill="#7F5539" opacity="0.5" style="animation:dungDrop 1.6s ease-in-out infinite 0.8s;"/>
+                <!-- Dung drops falling from cow rear (positioned at cow's back, ~x=100, ground level) -->
+                <circle cx="108" cy="228" r="5"   fill="#7F5539" opacity="0.85" style="animation:dungDrop 1.6s ease-in-out infinite;"/>
+                <circle cx="100" cy="218" r="3.5" fill="#7F5539" opacity="0.60" style="animation:dungDrop 1.6s ease-in-out infinite 0.5s;"/>
+                <circle cx="114" cy="222" r="2.5" fill="#7F5539" opacity="0.50" style="animation:dungDrop 1.6s ease-in-out infinite 1s;"/>
+
+                <!-- Dashed arrow: cow → funnel (travels from ~x=120 to funnel mouth at ~x=190) -->
+                <path d="M 122 224 Q 148 210 175 200" stroke="rgba(82,183,136,0.65)" stroke-width="2.5" stroke-dasharray="6 4" fill="none" stroke-linecap="round" style="animation:arrowDraw 1.5s linear infinite;stroke-dashoffset:0;"/>
+                <!-- Arrowhead -->
+                <polygon points="175,195 182,200 175,206" fill="rgba(82,183,136,0.65)"/>
+
+                <!-- ══════════════════════════════════════════
+                     TERRA DIGESTER SYSTEM — LARGE, right 55%
+                     Funnel inlet + big bag, centre-right focal point
+                ════════════════════════════════════════════ -->
+
+                <!-- FUNNEL / INLET — wide, tall, prominent -->
+                <g transform="translate(175, 68)">
+                  <!-- "Inlet" label above funnel -->
+                  <text x="42" y="-8" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="12" font-weight="600" font-family="system-ui" letter-spacing="0.5">Inlet</text>
+                  <!-- Funnel top rim (wide ellipse) -->
+                  <ellipse cx="42" cy="14" rx="42" ry="12" fill="rgba(45,106,79,0.35)" stroke="#52B788" stroke-width="2"/>
+                  <!-- Funnel body trapezoid -->
+                  <path d="M0 14 L18 62 L66 62 L84 14" fill="rgba(18,46,32,0.82)" stroke="#52B788" stroke-width="2"/>
+                  <!-- Funnel interior liquid sheen -->
+                  <ellipse cx="42" cy="35" rx="18" ry="6" fill="rgba(82,183,136,0.22)"/>
+                  <ellipse cx="42" cy="50" rx="10" ry="4" fill="rgba(82,183,136,0.16)"/>
+                  <!-- Funnel pipe (neck leading into bag) -->
+                  <rect x="28" y="62" width="28" height="38" rx="6" fill="rgba(18,46,32,0.9)" stroke="#52B788" stroke-width="2"/>
+                  <!-- Pipe connector ring -->
+                  <rect x="25" y="95" width="34" height="8" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Slurry drop in pipe (animated) -->
+                  <circle cx="42" cy="72" r="4" fill="rgba(127,85,57,0.6)" style="animation:dungDrop 1.4s ease-in-out infinite 0.2s;"/>
+                  <circle cx="42" cy="84" r="3" fill="rgba(127,85,57,0.4)" style="animation:dungDrop 1.4s ease-in-out infinite 0.7s;"/>
                 </g>
 
-                <!-- Arrow from cow to funnel -->
-                <path d="M188 195 Q210 188 228 200" stroke="rgba(82,183,136,0.5)" stroke-width="2" stroke-dasharray="5 4" fill="none" stroke-linecap="round" style="animation:arrowDraw 1.5s linear infinite;stroke-dashoffset:0;"/>
-
-                <!-- Funnel / inlet -->
-                <g transform="translate(235,155)">
-                  <!-- Funnel top rim -->
-                  <ellipse cx="35" cy="15" rx="35" ry="10" fill="rgba(45,106,79,0.3)" stroke="#52B788" stroke-width="1.5"/>
-                  <!-- Funnel body -->
-                  <path d="M0 15 L14 55 L56 55 L70 15" fill="rgba(27,58,45,0.7)" stroke="#52B788" stroke-width="1.5"/>
-                  <!-- Funnel pipe down -->
-                  <rect x="24" y="55" width="22" height="30" rx="4" fill="rgba(27,58,45,0.8)" stroke="#52B788" stroke-width="1.5"/>
-                  <!-- Water droplets inside funnel -->
-                  <ellipse cx="35" cy="30" rx="8" ry="4" fill="rgba(82,183,136,0.25)"/>
-                  <ellipse cx="35" cy="40" rx="5" ry="3" fill="rgba(82,183,136,0.2)"/>
-                  <!-- Label -->
-                  <text x="35" y="-4" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10" font-family="system-ui">Inlet</text>
+                <!-- TERRA DIGESTER BAG — large, prominent, right of funnel -->
+                <g transform="translate(248, 42)">
+                  <!-- Glow halo -->
+                  <ellipse cx="62" cy="108" rx="62" ry="95" fill="rgba(45,106,79,0.12)" style="animation:digestGlow 3.5s ease-in-out infinite;"/>
+                  <!-- Bag main body — inflatable bladder shape -->
+                  <path d="M 12 24
+                            C  8 50  4 90  7 130
+                            C  9 162 22 185 62 185
+                            C 102 185 115 162 117 130
+                            C 120 90 116 50 112 24
+                            C 100  8  80  2  62  2
+                            C  44  2  24  8  12 24 Z"
+                        fill="rgba(11,28,20,0.92)" stroke="#52B788" stroke-width="2.5"/>
+                  <!-- Left sheen highlight -->
+                  <path d="M 18 30 C 14 58 11 95 14 128" stroke="rgba(82,183,136,0.40)" stroke-width="4" stroke-linecap="round"/>
+                  <!-- Right subtle reflection -->
+                  <path d="M 106 35 C 109 63 110 98 107 128" stroke="rgba(82,183,136,0.15)" stroke-width="3" stroke-linecap="round"/>
+                  <!-- Biogas accumulation zone (top, with subtle glow) -->
+                  <ellipse cx="62" cy="50" rx="44" ry="20" fill="rgba(45,106,79,0.20)" style="animation:bagPulse 3.5s ease-in-out infinite;"/>
+                  <!-- Brand name — readable size -->
+                  <text x="62" y="102" text-anchor="middle" fill="rgba(82,183,136,0.85)" font-size="12" font-weight="700" font-family="system-ui" letter-spacing="1.5">TERRA</text>
+                  <text x="62" y="120" text-anchor="middle" fill="rgba(82,183,136,0.85)" font-size="12" font-weight="700" font-family="system-ui" letter-spacing="1.5">DIGESTER</text>
+                  <!-- Subtle separator line under text -->
+                  <line x1="34" y1="127" x2="90" y2="127" stroke="rgba(82,183,136,0.25)" stroke-width="1"/>
+                  <!-- "AD System" sub-label -->
+                  <text x="62" y="142" text-anchor="middle" fill="rgba(82,183,136,0.50)" font-size="9" font-family="system-ui" letter-spacing="0.5">Anaerobic Digestion</text>
+                  <!-- Vent stack on top -->
+                  <rect x="50" y="-14" width="24" height="22" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="2"/>
+                  <rect x="44" y="-18" width="36" height="9" rx="5" fill="#52B788"/>
+                  <!-- Biogas bubble from vent -->
+                  <circle cx="62" cy="-22" r="5" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="1.5" style="animation:bubbleUp 2s ease-in infinite;"/>
+                  <!-- Inlet pipe connection (left side, from funnel pipe) -->
+                  <rect x="-22" y="96" width="22" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Outlet tap (bottom right, small preview) -->
+                  <rect x="108" y="140" width="18" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <rect x="120" y="135" width="10" height="8" rx="3" fill="#DDB892" stroke="rgba(127,85,57,0.7)" stroke-width="1"/>
                 </g>
 
-                <!-- Terra Digester bag (right side, partial) -->
-                <g transform="translate(300,120)">
-                  <!-- Bag body -->
-                  <path d="M10 20C8 40 5 70 8 100C9 115 20 125 40 125C60 125 71 115 72 100C75 70 72 40 70 20" fill="rgba(13,33,24,0.85)" stroke="#52B788" stroke-width="2"/>
-                  <!-- Bag highlight -->
-                  <path d="M15 30C14 50 12 75 15 95" stroke="rgba(82,183,136,0.35)" stroke-width="3" stroke-linecap="round"/>
-                  <!-- TERRA DIGESTER label on bag -->
-                  <text x="40" y="75" text-anchor="middle" fill="rgba(82,183,136,0.7)" font-size="7" font-weight="bold" font-family="system-ui">TERRA</text>
-                  <text x="40" y="85" text-anchor="middle" fill="rgba(82,183,136,0.7)" font-size="7" font-weight="bold" font-family="system-ui">DIGESTER</text>
-                  <!-- Vent pipe top -->
-                  <rect x="34" y="5" width="12" height="18" rx="3" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
-                  <rect x="30" y="2" width="20" height="6" rx="3" fill="#52B788"/>
+                <!-- Water mix badge (below funnel) -->
+                <g transform="translate(175, 200)">
+                  <rect x="0" y="0" width="86" height="24" rx="8" fill="rgba(45,106,79,0.30)" stroke="rgba(82,183,136,0.40)" stroke-width="1.2"/>
+                  <text x="43" y="15.5" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10" font-weight="500" font-family="system-ui">+ Water mix</text>
                 </g>
 
-                <!-- Water bucket label -->
-                <g transform="translate(236,210)">
-                  <rect x="0" y="0" width="70" height="20" rx="6" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
-                  <text x="35" y="13.5" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9" font-family="system-ui">+ Water mix</text>
+                <!-- Small "Daily input" label top-left near cow -->
+                <g transform="translate(4,120)">
+                  <rect x="0" y="0" width="76" height="18" rx="6" fill="rgba(127,85,57,0.25)" stroke="rgba(127,85,57,0.35)" stroke-width="1"/>
+                  <text x="38" y="12" text-anchor="middle" fill="rgba(221,184,146,0.85)" font-size="8.5" font-weight="600" font-family="system-ui">Daily Input</text>
                 </g>
+
               </svg>
             </div>
             <div class="farm-step-content">
