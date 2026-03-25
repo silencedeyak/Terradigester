@@ -418,6 +418,19 @@
     .cta-section h2 { color:var(--white); margin-bottom:1rem; }
     .cta-section p { color:rgba(255,255,255,0.7); max-width:560px; margin-inline:auto; margin-bottom:2rem; }
 
+    /* FAQ SECTION */
+    .faq-section{background:var(--neutral-50);}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0;}
+    .faq-item{background:var(--white);border:1px solid var(--neutral-200);border-radius:var(--radius-md);overflow:hidden;transition:box-shadow 0.25s ease;}
+    .faq-item:hover{box-shadow:var(--shadow-md);}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;background:none;border:none;cursor:pointer;text-align:left;font-size:0.95rem;font-weight:600;color:var(--primary-dark);line-height:1.4;}
+    .faq-q .faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(82,183,136,0.12);border:1.5px solid rgba(82,183,136,0.3);display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;font-size:1rem;line-height:1;color:var(--primary-light);}
+    .faq-item.open .faq-icon{background:var(--primary-light);border-color:var(--primary-light);color:var(--primary-dark);transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s ease;padding:0 1.4rem;}
+    .faq-item.open .faq-a{max-height:300px;padding:0 1.4rem 1.2rem;}
+    .faq-a p{font-size:0.9rem;color:var(--neutral-600);line-height:1.7;}
+    @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
+
     /* FOOTER */
     .site-footer { background:var(--primary-dark); color:rgba(255,255,255,0.75); padding-block:clamp(3rem,6vw,5rem); }
     .footer-grid { display:grid; grid-template-columns:2fr 1.5fr 1.5fr 2fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1); }
@@ -982,11 +995,75 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section faq-section" aria-labelledby="faq-fw-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">FAQ</span>
+          <h2 id="faq-fw-heading">Common Questions</h2>
+          <p>Everything you need to know before getting started.</p>
+        </div>
+        <div class="faq-grid">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How does the system work?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Organic waste enters through the inlet, and anaerobic bacteria inside the sealed bag break it down over 15–30 days. Methane-rich biogas rises to the top for cooking; liquid bio-fertiliser flows from the outlet tap. No electricity, no chemicals — just natural biology.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">What waste can I feed in?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Food scraps, vegetable peelings, fruit waste, cooked leftovers, and small amounts of animal manure all work well. Avoid large quantities of oils or meat. The more consistent the daily input, the more stable the gas output.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How long before gas is produced?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>The bacterial colony needs 2–3 weeks to establish after the initial loading. Once active, the system produces biogas continuously. Daily feeding equals daily cooking gas — and the system can handle gaps; you do not need to feed every single day.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Does it smell?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>No. The sealed, oxygen-free environment is what makes anaerobic digestion work — and what eliminates odour. There is no smell during normal operation. Any odour would indicate a seal issue, which is straightforward to diagnose and resolve.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Where should I place the system?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Outdoors in a sunny, sheltered spot is ideal — near a water source for easy feeding. It can also be placed inside a well-ventilated greenhouse. Choose a flat, stable surface. Biogas pipe runs of up to 50 m are possible with good pressure.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How do I use the bio-fertiliser?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Dilute at roughly 1:3 (fertiliser to water) before applying. It is richer than raw compost — packed with nitrogen, phosphorus, potassium, amino acids, and beneficial microorganisms that are immediately bioavailable to plants.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">What temperature does it need?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Best performance above 18 °C (64 °F). Below 10 °C, activity slows significantly. In colder climates, insulate the bag or site it in a greenhouse. Reduce feeding by half in winter; avoid feeding if the system is frozen.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Does it need emptying or cleaning?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>No emptying needed — liquid digestate flows out continuously as you add waste. The interior does not require cleaning. Replace the gas filter every 6–12 months. The system exterior can be cleaned with water only. Expected lifespan is over 15 years.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Can I use it with a dedicated biogas stove?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Yes — and we recommend using a stove designed for low-pressure biogas. The gas is uncompressed, so standard LPG appliances require a simple adaptor. The system produces enough gas for 1–3 hours of daily cooking depending on input volume.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Is it safe?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Yes. Biogas is stored at very low pressure, uncompressed. Being lighter than air, any leak disperses upward safely rather than pooling at ground level. The sealed design prevents open-flame risk at the bag itself. The system meets international biogas safety standards.</p></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
-    <section class="cta-section" aria-labelledby="cta-heading">
+    <section class="cta-section" aria-labelledby="cta-fw-heading">
       <div class="container fade-in">
         <span class="section-label" style="color:var(--primary-light);">Get in Touch</span>
-        <h2 id="cta-heading">Discuss a Food Waste System</h2>
+        <h2 id="cta-fw-heading">Discuss a Food Waste System</h2>
         <p>Whether you are planning a household installation or a community-scale system, we are ready to explore the right configuration with you.</p>
         <a href="contact.html?interest=food-waste" class="btn btn-primary">Start a Conversation</a>
       </div>
@@ -1170,6 +1247,16 @@
 
     // Initialise
     goToStep(0, true);
+
+    // ── FAQ accordion ──
+    document.querySelectorAll('.faq-q').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item=btn.closest('.faq-item');
+        const isOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el=>{el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+        if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+      });
+    });
   </script>
 </body>
 </html>

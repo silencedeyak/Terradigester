@@ -175,6 +175,19 @@
     .scale-text{text-align:center;margin-top:1rem;}
     .scale-text p{max-width:640px;margin-inline:auto;color:var(--neutral-600);}
 
+    /* FAQ */
+    .faq-section{background:var(--neutral-50);}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0;}
+    .faq-item{background:var(--white);border:1px solid var(--neutral-200);border-radius:var(--radius-md);overflow:hidden;transition:box-shadow 0.25s ease;}
+    .faq-item:hover{box-shadow:var(--shadow-md);}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;background:none;border:none;cursor:pointer;text-align:left;font-size:0.95rem;font-weight:600;color:var(--primary-dark);line-height:1.4;}
+    .faq-q .faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(82,183,136,0.12);border:1.5px solid rgba(82,183,136,0.3);display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;font-size:1rem;line-height:1;color:var(--primary-light);}
+    .faq-item.open .faq-icon{background:var(--primary-light);border-color:var(--primary-light);color:var(--primary-dark);transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s ease;padding:0 1.4rem;}
+    .faq-item.open .faq-a{max-height:300px;padding:0 1.4rem 1.2rem;}
+    .faq-a p{font-size:0.9rem;color:var(--neutral-600);line-height:1.7;}
+    @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
+
     /* CTA */
     .cta-section{background:linear-gradient(135deg,var(--primary-dark) 0%,#142d22 100%);padding-block:clamp(3rem,6vw,5rem);text-align:center;}
     .cta-section h2{color:var(--white);margin-bottom:1rem;}
@@ -853,6 +866,70 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section faq-section" aria-labelledby="faq-df-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">FAQ</span>
+          <h2 id="faq-df-heading">Common Questions</h2>
+          <p>Everything dairy farmers ask before getting started with biodigestion.</p>
+        </div>
+        <div class="faq-grid">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How does the system work with dairy manure?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Dairy manure is loaded into the inlet, mixed with water, and fed into the sealed digester bag. Anaerobic bacteria break down the organic matter over 15–30 days, capturing methane for cooking gas and releasing liquid bio-fertiliser from the outlet — rich in nitrogen, phosphorus, and potassium.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">What manure types does it accept?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Cow, pig, and horse manure all work well. Dairy cow manure is particularly effective due to its high organic content and naturally present anaerobic bacteria. The system processes up to 50 litres of slurry per day at farm scale.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How long before gas starts flowing?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>After the initial load — typically manure mixed with water — the system requires 2–3 weeks for the bacterial colony to fully establish. No additional feeding is needed during this period. Once active, gas is produced daily as long as manure is added regularly.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How much gas can I expect each day?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Farm-scale systems produce enough biogas for up to 6 hours of cooking per day depending on unit size and manure volume. Gas output scales with the amount of organic matter fed in — consistent daily feeding means consistent daily gas.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Is the bio-fertiliser better than raw manure?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Yes. Anaerobic digestion does not destroy nutrients — it concentrates them. The liquid digestate is enriched with amino acids, biostimulants, minerals, and beneficial microorganisms that are immediately bioavailable to crops. It outperforms raw farmyard manure in plant uptake efficiency.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How much bio-fertiliser is produced?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Farm systems produce 50–150 litres of liquid fertiliser per day, yielding over 30,000 litres annually. Dilute at 1:3 (fertiliser to water) before applying. Storage impact is minimal — the fertiliser retains its quality for at least a week after collection.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Where should the system be installed?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Choose a flat, sunny area within 50 m of the kitchen or gas point of use. The system sits above ground and requires no civil works or pits. Keep the biogas pipe run under 50 m for optimal pressure. Installation typically takes one day.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">What maintenance does it need?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Very little. Replace the gas filter every 8–12 months. Clean only the exterior with water. The bag does not need emptying — digestate flows out continuously as new manure is added. Expected system lifespan is over 10 years.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">What temperature does it need?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Manure digesters work well from around 10 °C (50 °F) upward. Below this, slow feeding by half to match reduced bacterial activity. In colder climates, insulate the bag or shelter it from wind to maintain stable temperatures and consistent output.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Does it capture methane emissions?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Yes — and this is one of its most important environmental benefits. Dairy manure stored in open lagoons releases methane directly into the atmosphere. The Terra Digester captures 100% of that methane and converts it into usable cooking energy, reducing your farm's climate footprint significantly.</p></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section" aria-labelledby="cta-heading">
       <div class="container fade-in">
@@ -890,6 +967,16 @@
     document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
     const header=document.querySelector('.site-header');
     window.addEventListener('scroll',()=>{header.style.background=window.scrollY>60?'rgba(27,58,45,0.98)':'rgba(27,58,45,0.96)';},{passive:true});
+
+    /* ── FAQ ACCORDION ── */
+    document.querySelectorAll('.faq-q').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item=btn.closest('.faq-item');
+        const isOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el=>{el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+        if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+      });
+    });
 
     /* ── FARM HOW IT WORKS STEPPER ── */
     (function(){

@@ -186,6 +186,19 @@
     .bio-nav-btn.primary:hover{background:var(--primary-light);border-color:var(--primary-light);}
 
     /* differentiator pills (kept below) */
+    /* FAQ */
+    .faq-section{background:var(--neutral-50);}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .faq-item{background:var(--white);border:1px solid var(--neutral-200);border-radius:var(--radius-md);overflow:hidden;transition:box-shadow 0.25s ease;}
+    .faq-item:hover{box-shadow:var(--shadow-md);}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;background:none;border:none;cursor:pointer;text-align:left;font-size:0.95rem;font-weight:600;color:var(--primary-dark);line-height:1.4;}
+    .faq-q .faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(82,183,136,0.12);border:1.5px solid rgba(82,183,136,0.3);display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;font-size:1rem;line-height:1;color:var(--primary-light);}
+    .faq-item.open .faq-icon{background:var(--primary-light);border-color:var(--primary-light);color:var(--primary-dark);transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s ease;padding:0 1.4rem;}
+    .faq-item.open .faq-a{max-height:300px;padding:0 1.4rem 1.2rem;}
+    .faq-a p{font-size:0.9rem;color:var(--neutral-600);line-height:1.7;}
+    @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
+
     .concept-differentiator{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-md);padding:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;text-align:center;margin-top:3rem;position:relative;z-index:2;}
     .diff-item{display:flex;flex-direction:column;align-items:center;gap:0.5rem;}
     .diff-item strong{font-size:0.95rem;color:var(--white);}
@@ -1438,6 +1451,70 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section faq-section" aria-labelledby="faq-bt-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">FAQ</span>
+          <h2 id="faq-bt-heading">Common Questions</h2>
+          <p>Everything you need to know about the Terra Digester bio-toilet system.</p>
+        </div>
+        <div class="faq-grid">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How does the bio-toilet system work?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>The bio-toilet connects to the Terra Digester via a sealed pipe. Waste flows in and anaerobic bacteria break it down over 15–30 days, producing biogas for cooking and liquid digestate for the soil. No sewage connection, no chemicals, no water-flush required.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Does it need a sewage connection?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>No. The system is fully self-contained — no municipal sewage, septic tank, or drainage infrastructure required. This makes it ideal for off-grid sites, eco-tourism lodges, remote communities, and humanitarian camps.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Does it smell?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>No. The sealed, oxygen-free environment eliminates odour entirely. Unlike composting toilets, there is no smell during normal operation — making it comfortable for indoor or semi-indoor use. Any odour is a clear sign of a seal issue, which is easy to resolve.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How much water does each flush use?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>As little as 0.3–1.2 litres per flush — compared to 6–13 litres for a conventional toilet. Some configurations use near-zero water with a dry inlet pipe. No pressurised water supply is needed, and no electricity is required.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Can the toilet be installed indoors?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Yes. The toilet unit can be placed indoors as long as the pipe run to the outdoor digester is within roughly 5 m on the same level, or up to 10 m if the toilet is elevated 1 m above the digester. A short ventilation stack (90 mm, max 2 m) removes any residual air.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Can I use toilet paper?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Avoid large amounts — they slow digestion and can block the inlet. Thin, unbleached paper in small quantities is generally fine. We recommend reviewing your specific setup with us to find the best inlet configuration.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">What cleaning products are safe?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Use only water, vinegar, or eco-certified biological cleaners. Bleach, antibacterial sprays, and chemical disinfectants kill the anaerobic bacteria and stop the process. Keep cleaning simple and natural.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">What happens to the liquid digestate output?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Digestate flows continuously to a mulch basin, drain field, or is managed per local regulations. It supports soil health and reduces pathogens significantly through anaerobic digestion. Do not apply directly to edible plants without further treatment or local guidance.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">What temperature does it need?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>The system functions from around 5 °C (41 °F), though biogas production is best above 21 °C (70 °F). Avoid hard freezes. In colder regions, insulating the digester bag and siting it in a sheltered spot keeps performance stable year-round.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Is it safe and certified?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Yes. Biogas is stored at very low pressure, uncompressed — if any leak occurs, it rises and disperses safely upward. The system design meets international biogas safety standards. All installations are completed with a commissioning check to ensure seals and connections are fully secure.</p></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section">
       <div class="container fade-in">
@@ -1480,6 +1557,16 @@
     /* ── Header scroll tint ── */
     const header=document.querySelector('.site-header');
     window.addEventListener('scroll',()=>{header.style.background=window.scrollY>60?'rgba(27,58,45,0.98)':'rgba(27,58,45,0.96)';},{passive:true});
+
+    /* ── FAQ ACCORDION ── */
+    document.querySelectorAll('.faq-q').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item=btn.closest('.faq-item');
+        const isOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el=>{el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+        if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+      });
+    });
 
     /* ── Bio-toilet stepper ── */
     const BIO_TOTAL = 4;
