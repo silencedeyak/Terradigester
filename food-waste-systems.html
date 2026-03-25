@@ -64,12 +64,35 @@
     @media(max-width:1024px){.nav-links{display:none;}.nav-mobile-toggle{display:flex;}}
 
     /* HERO */
-    .hero { min-height:60vh; display:flex; align-items:center; padding-top:72px; background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(45,106,79,0.5) 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 80% 20%,rgba(27,58,45,0.65) 0%,transparent 60%),linear-gradient(135deg,#0d2219 0%,#1B3A2D 40%,#142d22 100%); position:relative; overflow:hidden; }
-    .hero-content { padding-block:5rem 4rem; position:relative; z-index:2; }
-    .hero h1 { color:var(--white); max-width:700px; margin-bottom:1.25rem; }
+    .hero { min-height:65vh; display:flex; align-items:center; padding-top:72px; background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(45,106,79,0.5) 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 80% 20%,rgba(27,58,45,0.65) 0%,transparent 60%),linear-gradient(135deg,#0d2219 0%,#1B3A2D 40%,#142d22 100%); position:relative; overflow:hidden; }
+    .hero-content { padding-block:5rem 4rem; position:relative; z-index:2; width:100%; }
+    .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:center; }
+    .hero-text { } 
+    .hero h1 { color:var(--white); margin-bottom:1.25rem; }
     .hero h1 em { font-style:normal; color:var(--primary-light); }
-    .hero-sub { color:rgba(255,255,255,0.75); font-size:clamp(1rem,1.8vw,1.2rem); max-width:540px; margin-bottom:2rem; }
+    .hero-sub { color:rgba(255,255,255,0.75); font-size:clamp(1rem,1.8vw,1.2rem); max-width:480px; margin-bottom:2rem; }
     .hero-deco-line { position:absolute; right:0; top:0; bottom:0; width:40%; background:radial-gradient(ellipse 100% 100% at 100% 50%,rgba(82,183,136,0.08) 0%,transparent 70%); pointer-events:none; }
+
+    /* Hero diagram image (right column) */
+    .hero-diagram-wrap { position:relative; display:flex; align-items:center; justify-content:center; }
+    .hero-diagram-frame { position:relative; border-radius:24px; overflow:hidden;
+      box-shadow: 0 0 0 1px rgba(82,183,136,0.25), 0 0 0 4px rgba(82,183,136,0.10), 0 20px 60px rgba(0,0,0,0.45), 0 4px 16px rgba(0,0,0,0.3);
+      animation: heroDiagramFloat 5s ease-in-out infinite; }
+    .hero-diagram-frame img { display:block; width:100%; height:auto; border-radius:24px; }
+    /* Subtle inner glow border overlay */
+    .hero-diagram-frame::before { content:''; position:absolute; inset:0; border-radius:24px;
+      background:linear-gradient(145deg, rgba(82,183,136,0.12) 0%, transparent 45%, transparent 55%, rgba(27,58,45,0.2) 100%);
+      pointer-events:none; z-index:1; }
+    /* Green corner accent lines */
+    .hero-diagram-frame::after { content:''; position:absolute; inset:0; border-radius:24px;
+      border:1.5px solid rgba(82,183,136,0.4); pointer-events:none; z-index:2;
+      box-shadow: inset 0 0 20px rgba(82,183,136,0.06); }
+    /* Caption badge below image */
+    .hero-diagram-caption { margin-top:0.85rem; display:flex; align-items:center; justify-content:center; gap:0.5rem; }
+    .hero-diagram-caption span { font-size:0.78rem; color:rgba(255,255,255,0.5); font-style:italic; }
+    .hero-diagram-caption .badge { display:inline-flex; align-items:center; gap:0.35rem; background:rgba(82,183,136,0.15); border:1px solid rgba(82,183,136,0.3); border-radius:20px; padding:4px 12px; font-size:0.72rem; font-weight:600; letter-spacing:0.08em; color:var(--primary-light); text-transform:uppercase; }
+    @keyframes heroDiagramFloat { 0%,100%{transform:translateY(0px);} 50%{transform:translateY(-8px);} }
+    @media(max-width:900px){ .hero-grid{grid-template-columns:1fr; gap:2.5rem;} .hero-diagram-wrap{max-width:520px; margin:0 auto;} }
     .breadcrumb { display:flex; align-items:center; gap:0.5rem; margin-bottom:1.5rem; }
     .breadcrumb a { color:rgba(255,255,255,0.5); font-size:0.8rem; text-decoration:none; }
     .breadcrumb a:hover { color:var(--primary-light); }
@@ -471,15 +494,40 @@
     <section class="hero" aria-label="Food Waste Systems hero">
       <div class="hero-deco-line" aria-hidden="true"></div>
       <div class="container hero-content">
-        <div class="breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <span class="current">Food Waste Systems</span>
+        <div class="hero-grid">
+
+          <!-- Left: text -->
+          <div class="hero-text">
+            <div class="breadcrumb">
+              <a href="index.html">Home</a>
+              <span>/</span>
+              <span class="current">Food Waste Systems</span>
+            </div>
+            <span class="section-label" style="color:var(--primary-light);">Solutions</span>
+            <h1>Turn Food Waste into <em>Energy and Fertiliser</em></h1>
+            <p class="hero-sub">Modular anaerobic digestion systems for communities, schools, and eco-lodges.</p>
+            <a href="contact.html?interest=food-waste" class="btn btn-primary">Discuss a System</a>
+          </div>
+
+          <!-- Right: process diagram image -->
+          <div class="hero-diagram-wrap fade-in fade-in-delay-1">
+            <div>
+              <div class="hero-diagram-frame">
+                <img
+                  src="https://www.genspark.ai/api/files/s/c4FRB8cH"
+                  alt="Terra Digester food waste system flow: insert food waste → Terra Digester anaerobic bag → cooking gas → bio-fertiliser"
+                  loading="eager"
+                  width="640" height="360"
+                />
+              </div>
+              <div class="hero-diagram-caption">
+                <span class="badge">How It Works</span>
+                <span>4-step closed-loop system — waste in, energy &amp; fertiliser out</span>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <span class="section-label" style="color:var(--primary-light);">Solutions</span>
-        <h1>Turn Food Waste into <em>Energy and Fertiliser</em></h1>
-        <p class="hero-sub">Modular anaerobic digestion systems for communities, schools, and eco-lodges.</p>
-        <a href="contact.html?interest=food-waste" class="btn btn-primary">Discuss a System</a>
       </div>
     </section>
 
