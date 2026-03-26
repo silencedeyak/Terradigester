@@ -39,11 +39,11 @@
     .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,0.1);}
     .nav-dropdown{position:relative;}
     .nav-dropdown>a::after{content:' ▾';font-size:0.75rem;opacity:0.7;}
-    .dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--primary-dark);border-radius:var(--radius-sm);min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);overflow:hidden;z-index:100;}
+    .dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--primary-dark);border-radius:var(--radius-sm);min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);z-index:100;}
     .dropdown-menu a{padding:10px 18px;display:block;color:rgba(255,255,255,0.85);font-size:0.875rem;border-radius:0;border-bottom:1px solid rgba(255,255,255,0.06);transition:var(--transition);}
     .dropdown-menu a:last-child{border-bottom:none;}
     .dropdown-menu a:hover{background:rgba(82,183,136,0.2);color:var(--white);}
-    .nav-dropdown:hover .dropdown-menu{display:block;}.dropdown-menu::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}
+    .dropdown-menu.open{display:block;}
     .nav-cta{background:var(--primary-light)!important;color:var(--primary-dark)!important;font-weight:600!important;padding:8px 18px!important;}
     .nav-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
     .nav-mobile-toggle span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
@@ -1049,6 +1049,23 @@
       // Init
       farmGoTo(0);
     })();
+  </script>
+
+  <script>
+  /* ── Dropdown: JS hover with delay to prevent flicker ── */
+  (function(){
+    document.querySelectorAll('.nav-dropdown').forEach(function(item){
+      var menu = item.querySelector('.dropdown-menu');
+      if(!menu) return;
+      var timer = null;
+      function show(){ clearTimeout(timer); menu.classList.add('open'); }
+      function hide(){ timer = setTimeout(function(){ menu.classList.remove('open'); }, 150); }
+      item.addEventListener('mouseenter', show);
+      item.addEventListener('mouseleave', hide);
+      menu.addEventListener('mouseenter', show);
+      menu.addEventListener('mouseleave', hide);
+    });
+  })();
   </script>
 </body>
 </html>

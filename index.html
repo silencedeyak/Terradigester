@@ -252,7 +252,6 @@
       min-width: 220px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.3);
       border: 1px solid rgba(255,255,255,0.1);
-      overflow: hidden;
       z-index: 100;
     }
     .dropdown-menu a {
@@ -267,8 +266,7 @@
     }
     .dropdown-menu a:last-child { border-bottom: none; }
     .dropdown-menu a:hover { background: rgba(82,183,136,0.2); color: var(--white); }
-    .nav-dropdown:hover .dropdown-menu { display: block; }
-    .dropdown-menu::before { content: ""; position: absolute; top: -8px; left: 0; right: 0; height: 8px; background: transparent; }
+    .dropdown-menu.open { display: block; }
 
     .nav-cta {
       background: var(--primary-light) !important;
@@ -1683,6 +1681,23 @@
         badge.style.transform = '';
       }, 100);
     });
+  </script>
+
+  <script>
+  /* ── Dropdown: JS hover with delay to prevent flicker ── */
+  (function(){
+    document.querySelectorAll('.nav-dropdown').forEach(function(item){
+      var menu = item.querySelector('.dropdown-menu');
+      if(!menu) return;
+      var timer = null;
+      function show(){ clearTimeout(timer); menu.classList.add('open'); }
+      function hide(){ timer = setTimeout(function(){ menu.classList.remove('open'); }, 150); }
+      item.addEventListener('mouseenter', show);
+      item.addEventListener('mouseleave', hide);
+      menu.addEventListener('mouseenter', show);
+      menu.addEventListener('mouseleave', hide);
+    });
+  })();
   </script>
 </body>
 </html>
