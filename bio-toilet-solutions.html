@@ -137,7 +137,7 @@
 
     /* ── BIO-TOILET HOW IT WORKS — animated stepper ── */
     .concept-section{background:var(--primary-dark);position:relative;overflow:hidden;}
-    .concept-section::before{content:'';position:absolute;inset:0;background:
+    .concept-section::before{content:'';position:absolute;inset:0;z-index:0;background:
       radial-gradient(ellipse 70% 55% at 15% 40%,rgba(45,106,79,0.28) 0%,transparent 60%),
       radial-gradient(ellipse 55% 65% at 85% 75%,rgba(27,58,45,0.35) 0%,transparent 55%);
       pointer-events:none;}
@@ -145,8 +145,8 @@
     .concept-section .section-header p{color:rgba(255,255,255,0.65);}
 
     /* progress track */
-    .bio-step-track{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:3rem;position:relative;z-index:2;}
-    .bio-step-btn{display:flex;flex-direction:column;align-items:center;gap:0.5rem;cursor:pointer;border:none;background:none;padding:0 1.5rem;}
+    .bio-step-track{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:3rem;position:relative;z-index:10;}
+    .bio-step-btn{display:flex;flex-direction:column;align-items:center;gap:0.5rem;cursor:pointer;border:none;background:none;padding:0 1.5rem;position:relative;z-index:10;}
     .bio-step-num{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:0.95rem;font-weight:700;color:rgba(255,255,255,0.4);transition:all 0.4s ease;background:rgba(27,58,45,0.6);}
     .bio-step-btn.active .bio-step-num{background:var(--primary-light);border-color:var(--primary-light);color:var(--primary-dark);}
     .bio-step-btn.done .bio-step-num{background:rgba(82,183,136,0.4);border-color:var(--primary-light);color:var(--white);}
@@ -156,7 +156,7 @@
     .bio-track-fill{position:absolute;top:0;left:0;height:100%;width:0%;background:var(--primary-light);transition:width 0.6s ease;}
 
     /* panels */
-    .bio-steps-wrap{position:relative;z-index:2;}
+    .bio-steps-wrap{position:relative;z-index:10;}
     .bio-step-panel{display:none;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
     .bio-step-panel.active{display:grid;animation:bioPanelIn 0.5s ease both;}
     @keyframes bioPanelIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
@@ -179,7 +179,7 @@
     .bio-metric-lbl{font-size:0.72rem;color:rgba(255,255,255,0.5);margin-top:0.15rem;}
 
     /* nav */
-    .bio-step-nav{display:flex;justify-content:center;gap:1rem;margin-top:2.5rem;position:relative;z-index:2;}
+    .bio-step-nav{display:flex;justify-content:center;gap:1rem;margin-top:2.5rem;position:relative;z-index:10;}
     .bio-nav-btn{padding:10px 28px;border-radius:8px;border:2px solid rgba(255,255,255,0.18);background:transparent;color:rgba(255,255,255,0.7);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;}
     .bio-nav-btn:hover{background:rgba(255,255,255,0.1);color:var(--white);border-color:rgba(255,255,255,0.35);}
     .bio-nav-btn.primary{background:var(--primary);border-color:var(--primary);color:var(--white);}
@@ -403,7 +403,7 @@
 
     <!-- HOW IT WORKS — BIO-TOILET SYSTEM -->
     <section class="section concept-section" aria-labelledby="concept-heading">
-      <div class="container">
+      <div class="container" style="position:relative;z-index:10;">
         <div class="section-header fade-in">
           <span class="section-label">How It Works</span>
           <h2 id="concept-heading">From Waste to <em style="font-style:normal;color:var(--primary-light);">Clean Energy</em></h2>
@@ -844,7 +844,7 @@
         </div><!-- /bio-flow-overview -->
 
         <!-- Divider label -->
-        <div style="text-align:center;margin-bottom:2.5rem;position:relative;z-index:2;">
+        <div style="text-align:center;margin-bottom:2.5rem;position:relative;z-index:10;">
           <span style="display:inline-block;background:rgba(82,183,136,0.15);border:1px solid rgba(82,183,136,0.3);border-radius:24px;padding:6px 20px;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Explore Each Step in Detail →</span>
         </div>
 
