@@ -50,6 +50,7 @@
     .dropdown-menu a:last-child { border-bottom:none; }
     .dropdown-menu a:hover { background:rgba(82,183,136,0.2); color:var(--white); }
     .nav-dropdown:hover .dropdown-menu { display:block; }
+    .dropdown-menu::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}
     .nav-cta { background:var(--primary-light)!important; color:var(--primary-dark)!important; font-weight:600!important; padding:8px 18px!important; }
     .nav-cta:hover { background:var(--white)!important; }
     .nav-mobile-toggle { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
