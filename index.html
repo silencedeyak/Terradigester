@@ -864,6 +864,97 @@
     .solution-card .learn-more svg { transition: var(--transition); }
 
     /* ============================================================
+       VIDEO SECTION
+    ============================================================ */
+    .video-section { background: var(--neutral-50); }
+
+    .video-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Outer frame: accent border + glow */
+    .video-frame-outer {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 4px;
+      background: linear-gradient(135deg, #52B788 0%, #2D6A4F 50%, #1B3A2D 100%);
+      box-shadow: 0 20px 60px rgba(45,106,79,0.25), 0 4px 20px rgba(0,0,0,0.12);
+    }
+    .video-frame-outer::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: calc(var(--radius-lg) + 8px);
+      background: radial-gradient(ellipse at 50% 50%, rgba(82,183,136,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Inner iframe container — forces 16:9 ratio */
+    .video-frame-inner {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 */
+      border-radius: calc(var(--radius-lg) - 4px);
+      overflow: hidden;
+      background: #000;
+    }
+    .video-frame-inner iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* Side info panel */
+    .video-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 0.5rem 0;
+    }
+    .video-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .video-info-icon {
+      width: 44px; height: 44px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(82,183,136,0.12);
+      border: 1px solid rgba(82,183,136,0.25);
+      border-radius: 10px;
+    }
+    .video-info-item strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+    .video-info-item span {
+      font-size: 0.82rem;
+      color: var(--neutral-600);
+      line-height: 1.5;
+    }
+
+    /* Responsive: stack on smaller screens */
+    @media (max-width: 900px) {
+      .video-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .video-info {
+        gap: 1.2rem;
+      }
+    }
+
+    /* ============================================================
        CIRCULAR ECONOMY COMPARISON
     ============================================================ */
     .circular-section { background: var(--white); }
@@ -1401,6 +1492,89 @@
             <a href="buy-carbon.html" class="learn-more" aria-label="Learn more about Carbon Credits">
               Learn more
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VIDEO SECTION — SEE IT IN ACTION
+    ============================================================ -->
+    <section class="section video-section fade-in" aria-labelledby="video-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">See It In Action</span>
+          <h2 id="video-heading">From Waste to Energy — Watch How It Works</h2>
+          <p>A real-world look at our anaerobic digestion system converting organic waste into clean biogas and bio-fertiliser.</p>
+        </div>
+
+        <div class="video-wrapper fade-in">
+          <div class="video-frame-outer">
+            <div class="video-frame-inner">
+              <iframe
+                src="https://www.youtube.com/embed/pcUhxi6tqaM?rel=0&modestbranding=1&color=white"
+                title="Terra Digester — Anaerobic Digestion System in Action"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Side info panel -->
+          <div class="video-info">
+            <div class="video-info-item">
+              <div class="video-info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2C10 2 5 5 5 9C5 11.76 7.24 14 10 14C12.76 14 15 11.76 15 9C15 5 10 2 10 2Z" stroke="#52B788" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M10 14V17M7.5 17H12.5" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Biogas Generation</strong>
+                <span>Continuous cooking gas from daily organic waste</span>
+              </div>
+            </div>
+            <div class="video-info-item">
+              <div class="video-info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="7" stroke="#52B788" stroke-width="1.5"/>
+                  <path d="M10 6V10L13 12" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>2–5 Hours Daily</strong>
+                <span>Average cooking gas output per household</span>
+              </div>
+            </div>
+            <div class="video-info-item">
+              <div class="video-info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 16L7 10L10 13L13 7L16 4" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4 16H16" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>1–2 t CO₂/year</strong>
+                <span>Measurable emissions avoided per system</span>
+              </div>
+            </div>
+            <div class="video-info-item">
+              <div class="video-info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2L11.8 7H17L12.6 10.1L14.4 15L10 11.9L5.6 15L7.4 10.1L3 7H8.2L10 2Z" stroke="#52B788" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>15+ Years Lifespan</strong>
+                <span>Durable, low-maintenance system design</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary" style="margin-top:0.5rem;align-self:flex-start;">
+              Request a Demo
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="margin-left:6px"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
