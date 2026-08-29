@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2352B788'/><path d='M16 4C16 4 8 8 8 14C8 17.3 10.7 20 16 20C19.3 20 22 17.3 22 14C22 8 16 4 16 4Z' stroke='%231B3A2D' stroke-width='1.5' fill='none'/></svg>" type="image/svg+xml">
-  <meta name="description" content="Solutions de bio-toilettes Terra Digester — assainissement biologique sans eau pour communautés hors réseau, sites d'écotourisme et installations temporaires sans réseau d'assainissement." />
-  <title>Solutions de bio-toilettes | Terra Digester — Systèmes de digestion anaérobie</title>
+  <meta name="description" content="Solutions de bio-toilettes Terra Digester — assainissement biologique sans eau pour communautés hors réseau, sites d’écotourisme et installations temporaires sans infrastructure d’égouts." />
   <link rel="canonical" href="https://terradigester.com/fr/bio-toilet-solutions.html" />
   <link rel="alternate" hreflang="en" href="https://terradigester.com/bio-toilet-solutions.html" />
   <link rel="alternate" hreflang="fr" href="https://terradigester.com/fr/bio-toilet-solutions.html" />
   <link rel="alternate" hreflang="de" href="https://terradigester.com/de/bio-toilet-solutions.html" />
+  <title>Solutions de bio-toilettes | Terra Digester — Anaerobic Digestion Systems</title>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{--primary-dark:#1B3A2D;--primary:#2D6A4F;--primary-light:#52B788;--earth-brown:#7F5539;--earth-light:#DDB892;--neutral-900:#1A1A1A;--neutral-600:#6B7280;--neutral-200:#E5E7EB;--neutral-50:#F9FAFB;--white:#FFFFFF;--radius-sm:8px;--radius-md:12px;--transition:all 0.3s ease;--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 8px 25px rgba(0,0,0,0.10);}
@@ -30,21 +30,6 @@
     .btn{display:inline-block;padding:14px 32px;border-radius:var(--radius-sm);font-size:1rem;font-weight:500;cursor:pointer;border:2px solid transparent;transition:var(--transition);text-decoration:none;line-height:1;}
     .btn-primary{background:var(--primary);color:var(--white);border-color:var(--primary);}
     .btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(45,106,79,0.35);text-decoration:none;color:var(--white);}
-
-    /* Language switcher */
-    .lang-switcher{position:relative;}
-    .lang-switcher .lang-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--primary-dark);border-radius:var(--radius-sm);min-width:120px;box-shadow:0 8px 24px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);z-index:200;list-style:none;padding:0.4rem 0;margin:0;}
-    .lang-switcher:hover .lang-menu,.lang-switcher:focus-within .lang-menu{display:block;}
-    .lang-switcher > a{display:inline-flex;align-items:center;gap:0.35rem;padding:8px 14px;color:rgba(255,255,255,0.85);font-size:0.85rem;font-weight:600;letter-spacing:0.05em;border-radius:6px;text-decoration:none;}
-    .lang-switcher > a:hover{color:var(--white);background:rgba(255,255,255,0.1);}
-    .lang-switcher > a.active{color:var(--white);background:rgba(255,255,255,0.1);}
-    .lang-switcher .lang-menu li{margin:0;}
-    .lang-switcher .lang-menu a{display:flex;align-items:center;gap:0.5rem;padding:8px 16px;color:rgba(255,255,255,0.85);font-size:0.875rem;text-decoration:none;transition:var(--transition);}
-    .lang-switcher .lang-menu a:hover{background:rgba(82,183,136,0.2);color:var(--white);}
-    .lang-switcher .lang-menu a.active{color:var(--white);background:rgba(82,183,136,0.15);}
-    .lang-switcher .lang-menu a[aria-current="true"]{color:var(--white);background:rgba(82,183,136,0.18);}
-    .lang-switcher .caret{font-size:0.7rem;opacity:0.7;}
-    @media(max-width:1024px){.lang-switcher{display:none;}.mobile-lang{display:flex;flex-direction:column;gap:0.4rem;padding:1rem 0;border-top:1px solid rgba(255,255,255,0.1);margin-top:1rem;}.mobile-lang a{color:rgba(255,255,255,0.85);font-size:1rem;font-weight:600;text-decoration:none;padding:8px 0;}.mobile-lang a.active{color:var(--primary-light);}}
 
     /* NAV */
     .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,58,45,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);}
@@ -204,6 +189,7 @@
     .bio-nav-btn.primary{background:var(--primary);border-color:var(--primary);color:var(--white);}
     .bio-nav-btn.primary:hover{background:var(--primary-light);border-color:var(--primary-light);}
 
+    /* differentiator pills (kept below) */
     /* FAQ */
     .faq-section{background:var(--neutral-50);}
     .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
@@ -301,80 +287,64 @@
     .footer-brand .nav-logo-text span{color:var(--primary-light);}
     @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
     @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem;}.footer-bottom{flex-direction:column;text-align:center;}}
-
-    a.skip-link{position:absolute;left:-9999px;top:auto;}a.skip-link:focus{position:static;background:#fff;color:var(--primary-dark);padding:.5rem 1rem;display:inline-block;}
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Aller au contenu</a>
   <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="container nav-inner" aria-label="Navigation principale">
-      <a href="index.html" class="nav-logo">
+      <a href="../index.html" class="nav-logo">
         <div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <span class="nav-logo-text">Terra<span>Digester</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
+        <li><a href="../index.html">Accueil</a></li>
         <li class="nav-dropdown">
           <a href="#" class="active">Solutions</a>
           <div class="dropdown-menu">
-            <a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a>
-            <a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a>
-            <a href="dairy-farmers-system.html">Système pour producteurs laitiers</a>
+            <a href="food-waste-systems.html">Systèmes de déchets alimentaires</a>
+            <a href="bio-toilet-solutions.html" class="active">Solutions de bio-toilettes</a>
+            <a href="dairy-farmers-system.html">Système pour exploitations laitières</a>
             <a href="buy-carbon.html">Acheter du carbone</a>
           </div>
         </li>
         <li><a href="technology.html">Technologie</a></li>
-        <li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de distribution</a></li>
+        <li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
-        <li class="lang-switcher">
-          <a href="#" class="active" aria-haspopup="true">FR <span class="caret" aria-hidden="true">▾</span></a>
-          <ul class="lang-menu" role="menu" aria-label="Sélecteur de langue">
-            <li role="none"><a href="../bio-toilet-solutions.html" role="menuitem" lang="en">EN</a></li>
-            <li role="none"><a href="bio-toilet-solutions.html" role="menuitem" lang="fr" class="active" aria-current="true">FR</a></li>
-            <li role="none"><a href="../de/bio-toilet-solutions.html" role="menuitem" lang="de">DE</a></li>
-          </ul>
-        </li>
       </ul>
-      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Ouvrir la navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
   </header>
   <div class="mobile-nav-overlay" id="mobileNav">
     <button class="mobile-nav-close" id="mobileClose">✕</button>
     <div class="mobile-nav-links">
-      <a href="index.html">Accueil</a>
-      <a href="food-waste-systems.html" class="sub-link">— Systèmes pour déchets alimentaires</a>
+      <a href="index.html">Home</a>
+      <a href="food-waste-systems.html" class="sub-link">— Systèmes de déchets alimentaires</a>
       <a href="bio-toilet-solutions.html" class="sub-link">— Solutions de bio-toilettes</a>
-      <a href="dairy-farmers-system.html" class="sub-link">— Système pour producteurs laitiers</a>
+      <a href="dairy-farmers-system.html" class="sub-link">— Système pour exploitations laitières</a>
       <a href="buy-carbon.html" class="sub-link">— Acheter du carbone</a>
       <a href="technology.html">Technologie</a>
       <a href="about.html">À propos</a>
-      <a href="reseller-program.html" class="sub-link">— Programme de distribution</a>
+      <a href="reseller-program.html" class="sub-link">— Programme de revente</a>
       <a href="contact.html">Contact</a>
-      <div class="mobile-lang">
-        <a href="../bio-toilet-solutions.html" lang="en">English (EN)</a>
-        <a href="bio-toilet-solutions.html" lang="fr" class="active" aria-current="true">Français (FR)</a>
-        <a href="../de/bio-toilet-solutions.html" lang="de">Deutsch (DE)</a>
-      </div>
     </div>
   </div>
 
-  <main id="main">
+  <main>
     <!-- HERO -->
-    <section class="hero" aria-label="Solutions de bio-toilettes — introduction">
+    <section class="hero" aria-label="Héros Solutions de bio-toilettes">
       <div class="container hero-content">
         <div class="hero-grid">
 
           <!-- Left: text -->
           <div class="hero-text">
             <div class="breadcrumb">
-              <a href="index.html">Accueil</a><span>/</span><span class="current">Solutions de bio-toilettes</span>
+              <a href="index.html">Home</a><span>/</span><span class="current">Solutions de bio-toilettes</span>
             </div>
             <span class="section-label" style="color:var(--primary-light);">Solutions</span>
             <h1>Assainissement <em>sans infrastructure</em></h1>
-            <p class="hero-sub">Assainissement biologique conçu pour les communautés hors réseau, l'écotourisme et les installations temporaires — seulement 1,2 L par chasse, aucun réseau d'assainissement, aucune arrivée d'eau nécessaire.</p>
-            <a href="contact.html?interest=bio-toilet" class="btn btn-primary">Demander des informations sur les bio-toilettes</a>
+            <p class="hero-sub">Assainissement biologique conçu pour communautés hors réseau, écotourisme et installations temporaires — seulement 1,2 L par chasse, aucun réseau d’égouts, aucune arrivée d’eau requise.</p>
+            <a href="contact.html?interest=bio-toilet" class="btn btn-primary">Demander des infos sur les bio-toilettes</a>
           </div>
 
           <!-- Right: process diagram image -->
@@ -382,15 +352,15 @@
             <div>
               <div class="hero-diagram-frame">
                 <img
-                  src="../images/bio-toilet-flow-diagram.jpg"
-                  alt="Diagramme du système de bio-toilette : déchets humains → Terra Digester → gaz de cuisson → biofertilisant"
+                  src="images/bio-toilet-flow-diagram.jpg"
+                  alt="Flux du système bio-toilette : déchets humains → Terra Digester → gaz de cuisson → biofertilisant"
                   loading="eager"
                   width="640" height="360"
                 />
               </div>
               <div class="hero-diagram-caption">
-                <span class="badge">Fonctionnement</span>
-                <span>Boucle fermée en 4 étapes — chasse ultra-réduite (1,2 L), sans réseau d'assainissement</span>
+                <span class="badge">Comment ça marche</span>
+                <span>Boucle fermée en 4 étapes — chasse ultra-faible (1,2 L), aucun réseau d’égouts</span>
               </div>
             </div>
           </div>
@@ -406,30 +376,30 @@
           <div class="problem-text fade-in">
             <span class="section-label">Contexte</span>
             <h2 id="problem-heading">Un déficit sanitaire mondial</h2>
-            <p>Les réseaux d'assainissement classiques exigent d'importantes quantités d'eau et des investissements en infrastructure considérables — des ressources qui restent inaccessibles pour des milliards de personnes et d'innombrables sites temporaires ou isolés.</p>
+            <p>Les systèmes d’égouts conventionnels exigent une consommation d’eau substantielle et d’importants investissements en infrastructure — des ressources qui restent indisponibles pour des milliards de personnes et d’innombrables sites temporaires ou isolés.</p>
             <ul class="problem-list">
-              <li>Selon les données de l'OMS, environ 3,6 milliards de personnes n'ont pas accès à un assainissement géré en toute sécurité.</li>
-              <li>Les toilettes à chasse classiques nécessitent entre 6 et 13 litres d'eau potable par utilisation — une charge lourde dans les contextes de rareté de l'eau.</li>
-              <li>Les événements temporaires, les chantiers de construction, les réserves naturelles et les situations d'aide d'urgence exigent des solutions sanitaires déployables sans infrastructure fixe.</li>
-              <li>La défécation à l'air libre et la mauvaise gestion des déchets présentent de sérieux risques sanitaires et environnementaux dans les zones mal desservies.</li>
+              <li>Selon les données de l’OMS, environ 3,6 milliards de personnes n’ont pas accès à un assainissement géré de manière sûre.</li>
+              <li>Les toilettes à chasse conventionnelles nécessitent entre 6 et 13 litres d’eau potable par utilisation — une charge significative dans les contextes de rareté d’eau.</li>
+              <li>Les événements temporaires, chantiers de construction, réserves naturelles et situations d’urgence nécessitent des solutions d’assainissement déployables sans infrastructure fixe.</li>
+              <li>La défécation à l’air libre et les déchets mal gérés présentent de sérieux risques sanitaires et environnementaux dans les zones sous-desservies.</li>
             </ul>
           </div>
           <div class="problem-visual fade-in fade-in-delay-1" aria-hidden="true">
-            <h4 style="font-size:0.875rem;font-weight:600;color:var(--neutral-600);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.75rem;">Comparaison de la consommation d'eau</h4>
+            <h4 style="font-size:0.875rem;font-weight:600;color:var(--neutral-600);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.75rem;">Comparaison de la consommation d’eau</h4>
             <div class="water-compare">
               <div>
                 <div class="water-bar-label"><span>Système à chasse classique</span><span>6–13 L par utilisation</span></div>
                 <div class="water-bar-track"><div class="water-bar-fill bar-conventional" style="width:90%"></div></div>
               </div>
               <div>
-                <div class="water-bar-label"><span>Système de bio-toilette</span><span>Quasi nulle</span></div>
+                <div class="water-bar-label"><span>Système bio-toilette</span><span>Quasi nulle</span></div>
                 <div class="water-bar-track"><div class="water-bar-fill bar-bio" style="width:5%"></div></div>
               </div>
             </div>
-            <p class="water-compare-label">Comparaison illustrative — les valeurs réelles varient selon la configuration et l'usage.</p>
+            <p class="water-compare-label">Comparaison illustrative — les valeurs réelles varient selon la configuration et l’usage du système.</p>
             <div style="margin-top:2rem;padding:1.25rem;background:rgba(45,106,79,0.06);border-radius:8px;border:1px solid rgba(45,106,79,0.15);">
               <p style="font-size:0.875rem;color:var(--primary-dark);font-weight:500;margin-bottom:0.5rem;">Objectif de conception clé</p>
-              <p style="font-size:0.85rem;color:var(--neutral-600);">Éliminer la dépendance à l'alimentation en eau et au réseau d'assainissement tout en maintenant un traitement hygiénique et sûr des déchets.</p>
+              <p style="font-size:0.85rem;color:var(--neutral-600);">Éliminer la dépendance à l’alimentation en eau et au raccordement aux égouts tout en maintenant un traitement hygiénique et sûr des déchets.</p>
             </div>
           </div>
         </div>
@@ -440,98 +410,176 @@
     <section class="section concept-section" aria-labelledby="concept-heading">
       <div class="container" style="position:relative;z-index:10;">
         <div class="section-header fade-in">
-          <span class="section-label">Fonctionnement</span>
-          <h2 id="concept-heading">Des déchets à l'<em style="font-style:normal;color:var(--primary-light);">énergie propre</em></h2>
-          <p>Quatre étapes. Un système étanche. Seulement 1,2 L par chasse — aucun réseau d'assainissement, aucune alimentation en eau du réseau. Production quotidienne de biogaz et de biofertilisant.</p>
+          <span class="section-label">Comment ça marche</span>
+          <h2 id="concept-heading">Des déchets à l’<em style="font-style:normal;color:var(--primary-light);">énergie propre</em></h2>
+          <p>Quatre étapes. Un système étanche. Seulement 1,2 L par chasse — aucun réseau d’égouts, aucune arrivée d’eau. Production quotidienne de biogaz et de biofertilisant.</p>
         </div>
 
         <!-- ══ FLOW OVERVIEW DIAGRAM ══ -->
         <div class="bio-flow-overview fade-in">
           <div class="bio-flow-canvas">
             <div class="bio-flow-title">
-              <span>Vue d'ensemble du système</span>
-              <h3>Quatre étapes. Un système étanche. Production quotidienne d'énergie et de fertilisant.</h3>
+              <span>Vue d’ensemble du système</span>
+              <h3>Quatre étapes. Un système étanche. Production quotidienne d’énergie et de fertilisant.</h3>
             </div>
 
             <!-- Large horizontal SVG flow diagram -->
             <div class="bio-flow-svg-wrap">
-              <svg viewBox="0 0 1060 320" width="100%" style="max-width:1060px;min-width:560px;" xmlns="http://www.w3.org/2000/svg" aria-label="Système de bio-toilette : déchets vers digesteur vers gaz de cuisson vers biofertilisant">
+              <svg viewBox="0 0 1060 320" width="100%" style="max-width:1060px;min-width:560px;" xmlns="http://www.w3.org/2000/svg" aria-label="Bio-toilet system flow: waste input to digester to cooking gas to bio-fertiliser">
                 <defs>
+                  <!-- Clip paths for circular "photo-style" frames -->
                   <clipPath id="clip-toilet"><circle cx="120" cy="130" r="88"/></clipPath>
                   <clipPath id="clip-digester"><circle cx="390" cy="130" r="88"/></clipPath>
                   <clipPath id="clip-stove"><circle cx="660" cy="130" r="88"/></clipPath>
                   <clipPath id="clip-plant"><circle cx="930" cy="130" r="88"/></clipPath>
-                  <radialGradient id="bg-toilet" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1f4834"/><stop offset="100%" stop-color="#0d2219"/></radialGradient>
-                  <radialGradient id="bg-digester" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#142d22"/><stop offset="100%" stop-color="#091a12"/></radialGradient>
-                  <radialGradient id="bg-stove" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a3828"/><stop offset="100%" stop-color="#0b1f14"/></radialGradient>
-                  <radialGradient id="bg-plant" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1e4030"/><stop offset="100%" stop-color="#0d2219"/></radialGradient>
+                  <!-- Radial gradients for scene backgrounds -->
+                  <radialGradient id="bg-toilet" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#1f4834"/>
+                    <stop offset="100%" stop-color="#0d2219"/>
+                  </radialGradient>
+                  <radialGradient id="bg-digester" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#142d22"/>
+                    <stop offset="100%" stop-color="#091a12"/>
+                  </radialGradient>
+                  <radialGradient id="bg-stove" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#1a3828"/>
+                    <stop offset="100%" stop-color="#0b1f14"/>
+                  </radialGradient>
+                  <radialGradient id="bg-plant" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#1e4030"/>
+                    <stop offset="100%" stop-color="#0d2219"/>
+                  </radialGradient>
+                  <!-- Arrow gradient -->
                   <linearGradient id="arrow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stop-color="#52B788" stop-opacity="0.2"/>
                     <stop offset="50%" stop-color="#52B788" stop-opacity="0.9"/>
                     <stop offset="100%" stop-color="#52B788" stop-opacity="0.2"/>
                   </linearGradient>
+                  <!-- Glow filter -->
                   <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">
                     <feGaussianBlur stdDeviation="4" result="blur"/>
                     <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                   </filter>
                 </defs>
 
-                <!-- STEP 1: BIO-TOILET -->
-                <circle cx="120" cy="130" r="20" fill="none" stroke="rgba(82,183,136,0.35)" stroke-width="2" style="animation:rippleOut 2.8s ease-out infinite;"/>
-                <circle cx="120" cy="130" r="20" fill="none" stroke="rgba(82,183,136,0.2)" stroke-width="2" style="animation:rippleOut 2.8s ease-out infinite 0.9s;"/>
+                <!-- ─────────────────────────────────────────────── -->
+                <!--  STEP 1: BIO-TOILET (left circle)              -->
+                <!-- ─────────────────────────────────────────────── -->
+                <!-- Ripple ring (glow pulse) -->
+                <circle cx="120" cy="130" r="20" fill="none" stroke="rgba(82,183,136,0.35)" stroke-width="2"
+                        style="animation:rippleOut 2.8s ease-out infinite;"/>
+                <circle cx="120" cy="130" r="20" fill="none" stroke="rgba(82,183,136,0.2)" stroke-width="2"
+                        style="animation:rippleOut 2.8s ease-out infinite 0.9s;"/>
+
+                <!-- White border ring -->
                 <circle cx="120" cy="130" r="91" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
-                <circle cx="120" cy="130" r="93" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="2" style="animation:circleGlow 3s ease-in-out infinite;"/>
+                <!-- Coloured accent ring -->
+                <circle cx="120" cy="130" r="93" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="2"
+                        style="animation:circleGlow 3s ease-in-out infinite;"/>
+
+                <!-- Scene background -->
                 <circle cx="120" cy="130" r="88" fill="url(#bg-toilet)" clip-path="url(#clip-toilet)"/>
+
+                <!-- TOILET illustration inside circle -->
                 <g clip-path="url(#clip-toilet)" style="animation:iconBob 3.5s ease-in-out infinite;">
+                  <!-- Ground line -->
                   <line x1="48" y1="206" x2="192" y2="206" stroke="rgba(82,183,136,0.15)" stroke-width="1.5"/>
+                  <!-- Cistern tank -->
                   <rect x="95" y="62" width="50" height="38" rx="7" fill="rgba(220,240,230,0.16)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                  <!-- Tank lid -->
                   <rect x="90" y="57" width="60" height="10" rx="5" fill="rgba(220,240,230,0.2)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+                  <!-- Flush button -->
                   <circle cx="120" cy="63" r="5" fill="rgba(82,183,136,0.6)" stroke="rgba(82,183,136,0.9)" stroke-width="1.5"/>
+                  <!-- Tank water -->
                   <rect x="99" y="72" width="42" height="22" rx="4" fill="rgba(82,183,136,0.12)"/>
-                  <path d="M90 100 C87 116 85 130 87 145 C89 158 97 168 120 168 C143 168 151 158 153 145 C155 130 153 116 150 100Z" fill="rgba(220,240,230,0.14)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+                  <!-- Toilet bowl body -->
+                  <path d="M90 100 C87 116 85 130 87 145 C89 158 97 168 120 168 C143 168 151 158 153 145 C155 130 153 116 150 100Z"
+                        fill="rgba(220,240,230,0.14)" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+                  <!-- Seat -->
                   <ellipse cx="120" cy="102" rx="32" ry="10" fill="rgba(220,240,230,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                  <!-- Bowl water -->
                   <ellipse cx="120" cy="148" rx="24" ry="14" fill="rgba(82,183,136,0.1)"/>
-                  <path d="M98 168 C97 178 97 186 100 190 C104 194 110 195 120 195 C130 195 136 194 140 190 C143 186 143 178 142 168Z" fill="rgba(220,240,230,0.10)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                  <!-- Base -->
+                  <path d="M98 168 C97 178 97 186 100 190 C104 194 110 195 120 195 C130 195 136 194 140 190 C143 186 143 178 142 168Z"
+                        fill="rgba(220,240,230,0.10)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                  <!-- Pipe outlet -->
                   <rect x="112" y="195" width="16" height="12" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Animated waste drops -->
                   <circle cx="117" cy="152" r="3.5" fill="rgba(127,85,57,0.7)" style="animation:bioWaste 2.4s ease-in infinite;"/>
                   <circle cx="124" cy="142" r="2.5" fill="rgba(127,85,57,0.5)" style="animation:bioWaste 2.4s ease-in infinite 0.8s;"/>
+                  <!-- "Ultra-low flush" tag -->
                   <rect x="56" y="48" width="98" height="16" rx="6" fill="rgba(82,183,136,0.22)" stroke="rgba(82,183,136,0.45)" stroke-width="1"/>
-                  <text x="105" y="59.5" text-anchor="middle" fill="rgba(82,183,136,1)" font-size="8.5" font-weight="700" font-family="system-ui,sans-serif">✓ Seulement 1,2 L / chasse</text>
+                  <text x="105" y="59.5" text-anchor="middle" fill="rgba(82,183,136,1)" font-size="8.5" font-weight="700" font-family="system-ui,sans-serif">✓ Only 1.2 L / flush</text>
                 </g>
 
+                <!-- Step label below circle -->
                 <text x="120" y="240" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="14" font-weight="700" font-family="system-ui,sans-serif">Entrée des déchets</text>
                 <text x="120" y="258" text-anchor="middle" fill="rgba(82,183,136,0.8)" font-size="10.5" font-family="system-ui,sans-serif">Bio-toilette → Digesteur</text>
+                <!-- Step number badge -->
                 <circle cx="166" cy="52" r="16" fill="#1B3A2D" stroke="#52B788" stroke-width="2"/>
                 <text x="166" y="57" text-anchor="middle" fill="#52B788" font-size="13" font-weight="700" font-family="system-ui,sans-serif">1</text>
 
-                <!-- ARROW 1→2 -->
+                <!-- ─────────────────────────────────────────────── -->
+                <!--  ANIMATED CONNECTING ARROW 1→2                 -->
+                <!-- ─────────────────────────────────────────────── -->
                 <g>
-                  <path d="M 213 130 Q 245 110 268 130 Q 291 148 323 130" fill="none" stroke="url(#arrow-grad)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="14 7" style="animation:flowDot 1.8s linear infinite;"/>
+                  <!-- Main curved arrow path -->
+                  <path d="M 213 130 Q 245 110 268 130 Q 291 148 323 130" fill="none"
+                        stroke="url(#arrow-grad)" stroke-width="3.5" stroke-linecap="round"
+                        stroke-dasharray="14 7"
+                        style="animation:flowDot 1.8s linear infinite;"/>
+                  <!-- Animated flow dots -->
                   <circle r="5" fill="rgba(82,183,136,0.85)" filter="url(#glow-green)">
                     <animateMotion dur="1.6s" repeatCount="indefinite" path="M 213 130 Q 245 110 268 130 Q 291 148 323 130"/>
                   </circle>
                   <circle r="3.5" fill="rgba(82,183,136,0.55)">
                     <animateMotion dur="1.6s" begin="0.5s" repeatCount="indefinite" path="M 213 130 Q 245 110 268 130 Q 291 148 323 130"/>
                   </circle>
+                  <!-- Arrowhead -->
                   <polygon points="323,123 335,130 323,137" fill="#52B788" opacity="0.85"/>
+                  <!-- Label on arrow -->
                   <rect x="242" y="94" width="54" height="16" rx="6" fill="rgba(27,58,45,0.85)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
-                  <text x="269" y="105.5" text-anchor="middle" fill="rgba(82,183,136,0.85)" font-size="8" font-weight="600" font-family="system-ui,sans-serif">Tuyau étanche</text>
+                  <text x="269" y="105.5" text-anchor="middle" fill="rgba(82,183,136,0.85)" font-size="8" font-weight="600" font-family="system-ui,sans-serif">Sealed pipe</text>
                 </g>
 
-                <!-- STEP 2: TERRA DIGESTER -->
-                <circle cx="390" cy="130" r="20" fill="none" stroke="rgba(82,183,136,0.4)" stroke-width="2" style="animation:rippleOut 3.2s ease-out infinite 0.3s;"/>
+                <!-- ─────────────────────────────────────────────── -->
+                <!--  STEP 2: TERRA DIGESTER (centre-left circle)   -->
+                <!-- ─────────────────────────────────────────────── -->
+                <!-- Ripple rings -->
+                <circle cx="390" cy="130" r="20" fill="none" stroke="rgba(82,183,136,0.4)" stroke-width="2"
+                        style="animation:rippleOut 3.2s ease-out infinite 0.3s;"/>
+                <!-- Border rings -->
                 <circle cx="390" cy="130" r="91" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
-                <circle cx="390" cy="130" r="93" fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="2" style="animation:circleGlow 3.5s ease-in-out infinite 0.5s;"/>
+                <circle cx="390" cy="130" r="93" fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="2"
+                        style="animation:circleGlow 3.5s ease-in-out infinite 0.5s;"/>
+
+                <!-- Scene background -->
                 <circle cx="390" cy="130" r="88" fill="url(#bg-digester)"/>
+
+                <!-- TERRA DIGESTER bag illustration inside circle -->
                 <g clip-path="url(#clip-digester)">
+                  <!-- Outer glow halo -->
                   <ellipse cx="390" cy="140" rx="68" ry="80" fill="rgba(45,106,79,0.10)" style="animation:gasGlow 3s ease-in-out infinite;"/>
-                  <path d="M 330 88 C 326 108 322 138 325 168 C 327 188 340 204 390 204 C 440 204 453 188 455 168 C 458 138 454 108 450 88 C 440 70 420 62 390 62 C 360 62 340 70 330 88 Z" fill="rgba(8,22,16,0.95)" stroke="#52B788" stroke-width="2.5" style="animation:bagSwell 4s ease-in-out infinite;"/>
+                  <!-- Bag shape -->
+                  <path d="M 330 88
+                            C 326 108 322 138 325 168
+                            C 327 188 340 204 390 204
+                            C 440 204 453 188 455 168
+                            C 458 138 454 108 450 88
+                            C 440 70 420 62 390 62
+                            C 360 62 340 70 330 88 Z"
+                        fill="rgba(8,22,16,0.95)" stroke="#52B788" stroke-width="2.5"
+                        style="animation:bagSwell 4s ease-in-out infinite;"/>
+                  <!-- Left sheen -->
                   <path d="M 337 94 C 333 116 330 146 332 172" stroke="rgba(82,183,136,0.35)" stroke-width="4" stroke-linecap="round"/>
+                  <!-- Biogas zone top -->
                   <ellipse cx="390" cy="98" rx="44" ry="18" fill="rgba(45,106,79,0.28)" style="animation:gasGlow 2.8s ease-in-out infinite;"/>
-                  <text x="390" y="101" text-anchor="middle" fill="rgba(82,183,136,0.75)" font-size="8" font-family="system-ui,sans-serif">Biogaz CH₄</text>
+                  <text x="390" y="101" text-anchor="middle" fill="rgba(82,183,136,0.75)" font-size="8" font-family="system-ui,sans-serif">CH₄ Biogas</text>
+                  <!-- Bubbles rising -->
                   <circle cx="374" cy="118" r="5" fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="1.8" style="animation:bubbleRise 2s ease-in infinite;"/>
                   <circle cx="395" cy="128" r="4" fill="none" stroke="rgba(82,183,136,0.45)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite 0.65s;"/>
                   <circle cx="412" cy="115" r="3.5" fill="none" stroke="rgba(82,183,136,0.40)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite 1.3s;"/>
+                  <!-- Bacteria -->
                   <g style="animation:bacteriaFloat 3.5s ease-in-out infinite;">
                     <ellipse cx="368" cy="158" rx="11" ry="5.5" fill="rgba(82,183,136,0.62)" stroke="rgba(82,183,136,0.88)" stroke-width="1.2"/>
                     <circle cx="358" cy="158" r="3.5" fill="rgba(82,183,136,0.58)"/>
@@ -542,14 +590,21 @@
                     <circle cx="403" cy="148" r="3.2" fill="rgba(82,183,136,0.52)"/>
                     <circle cx="423" cy="148" r="3.2" fill="rgba(82,183,136,0.52)"/>
                   </g>
+                  <!-- Brand text on bag -->
                   <text x="390" y="185" text-anchor="middle" fill="rgba(82,183,136,0.88)" font-size="10.5" font-weight="700" font-family="system-ui,sans-serif" letter-spacing="1.5">TERRA</text>
                   <text x="390" y="199" text-anchor="middle" fill="rgba(82,183,136,0.88)" font-size="10.5" font-weight="700" font-family="system-ui,sans-serif" letter-spacing="1.5">DIGESTER</text>
+                  <!-- Vent stack top -->
                   <rect x="376" y="46" width="28" height="20" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="2"/>
                   <rect x="370" y="42" width="40" height="9" rx="5" fill="#52B788"/>
+                  <!-- Rising vent bubble -->
                   <circle cx="390" cy="36" r="5" fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="1.5" style="animation:bubbleRise 1.8s ease-in infinite;"/>
+                  <!-- Inlet pipe left -->
                   <rect x="308" y="122" width="24" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Gas outlet pipe right (top) -->
                   <rect x="448" y="90" width="26" height="10" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Digestate outlet right (bottom) -->
                   <rect x="448" y="162" width="26" height="10" rx="4" fill="#2D6A4F" stroke="#DDB892" stroke-width="1.5"/>
+                  <!-- Sealed lock icon -->
                   <g transform="translate(376, 212)">
                     <rect x="0" y="5" width="28" height="18" rx="5" fill="rgba(82,183,136,0.15)" stroke="rgba(82,183,136,0.38)" stroke-width="1"/>
                     <path d="M5 5V3C5 0 23 0 23 3V5" fill="none" stroke="rgba(82,183,136,0.45)" stroke-width="1.5" stroke-linecap="round"/>
@@ -557,14 +612,21 @@
                   </g>
                 </g>
 
+                <!-- Step label -->
                 <text x="390" y="240" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="14" font-weight="700" font-family="system-ui,sans-serif">Digestion anaérobie</text>
-                <text x="390" y="258" text-anchor="middle" fill="rgba(82,183,136,0.8)" font-size="10.5" font-family="system-ui,sans-serif">15–30 jours · 60–70 % CH₄</text>
+                <text x="390" y="258" text-anchor="middle" fill="rgba(82,183,136,0.8)" font-size="10.5" font-family="system-ui,sans-serif">15 à 30 jours · 60 à 70 % CH₄</text>
+                <!-- Step number badge -->
                 <circle cx="436" cy="52" r="16" fill="#1B3A2D" stroke="#52B788" stroke-width="2"/>
                 <text x="436" y="57" text-anchor="middle" fill="#52B788" font-size="13" font-weight="700" font-family="system-ui,sans-serif">2</text>
 
-                <!-- ARROW 2→3 biogas -->
+                <!-- ─────────────────────────────────────────────── -->
+                <!--  ANIMATED CONNECTING ARROW 2→3  (gas pipe)     -->
+                <!-- ─────────────────────────────────────────────── -->
                 <g>
-                  <path d="M 477 95 Q 510 75 543 95 Q 563 108 580 95" fill="none" stroke="url(#arrow-grad)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="14 7" style="animation:flowDot 1.6s linear infinite;"/>
+                  <path d="M 477 95 Q 510 75 543 95 Q 563 108 580 95" fill="none"
+                        stroke="url(#arrow-grad)" stroke-width="3.5" stroke-linecap="round"
+                        stroke-dasharray="14 7"
+                        style="animation:flowDot 1.6s linear infinite;"/>
                   <circle r="5" fill="rgba(82,183,136,0.85)" filter="url(#glow-green)">
                     <animateMotion dur="1.4s" repeatCount="indefinite" path="M 477 95 Q 510 75 543 95 Q 563 108 580 95"/>
                   </circle>
@@ -573,30 +635,47 @@
                   </circle>
                   <polygon points="580,88 592,95 580,102" fill="#52B788" opacity="0.85"/>
                   <rect x="504" y="59" width="58" height="16" rx="6" fill="rgba(27,58,45,0.85)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
-                  <text x="533" y="70.5" text-anchor="middle" fill="rgba(82,183,136,0.85)" font-size="8" font-weight="600" font-family="system-ui,sans-serif">Conduite biogaz</text>
+                  <text x="533" y="70.5" text-anchor="middle" fill="rgba(82,183,136,0.85)" font-size="8" font-weight="600" font-family="system-ui,sans-serif">Biogas pipe</text>
                 </g>
-                <!-- ARROW 2→3 digestate -->
+                <!-- Arrow 2→3 for digestate (lower path) -->
                 <g>
-                  <path d="M 477 167 Q 510 185 543 167 Q 563 154 580 170" fill="none" stroke="rgba(127,85,57,0.6)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="10 6" style="animation:flowDot 2s linear infinite 0.3s;"/>
+                  <path d="M 477 167 Q 510 185 543 167 Q 563 154 580 170" fill="none"
+                        stroke="rgba(127,85,57,0.6)" stroke-width="2.5" stroke-linecap="round"
+                        stroke-dasharray="10 6"
+                        style="animation:flowDot 2s linear infinite 0.3s;"/>
                   <circle r="4" fill="rgba(127,85,57,0.75)">
                     <animateMotion dur="1.8s" repeatCount="indefinite" path="M 477 167 Q 510 185 543 167 Q 563 154 580 170"/>
                   </circle>
                   <rect x="502" y="185" width="62" height="16" rx="6" fill="rgba(27,58,45,0.85)" stroke="rgba(127,85,57,0.3)" stroke-width="1"/>
-                  <text x="533" y="196.5" text-anchor="middle" fill="rgba(221,184,146,0.85)" font-size="8" font-weight="600" font-family="system-ui,sans-serif">Digestat</text>
+                  <text x="533" y="196.5" text-anchor="middle" fill="rgba(221,184,146,0.85)" font-size="8" font-weight="600" font-family="system-ui,sans-serif">Digestate</text>
                 </g>
 
-                <!-- STEP 3: COOKING GAS -->
-                <circle cx="660" cy="130" r="20" fill="none" stroke="rgba(221,184,146,0.3)" stroke-width="2" style="animation:rippleOut 3s ease-out infinite 0.6s;"/>
+                <!-- ─────────────────────────────────────────────── -->
+                <!--  STEP 3: COOKING GAS (centre-right circle)     -->
+                <!-- ─────────────────────────────────────────────── -->
+                <circle cx="660" cy="130" r="20" fill="none" stroke="rgba(221,184,146,0.3)" stroke-width="2"
+                        style="animation:rippleOut 3s ease-out infinite 0.6s;"/>
                 <circle cx="660" cy="130" r="91" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
-                <circle cx="660" cy="130" r="93" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="2" style="animation:circleGlow 3.2s ease-in-out infinite 1s;"/>
+                <circle cx="660" cy="130" r="93" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="2"
+                        style="animation:circleGlow 3.2s ease-in-out infinite 1s;"/>
+
                 <circle cx="660" cy="130" r="88" fill="url(#bg-stove)"/>
+
+                <!-- STOVE illustration inside circle -->
                 <g clip-path="url(#clip-stove)">
+                  <!-- Countertop -->
                   <rect x="592" y="192" width="136" height="14" rx="5" fill="rgba(127,85,57,0.25)" stroke="rgba(127,85,57,0.4)" stroke-width="1"/>
+                  <!-- Stove body -->
                   <rect x="598" y="148" width="124" height="46" rx="9" fill="rgba(14,38,26,0.95)" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Stove top plate -->
                   <rect x="602" y="144" width="116" height="9" rx="4" fill="rgba(45,106,79,0.5)" stroke="rgba(82,183,136,0.38)" stroke-width="1"/>
+                  <!-- Burner ring outer -->
                   <circle cx="660" cy="170" r="32" fill="none" stroke="rgba(82,183,136,0.3)" stroke-width="2"/>
+                  <!-- Burner ring middle -->
                   <circle cx="660" cy="170" r="22" fill="none" stroke="rgba(82,183,136,0.42)" stroke-width="2"/>
+                  <!-- Burner centre -->
                   <circle cx="660" cy="170" r="10" fill="rgba(45,106,79,0.45)" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- FLAME animated -->
                   <g style="transform-origin:660px 160px;animation:flameFlicker 0.18s ease-in-out infinite;">
                     <path d="M647 158C644 150 647 141 653 136C651 144 654 147 656 143C658 150 656 153 654 157Z" fill="#52B788" opacity="0.75" style="animation:flameFlicker 0.22s ease-in-out infinite alternate;"/>
                     <path d="M673 158C676 150 673 141 667 136C669 144 666 147 664 143C662 150 664 153 666 157Z" fill="#52B788" opacity="0.75" style="animation:flameFlicker 0.22s ease-in-out infinite alternate-reverse;"/>
@@ -605,33 +684,49 @@
                     <path d="M654 158C653 152 654 144 660 140C666 144 667 152 666 158Z" fill="#DDB892" opacity="0.92" style="animation:flameFlicker 0.14s ease-in-out infinite alternate;"/>
                     <path d="M657 158C656 154 657 148 660 144C663 148 664 154 663 158Z" fill="white" opacity="0.6"/>
                   </g>
+                  <!-- Heat shimmer -->
                   <path d="M655 134C654 124 655 116 654 108" stroke="rgba(221,184,146,0.2)" stroke-width="2.5" stroke-linecap="round" style="animation:heatRise 1.2s ease-out infinite;"/>
                   <path d="M663 132C663 122 664 114 665 106" stroke="rgba(221,184,146,0.16)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 1.2s ease-out infinite 0.4s;"/>
+                  <!-- Control knob -->
                   <circle cx="616" cy="170" r="9" fill="rgba(82,183,136,0.18)" stroke="#52B788" stroke-width="1.5"/>
                   <circle cx="616" cy="170" r="3.8" fill="#52B788"/>
+                  <!-- Gas inlet pipe -->
                   <rect x="572" y="165" width="28" height="8" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Cooking POT on stove -->
                   <ellipse cx="660" cy="124" rx="34" ry="9" fill="rgba(150,150,160,0.55)" stroke="rgba(175,175,185,0.7)" stroke-width="1.5"/>
-                  <path d="M626 124 Q623 142 627 150 Q635 158 660 158 Q685 158 693 150 Q697 142 694 124" fill="rgba(125,125,135,0.45)" stroke="rgba(155,155,165,0.6)" stroke-width="1.5"/>
+                  <path d="M626 124 Q623 142 627 150 Q635 158 660 158 Q685 158 693 150 Q697 142 694 124"
+                        fill="rgba(125,125,135,0.45)" stroke="rgba(155,155,165,0.6)" stroke-width="1.5"/>
+                  <!-- Pot lid -->
                   <ellipse cx="660" cy="122" rx="34" ry="9" fill="rgba(160,160,170,0.58)" stroke="rgba(185,185,195,0.65)" stroke-width="1.5"/>
                   <ellipse cx="660" cy="120" rx="26" ry="7" fill="rgba(175,175,183,0.5)"/>
                   <circle cx="660" cy="115" r="5" fill="rgba(180,180,192,0.8)" stroke="rgba(200,200,210,0.6)" stroke-width="1"/>
+                  <!-- Pot handles -->
                   <path d="M626 138C620 136 618 128 621 124" fill="none" stroke="rgba(155,155,165,0.7)" stroke-width="2.5" stroke-linecap="round"/>
                   <path d="M694 138C700 136 702 128 699 124" fill="none" stroke="rgba(155,155,165,0.7)" stroke-width="2.5" stroke-linecap="round"/>
+                  <!-- Steam wisps -->
                   <path d="M646 118C644 110 646 102 644 94" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 2s ease-out infinite;"/>
                   <path d="M660 116C659 108 660 100 659 92" stroke="rgba(255,255,255,0.18)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 2s ease-out infinite 0.65s;"/>
                   <path d="M674 118C675 110 674 102 676 94" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 2s ease-out infinite 1.3s;"/>
+                  <!-- Smoke-free tag -->
                   <rect x="606" y="80" width="108" height="15" rx="6" fill="rgba(45,106,79,0.3)" stroke="rgba(82,183,136,0.38)" stroke-width="1"/>
-                  <text x="660" y="90.5" text-anchor="middle" fill="rgba(82,183,136,0.95)" font-size="8.5" font-weight="700" font-family="system-ui,sans-serif">🔥 Cuisson sans fumée</text>
+                  <text x="660" y="90.5" text-anchor="middle" fill="rgba(82,183,136,0.95)" font-size="8.5" font-weight="700" font-family="system-ui,sans-serif">🔥 Smoke-free cooking</text>
                 </g>
 
+                <!-- Step label -->
                 <text x="660" y="240" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="14" font-weight="700" font-family="system-ui,sans-serif">Gaz de cuisson</text>
-                <text x="660" y="258" text-anchor="middle" fill="rgba(82,183,136,0.8)" font-size="10.5" font-family="system-ui,sans-serif">Méthane propre · Sans GPL</text>
+                <text x="660" y="258" text-anchor="middle" fill="rgba(82,183,136,0.8)" font-size="10.5" font-family="system-ui,sans-serif">Méthane pur · Sans GPL</text>
+                <!-- Step number badge -->
                 <circle cx="706" cy="52" r="16" fill="#1B3A2D" stroke="#52B788" stroke-width="2"/>
                 <text x="706" y="57" text-anchor="middle" fill="#52B788" font-size="13" font-weight="700" font-family="system-ui,sans-serif">3</text>
 
-                <!-- ARROW 3→4 -->
+                <!-- ─────────────────────────────────────────────── -->
+                <!--  ANIMATED CONNECTING ARROW 3→4                 -->
+                <!-- ─────────────────────────────────────────────── -->
                 <g>
-                  <path d="M 751 165 Q 788 185 818 165 Q 838 150 862 168" fill="none" stroke="rgba(127,85,57,0.7)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="14 7" style="animation:flowDot 1.9s linear infinite 0.2s;"/>
+                  <path d="M 751 165 Q 788 185 818 165 Q 838 150 862 168" fill="none"
+                        stroke="rgba(127,85,57,0.7)" stroke-width="3.5" stroke-linecap="round"
+                        stroke-dasharray="14 7"
+                        style="animation:flowDot 1.9s linear infinite 0.2s;"/>
                   <circle r="5" fill="rgba(127,85,57,0.85)" filter="url(#glow-green)">
                     <animateMotion dur="1.7s" repeatCount="indefinite" path="M 751 165 Q 788 185 818 165 Q 838 150 862 168"/>
                   </circle>
@@ -643,24 +738,43 @@
                   <text x="820" y="203.5" text-anchor="middle" fill="rgba(221,184,146,0.85)" font-size="8" font-weight="600" font-family="system-ui,sans-serif">Biofertilisant</text>
                 </g>
 
-                <!-- STEP 4: BIO-FERTILISER -->
-                <circle cx="930" cy="130" r="20" fill="none" stroke="rgba(82,183,136,0.35)" stroke-width="2" style="animation:rippleOut 3.4s ease-out infinite 0.9s;"/>
+                <!-- ─────────────────────────────────────────────── -->
+                <!--  STEP 4: BIO-FERTILISER (right circle)         -->
+                <!-- ─────────────────────────────────────────────── -->
+                <circle cx="930" cy="130" r="20" fill="none" stroke="rgba(82,183,136,0.35)" stroke-width="2"
+                        style="animation:rippleOut 3.4s ease-out infinite 0.9s;"/>
                 <circle cx="930" cy="130" r="91" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
-                <circle cx="930" cy="130" r="93" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="2" style="animation:circleGlow 3.8s ease-in-out infinite 1.5s;"/>
+                <circle cx="930" cy="130" r="93" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="2"
+                        style="animation:circleGlow 3.8s ease-in-out infinite 1.5s;"/>
+
                 <circle cx="930" cy="130" r="88" fill="url(#bg-plant)"/>
+
+                <!-- PLANTS & FERTILISER illustration inside circle -->
                 <g clip-path="url(#clip-plant)">
+                  <!-- Soil ground -->
                   <rect x="858" y="192" width="144" height="26" rx="4" fill="rgba(45,106,79,0.15)"/>
                   <line x1="858" y1="192" x2="1002" y2="192" stroke="rgba(82,183,136,0.2)" stroke-width="1.5"/>
+
+                  <!-- COLLECTION BARREL (left) -->
                   <ellipse cx="890" cy="192" rx="22" ry="7" fill="rgba(127,85,57,0.42)" stroke="rgba(127,85,57,0.62)" stroke-width="1.5"/>
-                  <path d="M868 192 Q865 220 870 228 Q878 236 890 236 Q902 236 910 228 Q915 220 912 192" fill="rgba(127,85,57,0.28)" stroke="rgba(127,85,57,0.52)" stroke-width="1.5"/>
+                  <path d="M868 192 Q865 220 870 228 Q878 236 890 236 Q902 236 910 228 Q915 220 912 192"
+                        fill="rgba(127,85,57,0.28)" stroke="rgba(127,85,57,0.52)" stroke-width="1.5"/>
                   <ellipse cx="890" cy="222" rx="16" ry="8" fill="rgba(127,85,57,0.38)"/>
-                  <text x="890" y="211" text-anchor="middle" fill="rgba(221,184,146,0.75)" font-size="7.5" font-family="system-ui,sans-serif">Bio-liquide</text>
+                  <text x="890" y="211" text-anchor="middle" fill="rgba(221,184,146,0.75)" font-size="7.5" font-family="system-ui,sans-serif">Bio-liquid</text>
+
+                  <!-- TAP DRIPPING into barrel -->
                   <rect x="882" y="155" width="18" height="20" rx="5" fill="rgba(18,46,32,0.9)" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Tap handle -->
                   <rect x="885" y="148" width="12" height="10" rx="3" fill="#DDB892" stroke="rgba(127,85,57,0.6)" stroke-width="1.5"/>
+                  <!-- Spout -->
                   <rect x="888" y="173" width="6" height="14" rx="3" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Drip drops -->
                   <ellipse cx="891" cy="190" rx="3.5" ry="5" fill="rgba(127,85,57,0.75)" style="animation:dropFall 1.5s ease-in infinite;"/>
                   <ellipse cx="891" cy="190" rx="2.8" ry="4" fill="rgba(127,85,57,0.55)" style="animation:dropFall 1.5s ease-in infinite 0.5s;"/>
                   <ellipse cx="891" cy="190" rx="2.2" ry="3.5" fill="rgba(127,85,57,0.45)" style="animation:dropFall 1.5s ease-in infinite 1s;"/>
+
+                  <!-- GROWING PLANTS (right side) -->
+                  <!-- Plant 1 - tallest, centre -->
                   <g style="animation:stemGrow 1.6s ease-out both 0.3s;">
                     <line x1="950" y1="192" x2="950" y2="128" stroke="#52B788" stroke-width="3.5" stroke-linecap="round"/>
                     <path d="M950 158 C950 158 938 146 930 138" stroke="#52B788" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -669,6 +783,7 @@
                     <ellipse cx="973" cy="124" rx="12" ry="7" fill="rgba(82,183,136,0.68)" transform="rotate(25 973 124)"/>
                     <ellipse cx="950" cy="124" rx="11" ry="6.5" fill="rgba(82,183,136,0.85)"/>
                   </g>
+                  <!-- Plant 2 - left, medium -->
                   <g style="animation:stemGrow 1.6s ease-out both 0.65s;">
                     <line x1="926" y1="192" x2="926" y2="148" stroke="#52B788" stroke-width="2.8" stroke-linecap="round"/>
                     <path d="M926 168 C926 168 918 158 912 152" stroke="#52B788" stroke-width="1.8" fill="none" stroke-linecap="round"/>
@@ -677,64 +792,72 @@
                     <ellipse cx="946" cy="138" rx="10" ry="6" fill="rgba(82,183,136,0.58)" transform="rotate(20 946 138)"/>
                     <ellipse cx="926" cy="144" rx="9" ry="5.5" fill="rgba(82,183,136,0.78)"/>
                   </g>
+                  <!-- Plant 3 - right, small -->
                   <g style="animation:stemGrow 1.6s ease-out both 1s;">
                     <line x1="972" y1="192" x2="972" y2="158" stroke="#52B788" stroke-width="2.5" stroke-linecap="round"/>
                     <path d="M972 174 C972 174 963 165 957 159" stroke="#52B788" stroke-width="1.5" fill="none" stroke-linecap="round"/>
                     <ellipse cx="954" cy="156" rx="9" ry="5.5" fill="rgba(82,183,136,0.58)" transform="rotate(-22 954 156)"/>
                     <ellipse cx="972" cy="154" rx="8.5" ry="5" fill="rgba(82,183,136,0.74)"/>
                   </g>
+
+                  <!-- N.P.K label -->
                   <text x="950" y="208" text-anchor="middle" fill="rgba(82,183,136,0.78)" font-size="9" font-weight="700" font-family="system-ui,sans-serif">+ N · P · K</text>
+
+                  <!-- Organic label -->
                   <rect x="858" y="80" width="144" height="16" rx="6" fill="rgba(82,183,136,0.2)" stroke="rgba(82,183,136,0.38)" stroke-width="1"/>
-                  <text x="930" y="91.5" text-anchor="middle" fill="rgba(82,183,136,0.95)" font-size="8.5" font-weight="700" font-family="system-ui,sans-serif">🌱 Fertilisant 100 % organique</text>
+                  <text x="930" y="91.5" text-anchor="middle" fill="rgba(82,183,136,0.95)" font-size="8.5" font-weight="700" font-family="system-ui,sans-serif">🌱 100% Organic Fertiliser</text>
                 </g>
 
+                <!-- Step label -->
                 <text x="930" y="240" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="14" font-weight="700" font-family="system-ui,sans-serif">Biofertilisant</text>
                 <text x="930" y="258" text-anchor="middle" fill="rgba(82,183,136,0.8)" font-size="10.5" font-family="system-ui,sans-serif">Quotidien gratuit · Riche en N·P·K</text>
+                <!-- Step number badge -->
                 <circle cx="976" cy="52" r="16" fill="#1B3A2D" stroke="#52B788" stroke-width="2"/>
                 <text x="976" y="57" text-anchor="middle" fill="#52B788" font-size="13" font-weight="700" font-family="system-ui,sans-serif">4</text>
 
+                <!-- Bottom caption bar -->
                 <rect x="220" y="278" width="620" height="22" rx="8" fill="rgba(27,58,45,0.6)" stroke="rgba(82,183,136,0.18)" stroke-width="1"/>
-                <text x="530" y="292.5" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9.5" font-family="system-ui,sans-serif">🔒 Système anaérobie étanche · Fonctionne hors réseau · 1,2 L / chasse · Aucun réseau d'assainissement</text>
+                <text x="530" y="292.5" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9.5" font-family="system-ui,sans-serif">🔒 Sealed anaerobic system · Off-grid capable · 1.2 L / flush · No sewage network</text>
               </svg>
             </div>
 
             <!-- Quick-stat cards below diagram -->
             <div class="bio-flow-cards">
-              <div class="bio-flow-card" onclick="bioGoToScroll(0)" style="cursor:pointer;" aria-label="Aller au détail de l'étape 1">
+              <div class="bio-flow-card" onclick="bioGoToScroll(0)" style="cursor:pointer;" aria-label="Go to step 1 detail">
                 <div class="bfc-num">1</div>
-                <h4>Entrée des déchets</h4>
-                <p>Chasse ultra-réduite : seulement 1,2 L. Aucune arrivée d'eau nécessaire. Prêt pour le hors réseau.</p>
+                <h4>Waste Input</h4>
+                <p>Chasse ultra-faible : seulement 1,2 L. Aucune arrivée d’eau requise. Prêt pour le hors réseau.</p>
               </div>
-              <div class="bio-flow-card" onclick="bioGoToScroll(1)" style="cursor:pointer;" aria-label="Aller au détail de l'étape 2">
+              <div class="bio-flow-card" onclick="bioGoToScroll(1)" style="cursor:pointer;" aria-label="Go to step 2 detail">
                 <div class="bfc-num">2</div>
-                <h4>Digestion anaérobie</h4>
-                <p>Chambre étanche. Rétention de 15–30 jours. Les bactéries transforment les déchets en biogaz.</p>
+                <h4>Anaerobic Digestion</h4>
+                <p>Chambre étanche. Rétention de 15 à 30 jours. Les bactéries convertissent les déchets en biogaz.</p>
               </div>
-              <div class="bio-flow-card" onclick="bioGoToScroll(2)" style="cursor:pointer;" aria-label="Aller au détail de l'étape 3">
+              <div class="bio-flow-card" onclick="bioGoToScroll(2)" style="cursor:pointer;" aria-label="Go to step 3 detail">
                 <div class="bfc-num">3</div>
-                <h4>Gaz de cuisson</h4>
-                <p>Biogaz riche en méthane acheminé vers le brûleur. Sans fumée. Remplace le GPL.</p>
+                <h4>Cooking Gas</h4>
+                <p>Biogaz riche en méthane acheminé vers le réchaud. Sans fumée. Remplace le GPL.</p>
               </div>
-              <div class="bio-flow-card" onclick="bioGoToScroll(3)" style="cursor:pointer;" aria-label="Aller au détail de l'étape 4">
+              <div class="bio-flow-card" onclick="bioGoToScroll(3)" style="cursor:pointer;" aria-label="Go to step 4 detail">
                 <div class="bfc-num">4</div>
-                <h4>Biofertilisant</h4>
-                <p>Le digestat liquide s'écoule quotidiennement. Riche en N·P·K. Fertilisant organique gratuit.</p>
+                <h4>Bio-fertiliser</h4>
+                <p>Digestat liquide produit chaque jour. Riche en N·P·K. Fertilisant organique gratuit.</p>
               </div>
             </div>
 
-          </div>
-        </div>
+          </div><!-- /bio-flow-canvas -->
+        </div><!-- /bio-flow-overview -->
 
         <!-- Divider label -->
         <div style="text-align:center;margin-bottom:2.5rem;position:relative;z-index:10;">
-          <span style="display:inline-block;background:rgba(82,183,136,0.15);border:1px solid rgba(82,183,136,0.3);border-radius:24px;padding:6px 20px;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Explorez chaque étape en détail →</span>
+          <span style="display:inline-block;background:rgba(82,183,136,0.15);border:1px solid rgba(82,183,136,0.3);border-radius:24px;padding:6px 20px;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Explorer chaque étape en détail →</span>
         </div>
 
         <!-- Progress track -->
-        <div class="bio-step-track" role="tablist" aria-label="Étapes du système bio-toilette">
+        <div class="bio-step-track" role="tablist" aria-label="Bio-toilet system process steps">
           <button class="bio-step-btn active" id="bio-btn-0" role="tab" aria-selected="true" aria-controls="bio-panel-0" onclick="bioGoTo(0)">
             <div class="bio-step-num">1</div>
-            <div class="bio-step-lbl">Entrée des déchets</div>
+            <div class="bio-step-lbl">Waste Input</div>
           </button>
           <div class="bio-track-line"><div class="bio-track-fill" id="bio-fill-0"></div></div>
           <button class="bio-step-btn" id="bio-btn-1" role="tab" aria-selected="false" aria-controls="bio-panel-1" onclick="bioGoTo(1)">
@@ -744,12 +867,12 @@
           <div class="bio-track-line"><div class="bio-track-fill" id="bio-fill-1"></div></div>
           <button class="bio-step-btn" id="bio-btn-2" role="tab" aria-selected="false" aria-controls="bio-panel-2" onclick="bioGoTo(2)">
             <div class="bio-step-num">3</div>
-            <div class="bio-step-lbl">Gaz de cuisson</div>
+            <div class="bio-step-lbl">Cooking Gas</div>
           </button>
           <div class="bio-track-line"><div class="bio-track-fill" id="bio-fill-2"></div></div>
           <button class="bio-step-btn" id="bio-btn-3" role="tab" aria-selected="false" aria-controls="bio-panel-3" onclick="bioGoTo(3)">
             <div class="bio-step-num">4</div>
-            <div class="bio-step-lbl">Biofertilisant</div>
+            <div class="bio-step-lbl">Bio-fertiliser</div>
           </button>
         </div>
 
@@ -758,105 +881,182 @@
 
           <!-- STEP 1: Human Waste Input -->
           <div class="bio-step-panel active" id="bio-panel-0" role="tabpanel" aria-labelledby="bio-btn-0">
-            <div class="bio-svg-stage" aria-label="Illustration de la bio-toilette reliée par un tuyau à l'entrée du Terra Digester">
+            <div class="bio-svg-stage" aria-label="Illustration of bio-toilet connected via pipe to Terra Digester inlet">
               <svg viewBox="0 0 380 280" width="100%" height="100%" style="max-width:380px;" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Ground -->
                 <rect x="0" y="242" width="380" height="38" fill="rgba(82,183,136,0.07)" rx="4"/>
                 <line x1="0" y1="242" x2="380" y2="242" stroke="rgba(82,183,136,0.18)" stroke-width="1.5"/>
+
+                <!-- ── BIO-TOILET (left) ── -->
                 <g transform="translate(18, 62)">
+                  <!-- Toilet tank (cistern) -->
                   <rect x="18" y="0" width="58" height="42" rx="8" fill="rgba(220,235,228,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+                  <!-- Tank lid -->
                   <rect x="14" y="-5" width="66" height="10" rx="5" fill="rgba(220,235,228,0.22)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                  <!-- Tank water level -->
                   <rect x="22" y="8" width="50" height="28" rx="5" fill="rgba(82,183,136,0.15)"/>
                   <line x1="22" y1="20" x2="72" y2="20" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+                  <!-- Water ripple in tank -->
                   <path d="M28 20 Q37 17 46 20 Q55 23 64 20" fill="none" stroke="rgba(82,183,136,0.4)" stroke-width="1" style="animation:waterFlow 2s linear infinite;stroke-dasharray:8 4;"/>
+                  <!-- Flush button -->
                   <circle cx="47" cy="5" r="5" fill="rgba(82,183,136,0.5)" stroke="rgba(82,183,136,0.8)" stroke-width="1.5"/>
                   <circle cx="47" cy="5" r="2.5" fill="rgba(82,183,136,0.8)"/>
-                  <path d="M10 42 C8 58 6 72 8 88 C10 104 20 116 47 116 C74 116 84 104 86 88 C88 72 86 58 84 42Z" fill="rgba(220,235,228,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+
+                  <!-- Toilet bowl body -->
+                  <path d="M10 42 C8 58 6 72 8 88 C10 104 20 116 47 116 C74 116 84 104 86 88 C88 72 86 58 84 42Z"
+                        fill="rgba(220,235,228,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                  <!-- Bowl seat -->
                   <ellipse cx="47" cy="44" rx="38" ry="12" fill="rgba(220,235,228,0.22)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+                  <!-- Bowl rim -->
                   <ellipse cx="47" cy="44" rx="32" ry="9" fill="rgba(82,183,136,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                  <!-- Bowl interior water -->
                   <ellipse cx="47" cy="90" rx="28" ry="16" fill="rgba(82,183,136,0.12)"/>
-                  <path d="M20 116 C18 128 18 138 22 142 C26 146 34 148 47 148 C60 148 68 146 72 142 C76 138 76 128 74 116Z" fill="rgba(220,235,228,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+                  <!-- Toilet base -->
+                  <path d="M20 116 C18 128 18 138 22 142 C26 146 34 148 47 148 C60 148 68 146 72 142 C76 138 76 128 74 116Z"
+                        fill="rgba(220,235,228,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+                  <!-- Base foot -->
                   <ellipse cx="47" cy="172" rx="32" ry="6" fill="rgba(255,255,255,0.08)"/>
                   <rect x="28" y="148" width="38" height="24" rx="4" fill="rgba(220,235,228,0.10)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+
+                  <!-- Outlet pipe from toilet bottom -->
                   <rect x="36" y="172" width="22" height="18" rx="5" fill="rgba(45,106,79,0.7)" stroke="rgba(82,183,136,0.6)" stroke-width="1.5"/>
+
+                  <!-- Label badge -->
                   <rect x="-2" y="185" width="100" height="24" rx="8" fill="rgba(45,106,79,0.3)" stroke="rgba(82,183,136,0.35)" stroke-width="1"/>
-                  <text x="49" y="200" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="9.5" font-weight="600" font-family="system-ui">Unité bio-toilette</text>
+                  <text x="49" y="200" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="9.5" font-weight="600" font-family="system-ui">Bio-toilet Unit</text>
+
+                  <!-- "Ultra-low flush" tag -->
                   <rect x="-5" y="-22" width="104" height="18" rx="6" fill="rgba(82,183,136,0.2)" stroke="rgba(82,183,136,0.4)" stroke-width="1"/>
-                  <text x="47" y="-10" text-anchor="middle" fill="rgba(82,183,136,0.95)" font-size="8.5" font-weight="700" font-family="system-ui">✓ Seulement 1,2 L / chasse</text>
+                  <text x="47" y="-10" text-anchor="middle" fill="rgba(82,183,136,0.95)" font-size="8.5" font-weight="700" font-family="system-ui">✓ Only 1.2 L / flush</text>
                 </g>
-                <circle cx="65" cy="175" r="4" fill="rgba(127,85,57,0.7)" style="animation:bioWaste 2s ease-in infinite;"/>
+
+                <!-- Animated waste drop falling inside bowl -->
+                <circle cx="65" cy="175" r="4"   fill="rgba(127,85,57,0.7)" style="animation:bioWaste 2s ease-in infinite;"/>
                 <circle cx="60" cy="162" r="2.8" fill="rgba(127,85,57,0.5)" style="animation:bioWaste 2s ease-in infinite 0.6s;"/>
-                <circle cx="70" cy="168" r="2" fill="rgba(127,85,57,0.4)" style="animation:bioWaste 2s ease-in infinite 1.2s;"/>
-                <path d="M 112 234 Q 148 240 182 228 Q 200 222 215 210" fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 5" style="animation:pipeWave 1.4s linear infinite;"/>
+                <circle cx="70" cy="168" r="2"   fill="rgba(127,85,57,0.4)" style="animation:bioWaste 2s ease-in infinite 1.2s;"/>
+
+                <!-- Corrugated pipe connecting toilet to digester -->
+                <!-- Horizontal segment -->
+                <path d="M 112 234 Q 148 240 182 228 Q 200 222 215 210"
+                      fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="5"
+                      stroke-linecap="round" stroke-dasharray="10 5"
+                      style="animation:pipeWave 1.4s linear infinite;"/>
+                <!-- Pipe collar at toilet -->
                 <rect x="108" y="228" width="14" height="12" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                <!-- Arrowhead on pipe -->
                 <polygon points="214,205 224,210 214,216" fill="rgba(82,183,136,0.7)"/>
+
+                <!-- ── TERRA DIGESTER BAG (right, large) ── -->
                 <g transform="translate(218, 42)">
+                  <!-- Glow halo -->
                   <ellipse cx="70" cy="112" rx="72" ry="100" fill="rgba(45,106,79,0.10)" style="animation:gasGlow 3.5s ease-in-out infinite;"/>
-                  <path d="M 14 28 C 10 55 5 95 8 138 C 10 168 24 190 70 190 C 116 190 130 168 132 138 C 135 95 130 55 126 28 C 114 10 90 2 70 2 C 50 2 26 10 14 28 Z" fill="rgba(11,28,20,0.92)" stroke="#52B788" stroke-width="2.5" style="animation:bagSwell 4s ease-in-out infinite;"/>
+                  <!-- Bag body — inflatable bladder -->
+                  <path d="M 14 28
+                            C 10 55  5 95  8 138
+                            C 10 168 24 190 70 190
+                            C 116 190 130 168 132 138
+                            C 135 95 130 55 126 28
+                            C 114 10  90  2  70  2
+                            C 50  2  26 10  14 28 Z"
+                        fill="rgba(11,28,20,0.92)" stroke="#52B788" stroke-width="2.5"
+                        style="animation:bagSwell 4s ease-in-out infinite;"/>
+                  <!-- Bag sheen left -->
                   <path d="M 20 34 C 16 62 12 100 15 135" stroke="rgba(82,183,136,0.38)" stroke-width="4" stroke-linecap="round"/>
+                  <!-- Bag sheen right -->
                   <path d="M 120 38 C 123 66 124 102 121 134" stroke="rgba(82,183,136,0.14)" stroke-width="3" stroke-linecap="round"/>
+                  <!-- Biogas zone top -->
                   <ellipse cx="70" cy="52" rx="48" ry="22" fill="rgba(45,106,79,0.22)" style="animation:gasGlow 3s ease-in-out infinite;"/>
-                  <text x="70" y="55" text-anchor="middle" fill="rgba(82,183,136,0.7)" font-size="8" font-family="system-ui">biogaz</text>
-                  <circle cx="58" cy="80" r="5" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="1.5" style="animation:bubbleRise 2.2s ease-in infinite;"/>
-                  <circle cx="78" cy="90" r="4" fill="none" stroke="rgba(82,183,136,0.45)" stroke-width="1.5" style="animation:bubbleRise 2.2s ease-in infinite 0.7s;"/>
-                  <circle cx="90" cy="75" r="3.2" fill="none" stroke="rgba(82,183,136,0.4)" stroke-width="1.5" style="animation:bubbleRise 2.2s ease-in infinite 1.4s;"/>
+                  <text x="70" y="55" text-anchor="middle" fill="rgba(82,183,136,0.7)" font-size="8" font-family="system-ui">biogas</text>
+                  <!-- Biogas bubbles rising -->
+                  <circle cx="58"  cy="80" r="5"   fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="1.5" style="animation:bubbleRise 2.2s ease-in infinite;"/>
+                  <circle cx="78"  cy="90" r="4"   fill="none" stroke="rgba(82,183,136,0.45)" stroke-width="1.5" style="animation:bubbleRise 2.2s ease-in infinite 0.7s;"/>
+                  <circle cx="90"  cy="75" r="3.2" fill="none" stroke="rgba(82,183,136,0.4)" stroke-width="1.5" style="animation:bubbleRise 2.2s ease-in infinite 1.4s;"/>
+                  <!-- Bacteria microorganism symbols -->
                   <g style="animation:bacteriaFloat 3.5s ease-in-out infinite;">
                     <ellipse cx="52" cy="130" rx="10" ry="5" fill="rgba(82,183,136,0.6)" stroke="rgba(82,183,136,0.85)" stroke-width="1"/>
-                    <circle cx="43" cy="130" r="3" fill="rgba(82,183,136,0.55)"/>
-                    <circle cx="62" cy="130" r="3" fill="rgba(82,183,136,0.55)"/>
+                    <circle cx="43" cy="130" r="3"   fill="rgba(82,183,136,0.55)"/>
+                    <circle cx="62" cy="130" r="3"   fill="rgba(82,183,136,0.55)"/>
                   </g>
                   <g style="animation:bacteriaFloat 3.5s ease-in-out infinite 1.2s;">
                     <ellipse cx="92" cy="118" rx="9" ry="4.5" fill="rgba(82,183,136,0.55)" stroke="rgba(82,183,136,0.8)" stroke-width="1"/>
                     <circle cx="84" cy="118" r="2.8" fill="rgba(82,183,136,0.5)"/>
                     <circle cx="101" cy="118" r="2.8" fill="rgba(82,183,136,0.5)"/>
                   </g>
+                  <!-- Brand text -->
                   <text x="70" y="158" text-anchor="middle" fill="rgba(82,183,136,0.88)" font-size="11" font-weight="700" font-family="system-ui" letter-spacing="1.5">TERRA</text>
                   <text x="70" y="174" text-anchor="middle" fill="rgba(82,183,136,0.88)" font-size="11" font-weight="700" font-family="system-ui" letter-spacing="1.5">DIGESTER</text>
+                  <!-- Vent stack top -->
                   <rect x="56" y="-14" width="28" height="20" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="2"/>
                   <rect x="50" y="-18" width="40" height="9" rx="5" fill="#52B788"/>
+                  <!-- Rising gas from vent -->
                   <circle cx="70" cy="-24" r="5" fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite;"/>
+                  <!-- Inlet pipe left side (from corrugated pipe) -->
                   <rect x="-22" y="104" width="24" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Outlet tap right bottom -->
                   <rect x="124" y="148" width="20" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
                   <rect x="136" y="142" width="12" height="9" rx="3" fill="#DDB892" stroke="rgba(127,85,57,0.7)" stroke-width="1"/>
+                  <!-- Sealed lock icon -->
                   <g transform="translate(54,192)">
                     <rect x="0" y="5" width="32" height="22" rx="5" fill="rgba(82,183,136,0.18)" stroke="rgba(82,183,136,0.4)" stroke-width="1"/>
                     <path d="M6 5V2C6 -2 26 -2 26 2V5" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="1.5" stroke-linecap="round"/>
                     <circle cx="16" cy="16" r="4" fill="rgba(82,183,136,0.6)"/>
                   </g>
                 </g>
-                <text x="285" y="272" text-anchor="middle" fill="rgba(82,183,136,0.6)" font-size="9" font-family="system-ui">🔒 Étanche · Sans oxygène</text>
+
+                <!-- "Sealed system" label bottom -->
+                <text x="285" y="272" text-anchor="middle" fill="rgba(82,183,136,0.6)" font-size="9" font-family="system-ui">🔒 Sealed · Oxygen-free</text>
               </svg>
             </div>
             <div class="bio-step-content">
               <div class="bio-step-badge"><span class="bio-step-badge-num">Étape 01</span><span class="bio-step-badge-lbl">Entrée des déchets</span></div>
               <h3>Déchets humains <em>directement raccordés</em></h3>
-              <p>La bio-toilette se connecte au Terra Digester par un tuyau étanche. Chaque chasse utilise seulement 1,2 L — aucune alimentation en eau du réseau ni réseau d'assainissement n'est requis. L'eau peut provenir d'un seau, d'une bassine ou d'eaux grises recyclées (par exemple eau de lavage). Une pompe à pied ou manuelle génère la pression. Aucune électricité nécessaire.</p>
+              <p>La bio-toilette se raccorde au Terra Digester via une canalisation étanche. Chaque chasse n’utilise que 1,2 L — aucune arrivée d’eau ni réseau d’égouts n’est requis. L’eau peut provenir d’un seau, d’une bassine ou d’eaux grises recyclées (par exemple, eau de lavage). Une pompe à pied ou à main génère la pression. Aucune électricité requise.</p>
               <div class="bio-step-metrics">
                 <div class="bio-metric"><div class="bio-metric-val">1,2 L</div><div class="bio-metric-lbl">Eau par chasse</div></div>
-                <div class="bio-metric"><div class="bio-metric-val">100 %</div><div class="bio-metric-lbl">Fonctionne hors réseau</div></div>
+                <div class="bio-metric"><div class="bio-metric-val">100 %</div><div class="bio-metric-lbl">Capacité hors réseau</div></div>
               </div>
             </div>
           </div>
 
           <!-- STEP 2: Anaerobic Digestion -->
           <div class="bio-step-panel" id="bio-panel-1" role="tabpanel" aria-labelledby="bio-btn-1">
-            <div class="bio-svg-stage" aria-label="Illustration de la digestion anaérobie dans le sac Terra Digester étanche décomposant les déchets humains">
+            <div class="bio-svg-stage" aria-label="Illustration of anaerobic digestion inside sealed Terra Digester bag breaking down human waste">
               <svg viewBox="0 0 380 280" width="100%" height="100%" style="max-width:380px;" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Large digester bag — centred, prominent -->
                 <g transform="translate(68, 16)">
+                  <!-- Outer glow -->
                   <ellipse cx="122" cy="130" rx="118" ry="112" fill="rgba(45,106,79,0.09)" style="animation:gasGlow 3.5s ease-in-out infinite;"/>
-                  <path d="M 20 38 C 14 68 8 112 12 158 C 15 192 32 214 122 214 C 212 214 229 192 232 158 C 236 112 230 68 224 38 C 210 14 170 2 122 2 C 74 2 34 14 20 38 Z" fill="rgba(11,28,20,0.93)" stroke="#52B788" stroke-width="2.5"/>
+                  <!-- Bag body -->
+                  <path d="M 20 38
+                            C 14 68  8 112 12 158
+                            C 15 192 32 214 122 214
+                            C 212 214 229 192 232 158
+                            C 236 112 230 68 224 38
+                            C 210 14 170  2 122  2
+                            C 74  2  34 14  20 38 Z"
+                        fill="rgba(11,28,20,0.93)" stroke="#52B788" stroke-width="2.5"/>
+                  <!-- Left sheen -->
                   <path d="M 28 44 C 22 76 17 118 20 156" stroke="rgba(82,183,136,0.36)" stroke-width="5" stroke-linecap="round"/>
+                  <!-- Right sheen -->
                   <path d="M 218 48 C 222 80 224 120 220 155" stroke="rgba(82,183,136,0.13)" stroke-width="3" stroke-linecap="round"/>
+
+                  <!-- Biogas headspace (top zone) -->
                   <ellipse cx="122" cy="56" rx="88" ry="30" fill="rgba(45,106,79,0.25)" style="animation:gasGlow 3s ease-in-out infinite;"/>
-                  <text x="122" y="52" text-anchor="middle" fill="rgba(82,183,136,0.75)" font-size="10" font-weight="600" font-family="system-ui">Zone biogaz CH₄</text>
-                  <circle cx="90" cy="100" r="6" fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="2" style="animation:bubbleRise 2s ease-in infinite;"/>
-                  <circle cx="122" cy="110" r="5" fill="none" stroke="rgba(82,183,136,0.50)" stroke-width="2" style="animation:bubbleRise 2s ease-in infinite 0.6s;"/>
-                  <circle cx="152" cy="95" r="4" fill="none" stroke="rgba(82,183,136,0.45)" stroke-width="2" style="animation:bubbleRise 2s ease-in infinite 1.2s;"/>
-                  <circle cx="75" cy="118" r="3.5" fill="none" stroke="rgba(82,183,136,0.40)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite 1.8s;"/>
-                  <circle cx="168" cy="112" r="3" fill="none" stroke="rgba(82,183,136,0.38)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite 0.9s;"/>
+                  <text x="122" y="52" text-anchor="middle" fill="rgba(82,183,136,0.75)" font-size="10" font-weight="600" font-family="system-ui">CH₄ Biogas Zone</text>
+                  <!-- Biogas bubbles rising -->
+                  <circle cx="90"  cy="100" r="6"   fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="2" style="animation:bubbleRise 2s ease-in infinite;"/>
+                  <circle cx="122" cy="110" r="5"   fill="none" stroke="rgba(82,183,136,0.50)" stroke-width="2" style="animation:bubbleRise 2s ease-in infinite 0.6s;"/>
+                  <circle cx="152" cy="95"  r="4"   fill="none" stroke="rgba(82,183,136,0.45)" stroke-width="2" style="animation:bubbleRise 2s ease-in infinite 1.2s;"/>
+                  <circle cx="75"  cy="118" r="3.5" fill="none" stroke="rgba(82,183,136,0.40)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite 1.8s;"/>
+                  <circle cx="168" cy="112" r="3"   fill="none" stroke="rgba(82,183,136,0.38)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite 0.9s;"/>
+
+                  <!-- Bacteria — multiple animated clusters -->
                   <g style="animation:bacteriaFloat 3.5s ease-in-out infinite;">
                     <ellipse cx="80" cy="148" rx="12" ry="6" fill="rgba(82,183,136,0.65)" stroke="rgba(82,183,136,0.9)" stroke-width="1.2"/>
-                    <circle cx="69" cy="148" r="4" fill="rgba(82,183,136,0.60)"/>
-                    <circle cx="93" cy="148" r="4" fill="rgba(82,183,136,0.60)"/>
+                    <circle cx="69" cy="148" r="4"   fill="rgba(82,183,136,0.60)"/>
+                    <circle cx="93" cy="148" r="4"   fill="rgba(82,183,136,0.60)"/>
                   </g>
                   <g style="animation:bacteriaFloat 3.5s ease-in-out infinite 0.9s;">
                     <ellipse cx="148" cy="136" rx="11" ry="5.5" fill="rgba(82,183,136,0.60)" stroke="rgba(82,183,136,0.85)" stroke-width="1.2"/>
@@ -870,106 +1070,156 @@
                   </g>
                   <g style="animation:bacteriaFloat 3.5s ease-in-out infinite 2.7s;">
                     <ellipse cx="170" cy="162" rx="9" ry="4.5" fill="rgba(82,183,136,0.55)" stroke="rgba(82,183,136,0.80)" stroke-width="1.2"/>
-                    <circle cx="162" cy="162" r="3" fill="rgba(82,183,136,0.50)"/>
-                    <circle cx="180" cy="162" r="3" fill="rgba(82,183,136,0.50)"/>
+                    <circle cx="162" cy="162" r="3"   fill="rgba(82,183,136,0.50)"/>
+                    <circle cx="180" cy="162" r="3"   fill="rgba(82,183,136,0.50)"/>
                   </g>
+
+                  <!-- Waste slurry bottom -->
                   <ellipse cx="122" cy="192" rx="88" ry="22" fill="rgba(127,85,57,0.35)" style="animation:bagSwell 4.5s ease-in-out infinite;"/>
-                  <text x="122" y="196" text-anchor="middle" fill="rgba(221,184,146,0.75)" font-size="9" font-family="system-ui">Boues organiques</text>
+                  <text x="122" y="196" text-anchor="middle" fill="rgba(221,184,146,0.75)" font-size="9" font-family="system-ui">Organic Slurry</text>
+
+                  <!-- Brand -->
                   <text x="122" y="122" text-anchor="middle" fill="rgba(82,183,136,0.50)" font-size="9" font-weight="700" font-family="system-ui" letter-spacing="2">TERRA DIGESTER</text>
+
+                  <!-- Vent stack -->
                   <rect x="106" y="-16" width="32" height="22" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="2"/>
                   <rect x="98" y="-20" width="48" height="10" rx="5" fill="#52B788"/>
+                  <!-- Vent bubble -->
                   <circle cx="122" cy="-28" r="6" fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite;"/>
+
+                  <!-- Inlet pipe left (coming from toilet) -->
                   <rect x="-24" y="118" width="26" height="12" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Outlet pipe right (going to outputs) -->
                   <rect x="230" y="150" width="26" height="12" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
                 </g>
+
+                <!-- Sealed badge -->
                 <g transform="translate(8,240)">
                   <rect x="0" y="0" width="148" height="24" rx="8" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
-                  <text x="74" y="15.5" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="10" font-family="system-ui">🔒 Étanche · Sans oxygène</text>
+                  <text x="74" y="15.5" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="10" font-family="system-ui">🔒 Sealed · Oxygen-free</text>
                 </g>
+                <!-- Retention badge -->
                 <g transform="translate(226,240)">
                   <rect x="0" y="0" width="148" height="24" rx="8" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
-                  <text x="74" y="15.5" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="10" font-family="system-ui">Rétention : 15–30 jours</text>
+                  <text x="74" y="15.5" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="10" font-family="system-ui">Retention: 15–30 days</text>
                 </g>
               </svg>
             </div>
             <div class="bio-step-content">
               <div class="bio-step-badge"><span class="bio-step-badge-num">Étape 02</span><span class="bio-step-badge-lbl">Processus biologique</span></div>
-              <h3>La digestion anaérobie <em>les décompose</em></h3>
-              <p>À l'intérieur de la poche Terra Digester étanche, des bactéries anaérobies naturellement présentes décomposent les déchets humains dans un environnement totalement privé d'oxygène. Sur une période de rétention de 15 à 30 jours, les micro-organismes convertissent la matière organique en biogaz riche en méthane (CH₄) qui monte vers le haut, et en digestat riche en nutriments qui se dépose au fond. Les agents pathogènes sont significativement réduits au cours de ce processus.</p>
+              <h3>La digestion anaérobie <em>décompose tout</em></h3>
+              <p>À l’intérieur de la poche étanche du Terra Digester, des bactéries anaérobies naturellement présentes décomposent les déchets humains dans un environnement totalement exempt d’oxygène. Sur une période de rétention de 15 à 30 jours, les micro-organismes convertissent la matière organique en biogaz riche en méthane (CH₄) qui monte vers le haut, et en digestat riche en nutriments qui se dépose en dessous. Les agents pathogènes sont considérablement réduits pendant ce processus.</p>
               <div class="bio-step-metrics">
-                <div class="bio-metric"><div class="bio-metric-val">15–30j</div><div class="bio-metric-lbl">Temps de rétention</div></div>
-                <div class="bio-metric"><div class="bio-metric-val">60–70 %</div><div class="bio-metric-lbl">Teneur en CH₄</div></div>
+                <div class="bio-metric"><div class="bio-metric-val">15-30 j</div><div class="bio-metric-lbl">Temps de rétention</div></div>
+                <div class="bio-metric"><div class="bio-metric-val">60-70 %</div><div class="bio-metric-lbl">Teneur en CH₄</div></div>
               </div>
             </div>
           </div>
 
           <!-- STEP 3: Cooking Gas -->
           <div class="bio-step-panel" id="bio-panel-2" role="tabpanel" aria-labelledby="bio-btn-2">
-            <div class="bio-svg-stage" aria-label="Illustration du biogaz circulant du digesteur par un tuyau vers le brûleur de la cuisinière avec une flamme">
+            <div class="bio-svg-stage" aria-label="Illustration of biogas flowing from digester through pipe to kitchen stove burner with flame">
               <svg viewBox="0 0 380 280" width="100%" height="100%" style="max-width:380px;" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Digester bag partial (left) -->
                 <g transform="translate(8, 28)">
-                  <path d="M 10 22 C 7 48 4 86 7 124 C 9 150 20 168 58 168 C 96 168 107 150 109 124 C 112 86 109 48 106 22 C 96 8 76 2 58 2 C 40 2 20 8 10 22 Z" fill="rgba(11,28,20,0.9)" stroke="#52B788" stroke-width="2"/>
+                  <path d="M 10 22 C 7 48 4 86 7 124 C 9 150 20 168 58 168 C 96 168 107 150 109 124 C 112 86 109 48 106 22 C 96 8 76 2 58 2 C 40 2 20 8 10 22 Z"
+                        fill="rgba(11,28,20,0.9)" stroke="#52B788" stroke-width="2"/>
                   <path d="M 17 28 C 14 54 12 88 15 122" stroke="rgba(82,183,136,0.32)" stroke-width="3.5" stroke-linecap="round"/>
+                  <!-- Biogas zone top -->
                   <ellipse cx="58" cy="38" rx="42" ry="18" fill="rgba(45,106,79,0.28)" style="animation:gasGlow 3s ease-in-out infinite;"/>
                   <text x="58" y="42" text-anchor="middle" fill="rgba(82,183,136,0.7)" font-size="8" font-family="system-ui">CH₄</text>
+                  <!-- Vent pipe top -->
                   <rect x="46" y="-12" width="24" height="18" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
                   <rect x="40" y="-16" width="36" height="9" rx="4" fill="#52B788"/>
-                  <circle cx="44" cy="80" r="4" fill="none" stroke="rgba(82,183,136,0.45)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite;"/>
+                  <!-- Bubbles inside -->
+                  <circle cx="44" cy="80" r="4"   fill="none" stroke="rgba(82,183,136,0.45)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite;"/>
                   <circle cx="68" cy="92" r="3.5" fill="none" stroke="rgba(82,183,136,0.40)" stroke-width="1.5" style="animation:bubbleRise 2s ease-in infinite 0.8s;"/>
+                  <!-- Gas outlet pipe (right side of bag) -->
                   <rect x="104" y="76" width="32" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
                 </g>
-                <rect x="140" y="98" width="80" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5" style="animation:waterFlow 1.2s linear infinite;"/>
+
+                <!-- Gas pipe — horizontal run with animated flow dashes -->
+                <rect x="140" y="98" width="80" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"
+                      style="animation:waterFlow 1.2s linear infinite;"/>
+                <!-- Flow bubbles in pipe -->
                 <circle cx="158" cy="103" r="3" fill="rgba(82,183,136,0.6)" style="animation:bubbleRise 1.4s ease-in infinite;"/>
                 <circle cx="186" cy="103" r="3" fill="rgba(82,183,136,0.55)" style="animation:bubbleRise 1.4s ease-in infinite 0.45s;"/>
                 <circle cx="214" cy="103" r="3" fill="rgba(82,183,136,0.5)" style="animation:bubbleRise 1.4s ease-in infinite 0.9s;"/>
+                <!-- Valve on pipe -->
                 <circle cx="185" cy="103" r="12" fill="rgba(18,46,32,0.9)" stroke="#52B788" stroke-width="1.5"/>
                 <text x="185" y="107" text-anchor="middle" fill="rgba(82,183,136,0.9)" font-size="9" font-family="system-ui">⊕</text>
-                <text x="180" y="86" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="8.5" font-family="system-ui">Conduite biogaz</text>
+                <!-- Pipe label -->
+                <text x="180" y="86" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="8.5" font-family="system-ui">Biogas pipe</text>
+
+                <!-- STOVE & BURNER (right) -->
                 <g transform="translate(218, 52)">
+                  <!-- Countertop surface -->
                   <rect x="-12" y="118" width="158" height="14" rx="5" fill="rgba(127,85,57,0.28)" stroke="rgba(127,85,57,0.45)" stroke-width="1"/>
+                  <!-- Stove body -->
                   <rect x="0" y="66" width="134" height="54" rx="10" fill="rgba(18,46,32,0.92)" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Stove top plate -->
                   <rect x="4" y="62" width="126" height="10" rx="5" fill="rgba(45,106,79,0.5)" stroke="rgba(82,183,136,0.4)" stroke-width="1"/>
+                  <!-- Burner ring outer -->
                   <circle cx="67" cy="92" r="36" fill="none" stroke="rgba(82,183,136,0.35)" stroke-width="2"/>
+                  <!-- Burner ring middle -->
                   <circle cx="67" cy="92" r="25" fill="none" stroke="rgba(82,183,136,0.45)" stroke-width="2"/>
+                  <!-- Burner centre disc -->
                   <circle cx="67" cy="92" r="12" fill="rgba(45,106,79,0.45)" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- FLAME — animated flicker -->
                   <g style="transform-origin:67px 80px; animation:flameFlicker 0.18s ease-in-out infinite;">
+                    <!-- Outer blue petals -->
                     <path d="M52 80C49 72 51 64 58 59C56 67 60 71 62 66C64 73 62 76 60 80Z" fill="#52B788" opacity="0.72" style="animation:flameFlicker 0.22s ease-in-out infinite alternate;"/>
                     <path d="M82 80C85 72 83 64 76 59C78 67 74 71 72 66C70 73 72 76 74 80Z" fill="#52B788" opacity="0.72" style="animation:flameFlicker 0.22s ease-in-out infinite alternate-reverse;"/>
                     <path d="M57 80C55 73 57 63 64 57C67 62 68 72 66 80Z" fill="#52B788" opacity="0.75"/>
                     <path d="M77 80C79 73 77 63 70 57C67 62 66 72 68 80Z" fill="#52B788" opacity="0.75"/>
+                    <!-- Centre warm flame -->
                     <path d="M61 80C59 74 60 65 67 60C74 65 75 74 73 80Z" fill="#DDB892" opacity="0.9" style="animation:flameFlicker 0.14s ease-in-out infinite alternate;"/>
+                    <!-- Hot core -->
                     <path d="M64 80C63 76 64 69 67 65C70 69 71 76 70 80Z" fill="white" opacity="0.65"/>
                   </g>
+                  <!-- Heat shimmer above flame -->
                   <path d="M62 56C63 46 64 38 67 32" stroke="rgba(221,184,146,0.22)" stroke-width="2.5" stroke-linecap="round" style="animation:heatRise 1.1s ease-out infinite;"/>
                   <path d="M70 56C71 46 72 38 75 32" stroke="rgba(221,184,146,0.18)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 1.1s ease-out infinite 0.4s;"/>
+                  <!-- Control knob -->
                   <circle cx="20" cy="92" r="10" fill="rgba(82,183,136,0.18)" stroke="#52B788" stroke-width="1.5"/>
                   <circle cx="20" cy="92" r="4" fill="#52B788"/>
+                  <!-- Gas inlet pipe left -->
                   <rect x="-20" y="88" width="22" height="8" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+
+                  <!-- Cooking pot on stove -->
+                  <!-- Pot body -->
                   <ellipse cx="67" cy="40" rx="36" ry="10" fill="rgba(160,160,168,0.55)" stroke="rgba(180,180,190,0.7)" stroke-width="1.5"/>
-                  <path d="M31 40 Q28 62 32 72 Q42 82 67 82 Q92 82 102 72 Q106 62 103 40" fill="rgba(130,130,140,0.45)" stroke="rgba(160,160,170,0.6)" stroke-width="1.5"/>
+                  <path d="M31 40 Q28 62 32 72 Q42 82 67 82 Q92 82 102 72 Q106 62 103 40"
+                        fill="rgba(130,130,140,0.45)" stroke="rgba(160,160,170,0.6)" stroke-width="1.5"/>
+                  <!-- Pot lid -->
                   <ellipse cx="67" cy="38" rx="36" ry="10" fill="rgba(170,170,178,0.6)" stroke="rgba(190,190,200,0.7)" stroke-width="1.5"/>
-                  <ellipse cx="67" cy="36" rx="28" ry="7" fill="rgba(185,185,195,0.5)"/>
-                  <circle cx="67" cy="32" r="5" fill="rgba(190,190,200,0.8)" stroke="rgba(200,200,210,0.6)" stroke-width="1"/>
+                  <ellipse cx="67" cy="36" rx="28" ry="7"  fill="rgba(185,185,195,0.5)"/>
+                  <circle  cx="67" cy="32" r="5" fill="rgba(190,190,200,0.8)" stroke="rgba(200,200,210,0.6)" stroke-width="1"/>
+                  <!-- Pot handles -->
                   <path d="M31 58C24 56 22 48 26 44" fill="none" stroke="rgba(160,160,170,0.7)" stroke-width="2.5" stroke-linecap="round"/>
                   <path d="M103 58C110 56 112 48 108 44" fill="none" stroke="rgba(160,160,170,0.7)" stroke-width="2.5" stroke-linecap="round"/>
+                  <!-- Steam wisps from pot -->
                   <path d="M52 36C50 28 53 20 51 12" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 1.8s ease-out infinite;"/>
                   <path d="M67 34C66 26 68 18 67 10" stroke="rgba(255,255,255,0.18)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 1.8s ease-out infinite 0.6s;"/>
                   <path d="M82 36C83 28 81 20 83 12" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 1.8s ease-out infinite 1.2s;"/>
                 </g>
+
+                <!-- Labels bottom -->
                 <g transform="translate(8,248)">
                   <rect x="0" y="0" width="118" height="22" rx="7" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
-                  <text x="59" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="9.5" font-family="system-ui">🔥 Cuisson sans fumée</text>
+                  <text x="59" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="9.5" font-family="system-ui">🔥 Smoke-free cooking</text>
                 </g>
                 <g transform="translate(254,248)">
                   <rect x="0" y="0" width="120" height="22" rx="7" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
-                  <text x="60" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="9.5" font-family="system-ui">Sans GPL · Sans bois de chauffe</text>
+                  <text x="60" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="9.5" font-family="system-ui">No LPG · No firewood</text>
                 </g>
               </svg>
             </div>
             <div class="bio-step-content">
-              <div class="bio-step-badge"><span class="bio-step-badge-num">Étape 03</span><span class="bio-step-badge-lbl">Production d'énergie</span></div>
+              <div class="bio-step-badge"><span class="bio-step-badge-num">Étape 03</span><span class="bio-step-badge-lbl">Sortie d’énergie</span></div>
               <h3>Gaz de cuisson <em>propre</em></h3>
-              <p>Le biogaz riche en méthane monte au sommet de la poche Terra Digester étanche et est acheminé directement vers une cuisinière par une simple conduite de gaz. Il brûle avec une flamme bleue propre — totalement sans fumée et inodore — remplaçant les bouteilles de GPL coûteuses ou le bois de chauffe nocif. Un seul système de bio-toilette peut générer un combustible de cuisson quotidien significatif pour un ménage ou une petite communauté.</p>
+              <p>Le biogaz riche en méthane monte au sommet de la poche étanche du Terra Digester et est acheminé directement vers un réchaud de cuisine par une simple conduite de gaz. Il brûle avec une flamme bleue propre — totalement sans fumée et inodore, remplaçant les bonbonnes de GPL coûteuses ou le bois de chauffe nocif. Un seul système de bio-toilette peut générer un combustible de cuisson quotidien significatif pour un ménage ou une petite communauté.</p>
               <div class="bio-step-metrics">
                 <div class="bio-metric"><div class="bio-metric-val">CH₄</div><div class="bio-metric-lbl">Gaz riche en méthane</div></div>
                 <div class="bio-metric"><div class="bio-metric-val">0 fumée</div><div class="bio-metric-lbl">Combustion propre</div></div>
@@ -979,49 +1229,85 @@
 
           <!-- STEP 4: Bio-fertiliser -->
           <div class="bio-step-panel" id="bio-panel-3" role="tabpanel" aria-labelledby="bio-btn-3">
-            <div class="bio-svg-stage" aria-label="Illustration du biofertilisant liquide coulant du robinet de sortie vers des plantes en croissance">
+            <div class="bio-svg-stage" aria-label="Illustration of liquid bio-fertiliser flowing from outlet tap onto growing plants">
               <svg viewBox="0 0 380 280" width="100%" height="100%" style="max-width:380px;" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Ground / soil area -->
                 <rect x="168" y="200" width="212" height="55" fill="rgba(82,183,136,0.08)" rx="4"/>
                 <line x1="168" y1="200" x2="380" y2="200" stroke="rgba(82,183,136,0.22)" stroke-width="1.5"/>
+
+                <!-- Digester bag partial (left) -->
                 <g transform="translate(8,22)">
-                  <path d="M 10 24 C 7 52 4 94 7 138 C 9 166 20 186 58 186 C 96 186 107 166 109 138 C 112 94 109 52 106 24 C 96 8 76 2 58 2 C 40 2 20 8 10 24 Z" fill="rgba(11,28,20,0.9)" stroke="#52B788" stroke-width="2"/>
+                  <path d="M 10 24 C 7 52 4 94 7 138 C 9 166 20 186 58 186 C 96 186 107 166 109 138 C 112 94 109 52 106 24 C 96 8 76 2 58 2 C 40 2 20 8 10 24 Z"
+                        fill="rgba(11,28,20,0.9)" stroke="#52B788" stroke-width="2"/>
                   <path d="M 17 30 C 14 58 12 96 15 136" stroke="rgba(82,183,136,0.30)" stroke-width="3.5" stroke-linecap="round"/>
+                  <!-- Digestate settled bottom -->
                   <ellipse cx="58" cy="164" rx="44" ry="22" fill="rgba(127,85,57,0.38)" style="animation:bagSwell 4s ease-in-out infinite;"/>
-                  <text x="58" y="168" text-anchor="middle" fill="rgba(221,184,146,0.78)" font-size="8" font-family="system-ui">Digestat</text>
+                  <text x="58" y="168" text-anchor="middle" fill="rgba(221,184,146,0.78)" font-size="8" font-family="system-ui">Digestate</text>
+                  <!-- Brand text -->
                   <text x="58" y="96" text-anchor="middle" fill="rgba(82,183,136,0.48)" font-size="8" font-weight="700" font-family="system-ui" letter-spacing="1.5">TERRA</text>
                   <text x="58" y="108" text-anchor="middle" fill="rgba(82,183,136,0.48)" font-size="8" font-weight="700" font-family="system-ui" letter-spacing="1.5">DIGESTER</text>
+                  <!-- Vent top -->
                   <rect x="45" y="-12" width="26" height="18" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
                   <rect x="38" y="-16" width="40" height="8" rx="4" fill="#52B788"/>
+                  <!-- Outlet pipe (bottom right of bag) -->
                   <rect x="104" y="146" width="32" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
                 </g>
+
+                <!-- Horizontal outlet pipe -->
                 <rect x="140" y="160" width="58" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+
+                <!-- TAP VALVE assembly -->
                 <g transform="translate(192, 146)">
+                  <!-- Tap body -->
                   <rect x="0" y="14" width="26" height="24" rx="6" fill="rgba(18,46,32,0.9)" stroke="#52B788" stroke-width="1.5"/>
+                  <!-- Tap handle -->
                   <rect x="4" y="5" width="18" height="12" rx="4" fill="#DDB892" stroke="rgba(127,85,57,0.7)" stroke-width="1.5"/>
                   <circle cx="13" cy="5" r="4" fill="#C4956A" stroke="rgba(127,85,57,0.6)" stroke-width="1"/>
+                  <!-- Spout -->
                   <rect x="8" y="36" width="10" height="18" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+
+                  <!-- Drip animation - 3 droplets falling -->
                   <ellipse cx="13" cy="60" rx="4.5" ry="6" fill="rgba(127,85,57,0.75)" style="animation:dropFall 1.6s ease-in infinite;"/>
                   <ellipse cx="13" cy="60" rx="3.5" ry="5" fill="rgba(127,85,57,0.60)" style="animation:dropFall 1.6s ease-in infinite 0.55s;"/>
-                  <ellipse cx="13" cy="60" rx="3" ry="4" fill="rgba(127,85,57,0.50)" style="animation:dropFall 1.6s ease-in infinite 1.1s;"/>
+                  <ellipse cx="13" cy="60" rx="3"   ry="4" fill="rgba(127,85,57,0.50)" style="animation:dropFall 1.6s ease-in infinite 1.1s;"/>
                 </g>
+
+                <!-- Collection barrel -->
                 <g transform="translate(220,188)">
                   <ellipse cx="32" cy="10" rx="32" ry="10" fill="rgba(127,85,57,0.42)" stroke="rgba(127,85,57,0.65)" stroke-width="1.5"/>
-                  <path d="M0 10 Q-3 50 2 62 Q12 74 32 74 Q52 74 62 62 Q67 50 64 10" fill="rgba(127,85,57,0.28)" stroke="rgba(127,85,57,0.55)" stroke-width="1.5"/>
+                  <path d="M0 10 Q-3 50 2 62 Q12 74 32 74 Q52 74 62 62 Q67 50 64 10"
+                        fill="rgba(127,85,57,0.28)" stroke="rgba(127,85,57,0.55)" stroke-width="1.5"/>
                   <ellipse cx="32" cy="54" rx="26" ry="12" fill="rgba(127,85,57,0.45)"/>
-                  <text x="32" y="40" text-anchor="middle" fill="rgba(221,184,146,0.72)" font-size="8.5" font-family="system-ui">Bio-liquide</text>
+                  <text x="32" y="40" text-anchor="middle" fill="rgba(221,184,146,0.72)" font-size="8.5" font-family="system-ui">Bio-liquid</text>
                 </g>
-                <path d="M 286 220 Q 305 218 318 212" stroke="rgba(82,183,136,0.55)" stroke-width="2.5" stroke-dasharray="5 4" fill="none" stroke-linecap="round" style="animation:pathDraw 1.8s linear infinite;stroke-dashoffset:0;"/>
+
+                <!-- Dashed arrow: barrel → plants -->
+                <path d="M 286 220 Q 305 218 318 212"
+                      stroke="rgba(82,183,136,0.55)" stroke-width="2.5" stroke-dasharray="5 4"
+                      fill="none" stroke-linecap="round"
+                      style="animation:pathDraw 1.8s linear infinite;stroke-dashoffset:0;"/>
                 <polygon points="318,207 326,212 318,218" fill="rgba(82,183,136,0.65)"/>
+
+                <!-- GROWING PLANTS — 3 plants animated -->
                 <g transform="translate(308, 102)">
+                  <!-- Soil mound -->
                   <ellipse cx="36" cy="100" rx="52" ry="12" fill="rgba(45,106,79,0.18)" stroke="rgba(82,183,136,0.2)" stroke-width="1"/>
+
+                  <!-- Plant 1 (tallest, centre) -->
                   <g style="animation:stemGrow 1.4s ease-out both 0.2s;">
                     <line x1="36" y1="100" x2="36" y2="36" stroke="#52B788" stroke-width="3.5" stroke-linecap="round"/>
+                    <!-- Left branch -->
                     <path d="M36 68 C36 68 24 56 16 48" stroke="#52B788" stroke-width="2" fill="none" stroke-linecap="round"/>
                     <ellipse cx="13" cy="45" rx="13" ry="7" fill="rgba(82,183,136,0.72)" transform="rotate(-30 13 45)"/>
+                    <!-- Right branch -->
                     <path d="M36 54 C36 54 48 44 56 37" stroke="#52B788" stroke-width="2" fill="none" stroke-linecap="round"/>
                     <ellipse cx="59" cy="34" rx="12" ry="7" fill="rgba(82,183,136,0.68)" transform="rotate(25 59 34)"/>
+                    <!-- Crown leaf -->
                     <ellipse cx="36" cy="32" rx="10" ry="6" fill="rgba(82,183,136,0.85)"/>
                   </g>
+
+                  <!-- Plant 2 (left, medium) -->
                   <g style="animation:stemGrow 1.4s ease-out both 0.5s;">
                     <line x1="10" y1="100" x2="10" y2="52" stroke="#52B788" stroke-width="2.8" stroke-linecap="round"/>
                     <path d="M10 76 C10 76 2 66 -4 60" stroke="#52B788" stroke-width="1.8" fill="none" stroke-linecap="round"/>
@@ -1030,28 +1316,34 @@
                     <ellipse cx="29" cy="45" rx="10" ry="6" fill="rgba(82,183,136,0.58)" transform="rotate(20 29 45)"/>
                     <ellipse cx="10" cy="48" rx="9" ry="5.5" fill="rgba(82,183,136,0.78)"/>
                   </g>
+
+                  <!-- Plant 3 (right, small) -->
                   <g style="animation:stemGrow 1.4s ease-out both 0.8s;">
                     <line x1="62" y1="100" x2="62" y2="62" stroke="#52B788" stroke-width="2.5" stroke-linecap="round"/>
                     <path d="M62 80 C62 80 53 72 48 66" stroke="#52B788" stroke-width="1.5" fill="none" stroke-linecap="round"/>
                     <ellipse cx="45" cy="63" rx="9" ry="5.5" fill="rgba(82,183,136,0.58)" transform="rotate(-22 45 63)"/>
-                    <ellipse cx="62" cy="58" rx="8.5" ry="5" fill="rgba(82,183,136,0.74)"/>
+                    <ellipse cx="62" cy="58" rx="8" ry="5" fill="rgba(82,183,136,0.74)"/>
                   </g>
+
+                  <!-- Nutrient drip label -->
                   <text x="36" y="116" text-anchor="middle" fill="rgba(82,183,136,0.7)" font-size="9" font-family="system-ui">+ N · P · K</text>
                 </g>
+
+                <!-- Labels -->
                 <g transform="translate(8,250)">
                   <rect x="0" y="0" width="140" height="22" rx="7" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
-                  <text x="70" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="9.5" font-family="system-ui">🌱 Fertilisant 100 % organique</text>
+                  <text x="70" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="9.5" font-family="system-ui">🌱 100% Organic fertiliser</text>
                 </g>
                 <g transform="translate(230,250)">
                   <rect x="0" y="0" width="144" height="22" rx="7" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
-                  <text x="72" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="9.5" font-family="system-ui">Sans coût · Production quotidienne</text>
+                  <text x="72" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="9.5" font-family="system-ui">Zero cost · Daily output</text>
                 </g>
               </svg>
             </div>
             <div class="bio-step-content">
-              <div class="bio-step-badge"><span class="bio-step-badge-num">Étape 04</span><span class="bio-step-badge-lbl">Production de fertilisant</span></div>
+              <div class="bio-step-badge"><span class="bio-step-badge-num">Étape 04</span><span class="bio-step-badge-lbl">Sortie de fertilisant</span></div>
               <h3>Biofertilisant <em>riche en nutriments</em></h3>
-              <p>Au fur et à mesure que le cycle de digestion se complète, le digestat liquide s'écoule du robinet de sortie — un biofertilisant riche en nutriments contenant de l'azote, du phosphore et du potassium. Appliqué directement sur les massifs, les champs ou les arbres, ce flux quotidien entièrement gratuit remplace les fertilisants chimiques coûteux et referme le cycle organique. Rien n'est gaspillé ; tout devient une ressource.</p>
+              <p>Au fur et à mesure que le cycle de digestion s’achève, le digestat liquide s’écoule du robinet de sortie — un biofertilisant riche en nutriments contenant azote, phosphore et potassium. Appliqué directement sur plates-bandes, champs ou arbres, ce flux quotidien entièrement gratuit remplace les engrais chimiques coûteux et boucle le cycle organique. Rien ne se perd ; tout devient une ressource.</p>
               <div class="bio-step-metrics">
                 <div class="bio-metric"><div class="bio-metric-val">N·P·K</div><div class="bio-metric-lbl">Nutriments riches</div></div>
                 <div class="bio-metric"><div class="bio-metric-val">Gratuit</div><div class="bio-metric-lbl">Production quotidienne</div></div>
@@ -1059,7 +1351,7 @@
             </div>
           </div>
 
-        </div>
+        </div><!-- /bio-steps-wrap -->
 
         <!-- Nav buttons -->
         <div class="bio-step-nav">
@@ -1071,18 +1363,18 @@
         <div class="concept-differentiator fade-in">
           <div class="diff-item">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4C14 4 6 8 6 14C6 18.4 9.6 22 14 22C18.4 22 22 18.4 22 14C22 8 14 4 14 4Z" stroke="#52B788" stroke-width="1.5"/><path d="M10 14L12 16L17 11" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <strong>Consommation d'eau ultra-réduite — sans alimentation en eau du réseau</strong>
-            <span>Seulement 1,2 L par chasse. Utilisez un seau, une bassine ou des eaux grises recyclées — aucune alimentation en eau pressurisée ni raccordement à l'eau nécessaire.</span>
+            <strong>Consommation d’eau ultra-faible — aucune arrivée d’eau requise</strong>
+            <span>Seulement 1,2 L par chasse. Utilisez un seau, une bassine ou des eaux grises recyclées — aucune alimentation en eau pressurisée ni raccordement requis.</span>
           </div>
           <div class="diff-item">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="6" y="8" width="16" height="14" rx="2" stroke="#52B788" stroke-width="1.5"/><path d="M6 12H22" stroke="#52B788" stroke-width="1.5"/><path d="M10 8V6C10 4.9 10.9 4 12 4H16C17.1 4 18 4.9 18 6V8" stroke="#52B788" stroke-width="1.5"/></svg>
-            <strong>Aucun réseau d'assainissement nécessaire</strong>
-            <span>Totalement autonome — aucun raccordement à l'assainissement municipal ni aux infrastructures de drainage nécessaire.</span>
+            <strong>Aucun réseau d’égouts requis</strong>
+            <span>Entièrement autonome — aucun raccordement aux égouts municipaux ou à un réseau de drainage n’est requis.</span>
           </div>
           <div class="diff-item">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="#52B788" stroke-width="1.5" stroke-dasharray="4 3"/><circle cx="14" cy="14" r="5" fill="rgba(82,183,136,0.2)" stroke="#52B788" stroke-width="1.5"/></svg>
             <strong>Traitement biologique contenu</strong>
-            <span>Tout le traitement biologique se déroule au sein de l'unité étanche — minimisant l'exposition environnementale et les odeurs.</span>
+            <span>Tout le traitement biologique a lieu à l’intérieur de l’unité étanche — minimisant l’exposition environnementale et les odeurs.</span>
           </div>
         </div>
 
@@ -1095,7 +1387,7 @@
         <div class="section-header fade-in">
           <span class="section-label">Applications</span>
           <h2 id="designed-heading">Conçu pour</h2>
-          <p>Trois contextes principaux où l'assainissement conventionnel échoue — et où les systèmes de bio-toilettes sont conçus pour fonctionner.</p>
+          <p>Trois contextes principaux où l’assainissement conventionnel échoue — et où les systèmes bio-toilette sont conçus pour fonctionner.</p>
         </div>
         <div class="designed-grid">
           <div class="designed-card fade-in fade-in-delay-1">
@@ -1105,7 +1397,7 @@
               </div>
               <h3>Communautés isolées &amp; rurales</h3>
             </div>
-            <p>Les communautés en périphérie péri-urbaine, en milieu rural et dans les régions sans infrastructure d'assainissement municipale peuvent accéder à un assainissement sûr et digne sans attendre un raccordement au réseau. Les systèmes sont configurés pour un déploiement à l'échelle communautaire avec plusieurs unités.</p>
+            <p>Les communautés en périphérie urbaine, zones rurales et régions sans infrastructure d’égouts municipaux peuvent accéder à un assainissement sûr et digne sans attendre le raccordement au réseau. Les systèmes sont configurés pour un déploiement à l’échelle communautaire avec plusieurs unités.</p>
           </div>
           <div class="designed-card fade-in fade-in-delay-2">
             <div class="designed-card-header">
@@ -1114,7 +1406,7 @@
               </div>
               <h3>Écotourisme &amp; réserves naturelles</h3>
             </div>
-            <p>Les sites de tourisme durable — réserves animalières, lodges en pleine nature, parcs nationaux et éco-resorts côtiers — bénéficient d'un assainissement qui ne compromet pas leurs références environnementales et ne perturbe pas les écosystèmes naturels avec des infrastructures.</p>
+            <p>Les sites de tourisme durable — réserves animalières, lodges en pleine nature, parcs nationaux et éco-resorts côtiers — bénéficient d’un assainissement qui ne compromet pas leurs credentials environnementaux et ne perturbe pas les écosystèmes naturels par des infrastructures.</p>
           </div>
           <div class="designed-card fade-in fade-in-delay-3">
             <div class="designed-card-header">
@@ -1123,7 +1415,7 @@
               </div>
               <h3>Installations temporaires &amp; mobiles</h3>
             </div>
-            <p>Les chantiers de construction, festivals en plein air, camps de réponse humanitaire et sites événementiels temporaires nécessitent un assainissement qui peut être déployé rapidement, exploité sans infrastructure et déplacé selon l'évolution des besoins.</p>
+            <p>Les chantiers de construction, festivals en plein air, camps de réponse humanitaire et lieux événementiels temporaires nécessitent un assainissement rapidement déployable, fonctionnant sans infrastructure et relocalisable selon les besoins.</p>
           </div>
         </div>
       </div>
@@ -1135,32 +1427,32 @@
         <div class="section-header fade-in">
           <span class="section-label">Impact environnemental</span>
           <h2 id="impact-heading">Conçu pour réduire la charge environnementale</h2>
-          <p>Nos systèmes sont conçus pour fournir des résultats environnementaux significatifs dans trois dimensions clés.</p>
+          <p>Nos systèmes sont conçus pour offrir des résultats environnementaux significatifs selon trois dimensions clés.</p>
         </div>
         <div class="impact-grid">
           <div class="impact-card fade-in fade-in-delay-1">
             <div class="impact-icon water" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3C14 3 7 9 7 15C7 18.9 10.1 22 14 22C17.9 22 21 18.9 21 15C21 9 14 3 14 3Z" stroke="#3B82F6" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 17C10.5 18.5 12 19.5 14 19.5" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
-            <h3>Conservation de l'eau</h3>
-            <p>Chaque unité est conçue pour éliminer entièrement la consommation d'eau de chasse. Dans les régions où l'eau est rare ou les'accès à l'eau difficiles, cela représente un avantage opérationnel et en ressources significatif.</p>
+            <h3>Conservation de l’eau</h3>
+            <p>Chaque unité est conçue pour éliminer entièrement la consommation d’eau de chasse. Dans les régions où l’eau est rare ou son accès difficile, cela représente un avantage opérationnel et ressource significatif.</p>
           </div>
           <div class="impact-card fade-in fade-in-delay-2">
             <div class="impact-icon emission" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 5C14 5 8 9 8 14C8 17.3 10.7 20 14 20C17.3 20 20 17.3 20 14C20 9 14 5 14 5Z" stroke="#52B788" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 20V24" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/><path d="M10 24H18" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
             <h3>Capture du méthane</h3>
-            <p>En capturant le méthane généré pendant la digestion anaérobie, nos systèmes préviennent sa libération atmosphérique directe — convertissant un puissant gaz à effet de serre en une source d'énergie contenue et potentiellement utilisable.</p>
+            <p>En capturant le méthane généré lors de la digestion anaérobie, nos systèmes empêchent sa libération atmosphérique directe — convertissant un gaz à effet de serre puissant en une source d’énergie contenue et potentiellement utilisable.</p>
           </div>
           <div class="impact-card fade-in fade-in-delay-3">
             <div class="impact-icon pathogen" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="8" stroke="#7F5539" stroke-width="1.5"/><path d="M10 14L12 16L17 11" stroke="#7F5539" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="6" r="2" stroke="#7F5539" stroke-width="1" opacity="0.5"/><circle cx="22" cy="8" r="1.5" stroke="#7F5539" stroke-width="1" opacity="0.4"/></svg>
             </div>
             <h3>Gestion des agents pathogènes</h3>
-            <p>La digestion anaérobie, lorsqu'elle est opérée sur une durée de rétention adéquate, est conçue pour obtenir des réductions significatives de la charge pathogène — diminuant les risques sanitaires publics associés à l'exposition aux déchets à l'air libre.</p>
+            <p>La digestion anaérobie, lorsqu’elle fonctionne sur une période de rétention adéquate, est conçue pour obtenir des réductions significatives de la charge pathogène — diminuant les risques sanitaires liés à l’exposition aux déchets à l’air libre.</p>
           </div>
         </div>
-        <p class="impact-note fade-in">Note : les résultats de performance sont décrits avec une formulation « conçu pour atteindre ». Les résultats réels dépendent du contexte d'installation, des schémas d'usage et de la maintenance. Les données de performance détaillées sont disponibles sur demande.</p>
+        <p class="impact-note fade-in">Remarque : les résultats de performance sont décrits en termes de « conçu pour atteindre ». Les résultats réels dépendent du contexte d’installation, des modes d’usage et de la maintenance. Des données de performance détaillées sont disponibles sur demande.</p>
       </div>
     </section>
 
@@ -1176,52 +1468,52 @@
 
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Comment fonctionne le système de bio-toilette ?<span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>La bio-toilette utilise seulement 1,2 L par chasse — environ 1/6 d'une toilette classique — pour acheminer les déchets via un tuyau étanche vers le Terra Digester. Les bactéries anaérobies décomposent les déchets sur 15 à 30 jours, produisant du biogaz pour la cuisson et du digestat liquide pour le sol. Aucun raccordement à l'assainissement ni à l'eau du réseau nécessaire.</p></div>
+            <div class="faq-a"><p>La bio-toilette n’utilise que 1,2 L par chasse — environ 1/6 d’une toilette classique — pour acheminer les déchets via une canalisation étanche vers le Terra Digester. Des bactéries anaérobies décomposent les déchets sur 15 à 30 jours, produisant du biogaz pour la cuisson et du digestat liquide pour le sol. Aucun raccordement aux égouts ni arrivée d’eau requis.</p></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Nécessite-t-il un raccordement à l'assainissement ?<span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>Non. Le système est entièrement autonome — aucun réseau d'assainissement municipal, fosse septique ou infrastructure de drainage nécessaire. Cela le rend idéal pour les sites hors réseau, les lodges d'écotourisme, les communautés isolées et les camps humanitaires.</p></div>
+            <button class="faq-q" aria-expanded="false">Nécessite-t-il un raccordement aux égouts ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Non. Le système est entièrement autonome — aucune infrastructure d’égouts municipaux, de fosse septique ou de drainage n’est requise. Il est ainsi idéal pour les sites hors réseau, lodges d’écotourisme, communautés isolées et camps humanitaires.</p></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Est-ce qu'il y a des odeurs ?<span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>Non. L'environnement étanche et sans oxygène élimine entièrement les odeurs. Contrairement aux toilettes à compost, il n'y a aucune odeur pendant le fonctionnement normal — rendant l'usage confortable en intérieur ou semi-extérieur. Toute odeur est un signe clair d'un problème d'étanchéité, facile à résoudre.</p></div>
+            <button class="faq-q" aria-expanded="false">Y a-t-il des odeurs ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Non. L’environnement étanche et exempt d’oxygène élimine totalement les odeurs. Contrairement aux toilettes à compostage, il n’y a aucune odeur en fonctionnement normal — ce qui le rend confortable pour un usage intérieur ou semi-intérieur. Toute odeur est un signe clair de problème d’étanchéité, facile à résoudre.</p></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Combien d'eau chaque chasse utilise-t-elle ?<span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>Seulement 1,2 litre par chasse — environ 1/6 des 6 à 13 L d'une toilette standard. Aucune alimentation en eau du réseau ou pressurisée n'est nécessaire : un seau, une bassine ou des eaux grises recyclées fonctionnent parfaitement. Une pompe à pied ou manuelle génère la pression de la chasse. Aucune électricité requise.</p></div>
+            <button class="faq-q" aria-expanded="false">Combien d’eau consomme chaque chasse ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Seulement 1,2 litre par chasse — environ 1/6 des 6 à 13 L d’une toilette classique. Aucune arrivée d’eau sous pression n’est nécessaire : un seau, une bassine ou des eaux grises recyclées fonctionnent parfaitement. Une pompe à pied ou à main génère la pression. Aucune électricité requise.</p></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">La toilette peut-elle être installée en intérieur ?<span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>Oui. L'unité de toilette peut être placée en intérieur tant que la conduite vers le digesteur extérieur fait environ 5 m au même niveau, ou jusqu'à 10 m si la toilette est surélevée de 1 m par rapport au digesteur. Une courte cheminée de ventilation (90 mm, max 2 m) évacue l'air résiduel.</p></div>
+            <button class="faq-q" aria-expanded="false">La toilette peut-elle être installée à l’intérieur ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Oui. L’unité de toilette peut être placée à l’intérieur tant que la canalisation vers le digesteur extérieur ne dépasse pas environ 5 m au même niveau, ou jusqu’à 10 m si la toilette est surélevée de 1 m au-dessus du digesteur. Une courte cheminée de ventilation (90 mm, max 2 m) évacue l’air résiduel.</p></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Puis-je utiliser du papier toilette ?<span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>Évitez les grandes quantités — elles ralentissent la digestion et peuvent obstruer l'entrée. Du papier fin non blanchi en petites quantités convient généralement. Nous recommandons de revoir votre installation spécifique avec nous pour trouver la meilleure configuration d'entrée.</p></div>
+            <button class="faq-q" aria-expanded="false">Peut-on utiliser du papier toilette ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Évitez les grandes quantités — cela ralentit la digestion et peut obstruer l’entrée. Du papier fin, non blanchi, en petites quantités convient généralement. Nous recommandons d’examiner votre installation spécifique avec nous pour trouver la meilleure configuration d’entrée.</p></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Quels produits de nettoyage sont sûrs ?<span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>Utilisez uniquement de l'eau, du vinaigre ou des nettoyants biologiques éco-certifiés. L'eau de Javel, les sprays antibactériens et les désinfectants chimiques tuent les bactéries anaérobies et arrêtent le processus. Gardez le nettoyage simple et naturel.</p></div>
+            <button class="faq-q" aria-expanded="false">Quels produits d’entretien sont sûrs ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Utilisez uniquement de l’eau, du vinaigre ou des nettoyants biologiques éco-certifiés. L’eau de javel, les sprays antibactériens et les désinfectants chimiques tuent les bactéries anaérobies et stoppent le processus. Gardez l’entretien simple et naturel.</p></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Que devient le digestat liquide produit ?<span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>Le digestat s'écoule en continu vers un bassin de paillage, un champ d'épuration, ou est géré selon les réglementations locales. Il soutient la santé du sol et réduit significativement les agents pathogènes grâce à la digestion anaérobie. Ne pas appliquer directement sur des plantes comestibles sans traitement supplémentaire ou avis local.</p></div>
+            <button class="faq-q" aria-expanded="false">Que devient le digestat liquide ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Le digestat s’écoule en continu vers un bassin de paillage, un champ de drainage, ou est géré selon la réglementation locale. Il favorise la santé du sol et réduit significativement les agents pathogènes par digestion anaérobie. Ne pas appliquer directement sur des plantes comestibles sans traitement supplémentaire ou avis local.</p></div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Quelle température nécessite-t-il ?<span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>Le système fonctionne à partir d'environ 5 °C (41 °F), bien que la production de biogaz soit optimale au-dessus de 21 °C (70 °F). Évitez les gels durs. Dans les régions plus froides, isoler la poche du digesteur et l'installer dans un endroit abrité maintient une performance stable toute l'année.</p></div>
+            <div class="faq-a"><p>Le système fonctionne à partir d’environ 5 °C (41 °F), bien que la production de biogaz soit optimale au-dessus de 21 °C (70 °F). Évitez les gels sévères. Dans les régions plus froides, isoler la poche du digesteur et la placer dans un endroit abrité maintient des performances stables toute l’année.</p></div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Est-il sûr et certifié ?<span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>Oui. Le biogaz est stocké à très basse pression, non comprimé — en cas de fuite, il monte et se disperse en toute sécurité vers le haut. La conception du système répond aux normes internationales de sécurité du biogaz. Toutes les installations sont complétées par une vérification de mise en service pour s'assurer que les joints et connexions sont pleinement sécurisés.</p></div>
+            <div class="faq-a"><p>Oui. Le biogaz est stocké à très basse pression, non comprimé — en cas de fuite, il monte et se disperse en toute sécurité vers le haut. La conception du système répond aux normes internationales de sécurité sur le biogaz. Chaque installation est finalisée par un contrôle de mise en service garantissant l’étanchéité des joints et raccordements.</p></div>
           </div>
 
         </div>
@@ -1231,9 +1523,9 @@
     <!-- CTA -->
     <section class="cta-section">
       <div class="container fade-in">
-        <span class="section-label" style="color:var(--primary-light);">Prendre contact</span>
-        <h2>Discuter d'une solution de bio-toilette</h2>
-        <p>Que ce soit pour une communauté isolée, un site d'écotourisme ou une installation temporaire — nous pouvons vous aider à concevoir l'approche d'assainissement adaptée.</p>
+        <span class="section-label" style="color:var(--primary-light);">Nous contacter</span>
+        <h2>Discuter d’une solution bio-toilette</h2>
+        <p>Que ce soit pour une communauté isolée, un site d’écotourisme ou une installation temporaire, nous pouvons vous aider à concevoir l’approche d’assainissement adaptée.</p>
         <a href="contact.html?interest=bio-toilet" class="btn btn-primary">Démarrer une conversation</a>
       </div>
     </section>
@@ -1244,15 +1536,15 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="nav-logo-text">Terra<span>Digester</span></span></a>
-          <p>Transformer les déchets en valeur. Systèmes pour un avenir circulaire.</p>
+          <a href="../index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="nav-logo-text">Terra<span>Digester</span></span></a>
+          <p>Du déchet à la valeur. Des systèmes pour un avenir circulaire.</p>
           <div class="location"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5C2.5 7.25 6 11 6 11C6 11 9.5 7.25 9.5 4.5C9.5 2.57 7.93 1 6 1Z" stroke="currentColor" stroke-width="1"/><circle cx="6" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1"/></svg> Bruxelles, Belgique</div>
         </div>
-        <div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a></li><li><a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a></li><li><a href="dairy-farmers-system.html">Système pour producteurs laitiers</a></li><li><a href="buy-carbon.html">Acheter du carbone</a></li><li><a href="technology.html">Technologie</a></li><li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de distribution</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col footer-contact"><h4>Contact</h4><p><a href="mailto:info@terradigester.com">info@terradigester.com</a></p><p>Bruxelles, Belgique<br>Union européenne</p></div>
-        <div class="footer-col footer-vision"><h4>Notre mission</h4><p><strong>Construire des systèmes circulaires</strong>« Construire des systèmes circulaires pour un avenir résilient — où les déchets organiques deviennent énergie propre, sol fertile et valeur climatique mesurable. »</p></div>
+        <div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="food-waste-systems.html">Systèmes de déchets alimentaires</a></li><li><a href="bio-toilet-solutions.html" class="active">Solutions de bio-toilettes</a></li><li><a href="dairy-farmers-system.html">Système pour exploitations laitières</a></li><li><a href="buy-carbon.html">Acheter du carbone</a></li><li><a href="technology.html">Technologie</a></li><li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col footer-contact"><h4>Contact</h4><p><a href="mailto:info@terradigester.com">info@terradigester.com</a></p><p>Bruxelles, Belgique<br>European Union</p></div>
+        <div class="footer-col footer-vision"><h4>Notre raison d’être</h4><p><strong>Construire des systèmes circulaires</strong>"Construire des systèmes circulaires for a resilient future — where organic waste becomes clean energy, fertile soil, and measurable climate value."</p></div>
       </div>
-      <div class="footer-bottom"><p>© 2026 Terra Digester. Tous droits réservés.</p><div style="display:flex;gap:1.5rem;"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms-of-use.html">Conditions d'utilisation</a></div></div>
+      <div class="footer-bottom"><p>© 2026 Terra Digester. Tous droits réservés.</p><div style="display:flex;gap:1.5rem;"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms-of-use.html">Conditions d’utilisation</a></div></div>
     </div>
   </footer>
 
@@ -1287,6 +1579,7 @@
     let bioTimer = null;
 
     function bioGoTo(n){
+      const prev = bioCurrent;
       bioCurrent = ((n % BIO_TOTAL) + BIO_TOTAL) % BIO_TOTAL;
 
       // Update panels
@@ -1327,7 +1620,7 @@
       const nextBtn = document.getElementById('bio-next-btn');
       if(prevBtn) prevBtn.disabled = bioCurrent === 0;
       if(nextBtn){
-        nextBtn.textContent = bioCurrent === BIO_TOTAL - 1 ? 'Recommencer ↺' : 'Étape suivante →';
+        nextBtn.textContent = bioCurrent === BIO_TOTAL - 1 ? 'Start Over ↺' : 'Next Step →';
       }
 
       // Restart auto-advance timer
@@ -1344,7 +1637,7 @@
     function bioStartTimer(){
       clearTimeout(bioTimer);
       bioTimer = setTimeout(()=>{
-        if(typeof bioSectionVisible !== 'undefined' && bioSectionVisible) bioNext();
+        if(bioSectionVisible) bioNext();
       }, 5500);
     }
 
@@ -1370,6 +1663,7 @@
     // Scroll-to-stepper helper (for overview card clicks)
     function bioGoToScroll(n){
       bioGoTo(n);
+      // Small delay so panel renders before scrolling
       setTimeout(()=>{
         const stepTrack = document.querySelector('.bio-step-track');
         if(stepTrack){
@@ -1379,6 +1673,7 @@
       }, 80);
     }
 
+    // Initialise
     bioGoTo(0);
   </script>
 

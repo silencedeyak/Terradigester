@@ -1,120 +1,111 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2352B788'/><path d='M16 4C16 4 8 8 8 14C8 17.3 10.7 20 16 20C19.3 20 22 17.3 22 14C22 8 16 4 16 4Z' stroke='%231B3A2D' stroke-width='1.5' fill='none'/></svg>" type="image/svg+xml">
-  <meta name="description" content="Terra Digester conçoit des systèmes biotechnologiques intégrés qui transforment les déchets organiques en biogaz, en énergie propre et en digestat riche en nutriments. Basé à Bruxelles, Belgique." />
-  <title>Accueil | Terra Digester — Systèmes de digestion anaérobie</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terra Digester — Des déchets à l'énergie | Biotechnologie pour l'économie circulaire</title>
+  <meta name="description" content="Terra Digester conçoit des systèmes modulaires de digestion anaérobie qui transforment les déchets organiques en biogaz, bio-engrais et compost — pour la maison, l'exploitation agricole et les communautés.">
+  <link rel="canonical" href="https://terradigester.com/fr/index.html">
+  <link rel="alternate" hreflang="en" href="https://terradigester.com/index.html">
+  <link rel="alternate" hreflang="fr" href="https://terradigester.com/fr/index.html">
+  <link rel="alternate" hreflang="de" href="https://terradigester.com/de/index.html">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
   <style>
     /* ============================================================
-       DESIGN TOKENS & RESET
+       DESIGN TOKENS
     ============================================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --primary-dark:  #1B3A2D;
-      --primary:       #2D6A4F;
-      --primary-light: #52B788;
-      --earth-brown:   #7F5539;
-      --earth-light:   #DDB892;
-      --neutral-900:   #1A1A1A;
-      --neutral-600:   #6B7280;
-      --neutral-200:   #E5E7EB;
-      --neutral-50:    #F9FAFB;
-      --white:         #FFFFFF;
-
-      --radius-sm:   8px;
-      --radius-md:   12px;
-      --radius-lg:   20px;
-      --transition:  all 0.3s ease;
-      --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
-      --shadow-md:   0 8px 25px rgba(0,0,0,0.10);
+      --primary-dark:   #1B3A2D;
+      --primary:        #2D6A4F;
+      --primary-light:  #52B788;
+      --earth-brown:    #7F5539;
+      --neutral-50:     #F8FAF9;
+      --neutral-100:    #EEF2F0;
+      --neutral-200:    #D8DFDC;
+      --neutral-600:    #6B7280;
+      --neutral-900:    #1F2937;
+      --white:          #FFFFFF;
+      --shadow-sm:      0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md:      0 6px 18px rgba(0,0,0,0.08);
+      --shadow-lg:      0 16px 40px rgba(0,0,0,0.10);
+      --radius-sm:      8px;
+      --radius-md:      12px;
+      --radius-lg:      20px;
+      --transition:     all 0.25s cubic-bezier(.25,.8,.25,1);
     }
 
-    html { scroll-behavior: smooth; }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      font-size: 1rem;
-      line-height: 1.7;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
       color: var(--neutral-900);
       background: var(--white);
       overflow-x: hidden;
     }
-
-    img { display: block; max-width: 100%; }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
+    h1, h2, h3, h4 { font-family: Georgia, 'Times New Roman', serif; font-weight: 700; line-height: 1.2; margin: 0 0 1rem; letter-spacing: -0.01em; }
+    h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); }
+    h2 { font-size: clamp(1.625rem, 3.2vw, 2.25rem); }
+    h3 { font-size: clamp(1.15rem, 1.6vw, 1.35rem); }
+    p  { margin: 0 0 1rem; }
+    a  { color: var(--primary); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--primary-light); }
+    img { max-width: 100%; height: auto; display: block; }
+    svg { display: inline-block; vertical-align: middle; }
+    ul { list-style: none; padding: 0; margin: 0; }
     .container {
-      width: 100%;
       max-width: 1200px;
       margin-inline: auto;
       padding-inline: clamp(1rem, 4vw, 2rem);
     }
 
     /* ============================================================
-       TYPOGRAPHY
-    ============================================================ */
-    h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; }
-    h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; line-height: 1.2; }
-    h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
-    p  { font-size: 1rem; line-height: 1.7; }
-
-    .text-small { font-size: 0.875rem; color: var(--neutral-600); }
-    .text-muted  { color: var(--neutral-600); }
-
-    /* ============================================================
        BUTTONS
     ============================================================ */
     .btn {
-      display: inline-block;
-      padding: 14px 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.5rem;
       border-radius: var(--radius-sm);
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: var(--transition);
+      font-size: 0.95rem;
+      font-weight: 600;
       text-decoration: none;
-      line-height: 1;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
     }
     .btn-primary {
       background: var(--primary);
       color: var(--white);
-      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(45,106,79,0.25);
     }
     .btn-primary:hover {
       background: var(--primary-dark);
-      border-color: var(--primary-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(45,106,79,0.35);
-      text-decoration: none;
       color: var(--white);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(45,106,79,0.35);
     }
     .btn-outline {
       background: transparent;
-      color: var(--white);
-      border-color: rgba(255,255,255,0.7);
+      color: var(--primary);
+      border: 2px solid var(--primary);
     }
     .btn-outline:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: var(--white);
-      transform: translateY(-1px);
-      text-decoration: none;
+      background: var(--primary);
       color: var(--white);
     }
     .btn-outline-green {
       background: transparent;
-      color: var(--primary);
-      border-color: var(--primary);
+      color: var(--primary-dark);
+      border: 2px solid var(--primary-light);
     }
     .btn-outline-green:hover {
-      background: var(--primary);
+      background: var(--primary-light);
       color: var(--white);
-      transform: translateY(-1px);
-      text-decoration: none;
+      border-color: var(--primary-light);
     }
 
     /* ============================================================
@@ -122,55 +113,36 @@
     ============================================================ */
     .card {
       background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 2rem;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
       border: 1px solid var(--neutral-200);
-    }
-    .card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      transition: var(--transition);
     }
 
     /* ============================================================
-       SECTION WRAPPER
+       SECTION WRAPPERS
     ============================================================ */
-    .section {
-      padding-block: clamp(4rem, 8vw, 8rem);
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .section-header p {
-      max-width: 640px;
-      margin-inline: auto;
-      margin-top: 1rem;
-      color: var(--neutral-600);
-    }
+    .section { padding-block: clamp(4rem, 9vw, 6.5rem); }
+    .section-header { max-width: 720px; margin-inline: auto; text-align: center; margin-bottom: 3rem; }
     .section-label {
       display: inline-block;
       font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--primary-light);
+      color: var(--primary);
       margin-bottom: 0.75rem;
     }
 
     /* ============================================================
-       FADE-IN ANIMATION (IntersectionObserver)
+       FADE-IN ANIMATION
     ============================================================ */
     .fade-in {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
     .fade-in-delay-1 { transition-delay: 0.1s; }
     .fade-in-delay-2 { transition-delay: 0.2s; }
     .fade-in-delay-3 { transition-delay: 0.3s; }
@@ -184,711 +156,554 @@
       top: 0; left: 0; right: 0;
       z-index: 1000;
       background: rgba(27, 58, 45, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       transition: var(--transition);
     }
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
-      gap: 2rem;
+      height: 70px;
     }
     .nav-logo {
       display: flex;
       align-items: center;
       gap: 0.6rem;
+      color: var(--white);
       text-decoration: none;
-      flex-shrink: 0;
+      font-weight: 600;
     }
+    .nav-logo:hover { color: var(--white); }
     .nav-logo-mark {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      background: var(--primary-light);
-      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm);
     }
     .nav-logo-text {
+      font-family: Georgia, serif;
       font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--white);
       letter-spacing: -0.01em;
     }
-    .nav-logo-text span { color: var(--primary-light); }
-
+    .nav-logo-text span { color: var(--primary-light); font-weight: 700; }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 0.25rem;
-      list-style: none;
+      gap: 1.5rem;
     }
     .nav-links a {
-      display: block;
-      padding: 8px 14px;
       color: rgba(255,255,255,0.85);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       font-weight: 500;
-      border-radius: 6px;
-      transition: var(--transition);
       text-decoration: none;
+      padding: 0.4rem 0;
+      transition: var(--transition);
     }
-    .nav-links a:hover,
-    .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.1); }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary-light); }
+    .nav-links a.active { font-weight: 600; }
 
     /* Dropdown */
     .nav-dropdown { position: relative; }
-    .nav-dropdown > a::after {
-      content: ' ▾';
-      font-size: 0.75rem;
-      opacity: 0.7;
+    .nav-dropdown > a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      cursor: pointer;
     }
     .dropdown-menu {
-      display: none;
       position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      background: var(--primary-dark);
-      border-radius: var(--radius-sm);
-      min-width: 220px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      border: 1px solid rgba(255,255,255,0.1);
-      z-index: 100;
+      top: 100%;
+      left: -1rem;
+      margin-top: 0.4rem;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      min-width: 240px;
+      padding: 0.6rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
     }
+    .dropdown-menu.open { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-menu a {
-      padding: 10px 18px;
       display: block;
-      color: rgba(255,255,255,0.85);
-      font-size: 0.875rem;
-      font-weight: 400;
+      padding: 0.65rem 1.25rem;
+      color: var(--neutral-900);
+      font-size: 0.9rem;
       border-radius: 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      transition: var(--transition);
     }
-    .dropdown-menu a:last-child { border-bottom: none; }
-    .dropdown-menu a:hover { background: rgba(82,183,136,0.2); color: var(--white); }
-    .dropdown-menu.open { display: block; }
-
+    .dropdown-menu a:hover {
+      background: var(--neutral-50);
+      color: var(--primary);
+    }
     .nav-cta {
-      background: var(--primary-light) !important;
-      color: var(--primary-dark) !important;
-      font-weight: 600 !important;
-      padding: 8px 18px !important;
-    }
-    .nav-cta:hover { background: var(--white) !important; }
-
-    /* Language switcher */
-    .lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      margin-left: 0.5rem;
-      padding-left: 0.75rem;
-      border-left: 1px solid rgba(255,255,255,0.15);
-    }
-    .lang-switcher a {
-      display: block;
-      padding: 6px 8px;
-      color: rgba(255,255,255,0.55);
-      font-size: 0.78rem;
+      padding: 0.55rem 1.2rem !important;
+      background: var(--primary-light);
+      color: var(--white) !important;
+      border-radius: var(--radius-sm);
       font-weight: 600;
-      letter-spacing: 0.05em;
-      border-radius: 4px;
-      transition: var(--transition);
-      text-decoration: none;
     }
-    .lang-switcher a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
-    .lang-switcher a.active { color: var(--primary-light); background: rgba(82,183,136,0.15); }
+    .nav-cta:hover { background: var(--primary) !important; color: var(--white) !important; }
 
-    /* Mobile nav */
+    /* Mobile toggle */
     .nav-mobile-toggle {
       display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
       background: none;
       border: none;
-      padding: 4px;
-      aria-label: "Basculer la navigation";
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
     }
     .nav-mobile-toggle span {
       display: block;
-      width: 24px; height: 2px;
+      width: 24px;
+      height: 2px;
       background: var(--white);
-      border-radius: 2px;
       transition: var(--transition);
     }
     .mobile-nav-overlay {
-      display: none;
       position: fixed;
       inset: 0;
       background: var(--primary-dark);
-      z-index: 999;
-      padding: 2rem;
-      flex-direction: column;
-      gap: 1rem;
+      z-index: 1100;
+      padding: 5rem 2rem 2rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
       overflow-y: auto;
     }
-    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-overlay.open { transform: translateX(0); }
     .mobile-nav-close {
-      align-self: flex-end;
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
       background: none;
       border: none;
       color: var(--white);
       font-size: 1.75rem;
       cursor: pointer;
+      padding: 0.5rem;
       line-height: 1;
     }
-    .mobile-nav-links { display: flex; flex-direction: column; gap: 0.25rem; margin-top: 1rem; }
-    .mobile-nav-links a {
-      color: rgba(255,255,255,0.9);
-      font-size: 1.1rem;
-      font-weight: 500;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      text-decoration: none;
-    }
-    .mobile-nav-links a:hover { color: var(--primary-light); }
-    .mobile-nav-links .sub-link {
-      padding-left: 1.25rem;
-      font-size: 1rem;
-      color: rgba(255,255,255,0.7);
-    }
-    .mobile-lang-switcher {
+    .mobile-nav-links {
       display: flex;
+      flex-direction: column;
       gap: 1rem;
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
     }
-    .mobile-lang-switcher a {
-      color: rgba(255,255,255,0.7);
+    .mobile-nav-links a {
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-nav-links a.sub-link {
+      padding-left: 1.25rem;
       font-size: 0.95rem;
-      font-weight: 600;
-      padding: 8px 14px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 6px;
-    }
-    .mobile-lang-switcher a.active {
-      color: var(--primary-dark);
-      background: var(--primary-light);
-      border-color: var(--primary-light);
-    }
-
-    @media (max-width: 1024px) {
-      .nav-links { display: none; }
-      .nav-mobile-toggle { display: flex; }
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
     }
 
     /* ============================================================
-       HERO SECTION — SPLIT TWO-COLUMN WITH PRODUCT PHOTO
+       HERO SECTION
     ============================================================ */
     .hero {
-      min-height: 100vh;
       position: relative;
+      min-height: 100vh;
       display: flex;
       align-items: center;
+      padding-top: 90px;
+      padding-bottom: 5rem;
       overflow: hidden;
       background:
-        radial-gradient(ellipse 70% 80% at 0% 50%,  rgba(45,106,79,0.50) 0%, transparent 65%),
-        radial-gradient(ellipse 55% 70% at 100% 10%, rgba(27,58,45,0.65) 0%, transparent 60%),
-        radial-gradient(ellipse 80% 60% at 60% 100%, rgba(82,183,136,0.07) 0%, transparent 55%),
-        linear-gradient(135deg, #0d2219 0%, #1B3A2D 45%, #142d22 100%);
+        radial-gradient(ellipse at 20% 25%, rgba(82,183,136,0.22) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(45,106,79,0.28) 0%, transparent 55%),
+        linear-gradient(135deg, #0F2418 0%, #1B3A2D 60%, #2D6A4F 100%);
+      color: var(--white);
     }
-
-    /* ── Atmospheric noise layer ── */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(circle at 15% 85%, rgba(82,183,136,0.12) 0%, transparent 35%),
-        radial-gradient(circle at 85% 15%, rgba(127,85,57,0.08) 0%, transparent 30%);
+        radial-gradient(circle at 25% 35%, rgba(255,255,255,0.04) 1px, transparent 1px),
+        radial-gradient(circle at 75% 65%, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px, 80px 80px;
       pointer-events: none;
-      z-index: 1;
+      opacity: 0.7;
     }
 
-    /* ── Decorative SVG orbit rings ── */
+    /* Decorative orbit SVG rings */
     .hero-deco {
       position: absolute;
       inset: 0;
       pointer-events: none;
-      overflow: hidden;
-      z-index: 1;
+      opacity: 0.6;
     }
     .hero-deco svg { position: absolute; }
-    .hero-deco svg.circle-1 {
-      top: 5%; right: -60px; width: 500px;
-      opacity: 0.05;
+    .hero-deco .circle-1 {
+      width: 480px; height: 480px;
+      top: -120px; right: -160px;
       animation: rotateSlow 60s linear infinite;
     }
-    .hero-deco svg.circle-2 {
-      bottom: -40px; left: -100px; width: 380px;
-      opacity: 0.04;
+    .hero-deco .circle-2 {
+      width: 360px; height: 360px;
+      bottom: -120px; left: -100px;
       animation: rotateSlow 80s linear infinite reverse;
     }
-    .hero-deco svg.circle-3 {
-      top: 40%; left: 40%; width: 220px;
-      opacity: 0.035;
-      animation: rotateSlow 45s linear infinite;
+    .hero-deco .circle-3 {
+      width: 240px; height: 240px;
+      top: 30%; left: 8%;
+      animation: rotateSlow 100s linear infinite;
+    }
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
     }
 
-    @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-    /* ── Two-column grid ── */
     .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 4rem;
+      align-items: center;
       position: relative;
       z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(3rem, 6vw, 6rem);
-      align-items: center;
-      padding-top: clamp(6rem, 10vw, 9rem);
-      padding-bottom: clamp(5rem, 8vw, 8rem);
-      width: 100%;
     }
-
-    /* ── LEFT — Text column ── */
-    .hero-text { display: flex; flex-direction: column; align-items: flex-start; }
-
+    .hero-text { animation: fadeSlideUp 0.9s ease 0.2s both; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
       background: rgba(82,183,136,0.15);
-      border: 1px solid rgba(82,183,136,0.3);
-      color: var(--primary-light);
+      border: 1px solid rgba(82,183,136,0.4);
+      border-radius: 100px;
       font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 100px;
-      margin-bottom: 1.75rem;
-      animation: fadeSlideUp 0.7s ease both;
+      letter-spacing: 0.04em;
+      color: var(--primary-light);
+      margin-bottom: 1.5rem;
     }
-    .hero-badge svg { flex-shrink: 0; }
-
     .hero h1 {
       color: var(--white);
-      max-width: 600px;
-      margin-bottom: 1.5rem;
-      animation: fadeSlideUp 0.7s 0.15s ease both;
+      font-size: clamp(2.25rem, 5.2vw, 3.75rem);
+      margin-bottom: 1.25rem;
+      line-height: 1.1;
     }
-    .hero h1 em { font-style: normal; color: var(--primary-light); }
-
+    .hero h1 em {
+      color: var(--primary-light);
+      font-style: normal;
+      position: relative;
+    }
     .hero-sub {
-      color: rgba(255,255,255,0.72);
-      font-size: clamp(1rem, 1.6vw, 1.2rem);
-      max-width: 500px;
-      margin-bottom: 2.5rem;
-      line-height: 1.75;
-      animation: fadeSlideUp 0.7s 0.3s ease both;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      color: rgba(255,255,255,0.85);
+      max-width: 540px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
     }
-
     .hero-ctas {
       display: flex;
-      flex-wrap: wrap;
       gap: 1rem;
-      align-items: center;
-      animation: fadeSlideUp 0.7s 0.45s ease both;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
     }
-
-    /* ── Hero stat chips (beneath CTAs) ── */
     .hero-stats {
       display: flex;
+      align-items: center;
+      gap: 1rem;
       flex-wrap: wrap;
-      gap: 1.25rem;
-      margin-top: 2.5rem;
-      animation: fadeSlideUp 0.7s 0.6s ease both;
     }
     .hero-stat {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 0.15rem;
     }
     .hero-stat .stat-val {
-      font-size: 1.4rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--primary-light);
-      line-height: 1;
+      letter-spacing: -0.01em;
     }
     .hero-stat .stat-lbl {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.45);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.65);
     }
     .hero-stat-divider {
       width: 1px;
-      height: 40px;
-      background: rgba(255,255,255,0.12);
-      align-self: center;
+      height: 34px;
+      background: rgba(255,255,255,0.2);
     }
 
-    /* ── RIGHT — Product visual column ── */
+    /* Hero visual / product photo */
     .hero-visual {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: fadeSlideRight 0.9s 0.2s ease both;
+      animation: fadeSlideRight 1s ease 0.4s both;
     }
-
-    /* Outer glow halo */
     .hero-visual::before {
       content: '';
       position: absolute;
-      width: 88%;
-      height: 88%;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(82,183,136,0.22) 0%, transparent 72%);
-      filter: blur(40px);
-      animation: glowPulse 4s ease-in-out infinite;
-      z-index: 0;
+      inset: -20px;
+      background: radial-gradient(circle at center, rgba(82,183,136,0.25) 0%, transparent 60%);
+      z-index: -1;
     }
-
-    @keyframes glowPulse {
-      0%, 100% { transform: scale(1);   opacity: 0.7; }
-      50%       { transform: scale(1.12); opacity: 1;   }
-    }
-
-    /* Spinning orbit ring */
     .hero-orbit {
       position: absolute;
-      width: 105%;
-      height: 105%;
+      inset: -50px;
+      border: 1px dashed rgba(82,183,136,0.35);
       border-radius: 50%;
-      border: 1.5px solid rgba(82,183,136,0.18);
-      border-top-color: rgba(82,183,136,0.55);
-      border-left-color: rgba(82,183,136,0.35);
-      animation: orbitSpin 12s linear infinite;
-      z-index: 1;
+      animation: orbitSpin 30s linear infinite;
+      z-index: 0;
     }
     .hero-orbit-2 {
       position: absolute;
-      width: 118%;
-      height: 118%;
+      inset: 30px;
+      border: 1px dashed rgba(82,183,136,0.25);
       border-radius: 50%;
-      border: 1px solid rgba(82,183,136,0.1);
-      border-bottom-color: rgba(82,183,136,0.35);
-      border-right-color: rgba(82,183,136,0.2);
-      animation: orbitSpin 20s linear infinite reverse;
-      z-index: 1;
+      animation: orbitSpin 50s linear infinite reverse;
+      z-index: 0;
     }
-    @keyframes orbitSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-    /* Orbit dots */
+    @keyframes orbitSpin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
     .orbit-dot {
       position: absolute;
-      width: 8px; height: 8px;
-      border-radius: 50%;
+      width: 10px; height: 10px;
       background: var(--primary-light);
-      box-shadow: 0 0 12px rgba(82,183,136,0.8);
-      z-index: 3;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(82,183,136,0.7);
     }
-    /* placed on the orbit ring via transform-origin */
-    .orbit-dot-1 { top: -4px; left: calc(50% - 4px); }
-    .orbit-dot-2 { bottom: -4px; right: calc(50% - 4px); }
-    .orbit-dot-3 { top: calc(50% - 4px); right: -4px; width: 6px; height: 6px; opacity: 0.6; }
+    .orbit-dot-1 { top: 8%;  left: 50%; transform: translateX(-50%); }
+    .orbit-dot-2 { top: 92%; left: 50%; transform: translateX(-50%); }
+    .orbit-dot-3 { top: 50%; right: 8%; transform: translate(50%, -50%); }
 
-    /* Product image wrapper — floating
-       The Terra Digester product photo has a white studio background.
-       We use mix-blend-mode: multiply so the white disappears into the
-       dark hero background, leaving only the product visible.
-    */
     .hero-product-wrap {
       position: relative;
-      z-index: 2;
-      width: clamp(280px, 42vw, 560px);
-      aspect-ratio: 4 / 3;         /* landscape product shot ratio */
-      border-radius: 28px;
-      overflow: visible;            /* allow glow to bleed out */
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(82,183,136,0.25);
       animation: heroFloat 6s ease-in-out infinite;
-      background: transparent;      /* no background — white removed via blend */
-      filter: drop-shadow(0 28px 55px rgba(0,0,0,0.7))
-              drop-shadow(0 0 60px rgba(82,183,136,0.22));
+      aspect-ratio: 4 / 5;
+      mix-blend-mode: multiply;
     }
-
     @keyframes heroFloat {
-      0%, 100% { transform: translateY(0px)   rotate(0.3deg); }
-      33%       { transform: translateY(-14px) rotate(-0.3deg); }
-      66%       { transform: translateY(-7px)  rotate(0.5deg); }
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-10px); }
     }
-
-    /* Actual product image */
     .hero-product-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;          /* show full product, no crop */
-      object-position: center;
+      width: 100%; height: 100%;
+      object-fit: cover;
       display: block;
-      border-radius: 20px;
-      mix-blend-mode: multiply;     /* removes white background */
-      transition: transform 0.6s ease, filter 0.4s ease;
     }
-    .hero-product-wrap:hover .hero-product-img {
-      transform: scale(1.05);
-      filter: brightness(1.08);
-    }
-
-    /* Subtle gradient overlay (bottom) for label chip */
     .hero-product-overlay {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        transparent 60%,
-        rgba(13,33,24,0.65) 100%
-      );
-      z-index: 1;
-      border-radius: 20px;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(15,36,24,0.85) 0%, transparent 100%);
       pointer-events: none;
     }
-
-    /* Label chip inside the image */
     .hero-product-label {
       position: absolute;
-      bottom: -1.5rem;             /* float just below the product image */
-      left: 50%;
-      transform: translateX(-50%);
-      width: max-content;
-      max-width: 90%;
-      z-index: 4;
+      bottom: 1.25rem;
+      left: 1.25rem;
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      background: rgba(27,58,45,0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(82,183,136,0.3);
-      border-radius: 12px;
-      padding: 10px 14px;
+      padding: 0.55rem 1rem;
+      background: rgba(15,36,24,0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(82,183,136,0.4);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      color: var(--white);
     }
     .hero-product-label-dot {
       width: 8px; height: 8px;
+      background: var(--primary-light);
       border-radius: 50%;
-      background: #4ade80;
-      box-shadow: 0 0 8px rgba(74,222,128,0.8);
-      animation: dotPulse 2s ease-in-out infinite;
-      flex-shrink: 0;
+      box-shadow: 0 0 8px var(--primary-light);
+      animation: pulse 2s ease-in-out infinite;
     }
-    @keyframes dotPulse {
-      0%, 100% { box-shadow: 0 0 8px rgba(74,222,128,0.7); }
-      50%       { box-shadow: 0 0 18px rgba(74,222,128,1); }
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50%     { opacity: 0.4; }
     }
     .hero-product-label-text {
-      font-size: 0.78rem;
+      display: block;
       font-weight: 600;
-      color: rgba(255,255,255,0.9);
       letter-spacing: 0.02em;
     }
     .hero-product-label-sub {
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.45);
       display: block;
-      font-weight: 400;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.7);
     }
 
-    /* Floating spec badges around the product image */
+    /* Hero spec badges (floating around image) */
     .hero-spec-badge {
       position: absolute;
-      z-index: 4;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      background: rgba(27,58,45,0.82);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(82,183,136,0.28);
-      border-radius: 50px;
-      padding: 8px 14px;
-      font-size: 0.75rem;
+      gap: 0.4rem;
+      padding: 0.4rem 0.85rem;
+      background: rgba(255,255,255,0.92);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
       font-weight: 600;
-      color: rgba(255,255,255,0.88);
-      white-space: nowrap;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      border-radius: 100px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      backdrop-filter: blur(6px);
+      z-index: 2;
     }
-    .hero-spec-badge svg { flex-shrink: 0; color: var(--primary-light); }
-    .hero-spec-badge.badge-top-left {
-      top: 8%;
-      left: -5%;
-      animation: badgeFloat1 5s ease-in-out infinite;
-    }
-    .hero-spec-badge.badge-top-right {
-      top: 22%;
-      right: -8%;
-      animation: badgeFloat2 6s 0.5s ease-in-out infinite;
-    }
-    .hero-spec-badge.badge-bottom-left {
-      bottom: 20%;
-      left: -8%;
-      animation: badgeFloat3 5.5s 1s ease-in-out infinite;
-    }
-
+    .badge-top-left    { top: 8%;  left: -10px; animation: badgeFloat1 5s ease-in-out infinite; }
+    .badge-top-right   { top: 18%; right: -20px; animation: badgeFloat2 6s ease-in-out infinite; }
+    .badge-bottom-left { bottom: 20%; left: -15px; animation: badgeFloat3 7s ease-in-out infinite; }
     @keyframes badgeFloat1 {
-      0%, 100% { transform: translateY(0px);   }
-      50%       { transform: translateY(-8px);  }
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-6px); }
     }
     @keyframes badgeFloat2 {
-      0%, 100% { transform: translateY(0px);   }
-      50%       { transform: translateY(-10px); }
+      0%,100% { transform: translateY(0) translateX(0); }
+      50%     { transform: translateY(-4px) translateX(4px); }
     }
     @keyframes badgeFloat3 {
-      0%, 100% { transform: translateY(0px);  }
-      50%       { transform: translateY(-6px); }
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(5px); }
     }
 
-    /* Entry animations */
     @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0);    }
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeSlideRight {
       from { opacity: 0; transform: translateX(40px); }
-      to   { opacity: 1; transform: translateX(0);    }
+      to   { opacity: 1; transform: translateX(0); }
     }
 
-    /* Scroll indicator */
+    /* Scroll cue */
     .scroll-indicator {
       position: absolute;
-      bottom: 2rem;
+      bottom: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 3;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-    }
-    .scroll-indicator span {
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.35);
-      letter-spacing: 0.12em;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      z-index: 3;
     }
     .scroll-chevron {
-      width: 22px; height: 22px;
-      border-right: 2px solid rgba(255,255,255,0.3);
-      border-bottom: 2px solid rgba(255,255,255,0.3);
+      width: 1.5rem;
+      height: 1.5rem;
+      border-bottom: 1.5px solid rgba(255,255,255,0.6);
+      border-right: 1.5px solid rgba(255,255,255,0.6);
       transform: rotate(45deg);
       animation: chevronBounce 1.8s ease-in-out infinite;
     }
     @keyframes chevronBounce {
-      0%, 100% { transform: rotate(45deg) translateY(0);   opacity: 0.35; }
-      50%       { transform: rotate(45deg) translateY(6px); opacity: 0.9;  }
+      0%,100% { transform: rotate(45deg) translate(0, 0); opacity: 0.6; }
+      50%     { transform: rotate(45deg) translate(4px, 4px); opacity: 1; }
     }
 
-    /* ── Responsive hero ── */
+    /* Responsive */
     @media (max-width: 1024px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 4rem; padding-top: 8rem; padding-bottom: 5rem; }
-      .hero-visual { justify-content: center; padding-bottom: 2rem; }
-      .hero-product-wrap { width: clamp(280px, 72vw, 520px); }
-      .hero-spec-badge.badge-top-left  { left: 0; }
-      .hero-spec-badge.badge-top-right { right: 0; }
-      .hero-spec-badge.badge-bottom-left { left: 0; }
-      .hero h1 { max-width: 100%; }
-      .hero-sub { max-width: 100%; }
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-deco .circle-3 { display: none; }
     }
     @media (max-width: 768px) {
-      .hero-product-wrap { width: clamp(260px, 88vw, 420px); }
-      .hero-spec-badge { display: none; }
-      .hero-stats { gap: 1rem; }
-    }
-    @media (max-width: 375px) {
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: flex; }
+      .hero { min-height: auto; padding-top: 100px; padding-bottom: 3rem; }
+      .hero-deco .circle-1 { width: 300px; height: 300px; }
+      .hero-deco .circle-2 { width: 220px; height: 220px; }
       .hero-ctas { flex-direction: column; }
-      .hero-ctas .btn { width: 100%; text-align: center; }
-      .hero-stats { flex-direction: column; gap: 0.75rem; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .badge-top-left  { left:  0;  }
+      .badge-top-right { right: 0;  }
+      .badge-bottom-left { left: 0; }
+    }
+    @media (max-width: 480px) {
+      .hero-stats { gap: 0.5rem; }
       .hero-stat-divider { display: none; }
     }
 
-    /* ── CSS Fallback visual when product image is absent ── */
+    /* Hero product fallback (no image) */
     .hero-product-fallback {
-      display: none;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(160deg, #1a3d2e 0%, #0d2118 60%, #152b1e 100%);
-      position: relative;
-    }
-    /* Show fallback only when image errors */
-    .hero-product-wrap.no-image .hero-product-fallback {
-      display: block;
-    }
-    .hero-product-fallback::before {
-      content: '';
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 50% at 50% 35%, rgba(82,183,136,0.2) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 70% 70%, rgba(45,106,79,0.15) 0%, transparent 50%);
+        linear-gradient(135deg, #0F2418 0%, #2D6A4F 60%, #52B788 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: -1;
     }
-    /* Stylised device outline as fallback */
     .hero-product-fallback::after {
       content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -55%);
-      width: 140px; height: 190px;
-      border: 2px solid rgba(82,183,136,0.4);
-      border-radius: 20px;
-      box-shadow:
-        0 0 40px rgba(82,183,136,0.15),
-        inset 0 0 30px rgba(82,183,136,0.05);
-      background: linear-gradient(180deg, rgba(82,183,136,0.07) 0%, transparent 100%);
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(82,183,136,0.4) 0%, transparent 70%);
     }
 
     /* ============================================================
        MISSION SECTION
     ============================================================ */
     .mission-section {
-      background: var(--white);
-      padding-block: clamp(4rem, 8vw, 7rem);
-      text-align: center;
+      padding-block: clamp(3rem, 6vw, 4.5rem);
+      background: var(--neutral-50);
+      border-bottom: 1px solid var(--neutral-200);
     }
     .mission-text {
-      max-width: 800px;
+      max-width: 880px;
       margin-inline: auto;
-      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
-      line-height: 1.75;
-      color: var(--neutral-900);
-      font-weight: 400;
+      text-align: center;
+      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+      color: var(--neutral-600);
+      line-height: 1.8;
     }
-    .mission-text strong { color: var(--primary); font-weight: 600; }
+    .mission-text strong { color: var(--primary-dark); font-weight: 600; }
 
     /* ============================================================
        SOLUTIONS GRID
     ============================================================ */
-    .solutions-section {
-      background: var(--neutral-50);
-    }
+    .solutions-section { background: var(--white); }
     .solutions-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
     .solution-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 2rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--neutral-200);
-      transition: var(--transition);
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
     }
     .solution-card:hover {
-      box-shadow: var(--shadow-md);
       transform: translateY(-4px);
-      border-color: rgba(82,183,136,0.3);
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-md);
     }
     .solution-icon {
-      width: 56px; height: 56px;
-      background: linear-gradient(135deg, rgba(82,183,136,0.15) 0%, rgba(45,106,79,0.1) 100%);
-      border-radius: 12px;
+      width: 52px;
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      background: rgba(82,183,136,0.12);
+      border-radius: var(--radius-md);
     }
     .solution-icon svg { color: var(--primary); }
     .solution-card h3 { color: var(--neutral-900); }
@@ -1040,89 +855,73 @@
     }
     .flow-step-box {
       flex: 1;
-      padding: 0.875rem 1.25rem;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
     }
-    .economy-column.linear .flow-step-box {
-      background: var(--white);
-      border: 1px solid var(--neutral-200);
+    .linear .flow-step-box {
+      background: var(--neutral-200);
       color: var(--neutral-600);
     }
-    .economy-column.circular .flow-step-box {
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(82,183,136,0.3);
+    .circular .flow-step-box {
+      background: rgba(82,183,136,0.15);
       color: var(--primary-dark);
     }
     .flow-arrow {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 28px;
-      color: var(--neutral-400);
+      padding: 4px 0;
     }
+    .flow-arrow svg { opacity: 0.4; }
+    .linear .flow-arrow svg { color: var(--neutral-600); }
+    .circular .flow-arrow svg { color: var(--primary); opacity: 0.7; }
+
     .flow-endpoint {
-      margin-top: 1rem;
+      margin-top: 1.25rem;
       padding: 0.75rem 1rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.85rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
       font-weight: 600;
       text-align: center;
     }
-    .economy-column.linear .flow-endpoint {
-      background: rgba(127,85,57,0.08);
-      border: 1px solid rgba(127,85,57,0.2);
+    .linear .flow-endpoint {
+      background: rgba(127,85,57,0.1);
       color: var(--earth-brown);
+      border: 1px solid rgba(127,85,57,0.2);
     }
-    .economy-column.circular .flow-endpoint {
-      background: rgba(45,106,79,0.08);
+    .circular .flow-endpoint {
+      background: rgba(45,106,79,0.1);
+      color: var(--primary);
       border: 1px solid rgba(45,106,79,0.2);
-      color: var(--primary-dark);
     }
 
     .circular-quote {
-      max-width: 820px;
-      margin-inline: auto;
       text-align: center;
-      padding: 2rem;
-      background: var(--neutral-50);
-      border-left: 4px solid var(--primary-light);
-      border-radius: var(--radius-md);
-    }
-    .circular-quote strong {
-      display: block;
-      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
-      color: var(--primary-dark);
-      font-weight: 600;
-      line-height: 1.4;
-      margin-bottom: 0.5rem;
-    }
-    .circular-quote {
-      font-size: 0.95rem;
+      max-width: 760px;
+      margin-inline: auto;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
       color: var(--neutral-600);
-      line-height: 1.7;
+      font-style: italic;
+      line-height: 1.8;
+      padding-top: 2rem;
+      border-top: 1px solid var(--neutral-200);
     }
+    .circular-quote strong { color: var(--neutral-900); font-style: normal; font-weight: 600; }
 
     /* ============================================================
-       TRANSPARENCY SECTION
+       TRANSPARENCY BANNER
     ============================================================ */
     .transparency-section {
-      background: linear-gradient(135deg, rgba(45,106,79,0.04), rgba(82,183,136,0.06));
+      background: var(--neutral-50);
       border-top: 1px solid var(--neutral-200);
       border-bottom: 1px solid var(--neutral-200);
     }
     .transparency-inner {
-      max-width: 820px;
+      max-width: 780px;
       margin-inline: auto;
       text-align: center;
-    }
-    .transparency-inner h2 { margin-bottom: 1.25rem; }
-    .transparency-inner p {
-      font-size: clamp(1rem, 1.6vw, 1.15rem);
-      color: var(--neutral-600);
-      line-height: 1.8;
     }
     .transparency-dot {
       display: inline-block;
@@ -1130,8 +929,16 @@
       border-radius: 50%;
       background: var(--primary-light);
       margin-right: 0.5rem;
-      animation: dotPulse 2s ease-in-out infinite;
-      vertical-align: middle;
+    }
+    .transparency-inner h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+    }
+    .transparency-inner p {
+      color: var(--neutral-600);
+      font-size: 1.05rem;
+      line-height: 1.8;
     }
 
     /* ============================================================
@@ -1144,7 +951,7 @@
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1.5fr 1fr 2fr;
+      grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
       gap: 3rem;
       padding-bottom: 3rem;
       border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -1236,7 +1043,7 @@
   ============================================================ -->
   <header class="site-header" role="banner">
     <nav class="container nav-inner" aria-label="Navigation principale">
-      <a href="index.html" class="nav-logo" aria-label="Terra Digester accueil">
+      <a href="../index.html" class="nav-logo" aria-label="Terra Digester accueil">
         <div class="nav-logo-mark" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/>
@@ -1247,51 +1054,40 @@
       </a>
 
       <ul class="nav-links" role="list">
-        <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
+        <li><a href="../index.html">Accueil</a></li>
         <li class="nav-dropdown">
           <a href="#" aria-haspopup="true">Solutions</a>
           <div class="dropdown-menu" role="menu">
             <a href="food-waste-systems.html" role="menuitem">Systèmes pour déchets alimentaires</a>
-            <a href="bio-toilet-solutions.html" role="menuitem">Solutions de bio-toilettes</a>
-            <a href="dairy-farmers-system.html" role="menuitem">Système pour producteurs laitiers</a>
-            <a href="buy-carbon.html" role="menuitem">Acheter des crédits carbone</a>
+            <a href="bio-toilet-solutions.html" role="menuitem">Solutions Bio-toilettes</a>
+            <a href="dairy-farmers-system.html" role="menuitem">Système pour éleveurs laitiers</a>
+            <a href="buy-carbon.html" role="menuitem">Acheter du carbone</a>
           </div>
         </li>
         <li><a href="technology.html">Technologie</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="reseller-program.html">Programme de revente</a></li>
+        <li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
-        <li class="lang-switcher" aria-label="Sélecteur de langue">
-          <a href="../index.html" lang="en">EN</a>
-          <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
-          <a href="../de/index.html" lang="de">DE</a>
-        </li>
       </ul>
 
-      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Ouvrir la navigation" aria-expanded="false">
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
   </header>
 
   <!-- Mobile Navigation -->
-  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation mobile">
-    <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer la navigation">✕</button>
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu mobile">
+    <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer le menu">✕</button>
     <div class="mobile-nav-links">
-      <a href="index.html">Accueil</a>
+      <a href="../index.html">Accueil</a>
       <a href="food-waste-systems.html" class="sub-link">— Systèmes pour déchets alimentaires</a>
-      <a href="bio-toilet-solutions.html" class="sub-link">— Solutions de bio-toilettes</a>
-      <a href="dairy-farmers-system.html" class="sub-link">— Système pour producteurs laitiers</a>
-      <a href="buy-carbon.html" class="sub-link">— Acheter des crédits carbone</a>
+      <a href="bio-toilet-solutions.html" class="sub-link">— Solutions Bio-toilettes</a>
+      <a href="dairy-farmers-system.html" class="sub-link">— Système pour éleveurs laitiers</a>
+      <a href="buy-carbon.html" class="sub-link">— Acheter du carbone</a>
       <a href="technology.html">Technologie</a>
       <a href="about.html">À propos</a>
       <a href="reseller-program.html" class="sub-link">— Programme de revente</a>
       <a href="contact.html">Contact</a>
-      <div class="mobile-lang-switcher" aria-label="Sélecteur de langue">
-        <a href="../index.html" lang="en">English</a>
-        <a href="index.html" class="active" lang="fr" aria-current="true">Français</a>
-        <a href="../de/index.html" lang="de">Deutsch</a>
-      </div>
     </div>
   </div>
 
@@ -1302,7 +1098,7 @@
     ============================================================ -->
     <section class="hero" id="hero" aria-label="Section principale">
 
-      <!-- ── Anneaux orbitaux décoratifs atmosphériques ── -->
+      <!-- ── Anneaux d'orbite décoratifs atmosphériques ── -->
       <div class="hero-deco" aria-hidden="true">
         <svg class="circle-1" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="200" cy="200" r="180" stroke="#52B788" stroke-width="1.5" stroke-dasharray="8 6"/>
@@ -1335,19 +1131,19 @@
               Biotechnologie · Économie circulaire · Énergie issue des déchets
             </div>
 
-            <h1>Technologie verte<br>pour un <em>avenir&nbsp;circulaire</em></h1>
+            <h1>Rien ne se perd.<br>Tout est <em>Restitué.</em></h1>
 
             <p class="hero-sub">
-              Conçue pour transformer les déchets organiques en biogaz, bioénergie et digestat
-              riche en nutriments — refermer la boucle des déchets organiques, un système à la fois.
+              Conçus pour transformer les déchets organiques en biogaz, bio-énergie et digestat
+              riche en nutriments — fermer la boucle du déchet organique, un système à la fois.
             </p>
 
             <div class="hero-ctas">
-              <a href="#solutions" class="btn btn-primary">Découvrir nos solutions</a>
-              <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+              <a href="#solutions" class="btn btn-primary">Explorer nos solutions</a>
+              <a href="contact.html" class="btn btn-outline">Contactez-nous</a>
             </div>
 
-            <!-- Indicateurs clés -->
+            <!-- Pastilles de métriques -->
             <div class="hero-stats" aria-label="Indicateurs clés">
               <div class="hero-stat">
                 <span class="stat-val">2–5 h/jour</span>
@@ -1366,10 +1162,10 @@
             </div>
           </div>
 
-          <!-- DROITE : Visuel du produit -->
+          <!-- DROITE : Visuel produit -->
           <div class="hero-visual" aria-label="Système de digestion anaérobie Terra Digester">
 
-            <!-- Anneaux orbitaux autour du produit -->
+            <!-- Anneaux d'orbite autour du produit -->
             <div class="hero-orbit"  aria-hidden="true">
               <span class="orbit-dot orbit-dot-1"></span>
               <span class="orbit-dot orbit-dot-2"></span>
@@ -1378,7 +1174,7 @@
               <span class="orbit-dot orbit-dot-3"></span>
             </div>
 
-            <!-- Badges techniques flottants -->
+            <!-- Pastilles de spécifications flottantes -->
             <div class="hero-spec-badge badge-top-left" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M7 1L8.5 4.5H12.5L9.3 6.7L10.5 10.5L7 8.3L3.5 10.5L4.7 6.7L1.5 4.5H5.5Z" fill="#52B788"/>
@@ -1387,12 +1183,12 @@
             </div>
 
             <div class="hero-spec-badge badge-top-right" aria-hidden="true">
-              <!-- Icône flamme -->
+              <!-- Icône de flamme -->
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M7 1C7 1 4 4 4 7C4 8.66 5.34 10 7 10C8.66 10 10 8.66 10 7C10 5.5 9 4 8 3C8 4.5 7.5 5 7 5C6.5 5 6 4.5 6 3.5C6 2.5 7 1 7 1Z" fill="#52B788"/>
                 <path d="M7 10V13M5.5 13H8.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/>
               </svg>
-              Gaz de cuisson &amp; biofertilisant
+              Gaz de cuisson &amp; Bio-engrais
             </div>
 
             <div class="hero-spec-badge badge-bottom-left" aria-hidden="true">
@@ -1403,26 +1199,32 @@
               Déchet alimentaire = Énergie
             </div>
 
-            <!-- Carte d'image du produit -->
+            <!-- Carte image produit -->
             <figure class="hero-product-wrap" aria-label="Unité de digestion anaérobie Terra Digester">
               <!--
                 INTÉGRATION DE LA PHOTO DU PRODUIT :
-                Placez votre image produit à : images/product-hero.jpg
-                Taille recommandée : 600×660px ou ratio portrait similaire
+                Placez votre image produit à : ../images/product-hero.jpg
+                Taille recommandée : 600×660px ou format portrait similaire
                 L'image sera affichée avec une animation flottante + halo
+              -->
+              <!--
+                DÉPOSEZ VOTRE PHOTO PRODUIT ICI :
+                Remplacez ../images/product-hero.jpg par votre photo produit réelle
+                Recommandé : 600×660px portrait, JPG/WebP, haute qualité
+                L'illustration SVG (../images/product-hero.svg) s'affiche jusqu'à ce que la vraie photo soit fournie
               -->
               <img
                 src="../images/product-hero.jpg"
-                alt="Unité de digestion anaérobie Terra Digester — transforme les déchets organiques en biogaz et digestat"
+                alt="Terra Digester Terra Digester unité de digestion anaérobie — convertit les déchets organiques en biogaz et digestat"
                 class="hero-product-img"
                 loading="eager"
                 onerror="this.src='../images/product-hero.svg'; this.onerror=null;"
               />
-              <!-- Repli CSS en cas d'absence d'image -->
+              <!-- Solution de repli CSS en cas d'absence d'image -->
               <div class="hero-product-fallback" aria-hidden="true"></div>
-              <!-- Dégradé de superposition -->
+              <!-- Superposition en dégradé -->
               <div class="hero-product-overlay" aria-hidden="true"></div>
-              <!-- Badge d'état -->
+              <!-- Pastille d'état -->
               <div class="hero-product-label">
                 <div class="hero-product-label-dot" aria-hidden="true"></div>
                 <div>
@@ -1452,7 +1254,7 @@
       <div class="container">
         <span class="section-label">Notre mission</span>
         <p class="mission-text">
-          Le gaspillage alimentaire, les lacunes d'assainissement, l'inefficacité agricole et les émissions de carbone ne sont pas des problèmes distincts — ce sont les symptômes d'une <strong>économie linéaire</strong>. Terra Digester conçoit des systèmes biotechnologiques intégrés qui les traitent comme <strong>un défi unique et connecté</strong>.
+          Le gaspillage alimentaire, les lacunes d'assainissement, l'inefficacité agricole et les émissions de carbone ne sont pas des problèmes séparés — ce sont les symptômes d'une <strong>économie linéaire</strong>. Terra Digester construit des systèmes biotechnologiques intégrés qui les traitent comme <strong>un défi unique et connecté</strong>.
         </p>
       </div>
     </section>
@@ -1465,7 +1267,7 @@
         <div class="section-header fade-in">
           <span class="section-label">Ce que nous construisons</span>
           <h2 id="solutions-heading">Quatre systèmes. Un seul objectif.</h2>
-          <p>Biotechnologie conçue sur mesure pour la valorisation des déchets organiques, l'énergie propre et la responsabilité climatique.</p>
+          <p>Biotechnologie conçue pour la valorisation des déchets organiques, l'énergie propre et la responsabilité climatique.</p>
         </div>
         <div class="solutions-grid">
           <!-- Carte 1 : Déchets alimentaires -->
@@ -1481,7 +1283,7 @@
             </div>
             <div>
               <h3>Systèmes pour déchets alimentaires</h3>
-              <p>Systèmes modulaires de digestion anaérobie qui transforment les déchets organiques en biogaz et biofertilisant — conçus pour les communautés, les écoles et les éco-lodges.</p>
+              <p>Systèmes modulaires de digestion anaérobie qui convertissent les déchets organiques en biogaz et bio-engrais — conçus pour les communautés, les écoles et les éco-lodges.</p>
             </div>
             <a href="food-waste-systems.html" class="learn-more" aria-label="En savoir plus sur les systèmes pour déchets alimentaires">
               En savoir plus
@@ -1501,16 +1303,16 @@
               </svg>
             </div>
             <div>
-              <h3>Solutions de bio-toilettes</h3>
+              <h3>Solutions Bio-toilettes</h3>
               <p>Systèmes d'assainissement sans eau conçus pour les sites isolés, transformant les déchets humains en énergie — aucune infrastructure d'égouts requise.</p>
             </div>
-            <a href="bio-toilet-solutions.html" class="learn-more" aria-label="En savoir plus sur les solutions de bio-toilettes">
+            <a href="bio-toilet-solutions.html" class="learn-more" aria-label="En savoir plus sur les solutions Bio-toilettes">
               En savoir plus
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
 
-          <!-- Carte 3 : Producteurs laitiers -->
+          <!-- Carte 3 : Élevage -->
           <div class="solution-card fade-in fade-in-delay-3">
             <div class="solution-icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1522,10 +1324,10 @@
               </svg>
             </div>
             <div>
-              <h3>Système pour producteurs laitiers</h3>
-              <p>Unités de biogaz à petite échelle conçues pour les éleveurs laitiers détenant deux bovins ou plus — transformant les déchets quotidiens en gaz de cuisine et fertilisant.</p>
+              <h3>Système pour éleveurs laitiers</h3>
+              <p>Petites unités de biogaz conçues pour les éleveurs laitiers ayant deux bovins ou plus — transformant les déchets quotidiens en gaz de cuisine et engrais au quotidien.</p>
             </div>
-            <a href="dairy-farmers-system.html" class="learn-more" aria-label="En savoir plus sur le système pour producteurs laitiers">
+            <a href="dairy-farmers-system.html" class="learn-more" aria-label="En savoir plus sur le système pour éleveurs laitiers">
               En savoir plus
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
@@ -1544,7 +1346,7 @@
             </div>
             <div>
               <h3>Acheter des crédits carbone</h3>
-              <p>Achats de crédits carbone transparents et vérifiés liés à de réels projets de valorisation des déchets en énergie — avec une documentation claire et un impact mesurable.</p>
+              <p>Achats de crédits carbone transparents et vérifiés liés à de vrais projets de valorisation des déchets en énergie — avec une documentation claire et un impact mesurable.</p>
             </div>
             <a href="buy-carbon.html" class="learn-more" aria-label="En savoir plus sur les crédits carbone">
               En savoir plus
@@ -1561,9 +1363,9 @@
     <section class="section video-section fade-in" aria-labelledby="video-heading">
       <div class="container">
         <div class="section-header fade-in">
-          <span class="section-label">Voir en action</span>
-          <h2 id="video-heading">Des déchets à l'énergie — Découvrez comment ça fonctionne</h2>
-          <p>Un aperçu concret de notre système de digestion anaérobie transformant les déchets organiques en biogaz propre et biofertilisant.</p>
+          <span class="section-label">Voyez-le en action</span>
+          <h2 id="video-heading">Des déchets à l'énergie — Regardez comment ça fonctionne</h2>
+          <p>Un aperçu concret de notre système de digestion anaérobie qui transforme les déchets organiques en biogaz propre et bio-engrais.</p>
         </div>
 
         <div class="video-wrapper fade-in">
@@ -1603,7 +1405,7 @@
               </div>
               <div>
                 <strong>2 à 5 heures par jour</strong>
-                <span>Production moyenne de gaz de cuisson par ménage</span>
+                <span>Production moyenne de gaz de cuisson par foyer</span>
               </div>
             </div>
             <div class="video-info-item">
@@ -1614,8 +1416,8 @@
                 </svg>
               </div>
               <div>
-                <strong>1–2 t CO₂/an</strong>
-                <span>Émissions évitées mesurables par système</span>
+                <strong>1 à 2 t CO₂/an</strong>
+                <span>Émissions mesurables évitées par système</span>
               </div>
             </div>
             <div class="video-info-item">
@@ -1630,7 +1432,7 @@
               </div>
             </div>
             <a href="contact.html" class="btn btn-primary" style="margin-top:0.5rem;align-self:flex-start;">
-              Demander une démonstration
+              Demander une démo
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="margin-left:6px"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -1639,13 +1441,13 @@
     </section>
 
     <!-- ============================================================
-         ÉCONOMIE LINÉAIRE VS CIRCULAIRE
+         POURQUOI L'ÉCONOMIE CIRCULAIRE
     ============================================================ -->
     <section class="section circular-section" aria-labelledby="circular-heading">
       <div class="container">
         <div class="section-header fade-in">
           <span class="section-label">Pensée systémique</span>
-          <h2 id="circular-heading">Économie linéaire vs économie circulaire</h2>
+          <h2 id="circular-heading">Économie linéaire vs circulaire</h2>
           <p>La différence n'est pas philosophique — elle est structurelle. L'une se termine en déchets ; l'autre crée de la valeur.</p>
         </div>
 
@@ -1676,7 +1478,7 @@
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div class="flow-step">
-                <div class="flow-step-box">Éliminer</div>
+                <div class="flow-step-box">Jeter</div>
               </div>
             </div>
             <div class="flow-endpoint">⚠ Décharge · Pollution · Émissions</div>
@@ -1702,7 +1504,7 @@
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div class="flow-step">
-                <div class="flow-step-box">Valoriser</div>
+                <div class="flow-step-box">Récupérer</div>
               </div>
               <div class="flow-arrow">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1716,22 +1518,22 @@
         </div>
 
         <blockquote class="circular-quote fade-in">
-          <strong>« L'économie circulaire n'est pas une aspiration — c'est une discipline d'ingénierie. »</strong><br>
-          Terra Digester construit l'infrastructure pour la rendre opérationnelle — à l'échelle du ménage, de l'exploitation agricole et de la communauté.
+          <strong>"L'économie circulaire n'est pas une aspiration — c'est une discipline d'ingénierie."</strong><br>
+          Terra Digester construit l'infrastructure pour la rendre opérationnelle — à l'échelle du foyer, de la ferme et de la communauté.
         </blockquote>
       </div>
     </section>
 
     <!-- ============================================================
-         BANDEAU TRANSPARENCE
+         BANDEAU DE TRANSPARENCE
     ============================================================ -->
     <section class="section transparency-section fade-in" aria-labelledby="transparency-heading">
       <div class="container">
         <div class="transparency-inner">
           <span class="section-label"><span class="transparency-dot"></span>Où nous en sommes</span>
-          <h2 id="transparency-heading">Bâtir sur la transparence</h2>
+          <h2 id="transparency-heading">Bâti sur la transparence</h2>
           <p>
-            Terra Digester en est à sa phase opérationnelle initiale. Nos systèmes sont conçus, testés et prêts pour des partenariats de déploiement. Nous choisissons la transparence, car la confiance se construit sur des années, pas à travers des slogans. Nous construisons activement les partenariats qui apporteront ces systèmes aux communautés et aux secteurs qui en ont le plus besoin.
+            Terra Digester est dans sa phase opérationnelle initiale. Nos systèmes sont conçus, testés et prêts pour des partenariats de déploiement. Nous choisissons la transparence car la confiance se construit sur des années, et non à travers des slogans. Nous construisons activement les partenariats qui apporteront ces systèmes aux communautés et aux secteurs qui en ont le plus besoin.
           </p>
         </div>
       </div>
@@ -1747,7 +1549,7 @@
       <div class="footer-grid">
         <!-- Colonne 1 : Marque -->
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
+          <a href="../index.html" class="nav-logo">
             <div class="nav-logo-mark">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
@@ -1765,14 +1567,13 @@
         <div class="footer-col">
           <h4>Liens rapides</h4>
           <ul>
-            <li><a href="index.html">Accueil</a></li>
+            <li><a href="../index.html">Accueil</a></li>
             <li><a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a></li>
-            <li><a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a></li>
-            <li><a href="dairy-farmers-system.html">Système pour producteurs laitiers</a></li>
-            <li><a href="buy-carbon.html">Acheter des crédits carbone</a></li>
+            <li><a href="bio-toilet-solutions.html">Solutions Bio-toilettes</a></li>
+            <li><a href="dairy-farmers-system.html">Système pour éleveurs laitiers</a></li>
+            <li><a href="buy-carbon.html">Acheter du carbone</a></li>
             <li><a href="technology.html">Technologie</a></li>
-            <li><a href="about.html">À propos</a></li>
-            <li><a href="reseller-program.html">Programme de revente</a></li>
+            <li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -1790,24 +1591,19 @@
               LinkedIn
             </a>
           </p>
-          <div class="footer-lang" style="margin-top:1.5rem; display:flex; gap:0.5rem;">
-            <a href="../index.html" lang="en" style="color:rgba(255,255,255,0.55); font-size:0.75rem; font-weight:600; letter-spacing:0.05em; padding:4px 8px; border:1px solid rgba(255,255,255,0.2); border-radius:4px;">EN</a>
-            <a href="index.html" lang="fr" style="color:var(--primary-light); font-size:0.75rem; font-weight:600; letter-spacing:0.05em; padding:4px 8px; border:1px solid var(--primary-light); border-radius:4px;">FR</a>
-            <a href="../de/index.html" lang="de" style="color:rgba(255,255,255,0.55); font-size:0.75rem; font-weight:600; letter-spacing:0.05em; padding:4px 8px; border:1px solid rgba(255,255,255,0.2); border-radius:4px;">DE</a>
-          </div>
         </div>
 
         <!-- Colonne 4 : Vision -->
         <div class="footer-col footer-vision">
           <h4>Notre raison d'être</h4>
           <p>
-            <strong>Construire des systèmes circulaires</strong>
-            « Construire des systèmes circulaires pour un avenir résilient — où les déchets organiques deviennent énergie propre, sol fertile et valeur climatique mesurable. De Bruxelles aux communautés du monde entier. »
+            <strong>Bâtir des systèmes circulaires</strong>
+            "Bâtir des systèmes circulaires pour un avenir résilient — où les déchets organiques deviennent de l'énergie propre, un sol fertile et une valeur climatique mesurable. De Bruxelles aux communautés du monde entier."
           </p>
         </div>
       </div>
 
-      <!-- Pied de page — bas -->
+      <!-- Pied de page bas -->
       <div class="footer-bottom">
         <p>© 2026 Terra Digester. Tous droits réservés.</p>
         <div style="display:flex;gap:1.5rem;">
@@ -1821,8 +1617,8 @@
   <!-- ============================================================
        JAVASCRIPT
   ============================================================ -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // --- Bascule de la navigation mobile ---
+  <script>
+    // --- Bascule de navigation mobile ---
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileNav    = document.getElementById('mobileNav');
     const mobileClose  = document.getElementById('mobileClose');
@@ -1858,7 +1654,7 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // --- Défilement fluide pour le CTA du héros ---
+    // --- Défilement fluide du CTA du hero ---
     const solLink = document.querySelector('a[href="#solutions"]');
     if (solLink) {
       solLink.addEventListener('click', (e) => {
@@ -1868,7 +1664,7 @@
       });
     }
 
-    // --- Effet de rétrécissement de l'en-tête au défilement ---
+    // --- Effet de rétrécissement du header au défilement ---
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 60) {
@@ -1880,7 +1676,7 @@
       }
     }, { passive: true });
 
-    // --- Inclinaison parallaxe de l'image produit au mouvement de la souris ---
+    // --- Inclinaison parallactique de l'image produit hero au survol ---
     const heroVisual = document.querySelector('.hero-visual');
     const productWrap = document.querySelector('.hero-product-wrap');
     if (heroVisual && productWrap) {
@@ -1888,10 +1684,10 @@
         const rect = heroVisual.getBoundingClientRect();
         const cx   = rect.left + rect.width  / 2;
         const cy   = rect.top  + rect.height / 2;
-        const dx   = (e.clientX - cx) / rect.width;
+        const dx   = (e.clientX - cx) / rect.width;  // –0.5 … +0.5
         const dy   = (e.clientY - cy) / rect.height;
-        const rx   = dy * -10;
-        const ry   = dx *  10;
+        const rx   = dy * -10;   // inclinaison axe X (haut/bas)
+        const ry   = dx *  10;   // inclinaison axe Y (gauche/droite)
         productWrap.style.transition = 'transform 0.1s linear, box-shadow 0.3s ease';
         productWrap.style.transform  =
           `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-7px) scale(1.02)`;
@@ -1905,7 +1701,9 @@
       });
     }
 
-    // --- Apparition décalée des badges techniques du héros ---
+    // --- Position des points d'orbite : correction via animation CSS ---
+
+    // --- Entrée du hero : échelonner les pastilles de spécifications ---
     document.querySelectorAll('.hero-spec-badge').forEach((badge, i) => {
       badge.style.opacity = '0';
       badge.style.transform = 'translateY(12px)';
@@ -1918,7 +1716,7 @@
   </script>
 
   <script>
-  /* ── Menu déroulant : survol JS avec délai pour éviter le clignotement ── */
+  /* ── Menu déroulant : survol JS avec délai pour éviter le scintillement ── */
   (function(){
     document.querySelectorAll('.nav-dropdown').forEach(function(item){
       var menu = item.querySelector('.dropdown-menu');

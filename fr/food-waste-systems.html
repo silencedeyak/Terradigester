@@ -3,758 +3,1282 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Systèmes pour déchets alimentaires | Terra Digester — Systèmes de digestion anaérobie</title>
-  <meta name="description" content="Systèmes modulaires de digestion anaérobie qui transforment les déchets alimentaires quotidiens en biogaz de cuisson propre et en biofertilisant liquide — pour foyers, écoles et écodges." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2352B788'/><path d='M16 4C16 4 8 8 8 14C8 17.3 10.7 20 16 20C19.3 20 22 17.3 22 14C22 8 16 4 16 4Z' stroke='%231B3A2D' stroke-width='1.5' fill='none'/></svg>" type="image/svg+xml">
+  <meta name="description" content="Systèmes de déchets alimentaires Terra Digester — digestion anaérobie modulaire convertissant les déchets organiques en biogaz et bio-engrais pour communautés, écoles et éco-lodges." />
   <link rel="canonical" href="https://terradigester.com/fr/food-waste-systems.html" />
   <link rel="alternate" hreflang="en" href="https://terradigester.com/food-waste-systems.html" />
   <link rel="alternate" hreflang="fr" href="https://terradigester.com/fr/food-waste-systems.html" />
   <link rel="alternate" hreflang="de" href="https://terradigester.com/de/food-waste-systems.html" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
-  <meta property="og:title" content="Systèmes pour déchets alimentaires | Terra Digester" />
-  <meta property="og:description" content="Systèmes modulaires de digestion anaérobie — biocarburant quotidien & biofertilisant à partir des restes de cuisine." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://terradigester.com/fr/food-waste-systems.html" />
-  <meta property="og:image" content="https://terradigester.com/images/food-waste-flow-diagram.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <title>Systèmes de déchets alimentaires | Terra Digester — Systèmes de digestion anaérobie</title>
   <style>
-    .lang-switcher { display: inline-flex; gap: 0.4rem; align-items: center; padding-left: 0.6rem; margin-left: 0.4rem; border-left: 1px solid rgba(255,255,255,0.25); }
-    .lang-switcher a { color: rgba(255,255,255,0.85); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.2rem 0.45rem; border-radius: 4px; text-decoration: none; transition: background 0.2s, color 0.2s; }
-    .lang-switcher a:hover { background: rgba(255,255,255,0.12); color: #fff; }
-    .lang-switcher a.active { background: rgba(255,255,255,0.18); color: #fff; }
-    .lang-switcher a[aria-current="true"] { background: rgba(255,255,255,0.2); color: #fff; }
-    @media (max-width: 640px) { .lang-switcher { padding-left: 0; margin-left: 0; border-left: none; } }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary-dark:#1B3A2D; --primary:#2D6A4F; --primary-light:#52B788;
+      --earth-brown:#7F5539; --earth-light:#DDB892;
+      --neutral-900:#1A1A1A; --neutral-600:#6B7280; --neutral-200:#E5E7EB; --neutral-50:#F9FAFB; --white:#FFFFFF;
+      --radius-sm:8px; --radius-md:12px; --transition:all 0.3s ease;
+      --shadow-sm:0 1px 3px rgba(0,0,0,0.08); --shadow-md:0 8px 25px rgba(0,0,0,0.10);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',system-ui,-apple-system,sans-serif; font-size:1rem; line-height:1.7; color:var(--neutral-900); background:var(--white); overflow-x:hidden; }
+    a { color:var(--primary); text-decoration:none; } a:hover { text-decoration:underline; }
+    .container { width:100%; max-width:1200px; margin-inline:auto; padding-inline:clamp(1rem,4vw,2rem); }
+    h1 { font-size:clamp(2.5rem,5vw,4rem); font-weight:700; line-height:1.1; }
+    h2 { font-size:clamp(1.75rem,3vw,2.5rem); font-weight:600; line-height:1.2; }
+    h3 { font-size:1.25rem; font-weight:600; line-height:1.3; }
+    .section { padding-block:clamp(4rem,8vw,8rem); }
+    .section-header { text-align:center; margin-bottom:3rem; }
+    .section-header p { max-width:640px; margin-inline:auto; margin-top:1rem; color:var(--neutral-600); }
+    .section-label { display:inline-block; font-size:0.75rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--primary-light); margin-bottom:0.75rem; }
+    .fade-in { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+    .fade-in-delay-1{transition-delay:0.1s;} .fade-in-delay-2{transition-delay:0.2s;} .fade-in-delay-3{transition-delay:0.3s;}
+    .btn { display:inline-block; padding:14px 32px; border-radius:var(--radius-sm); font-size:1rem; font-weight:500; cursor:pointer; border:2px solid transparent; transition:var(--transition); text-decoration:none; line-height:1; }
+    .btn-primary { background:var(--primary); color:var(--white); border-color:var(--primary); }
+    .btn-primary:hover { background:var(--primary-dark); border-color:var(--primary-dark); transform:translateY(-1px); box-shadow:0 4px 12px rgba(45,106,79,0.35); text-decoration:none; color:var(--white); }
 
-    /* Food-waste-systems process stepper */
-    .process-stepper { background: #fbfaf6; padding: 5rem 1.5rem; }
-    .process-stepper .container { max-width: 1200px; margin: 0 auto; }
-    .step-header { text-align: center; margin-bottom: 2.5rem; }
-    .step-header .eyebrow { display: inline-block; background: rgba(70, 110, 60, 0.12); color: #466e3c; padding: 0.4rem 0.85rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
-    .step-header h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: #1f3325; margin-bottom: 0.6rem; }
-    .step-header p.lead { color: #5a6258; font-size: 1.05rem; max-width: 720px; margin: 0 auto; }
+    /* NAV */
+    .site-header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(27,58,45,0.96); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.08); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; height:72px; gap:2rem; }
+    .nav-logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; flex-shrink:0; }
+    .nav-logo-mark { width:36px; height:36px; border-radius:8px; background:var(--primary-light); display:flex; align-items:center; justify-content:center; }
+    .nav-logo-text { font-size:1.1rem; font-weight:700; color:var(--white); letter-spacing:-0.01em; }
+    .nav-logo-text span { color:var(--primary-light); }
+    .nav-links { display:flex; align-items:center; gap:0.25rem; list-style:none; }
+    .nav-links a { display:block; padding:8px 14px; color:rgba(255,255,255,0.85); font-size:0.9rem; font-weight:500; border-radius:6px; transition:var(--transition); text-decoration:none; }
+    .nav-links a:hover,.nav-links a.active { color:var(--white); background:rgba(255,255,255,0.1); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown>a::after { content:' ▾'; font-size:0.75rem; opacity:0.7; }
+    .dropdown-menu { display:none; position:absolute; top:calc(100% + 8px); left:0; background:var(--primary-dark); border-radius:var(--radius-sm); min-width:220px; box-shadow:0 8px 32px rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); overflow:hidden; z-index:100; }
+    .dropdown-menu a { padding:10px 18px; display:block; color:rgba(255,255,255,0.85); font-size:0.875rem; border-radius:0; border-bottom:1px solid rgba(255,255,255,0.06); transition:var(--transition); }
+    .dropdown-menu a:last-child { border-bottom:none; }
+    .dropdown-menu a:hover { background:rgba(82,183,136,0.2); color:var(--white); }
+    .dropdown-menu.open { display:block; }
+    .nav-cta { background:var(--primary-light)!important; color:var(--primary-dark)!important; font-weight:600!important; padding:8px 18px!important; }
+    .nav-cta:hover { background:var(--white)!important; }
+    .nav-mobile-toggle { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .nav-mobile-toggle span { display:block; width:24px; height:2px; background:var(--white); border-radius:2px; transition:var(--transition); }
+    .mobile-nav-overlay { display:none; position:fixed; inset:0; background:var(--primary-dark); z-index:999; padding:2rem; flex-direction:column; gap:1rem; overflow-y:auto; }
+    .mobile-nav-overlay.open { display:flex; }
+    .mobile-nav-close { align-self:flex-end; background:none; border:none; color:var(--white); font-size:1.75rem; cursor:pointer; }
+    .mobile-nav-links { display:flex; flex-direction:column; gap:0.25rem; margin-top:1rem; }
+    .mobile-nav-links a { color:rgba(255,255,255,0.9); font-size:1.1rem; font-weight:500; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1); text-decoration:none; }
+    .mobile-nav-links a:hover { color:var(--primary-light); }
+    .mobile-nav-links .sub-link { padding-left:1.25rem; font-size:1rem; color:rgba(255,255,255,0.7); }
+    @media(max-width:1024px){.nav-links{display:none;}.nav-mobile-toggle{display:flex;}}
 
-    .step-progress { display: flex; gap: 0.5rem; justify-content: center; margin: 1.5rem 0 2.5rem; }
-    .step-progress .pip { width: 36px; height: 6px; background: rgba(70, 110, 60, 0.18); border-radius: 4px; transition: background 0.3s; }
-    .step-progress .pip.active { background: #466e3c; }
+    /* HERO */
+    .hero { min-height:65vh; display:flex; align-items:center; padding-top:72px; background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(45,106,79,0.5) 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 80% 20%,rgba(27,58,45,0.65) 0%,transparent 60%),linear-gradient(135deg,#0d2219 0%,#1B3A2D 40%,#142d22 100%); position:relative; overflow:hidden; }
+    .hero-content { padding-block:5rem 4rem; position:relative; z-index:2; width:100%; }
+    .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:center; }
+    .hero-text { } 
+    .hero h1 { color:var(--white); margin-bottom:1.25rem; }
+    .hero h1 em { font-style:normal; color:var(--primary-light); }
+    .hero-sub { color:rgba(255,255,255,0.75); font-size:clamp(1rem,1.8vw,1.2rem); max-width:480px; margin-bottom:2rem; }
+    .hero-deco-line { position:absolute; right:0; top:0; bottom:0; width:40%; background:radial-gradient(ellipse 100% 100% at 100% 50%,rgba(82,183,136,0.08) 0%,transparent 70%); pointer-events:none; }
 
-    .step-frame { position: relative; background: #fff; border: 1px solid rgba(31,51,37,0.08); border-radius: 18px; box-shadow: 0 18px 50px -22px rgba(31,51,37,0.25); padding: 2rem; min-height: 480px; }
-    .step-stage { display: none; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
-    .step-stage.is-active { display: grid; animation: fadeUp 0.5s ease; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-    .step-illustration { background: linear-gradient(135deg, #eaf1e5 0%, #f7f5ed 100%); border-radius: 14px; padding: 1.2rem; display: flex; align-items: center; justify-content: center; aspect-ratio: 4/3; }
-    .step-illustration svg { width: 100%; height: auto; max-height: 320px; }
-    .step-body h3 { color: #1f3325; font-size: 1.6rem; margin-bottom: 0.5rem; }
-    .step-body .step-counter { color: #466e3c; font-weight: 700; letter-spacing: 0.1em; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.5rem; }
-    .step-body p { color: #4a5249; line-height: 1.6; }
-    .spec-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
-    .spec-pill { background: rgba(70, 110, 60, 0.1); color: #2b4a25; padding: 0.45rem 0.9rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
-    .spec-pill i { color: #466e3c; }
+    /* Hero diagram image (right column) */
+    .hero-diagram-wrap { position:relative; display:flex; align-items:center; justify-content:center; }
+    .hero-diagram-frame { position:relative; border-radius:24px; overflow:hidden;
+      box-shadow: 0 0 0 1px rgba(82,183,136,0.25), 0 0 0 4px rgba(82,183,136,0.10), 0 20px 60px rgba(0,0,0,0.45), 0 4px 16px rgba(0,0,0,0.3);
+      animation: heroDiagramFloat 5s ease-in-out infinite; }
+    .hero-diagram-frame img { display:block; width:100%; height:auto; border-radius:24px; }
+    /* Subtle inner glow border overlay */
+    .hero-diagram-frame::before { content:''; position:absolute; inset:0; border-radius:24px;
+      background:linear-gradient(145deg, rgba(82,183,136,0.12) 0%, transparent 45%, transparent 55%, rgba(27,58,45,0.2) 100%);
+      pointer-events:none; z-index:1; }
+    /* Green corner accent lines */
+    .hero-diagram-frame::after { content:''; position:absolute; inset:0; border-radius:24px;
+      border:1.5px solid rgba(82,183,136,0.4); pointer-events:none; z-index:2;
+      box-shadow: inset 0 0 20px rgba(82,183,136,0.06); }
+    /* Caption badge below image */
+    .hero-diagram-caption { margin-top:0.85rem; display:flex; align-items:center; justify-content:center; gap:0.5rem; }
+    .hero-diagram-caption span { font-size:0.78rem; color:rgba(255,255,255,0.5); font-style:italic; }
+    .hero-diagram-caption .badge { display:inline-flex; align-items:center; gap:0.35rem; background:rgba(82,183,136,0.15); border:1px solid rgba(82,183,136,0.3); border-radius:20px; padding:4px 12px; font-size:0.72rem; font-weight:600; letter-spacing:0.08em; color:var(--primary-light); text-transform:uppercase; }
+    @keyframes heroDiagramFloat { 0%,100%{transform:translateY(0px);} 50%{transform:translateY(-8px);} }
+    @media(max-width:900px){ .hero-grid{grid-template-columns:1fr; gap:2.5rem;} .hero-diagram-wrap{max-width:520px; margin:0 auto;} }
+    .breadcrumb { display:flex; align-items:center; gap:0.5rem; margin-bottom:1.5rem; }
+    .breadcrumb a { color:rgba(255,255,255,0.5); font-size:0.8rem; text-decoration:none; }
+    .breadcrumb a:hover { color:var(--primary-light); }
+    .breadcrumb span { color:rgba(255,255,255,0.3); font-size:0.8rem; }
+    .breadcrumb .current { color:var(--primary-light); font-size:0.8rem; }
 
-    .step-controls { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(31,51,37,0.08); }
-    .step-nav { display: flex; gap: 0.5rem; }
-    .step-btn { background: #466e3c; color: #fff; border: none; padding: 0.7rem 1.4rem; border-radius: 999px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.2s, transform 0.15s; font-size: 0.95rem; }
-    .step-btn:hover { background: #2b4a25; }
-    .step-btn:active { transform: scale(0.97); }
-    .step-btn.ghost { background: transparent; color: #466e3c; border: 1px solid #466e3c; }
-    .step-btn.ghost:hover { background: rgba(70, 110, 60, 0.08); }
-    .step-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-    .auto-toggle { display: inline-flex; align-items: center; gap: 0.5rem; color: #5a6258; font-size: 0.9rem; cursor: pointer; user-select: none; }
-    .auto-toggle .dot { width: 8px; height: 8px; border-radius: 50%; background: #466e3c; animation: pulse 1.6s ease-in-out infinite; }
-    .auto-toggle.paused .dot { background: #b8b0a0; animation: none; }
-    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(1.4); } }
+    /* ============================================================
+       HOW IT WORKS — ANIMATED 4-STEP DIAGRAM
+    ============================================================ */
+    .how-section {
+      background: var(--primary-dark);
+      overflow: hidden;
+      position: relative;
+    }
+    /* Subtle background texture */
+    .how-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 10% 50%, rgba(82,183,136,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 50%, rgba(45,106,79,0.1)  0%, transparent 55%);
+      pointer-events: none;
+    }
+    .how-section .section-label { color: var(--primary-light); }
+    .how-section .section-header h2 { color: var(--white); }
+    .how-section .section-header p  { color: rgba(255,255,255,0.55); }
 
-    @media (max-width: 760px) { .step-stage.is-active { grid-template-columns: 1fr; } .step-frame { padding: 1.4rem; min-height: 0; } .step-controls { flex-direction: column; align-items: stretch; gap: 0.8rem; } .step-nav { justify-content: center; } }
+    /* ── Progress track bar ── */
+    .how-track {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 3rem auto 3.5rem;
+      max-width: 700px;
+      position: relative;
+      z-index: 2;
+    }
+    .how-track-btn {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      border: 2px solid rgba(82,183,136,0.3);
+      background: rgba(27,58,45,0.8);
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem; font-weight: 700;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .how-track-btn:hover {
+      border-color: var(--primary-light);
+      color: var(--primary-light);
+      background: rgba(82,183,136,0.12);
+    }
+    .how-track-btn.active {
+      border-color: var(--primary-light);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      box-shadow: 0 0 0 6px rgba(82,183,136,0.15), 0 0 24px rgba(82,183,136,0.4);
+      transform: scale(1.12);
+    }
+    .how-track-line {
+      flex: 1;
+      height: 2px;
+      background: rgba(82,183,136,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .how-track-line-fill {
+      position: absolute; top: 0; left: 0; bottom: 0;
+      background: var(--primary-light);
+      width: 0%;
+      transition: width 0.6s ease;
+    }
 
-    /* Engineering principles */
-    .engineering-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
-    .eng-card { background: #fff; border-radius: 14px; border: 1px solid rgba(31,51,37,0.08); padding: 1.4rem; }
-    .eng-card i { color: #466e3c; font-size: 1.6rem; margin-bottom: 0.6rem; display: block; }
-    .eng-card h4 { color: #1f3325; font-size: 1.1rem; margin-bottom: 0.4rem; }
-    .eng-card p { color: #5a6258; font-size: 0.95rem; line-height: 1.5; }
+    /* ── Main stage ── */
+    .how-stage {
+      position: relative;
+      z-index: 2;
+      min-height: 440px;
+    }
+    .how-panel {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+      animation: panelIn 0.55s cubic-bezier(.25,.8,.25,1) both;
+    }
+    .how-panel.active { display: grid; }
 
-    /* Scenario cards */
-    .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
-    .scenario-card { background: linear-gradient(135deg, rgba(70,110,60,0.06), rgba(247,245,237,1)); border-radius: 16px; padding: 1.8rem; border: 1px solid rgba(31,51,37,0.08); }
-    .scenario-card .scenario-icon { width: 48px; height: 48px; background: rgba(70,110,60,0.15); color: #466e3c; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.3rem; margin-bottom: 1rem; }
-    .scenario-card h3 { color: #1f3325; font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .scenario-card p { color: #4a5249; font-size: 0.95rem; line-height: 1.6; }
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateX(30px); }
+      to   { opacity: 1; transform: translateX(0);    }
+    }
 
-    /* Benefits grid */
-    .benefit-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
-    .benefit-row .item { background: #fff; padding: 1.4rem; border-radius: 12px; border: 1px solid rgba(31,51,37,0.08); }
-    .benefit-row .item i { color: #466e3c; font-size: 1.4rem; margin-bottom: 0.5rem; display: block; }
-    .benefit-row .item h4 { color: #1f3325; font-size: 1.05rem; margin-bottom: 0.3rem; }
-    .benefit-row .item p { color: #5a6258; font-size: 0.9rem; }
+    /* ── Left: SVG illustration ── */
+    .how-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .how-svg-wrap {
+      width: clamp(200px, 35vw, 380px);
+      aspect-ratio: 1 / 1;
+      position: relative;
+    }
+    .how-svg-wrap svg { width: 100%; height: 100%; overflow: visible; }
 
-    /* Scenario image inside flow diagram caption */
-    .flow-image-card { background: #fff; border-radius: 18px; border: 1px solid rgba(31,51,37,0.08); overflow: hidden; box-shadow: 0 16px 40px -22px rgba(31,51,37,0.3); }
-    .flow-image-card img { width: 100%; height: auto; display: block; }
-    .flow-caption { padding: 1.2rem 1.5rem; background: #fbfaf6; border-top: 1px solid rgba(31,51,37,0.08); }
-    .flow-caption strong { color: #1f3325; display: block; margin-bottom: 0.3rem; }
-    .flow-caption small { color: #5a6258; font-size: 0.85rem; }
+    /* ── Right: text ── */
+    .how-text { display: flex; flex-direction: column; gap: 1.5rem; }
+    .how-step-num {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .how-step-num .num-badge {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 1.1rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 20px rgba(82,183,136,0.4);
+      flex-shrink: 0;
+    }
+    .how-step-num .step-of {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .how-text h3 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .how-text h3 em { font-style: normal; color: var(--primary-light); }
+    .how-text p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.62);
+    }
 
-    /* FAQ accordion */
-    .faq-list { display: flex; flex-direction: column; gap: 0.8rem; max-width: 900px; margin: 2rem auto 0; }
-    .faq-item { background: #fff; border: 1px solid rgba(31,51,37,0.08); border-radius: 12px; overflow: hidden; }
-    .faq-question { width: 100%; background: none; border: none; padding: 1.2rem 1.5rem; text-align: left; font-weight: 600; color: #1f3325; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.02rem; }
-    .faq-question i { color: #466e3c; transition: transform 0.3s; }
-    .faq-item.open .faq-question i { transform: rotate(180deg); }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; padding: 0 1.5rem; color: #4a5249; line-height: 1.6; }
-    .faq-item.open .faq-answer { max-height: 400px; padding: 0 1.5rem 1.4rem; }
+    /* Spec pills */
+    .how-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    .how-spec {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(82,183,136,0.1);
+      border: 1px solid rgba(82,183,136,0.25);
+      border-radius: 100px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--primary-light);
+    }
+    .how-spec svg { flex-shrink: 0; }
+
+    /* ── Step navigation arrows ── */
+    .how-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+    .how-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(82,183,136,0.1);
+      border: 1px solid rgba(82,183,136,0.25);
+      border-radius: 100px;
+      padding: 10px 22px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .how-nav-btn:hover {
+      background: rgba(82,183,136,0.18);
+      border-color: var(--primary-light);
+      color: var(--white);
+    }
+    .how-nav-btn:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+    .how-nav-btn.next {
+      background: var(--primary-light);
+      border-color: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+    .how-nav-btn.next:hover {
+      background: #3da570;
+      border-color: #3da570;
+      color: var(--white);
+    }
+
+    /* ── SVG animation utilities ── */
+
+    /* Floating organic waste particles */
+    @keyframes particleFall {
+      0%   { transform: translateY(-10px) rotate(0deg);   opacity: 0; }
+      20%  { opacity: 1; }
+      100% { transform: translateY(60px)  rotate(180deg); opacity: 0; }
+    }
+    .particle { animation: particleFall 2.2s ease-in infinite; }
+    .particle:nth-child(2) { animation-delay: 0.4s; }
+    .particle:nth-child(3) { animation-delay: 0.9s; }
+    .particle:nth-child(4) { animation-delay: 1.4s; }
+
+    /* Biogas bubbles rising */
+    @keyframes bubbleRise {
+      0%   { transform: translateY(0)    scale(1);    opacity: 0.8; }
+      100% { transform: translateY(-55px) scale(0.4); opacity: 0; }
+    }
+    .bubble { animation: bubbleRise 2.4s ease-out infinite; }
+    .bubble:nth-child(2) { animation-delay: 0.7s; }
+    .bubble:nth-child(3) { animation-delay: 1.4s; }
+
+    /* Flame flicker */
+    @keyframes flicker {
+      0%,100% { transform: scaleY(1)    scaleX(1);    }
+      25%      { transform: scaleY(1.08) scaleX(0.96); }
+      50%      { transform: scaleY(0.94) scaleX(1.04); }
+      75%      { transform: scaleY(1.05) scaleX(0.97); }
+    }
+    .flame { animation: flicker 1.5s ease-in-out infinite; transform-origin: bottom center; }
+
+    /* Liquid drip */
+    @keyframes drip {
+      0%   { transform: translateY(0);  opacity: 1; }
+      80%  { transform: translateY(30px); opacity: 0.7; }
+      100% { transform: translateY(40px); opacity: 0; }
+    }
+    .drip { animation: drip 2s ease-in infinite; }
+    .drip:nth-child(2) { animation-delay: 0.8s; }
+
+    /* Glow pulse on digester */
+    @keyframes digestGlow {
+      0%,100% { opacity: 0.3; r: 60; }
+      50%      { opacity: 0.65; r: 72; }
+    }
+    .digest-glow { animation: digestGlow 3s ease-in-out infinite; }
+
+    /* Path draw animation */
+    @keyframes drawPath {
+      from { stroke-dashoffset: 600; }
+      to   { stroke-dashoffset: 0;   }
+    }
+    .draw-path {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      animation: drawPath 1.4s ease forwards;
+    }
+
+    /* Plant grow */
+    @keyframes plantGrow {
+      from { transform: scaleY(0); transform-origin: bottom center; }
+      to   { transform: scaleY(1); transform-origin: bottom center; }
+    }
+    .plant-grow { animation: plantGrow 1s 0.3s ease both; }
+
+    /* ── Responsive ── */
+    @media(max-width: 768px) {
+      .how-panel { grid-template-columns: 1fr; gap: 2rem; }
+      .how-visual { order: 1; }
+      .how-text  { order: 2; }
+      .how-svg-wrap { width: clamp(180px, 65vw, 280px); }
+      .how-track { max-width: 320px; gap: 0; }
+      .how-track-btn { width: 42px; height: 42px; font-size: 0.75rem; }
+    }
+    @media(max-width: 375px) {
+      .how-nav { flex-direction: column; gap: 1rem; }
+      .how-nav-btn { width: 100%; justify-content: center; }
+    }
+
+    /* SCENARIOS */
+    .scenarios-section { background:var(--white); }
+    .scenarios-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .scenario-card { padding:2rem; border-radius:var(--radius-md); background:var(--neutral-50); border:1px solid var(--neutral-200); transition:var(--transition); }
+    .scenario-card:hover { background:var(--white); box-shadow:var(--shadow-md); transform:translateY(-4px); border-color:rgba(82,183,136,0.3); }
+    .scenario-icon { width:48px; height:48px; background:rgba(82,183,136,0.15); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+    .scenario-card h3 { margin-bottom:0.75rem; color:var(--primary-dark); }
+    .scenario-card p { font-size:0.9rem; color:var(--neutral-600); }
+    @media(max-width:768px){.scenarios-grid{grid-template-columns:1fr;}}
+
+    /* BENEFITS */
+    .benefits-section { background:var(--neutral-50); }
+    .benefits-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .benefit-item { display:flex; align-items:flex-start; gap:1rem; padding:1.5rem; background:var(--white); border-radius:var(--radius-md); border:1px solid var(--neutral-200); }
+    .benefit-icon { width:40px; height:40px; background:rgba(45,106,79,0.1); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .benefit-item h4 { font-size:0.95rem; font-weight:600; margin-bottom:0.25rem; color:var(--neutral-900); }
+    .benefit-item p { font-size:0.85rem; color:var(--neutral-600); }
+    @media(max-width:1024px){.benefits-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){.benefits-grid{grid-template-columns:1fr;}}
+
+    /* TECHNICAL */
+    .technical-section { background:var(--white); }
+    .tech-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-bottom:2rem; }
+    .tech-item { padding:1.5rem; border-radius:var(--radius-md); border:1px solid rgba(82,183,136,0.25); background:linear-gradient(135deg,rgba(82,183,136,0.05),rgba(45,106,79,0.03)); text-align:center; }
+    .tech-item svg { margin:0 auto 1rem; }
+    .tech-item h4 { font-size:0.95rem; font-weight:600; color:var(--primary-dark); margin-bottom:0.5rem; }
+    .tech-item p { font-size:0.85rem; color:var(--neutral-600); }
+    .tech-note { background:var(--neutral-50); border-radius:var(--radius-sm); border-left:3px solid var(--primary-light); padding:1rem 1.25rem; font-size:0.875rem; color:var(--neutral-600); }
+    @media(max-width:1024px){.tech-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){.tech-grid{grid-template-columns:1fr;}}
+
+    /* CTA SECTION */
+    .cta-section { background:linear-gradient(135deg,var(--primary-dark) 0%,#142d22 100%); padding-block:clamp(3rem,6vw,5rem); text-align:center; }
+    .cta-section h2 { color:var(--white); margin-bottom:1rem; }
+    .cta-section p { color:rgba(255,255,255,0.7); max-width:560px; margin-inline:auto; margin-bottom:2rem; }
+
+    /* FAQ SECTION */
+    .faq-section{background:var(--neutral-50);}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0;}
+    .faq-item{background:var(--white);border:1px solid var(--neutral-200);border-radius:var(--radius-md);overflow:hidden;transition:box-shadow 0.25s ease;}
+    .faq-item:hover{box-shadow:var(--shadow-md);}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;background:none;border:none;cursor:pointer;text-align:left;font-size:0.95rem;font-weight:600;color:var(--primary-dark);line-height:1.4;}
+    .faq-q .faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(82,183,136,0.12);border:1.5px solid rgba(82,183,136,0.3);display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;font-size:1rem;line-height:1;color:var(--primary-light);}
+    .faq-item.open .faq-icon{background:var(--primary-light);border-color:var(--primary-light);color:var(--primary-dark);transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s ease;padding:0 1.4rem;}
+    .faq-item.open .faq-a{max-height:300px;padding:0 1.4rem 1.2rem;}
+    .faq-a p{font-size:0.9rem;color:var(--neutral-600);line-height:1.7;}
+    @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
+
+    /* FOOTER */
+    .site-footer { background:var(--primary-dark); color:rgba(255,255,255,0.75); padding-block:clamp(3rem,6vw,5rem); }
+    .footer-grid { display:grid; grid-template-columns:2fr 1.5fr 1.5fr 2fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,0.1); }
+    .footer-brand p { font-size:0.875rem; line-height:1.7; margin-bottom:0.75rem; }
+    .footer-brand .location { display:flex; align-items:center; gap:0.4rem; font-size:0.8rem; color:rgba(255,255,255,0.5); }
+    .footer-col h4 { color:var(--white); font-size:0.875rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:1.25rem; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:0.5rem; }
+    .footer-col ul a { color:rgba(255,255,255,0.65); font-size:0.875rem; text-decoration:none; transition:var(--transition); }
+    .footer-col ul a:hover { color:var(--primary-light); }
+    .footer-contact p { font-size:0.875rem; line-height:1.7; margin-bottom:0.5rem; }
+    .footer-contact a { color:var(--primary-light); }
+    .footer-vision p { font-size:1rem; font-style:italic; color:rgba(255,255,255,0.6); line-height:1.8; }
+    .footer-vision p strong { display:block; font-style:normal; color:var(--primary-light); font-size:0.8rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.75rem; }
+    .footer-bottom { padding-top:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+    .footer-bottom p { font-size:0.8rem; color:rgba(255,255,255,0.4); }
+    .footer-bottom a { color:rgba(255,255,255,0.5); font-size:0.8rem; text-decoration:none; }
+    .footer-bottom a:hover { color:var(--primary-light); }
+    .footer-brand .nav-logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; margin-bottom:1rem; }
+    .footer-brand .nav-logo-mark { width:36px; height:36px; border-radius:8px; background:var(--primary-light); display:flex; align-items:center; justify-content:center; }
+    .footer-brand .nav-logo-text { font-size:1.1rem; font-weight:700; color:var(--white); }
+    .footer-brand .nav-logo-text span { color:var(--primary-light); }
+    @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem;}.footer-bottom{flex-direction:column;text-align:center;}}
   </style>
 </head>
 <body>
-  <!-- Skip link -->
-  <a class="skip-link" href="#main">Aller au contenu</a>
 
-  <!-- HEADER -->
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="Terra Digester — Accueil">
-        <img src="../images/logo.svg" alt="Logo Terra Digester" width="180" height="44" />
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="container nav-inner" aria-label="Navigation principale">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-mark">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <span class="nav-logo-text">Terra<span>Digester</span></span>
       </a>
-      <nav class="primary-nav" aria-label="Navigation principale">
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="technology.html">Technologie</a></li>
-          <li class="has-submenu">
-            <a href="#" aria-haspopup="true">Systèmes <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
-            <ul class="submenu">
-              <li><a href="food-waste-systems.html" class="active" aria-current="page">Déchets alimentaires</a></li>
-              <li><a href="bio-toilet-solutions.html">Bio-toilettes</a></li>
-              <li><a href="dairy-farmers-system.html">Producteurs laitiers</a></li>
-            </ul>
-          </li>
-          <li><a href="about.html">À propos</a></li>
-          <li><a href="reseller-program.html">Distribution</a></li>
-          <li><a href="buy-carbon.html">Carbone</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li class="lang-switcher" aria-label="Sélecteur de langue">
-            <a href="../food-waste-systems.html" lang="en">EN</a>
-            <a href="food-waste-systems.html" class="active" lang="fr" aria-current="true">FR</a>
-            <a href="../de/food-waste-systems.html" lang="de">DE</a>
-          </li>
-        </ul>
-      </nav>
-      <button class="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <ul class="nav-links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="active">Solutions</a>
+          <div class="dropdown-menu">
+            <a href="food-waste-systems.html">Systèmes de déchets alimentaires</a>
+            <a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a>
+            <a href="dairy-farmers-system.html">Système pour exploitations laitières</a>
+            <a href="buy-carbon.html">Acheter du carbone</a>
+          </div>
+        </li>
+        <li><a href="technology.html">Technologie</a></li>
+        <li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Ouvrir la navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-    </div>
+    </nav>
   </header>
 
-  <main id="main">
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose">✕</button>
+    <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="food-waste-systems.html" class="sub-link">— Systèmes de déchets alimentaires</a>
+      <a href="bio-toilet-solutions.html" class="sub-link">— Solutions de bio-toilettes</a>
+      <a href="dairy-farmers-system.html" class="sub-link">— Système pour exploitations laitières</a>
+      <a href="buy-carbon.html" class="sub-link">— Acheter du carbone</a>
+      <a href="technology.html">Technologie</a>
+      <a href="about.html">À propos</a>
+      <a href="reseller-program.html" class="sub-link">— Programme de revente</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <main>
     <!-- HERO -->
-    <section class="page-hero" aria-labelledby="hero-title">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <ol>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="#">Systèmes</a></li>
-            <li aria-current="page">Déchets alimentaires</li>
-          </ol>
-        </nav>
-        <span class="eyebrow">Déchets alimentaires</span>
-        <h1 id="hero-title">Systèmes pour <em>déchets alimentaires</em></h1>
-        <p class="lead">Pollution invisible, mais silencieuse. Les restes de cuisine, les épluchures et les déchets alimentaires d'un foyer ou d'un établissement s'accumulent chaque jour — et finissent trop souvent dans des décharges qui émettent du méthane. Le système Terra Digester transforme ce flux quotidien en deux ressources utiles : du <strong>biogaz de cuisson propre</strong> et un <strong>biofertilisant liquide</strong> pour les sols.</p>
+    <section class="hero" aria-label="Systèmes de déchets alimentaires — section héro">
+      <div class="hero-deco-line" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="hero-grid">
 
-        <div class="flow-image-card" style="max-width: 920px; margin: 2.5rem auto 0;">
-          <img src="../images/food-waste-flow-diagram.jpg" alt="Diagramme illustrant le flux des déchets alimentaires à travers le système Terra Digester : entrée, digestion anaérobie, biogaz et biofertilisant." width="1200" height="675" loading="lazy" />
-          <div class="flow-caption">
-            <strong>Du rebut au carburant, en 24 heures</strong>
-            <small>Les déchets alimentaires quotidiens deviennent du biogaz de cuisson propre et un biofertilisant riche en nutriments.</small>
+          <!-- Left: text -->
+          <div class="hero-text">
+            <div class="breadcrumb">
+              <a href="index.html">Home</a>
+              <span>/</span>
+              <span class="current">Systèmes de Déchets Alimentaires</span>
+            </div>
+            <span class="section-label" style="color:var(--primary-light);">Solutions</span>
+            <h1>Transformez les déchets alimentaires en <em>énergie et engrais</em></h1>
+            <p class="hero-sub">Modular anaerobic digestion systems for communities, schools, and eco-lodges.</p>
+            <a href="contact.html?interest=food-waste" class="btn btn-primary">Discuss a System</a>
           </div>
-        </div>
 
-        <div class="hero-cta">
-          <a href="contact.html" class="btn btn-primary">Discuter d'un système pour déchets alimentaires</a>
-          <a href="#how-it-works" class="btn btn-ghost">Voir le processus <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+          <!-- Right: process diagram image -->
+          <div class="hero-diagram-wrap fade-in fade-in-delay-1">
+            <div>
+              <div class="hero-diagram-frame">
+                <img
+                  src="images/food-waste-flow-diagram.jpg"
+                  alt="Terra Digester food waste system flow: insert food waste → Terra Digester anaerobic bag → cooking gas → bio-fertiliser"
+                  loading="eager"
+                  width="640" height="360"
+                />
+              </div>
+              <div class="hero-diagram-caption">
+                <span class="badge">Comment Ça Marche</span>
+                <span>4-step closed-loop system — waste in, energy &amp; fertiliser out</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- HOW IT WORKS — 4 STEP STEPPER -->
-    <section class="process-stepper" id="how-it-works" aria-labelledby="how-title">
+    <!-- ============================================================
+         HOW TERRA DIGESTER WORKS — ANIMATED 4-STEP DIAGRAM
+    ============================================================ -->
+    <section class="section how-section" id="how-it-works" aria-labelledby="how-heading">
       <div class="container">
-        <div class="step-header">
-          <span class="eyebrow">Fonctionnement</span>
-          <h2 id="how-title">Quatre étapes, de la cuisine au champ</h2>
-          <p class="lead">Chaque charge suit le même parcours simple : introduction, digestion en conditions contrôlées, séparation du biogaz et du digestat. Aucune pré-traitement, aucun produit chimique.</p>
+
+        <!-- Header -->
+        <div class="section-header fade-in">
+          <span class="section-label">The Process</span>
+          <h2 id="how-heading" style="color:var(--white);">How Our Terra Digester<br>Systems Work</h2>
+          <p>Four stages — from organic waste input to clean cooking gas and bio-fertiliser.</p>
         </div>
 
-        <div class="step-progress" role="tablist" aria-label="Progression des étapes">
-          <span class="pip active" data-pip="1" role="tab" aria-label="Étape 1"></span>
-          <span class="pip" data-pip="2" role="tab" aria-label="Étape 2"></span>
-          <span class="pip" data-pip="3" role="tab" aria-label="Étape 3"></span>
-          <span class="pip" data-pip="4" role="tab" aria-label="Étape 4"></span>
+        <!-- Step progress track -->
+        <div class="how-track" role="tablist" aria-label="Étapes du processus>
+          <button class="how-track-btn active" data-step="0" role="tab" aria-selected="true"  aria-controls="panel-0">1</button>
+          <div class="how-track-line"><div class="how-track-line-fill" id="line-0"></div></div>
+          <button class="how-track-btn"        data-step="1" role="tab" aria-selected="false" aria-controls="panel-1">2</button>
+          <div class="how-track-line"><div class="how-track-line-fill" id="line-1"></div></div>
+          <button class="how-track-btn"        data-step="2" role="tab" aria-selected="false" aria-controls="panel-2">3</button>
+          <div class="how-track-line"><div class="how-track-line-fill" id="line-2"></div></div>
+          <button class="how-track-btn"        data-step="3" role="tab" aria-selected="false" aria-controls="panel-3">4</button>
         </div>
 
-        <div class="step-frame" role="region" aria-live="polite">
+        <!-- Main stage: 4 panels -->
+        <div class="how-stage">
 
-          <!-- STEP 1 -->
-          <article class="step-stage is-active" data-step="1" role="tabpanel">
-            <div class="step-illustration">
-              <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" aria-label="Déchets organiques introduits dans le système">
-                <defs>
-                  <linearGradient id="g1" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#a4c98c"/>
-                    <stop offset="100%" stop-color="#466e3c"/>
-                  </linearGradient>
-                </defs>
-                <rect x="60" y="170" width="200" height="50" rx="8" fill="url(#g1)" />
-                <rect x="60" y="170" width="200" height="50" rx="8" fill="none" stroke="#2b4a25" stroke-width="2"/>
-                <text x="160" y="200" text-anchor="middle" fill="#fff" font-size="14" font-weight="700" font-family="system-ui, sans-serif">TERRA DIGESTER</text>
-                <text x="160" y="160" text-anchor="middle" fill="#1f3325" font-size="11" font-family="system-ui, sans-serif">Entrée déchets organiques</text>
-                <!-- floating waste -->
-                <circle cx="110" cy="80" r="14" fill="#c97a3a"/>
-                <circle cx="150" cy="60" r="10" fill="#a05028"/>
-                <circle cx="190" cy="78" r="12" fill="#d9924a"/>
-                <path d="M120 100 Q130 115 145 100" stroke="#466e3c" stroke-width="2" fill="none"/>
-                <path d="M175 100 Q185 118 200 100" stroke="#466e3c" stroke-width="2" fill="none"/>
-                <text x="160" y="40" text-anchor="middle" fill="#5a6258" font-size="10" font-family="system-ui, sans-serif">Épluchures, restes, Cooked food</text>
-              </svg>
-            </div>
-            <div class="step-body">
-              <span class="step-counter">Étape 1 sur 4</span>
-              <h3>Introduire les déchets organiques</h3>
-              <p>Charge quotidienne depuis l'évier ou le comptoir. Aucun tri préalable requis : épluchures de légumes, restes cuits, pain rassis, marc de café, petits os.</p>
-              <div class="spec-pills">
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Aucun pré-traitement nécessaire</span>
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Évier d'entrée en acier inoxydable</span>
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Cycle d'alimentation quotidien</span>
+          <!-- ══ STEP 1: Insert Waste ══ -->
+          <div class="how-panel active" id="panel-0" role="tabpanel">
+            <!-- SVG Illustration -->
+            <div class="how-visual" aria-hidden="true">
+              <div class="how-svg-wrap">
+                <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Background circle -->
+                  <circle cx="160" cy="160" r="148" fill="rgba(45,106,79,0.08)" stroke="rgba(82,183,136,0.15)" stroke-width="1.5"/>
+                  <circle cx="160" cy="160" r="115" fill="rgba(27,58,45,0.6)" stroke="rgba(82,183,136,0.1)" stroke-width="1"/>
+
+                  <!-- Inlet funnel / sink -->
+                  <rect x="110" y="80" width="100" height="8"  rx="4" fill="#7F5539" stroke="#DDB892" stroke-width="1"/>
+                  <path d="M118 88 L130 130 L190 130 L202 88 Z" fill="rgba(127,85,57,0.4)" stroke="#DDB892" stroke-width="1.5" stroke-linejoin="round"/>
+                  <!-- pipe down -->
+                  <rect x="148" y="130" width="24" height="50" rx="4" fill="rgba(45,106,79,0.5)" stroke="rgba(82,183,136,0.5)" stroke-width="1.5"/>
+                  <!-- connection to digester bag shape -->
+                  <path d="M130 180 Q100 195 95 220 Q90 248 160 252 Q230 248 225 220 Q220 195 190 180 Z" fill="rgba(20,43,30,0.85)" stroke="rgba(82,183,136,0.4)" stroke-width="2"/>
+                  <!-- TERRA DIGESTER label on bag -->
+                  <text x="160" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.35)" letter-spacing="1">TERRA DIGESTER</text>
+                  <!-- gas outlet pipe right -->
+                  <rect x="220" y="195" width="30" height="10" rx="3" fill="rgba(82,183,136,0.5)" stroke="rgba(82,183,136,0.6)" stroke-width="1"/>
+                  <!-- digestate outlet left -->
+                  <rect x="70"  y="205" width="28" height="10" rx="3" fill="rgba(127,85,57,0.6)"  stroke="#DDB892" stroke-width="1"/>
+                  <!-- gas tube up from right -->
+                  <line x1="245" y1="195" x2="245" y2="168" stroke="rgba(82,183,136,0.5)" stroke-width="4" stroke-linecap="round"/>
+
+                  <!-- Falling food waste particles -->
+                  <g>
+                    <ellipse class="particle" cx="155" cy="60" rx="5" ry="3" fill="#52B788" opacity="0.8"/>
+                    <ellipse class="particle" cx="168" cy="52" rx="3" ry="5" fill="#DDB892" opacity="0.7"/>
+                    <ellipse class="particle" cx="147" cy="55" rx="4" ry="3" fill="#7F5539" opacity="0.9"/>
+                    <circle  class="particle" cx="172" cy="62" r="3"         fill="#52B788" opacity="0.6"/>
+                  </g>
+
+                  <!-- Arrow showing direction of feed -->
+                  <path class="draw-path" d="M160 38 L160 70" stroke="#52B788" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+                  <path d="M153 66 L160 76 L167 66" fill="none" stroke="#52B788" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+                  <!-- Labels -->
+                  <text x="160" y="32" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">Organic waste input</text>
+                  <text x="265" y="180" text-anchor="start"  font-family="system-ui,sans-serif" font-size="10" fill="rgba(82,183,136,0.7)">Biogas</text>
+                  <text x="40"  y="213" text-anchor="start"  font-family="system-ui,sans-serif" font-size="10" fill="rgba(221,184,146,0.7)">Digestate</text>
+                </svg>
               </div>
             </div>
-          </article>
-
-          <!-- STEP 2 -->
-          <article class="step-stage" data-step="2" role="tabpanel">
-            <div class="step-illustration">
-              <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" aria-label="Processus de digestion anaérobie">
-                <defs>
-                  <radialGradient id="g2" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#6fa259"/>
-                    <stop offset="100%" stop-color="#2b4a25"/>
-                  </radialGradient>
-                </defs>
-                <circle cx="160" cy="120" r="90" fill="url(#g2)" />
-                <circle cx="160" cy="120" r="90" fill="none" stroke="#1f3325" stroke-width="2" stroke-dasharray="4 6">
-                  <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 160 120" to="360 160 120" dur="14s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="120" cy="110" r="8" fill="#fff" opacity="0.7">
-                  <animate attributeName="cy" values="110;130;110" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="170" cy="100" r="6" fill="#fff" opacity="0.7">
-                  <animate attributeName="cy" values="100;130;100" dur="4s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="205" cy="115" r="7" fill="#fff" opacity="0.6">
-                  <animate attributeName="cy" values="115;140;115" dur="3.5s" repeatCount="indefinite"/>
-                </circle>
-                <path d="M40 150 L70 130" stroke="#466e3c" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
-                <text x="50" y="170" fill="#5a6258" font-size="11" font-family="system-ui, sans-serif">Aucun oxygène</text>
-                <text x="160" y="125" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="system-ui, sans-serif">DIGESTION</text>
-                <text x="160" y="142" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="system-ui, sans-serif">ANAÉROBIE</text>
-                <text x="160" y="40" text-anchor="middle" fill="#5a6258" font-size="10" font-family="system-ui, sans-serif">Formation de biogaz</text>
-              </svg>
-            </div>
-            <div class="step-body">
-              <span class="step-counter">Étape 2 sur 4</span>
-              <h3>Processus de digestion anaérobie</h3>
-              <p>À l'intérieur d'une chambre étanche, les micro-organismes décomposent la matière organique en l'absence d'oxygène. La température est maintenue dans la plage mésophile, ce qui optimise la production de méthane.</p>
-              <div class="spec-pills">
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Environnement sans oxygène</span>
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Plage mésophile 35–40 °C</span>
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Production de biogaz riche en méthane</span>
+            <!-- Text -->
+            <div class="how-text">
+              <div class="how-step-num">
+                <div class="num-badge">1</div>
+                <span class="step-of">Step 1 of 4</span>
+              </div>
+              <h3>Insert <em>Organic Waste</em></h3>
+              <p>Les déchets organiques — restes alimentaires, épluchures de légumes, restes de fruits, résidus de cuisine — sont introduits dans le Terra Digester via l’évier d’entrée en acier inoxydable. Aucun pré-traitement ou tri n’est nécessaire.</p>
+              <div class="how-specs">
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  No pre-treatment needed
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Stainless-steel inlet sink
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Daily feeding cycle
+                </span>
               </div>
             </div>
-          </article>
-
-          <!-- STEP 3 -->
-          <article class="step-stage" data-step="3" role="tabpanel">
-            <div class="step-illustration">
-              <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" aria-label="Génération quotidienne de biogaz de cuisson propre">
-                <defs>
-                  <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#f7f5ed"/>
-                    <stop offset="100%" stop-color="#eaf1e5"/>
-                  </linearGradient>
-                </defs>
-                <!-- stove top -->
-                <rect x="60" y="170" width="200" height="50" rx="8" fill="url(#g3)" stroke="#b8b0a0" stroke-width="2"/>
-                <circle cx="160" cy="195" r="22" fill="none" stroke="#466e3c" stroke-width="3"/>
-                <!-- flame -->
-                <path d="M160 195 Q150 175 155 160 Q162 165 165 145 Q170 170 160 195" fill="#f4a13a"/>
-                <path d="M160 195 Q155 180 158 170 Q163 175 165 160 Q168 178 160 195" fill="#e85f2a"/>
-                <!-- pipe -->
-                <path d="M195 195 L240 195 L240 130 L260 130" stroke="#2b4a25" stroke-width="4" fill="none"/>
-                <circle cx="260" cy="130" r="8" fill="#466e3c">
-                  <animate attributeName="r" values="8;12;8" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
-                <text x="240" y="118" fill="#5a6258" font-size="10" font-family="system-ui, sans-serif">Biogaz</text>
-                <text x="160" y="100" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="system-ui, sans-serif">60–70 % CH₄</text>
-                <text x="160" y="40" text-anchor="middle" fill="#5a6258" font-size="11" font-family="system-ui, sans-serif">Gaz de cuisson propre</text>
-              </svg>
-            </div>
-            <div class="step-body">
-              <span class="step-counter">Étape 3 sur 4</span>
-              <h3>Gaz de cuisson propre, généré chaque jour</h3>
-              <p>Le biogaz produit est acheminé vers un brûleur standard, où il remplace directement le GPL ou le propane. Les foyers peuvent cuisiner en continu, grâce à une génération quotidienne et renouvelable.</p>
-              <div class="spec-pills">
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Teneur en méthane 60–70 %</span>
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Génération renouvelable quotidienne</span>
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Compatible avec brûleur à gaz standard</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- STEP 4 -->
-          <article class="step-stage" data-step="4" role="tabpanel">
-            <div class="step-illustration">
-              <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" aria-label="Production de biofertilisant liquide">
-                <defs>
-                  <linearGradient id="g4" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#c97a3a"/>
-                    <stop offset="100%" stop-color="#7a4422"/>
-                  </linearGradient>
-                </defs>
-                <!-- soil layer -->
-                <rect x="20" y="190" width="280" height="30" fill="url(#g4)"/>
-                <!-- plant -->
-                <path d="M160 190 L160 140" stroke="#2b4a25" stroke-width="3"/>
-                <path d="M160 160 Q175 150 185 130" stroke="#466e3c" stroke-width="3" fill="none"/>
-                <path d="M160 170 Q145 160 135 140" stroke="#466e3c" stroke-width="3" fill="none"/>
-                <ellipse cx="160" cy="135" rx="14" ry="6" fill="#a4c98c"/>
-                <!-- droplets -->
-                <circle cx="200" cy="190" r="5" fill="#5b8db8">
-                  <animate attributeName="cy" values="120;190;190" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="220" cy="190" r="4" fill="#5b8db8">
-                  <animate attributeName="cy" values="140;190;190" dur="3s" begin="0.6s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="115" cy="190" r="5" fill="#5b8db8">
-                  <animate attributeName="cy" values="125;190;190" dur="3s" begin="1.2s" repeatCount="indefinite"/>
-                </circle>
-                <!-- jar -->
-                <rect x="240" y="170" width="50" height="40" rx="4" fill="#fff" stroke="#b8b0a0" stroke-width="2"/>
-                <rect x="244" y="180" width="42" height="20" fill="#c97a3a" opacity="0.7"/>
-                <text x="265" y="170" text-anchor="middle" fill="#5a6258" font-size="10" font-family="system-ui, sans-serif">Digestat</text>
-                <text x="160" y="40" text-anchor="middle" fill="#5a6258" font-size="11" font-family="system-ui, sans-serif">N–P–K riche</text>
-              </svg>
-            </div>
-            <div class="step-body">
-              <span class="step-counter">Étape 4 sur 4</span>
-              <h3>Production de biofertilisant liquide</h3>
-              <p>Le sous-produit solide-liquide, appelé digestat, est riche en azote, phosphore et potassium. Il s'applique directement sur les sols — fermes, potagers, jardins — pour refermer le cycle des nutriments.</p>
-              <div class="spec-pills">
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Digestat riche en N–P–K</span>
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Application directe au sol</span>
-                <span class="spec-pill"><i class="fas fa-check" aria-hidden="true"></i> Zéro engrais synthétique</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Controls -->
-          <div class="step-controls">
-            <div class="step-nav">
-              <button type="button" class="step-btn ghost" data-action="prev" aria-label="Étape précédente" disabled>
-                <i class="fas fa-arrow-left" aria-hidden="true"></i> Précédent
-              </button>
-              <button type="button" class="step-btn" data-action="next" aria-label="Étape suivante">
-                Suivant <i class="fas fa-arrow-right" aria-hidden="true"></i>
-              </button>
-            </div>
-            <button type="button" class="auto-toggle paused" data-action="auto" aria-label="Lecture automatique">
-              <span class="dot" aria-hidden="true"></span>
-              <span class="auto-label">Lecture auto : en pause</span>
-            </button>
-            <button type="button" class="step-btn ghost" data-action="restart" aria-label="Recommencer depuis le début">
-              <i class="fas fa-rotate-left" aria-hidden="true"></i> Recommencer
-            </button>
           </div>
+
+          <!-- ══ STEP 2: Anaerobic Digestion ══ -->
+          <div class="how-panel" id="panel-1" role="tabpanel">
+            <div class="how-visual" aria-hidden="true">
+              <div class="how-svg-wrap">
+                <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="160" cy="160" r="148" fill="rgba(45,106,79,0.08)" stroke="rgba(82,183,136,0.15)" stroke-width="1.5"/>
+                  <circle cx="160" cy="160" r="115" fill="rgba(27,58,45,0.6)"    stroke="rgba(82,183,136,0.1)"  stroke-width="1"/>
+
+                  <!-- Pulsing glow — digestion at work -->
+                  <circle class="digest-glow" cx="160" cy="175" r="68" fill="rgba(82,183,136,0.08)" stroke="rgba(82,183,136,0.2)" stroke-width="1"/>
+
+                  <!-- Digester bag body -->
+                  <path d="M80 160 Q75 200 80 225 Q90 255 160 258 Q230 255 240 225 Q245 200 240 160 Q220 145 160 140 Q100 145 80 160 Z"
+                        fill="rgba(20,43,30,0.9)" stroke="rgba(82,183,136,0.45)" stroke-width="2"/>
+
+                  <!-- Microorganism bubbles inside -->
+                  <g>
+                    <circle class="bubble" cx="130" cy="220" r="6"  fill="none" stroke="rgba(82,183,136,0.6)" stroke-width="1.5"/>
+                    <circle class="bubble" cx="160" cy="240" r="9"  fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="1.5"/>
+                    <circle class="bubble" cx="190" cy="215" r="5"  fill="none" stroke="rgba(82,183,136,0.7)" stroke-width="1.5"/>
+                  </g>
+
+                  <!-- Molecule dots — microorganism activity -->
+                  <circle cx="120" cy="195" r="4" fill="#52B788" opacity="0.6"/>
+                  <circle cx="145" cy="210" r="3" fill="#52B788" opacity="0.5"/>
+                  <circle cx="160" cy="200" r="5" fill="#52B788" opacity="0.7"/>
+                  <circle cx="178" cy="212" r="3" fill="#52B788" opacity="0.5"/>
+                  <circle cx="198" cy="196" r="4" fill="#52B788" opacity="0.6"/>
+                  <!-- Lines connecting molecules -->
+                  <line x1="120" y1="195" x2="145" y2="210" stroke="rgba(82,183,136,0.25)" stroke-width="1"/>
+                  <line x1="145" y1="210" x2="160" y2="200" stroke="rgba(82,183,136,0.25)" stroke-width="1"/>
+                  <line x1="160" y1="200" x2="178" y2="212" stroke="rgba(82,183,136,0.25)" stroke-width="1"/>
+                  <line x1="178" y1="212" x2="198" y2="196" stroke="rgba(82,183,136,0.25)" stroke-width="1"/>
+
+                  <!-- CH4 label inside -->
+                  <text x="160" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="700" fill="rgba(82,183,136,0.3)">CH₄</text>
+                  <text x="160" y="192" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9"  fill="rgba(82,183,136,0.4)">BIOGAS FORMING</text>
+
+                  <!-- Gas rising out of bag top -->
+                  <path class="draw-path" d="M160 140 L160 100 Q160 85 175 80" stroke="rgba(82,183,136,0.55)" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="176" cy="80" r="5" fill="none" stroke="rgba(82,183,136,0.55)" stroke-width="1.5"/>
+
+                  <!-- Temp/O2 labels -->
+                  <text x="58"  y="165" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9"  fill="rgba(255,255,255,0.35)">O₂ free</text>
+                  <text x="262" y="165" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9"  fill="rgba(255,255,255,0.35)">35–40°C</text>
+                  <text x="160" y="275" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.3)" letter-spacing="1">TERRA DIGESTER</text>
+                </svg>
+              </div>
+            </div>
+            <div class="how-text">
+              <div class="how-step-num">
+                <div class="num-badge">2</div>
+                <span class="step-of">Step 2 of 4</span>
+              </div>
+              <h3>Anaerobic <em>Digestion Process</em></h3>
+              <p>À l’intérieur de la membrane flexible scellée, les micro-organismes anaérobies décomposent la matière organique dans un environnement complètement exempt d’oxygène. Le processus biochimique — fonctionnant à 35–40°C — produit naturellement du biogaz riche en méthane.</p>
+              <div class="how-specs">
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Zero oxygen environment
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  35–40°C mesophilic range
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Methane-rich biogas output
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ STEP 3: Clean Cooking Gas ══ -->
+          <div class="how-panel" id="panel-2" role="tabpanel">
+            <div class="how-visual" aria-hidden="true">
+              <div class="how-svg-wrap">
+                <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="160" cy="160" r="148" fill="rgba(45,106,79,0.08)" stroke="rgba(82,183,136,0.15)" stroke-width="1.5"/>
+                  <circle cx="160" cy="160" r="115" fill="rgba(27,58,45,0.6)"    stroke="rgba(82,183,136,0.1)"  stroke-width="1"/>
+
+                  <!-- Gas pipe from digester (bottom) -->
+                  <rect x="148" y="230" width="24" height="50" rx="4" fill="rgba(45,106,79,0.5)" stroke="rgba(82,183,136,0.5)" stroke-width="1.5"/>
+                  <!-- Valve -->
+                  <rect x="138" y="252" width="44" height="14" rx="7" fill="rgba(82,183,136,0.3)" stroke="rgba(82,183,136,0.6)" stroke-width="1.5"/>
+                  <circle cx="160" cy="259" r="4" fill="#52B788" opacity="0.8"/>
+
+                  <!-- Gas pipe up to burner -->
+                  <rect x="154" y="160" width="12" height="72" rx="4" fill="rgba(82,183,136,0.35)" stroke="rgba(82,183,136,0.4)" stroke-width="1"/>
+                  <!-- Horizontal pipe to burner -->
+                  <rect x="126" y="152" width="68" height="12" rx="6" fill="rgba(82,183,136,0.4)" stroke="rgba(82,183,136,0.6)" stroke-width="1.5"/>
+
+                  <!-- Burner ring -->
+                  <ellipse cx="160" cy="148" rx="40" ry="10" fill="rgba(27,58,45,0.8)" stroke="rgba(82,183,136,0.5)" stroke-width="2"/>
+                  <ellipse cx="160" cy="146" rx="28" ry="7"  fill="rgba(27,58,45,0.9)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+
+                  <!-- Flames on burner -->
+                  <g class="flame">
+                    <path d="M148 143 Q146 134 150 128 Q152 134 148 143Z" fill="#52B788" opacity="0.9"/>
+                    <path d="M160 140 Q158 128 162 120 Q165 128 160 140Z" fill="#52B788"/>
+                    <path d="M172 143 Q170 133 174 127 Q176 133 172 143Z" fill="#52B788" opacity="0.9"/>
+                    <path d="M154 142 Q152 133 155 128 Q157 133 154 142Z" fill="#DDB892" opacity="0.7"/>
+                    <path d="M166 142 Q164 132 167 127 Q169 132 166 142Z" fill="#DDB892" opacity="0.7"/>
+                  </g>
+
+                  <!-- Cooking pot -->
+                  <ellipse cx="160" cy="108" rx="38" ry="10" fill="#1a3d2e" stroke="rgba(82,183,136,0.4)" stroke-width="1.5"/>
+                  <path d="M122 108 L122 88 Q122 76 160 76 Q198 76 198 88 L198 108" fill="#1a3d2e" stroke="rgba(82,183,136,0.4)" stroke-width="1.5"/>
+                  <ellipse cx="160" cy="88" rx="36" ry="8" fill="rgba(82,183,136,0.15)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+                  <!-- Steam from pot -->
+                  <path d="M148 76 Q145 65 149 58" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                  <path d="M160 74 Q157 62 161 54" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                  <path d="M172 76 Q169 65 173 58" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+                  <!-- CH4 label -->
+                  <text x="220" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="rgba(82,183,136,0.6)">Biogas</text>
+                  <text x="220" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9"  fill="rgba(82,183,136,0.4)">~60–70% CH₄</text>
+                  <!-- Arrow to burner -->
+                  <path d="M210 205 Q215 190 200 180" stroke="rgba(82,183,136,0.35)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+                </svg>
+              </div>
+            </div>
+            <div class="how-text">
+              <div class="how-step-num">
+                <div class="num-badge">3</div>
+                <span class="step-of">Step 3 of 4</span>
+              </div>
+              <h3>Clean <em>Cooking Gas</em> Generated Daily</h3>
+              <p>The biogas produced — containing approximately 60–70% methane — travels via a flexible pipe to your cooking burner or gas appliance. The system generates a renewable, clean-burning fuel every day, directly from your organic waste.</p>
+              <div class="how-specs">
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  60–70% methane content
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Daily renewable generation
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Standard gas burner compatible
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ STEP 4: Liquid Bio-fertiliser ══ -->
+          <div class="how-panel" id="panel-3" role="tabpanel">
+            <div class="how-visual" aria-hidden="true">
+              <div class="how-svg-wrap">
+                <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="160" cy="160" r="148" fill="rgba(45,106,79,0.08)" stroke="rgba(82,183,136,0.15)" stroke-width="1.5"/>
+                  <circle cx="160" cy="160" r="115" fill="rgba(27,58,45,0.6)"    stroke="rgba(82,183,136,0.1)"  stroke-width="1"/>
+
+                  <!-- Tap / valve outlet (left side of digester) -->
+                  <rect x="72"  y="175" width="40" height="14" rx="7" fill="rgba(127,85,57,0.7)" stroke="#DDB892" stroke-width="1.5"/>
+                  <circle cx="76" cy="182" r="6" fill="#7F5539" stroke="#DDB892" stroke-width="1"/>
+                  <!-- Pipe down from tap -->
+                  <rect x="86" y="186" width="10" height="40" rx="4" fill="rgba(127,85,57,0.5)" stroke="#DDB892" stroke-width="1"/>
+
+                  <!-- Collection container -->
+                  <path d="M68 228 L112 228 L118 280 L62 280 Z" fill="rgba(127,85,57,0.25)" stroke="#DDB892" stroke-width="1.5" stroke-linejoin="round"/>
+                  <!-- Liquid inside container (rising) -->
+                  <path d="M70 265 Q90 262 110 265 L115 280 L65 280 Z" fill="rgba(127,85,57,0.5)"/>
+                  <!-- Liquid ripple -->
+                  <path d="M72 265 Q90 261 108 265" stroke="#DDB892" stroke-width="1" fill="none" opacity="0.6"/>
+
+                  <!-- Drip drops -->
+                  <ellipse class="drip" cx="91" cy="224" rx="4"   ry="5.5" fill="#DDB892" opacity="0.8"/>
+                  <ellipse class="drip" cx="91" cy="210" rx="3"   ry="4.5" fill="#DDB892" opacity="0.5"/>
+
+                  <!-- Plant growing from fertilised soil (right side) -->
+                  <rect x="195" y="248" width="70" height="14" rx="4" fill="rgba(82,183,136,0.15)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+                  <!-- soil -->
+                  <ellipse cx="230" cy="248" rx="34" ry="6" fill="rgba(127,85,57,0.35)" stroke="rgba(127,85,57,0.4)" stroke-width="1"/>
+                  <!-- stem -->
+                  <line class="plant-grow" x1="230" y1="248" x2="230" y2="185" stroke="#52B788" stroke-width="3" stroke-linecap="round"/>
+                  <!-- leaves -->
+                  <g class="plant-grow">
+                    <path d="M230 220 Q215 210 210 195 Q225 196 230 220Z" fill="#52B788" opacity="0.9"/>
+                    <path d="M230 205 Q245 195 250 180 Q236 181 230 205Z" fill="#2D6A4F" opacity="0.9"/>
+                    <path d="M230 235 Q218 228 215 215 Q227 217 230 235Z" fill="#52B788" opacity="0.7"/>
+                  </g>
+                  <!-- Arrow from container to plant -->
+                  <path d="M118 260 Q160 250 195 252" stroke="rgba(82,183,136,0.35)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+                  <path d="M190 248 L196 252 L190 256" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                  <!-- Labels -->
+                  <text x="90"  y="295" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="rgba(221,184,146,0.7)">Bio-fertiliser</text>
+                  <text x="230" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="rgba(82,183,136,0.7)">Plant growth</text>
+                  <text x="160" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9"  fill="rgba(255,255,255,0.2)" letter-spacing="1">TERRA DIGESTER</text>
+                </svg>
+              </div>
+            </div>
+            <div class="how-text">
+              <div class="how-step-num">
+                <div class="num-badge">4</div>
+                <span class="step-of">Step 4 of 4</span>
+              </div>
+              <h3>Liquid <em>Bio-fertiliser</em> Output</h3>
+              <p>Parallèlement au biogaz, le processus de digestion anaérobie produit un digestat liquide riche en nutriments — un bio-engrais naturel contenant de l’azote, du phosphore et du potassium. Il s’écoule par le robinet de sortie et peut être appliqué directement au sol, aux jardins et aux terres agricoles.</p>
+              <div class="how-specs">
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  N–P–K rich digestate
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Direct soil application
+                </span>
+                <span class="how-spec">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#52B788" stroke-width="1.2"/><path d="M4 6L5.5 7.5L8 4.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Zero synthetic fertiliser
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.how-stage -->
+
+        <!-- Prev / Next navigation -->
+        <div class="how-nav">
+          <button class="how-nav-btn prev" id="howPrev" disabled aria-label="Previous step">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Previous
+          </button>
+          <span id="howStepLabel" style="font-size:0.8rem;color:rgba(255,255,255,0.3);letter-spacing:0.08em;text-transform:uppercase;">Step 1 — Insert Waste</span>
+          <button class="how-nav-btn next" id="howNext" aria-label="Next step">
+            Next step
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
+
       </div>
     </section>
 
     <!-- APPLICATION SCENARIOS -->
-    <section aria-labelledby="scenarios-title" style="background: #fff; padding: 5rem 1.5rem;">
-      <div class="container" style="max-width: 1200px; margin: 0 auto;">
-        <div class="step-header">
-          <span class="eyebrow">Cas d'usage</span>
-          <h2 id="scenarios-title">Adapté à de multiples contextes</h2>
-          <p class="lead">Le système se décline en plusieurs tailles selon le volume quotidien de déchets organiques — du foyer à l'institution.</p>
+    <section class="section scenarios-section" aria-labelledby="scenarios-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Applications</span>
+          <h2 id="scenarios-heading">Designed for Multiple Contexts</h2>
+          <p>Des ménages individuels aux cuisines institutionnelles — nos systèmes sont configurés pour s’adapter au contexte.</p>
         </div>
-
-        <div class="scenario-grid">
-          <div class="scenario-card">
-            <div class="scenario-icon"><i class="fas fa-house" aria-hidden="true"></i></div>
-            <h3>Jardins & foyers</h3>
-            <p>Pour les ménages qui compostent déjà mais veulent aller plus loin : transformer les restes en énergie de cuisson plutôt que de simplement les décomposer lentement.</p>
+        <div class="scenarios-grid">
+          <div class="scenario-card fade-in fade-in-delay-1">
+            <div class="scenario-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 22H21M4 22V11L12 2L20 11V22" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/><rect x="9" y="15" width="6" height="7" rx="1" stroke="#2D6A4F" stroke-width="1.5"/></svg>
+            </div>
+            <h3>Backyards &amp; Ménages</h3>
+            <p>Compact units designed for household-scale organic waste processing. Suitable for families seeking to reduce kitchen waste and produce their own cooking gas and garden fertiliser.</p>
           </div>
-          <div class="scenario-card">
-            <div class="scenario-icon"><i class="fas fa-school" aria-hidden="true"></i></div>
-            <h3>Écoles & institutions</h3>
-            <p>Les cantines, internats et réfectoires produisent chaque jour de grands volumes de restes alimentaires. Le système offre un support pédagogique concret sur le cycle des nutriments et l'énergie renouvelable.</p>
+          <div class="scenario-card fade-in fade-in-delay-2">
+            <div class="scenario-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="8" width="20" height="14" rx="2" stroke="#2D6A4F" stroke-width="1.5"/><path d="M8 8V6C8 4.3 9.3 3 11 3H13C14.7 3 16 4.3 16 6V8" stroke="#2D6A4F" stroke-width="1.5"/><path d="M8 14H16M12 11V17" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Écoles &amp; Institutions</h3>
+            <p>Medium-capacity systems suitable for school canteens and institutional kitchens, converting significant daily food waste volumes into measurable energy and fertiliser outputs.</p>
           </div>
-          <div class="scenario-card">
-            <div class="scenario-icon"><i class="fas fa-mountain-sun" aria-hidden="true"></i></div>
-            <h3>Écolodges & sites isolés</h3>
-            <p>Là où l'accès au réseau de gaz est limité ou coûteux, le biogaz généré sur place devient une ressource quotidienne fiable — tout en éliminant le besoin de transporter les déchets vers une décharge.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BENEFITS GRID -->
-    <section aria-labelledby="benefits-title" style="background: #fbfaf6; padding: 5rem 1.5rem;">
-      <div class="container" style="max-width: 1200px; margin: 0 auto;">
-        <div class="step-header">
-          <span class="eyebrow">Bénéfices</span>
-          <h2 id="benefits-title">Une boucle qui remplace plusieurs flux</h2>
-          <p class="lead">Ce qui sortait comme résidu devient un intrant qui sert à cuisiner et à fertiliser. Le système remplace plusieurs intrants externes par un seul flux local et renouvelable.</p>
-        </div>
-
-        <div class="benefit-row">
-          <div class="item">
-            <i class="fas fa-recycle" aria-hidden="true"></i>
-            <h4>Déviation de la décharge</h4>
-            <p>Les restes alimentaires qui auraient contribué à l'émission de méthane en décharge sont valorisés sur place.</p>
-          </div>
-          <div class="item">
-            <i class="fas fa-fire" aria-hidden="true"></i>
-            <h4>Gaz de cuisson propre</h4>
-            <p>Une production quotidienne qui réduit la dépendance au GPL, au propane ou au bois de chauffe.</p>
-          </div>
-          <div class="item">
-            <i class="fas fa-leaf" aria-hidden="true"></i>
-            <h4>Fertilisant organique</h4>
-            <p>Le digestat riche en nutriments remplace partiellement les engrais chimiques sur les parcelles locales.</p>
-          </div>
-          <div class="item">
-            <i class="fas fa-cloud" aria-hidden="true"></i>
-            <h4>Réduction des émissions</h4>
-            <p>Moindres émissions fugitives de méthane et moindre consommation de combustibles fossiles pour la cuisson.</p>
-          </div>
-          <div class="item">
-            <i class="fas fa-coins" aria-hidden="true"></i>
-            <h4>Diminution des coûts liés aux déchets</h4>
-            <p>Moins de collectes, moins de frais de traitement, moins de transport vers les sites de traitement.</p>
-          </div>
-          <div class="item">
-            <i class="fas fa-arrows-rotate" aria-hidden="true"></i>
-            <h4>Cycles fermés de nutriments</h4>
-            <p>Ce qui sort de la cuisine revient au sol — bouclant un cycle court qui profite à la production alimentaire locale.</p>
+          <div class="scenario-card fade-in fade-in-delay-3">
+            <div class="scenario-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 17L12 22L22 17" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12L12 17L22 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Eco-lodges &amp; Sustainable Centres</h3>
+            <p>Off-grid capable systems for sustainable tourism and community centres, supporting circular waste management as part of a broader environmental commitment.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ENGINEERING PRINCIPLES -->
-    <section aria-labelledby="engineering-title" style="background: #fff; padding: 5rem 1.5rem;">
-      <div class="container" style="max-width: 1100px; margin: 0 auto;">
-        <div class="step-header">
-          <span class="eyebrow">Principes d'ingénierie</span>
-          <h2 id="engineering-title">Conçu pour fonctionner partout</h2>
-          <p class="lead">Architecture modulaire, entretien minimal, capacité hors réseau — des principes qui permettent au système de s'installer dans des contextes variés sans dépendance externe.</p>
+    <!-- KEY BENEFITS -->
+    <section class="section benefits-section" aria-labelledby="benefits-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Benefits</span>
+          <h2 id="benefits-heading">Ce que le Système Apporte</h2>
         </div>
-
-        <div class="engineering-grid">
-          <div class="eng-card">
-            <i class="fas fa-cubes" aria-hidden="true"></i>
-            <h4>Architecture modulaire</h4>
-            <p>Les unités s'adaptent à la capacité requise et peuvent être mises à l'échelle au fil de la croissance.</p>
+        <div class="benefits-grid">
+          <div class="benefit-item fade-in fade-in-delay-1">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10H17M10 3V17" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="8" stroke="#2D6A4F" stroke-width="1.5"/></svg>
+            </div>
+            <div><h4>Landfill Diversion</h4><p>Reduce organic waste sent to landfill, directly lowering methane emissions from anaerobic decomposition in open sites.</p></div>
           </div>
-          <div class="eng-card">
-            <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
-            <h4>Conception à faible entretien</h4>
-            <p>Composants accessibles, cycle de nettoyage simple, pièces standard remplaçables localement.</p>
+          <div class="benefit-item fade-in fade-in-delay-2">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C8 6 8 8 8 10C8 12.2 8.9 14 10 14C11.1 14 12 12.2 12 10C12 8 12 6 10 2Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 18H12M10 14V18" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div><h4>Clean Cooking Gas</h4><p>Generate clean biogas suitable for cooking and heating, reducing dependence on purchased LPG or firewood.</p></div>
           </div>
-          <div class="eng-card">
-            <i class="fas fa-bolt" aria-hidden="true"></i>
-            <h4>Capacité hors réseau</h4>
-            <p>Fonctionne sans raccordement au réseau de gaz — utile pour les sites isolés ou les localités à infrastructure limitée.</p>
+          <div class="benefit-item fade-in fade-in-delay-3">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3C10 3 5 6 5 10C5 12.8 7.2 15 10 15C12.8 15 15 12.8 15 10C15 6 10 3 10 3Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 15V17M8 17H12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div><h4>Engrais Organique</h4><p>Produce nutrient-dense digestate suitable as organic fertiliser, supporting soil health and reducing need for chemical inputs.</p></div>
           </div>
-          <div class="eng-card">
-            <i class="fas fa-cloud-sun-rain" aria-hidden="true"></i>
-            <h4>Résistance aux intempéries</h4>
-            <p>Enveloppe conçue pour résister aux UV, à la pluie et aux variations de température sur la durée d'exploitation.</p>
+          <div class="benefit-item fade-in">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#2D6A4F" stroke-width="1.5"/><path d="M7 10L9 12L13 8" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div><h4>Emissions Reduction</h4><p>Capture methane that would otherwise be released through open decomposition, converting it into useful energy instead.</p></div>
+          </div>
+          <div class="benefit-item fade-in fade-in-delay-1">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="8" width="16" height="10" rx="2" stroke="#2D6A4F" stroke-width="1.5"/><path d="M6 8V6C6 4.3 7.3 3 9 3H11C12.7 3 14 4.3 14 6V8" stroke="#2D6A4F" stroke-width="1.5"/></svg>
+            </div>
+            <div><h4>Reduced Waste Costs</h4><p>Lower operational waste management costs by converting waste streams from a cost centre into an on-site energy resource.</p></div>
+          </div>
+          <div class="benefit-item fade-in fade-in-delay-2">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C5.6 2 2 5.6 2 10C2 14.4 5.6 18 10 18C14.4 18 18 14.4 18 10" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/><path d="M15 2V8H9" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div><h4>Cycles des Nutriments</h4><p>Soutenir les cycles locaux nutriments-sol-aliments — en restituant la matière organique au sol qui l’a produite, en fermant la boucle biologique.</p></div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <p style="margin-top: 2rem; padding: 1.2rem 1.4rem; background: rgba(70,110,60,0.08); border-radius: 12px; color: #2b4a25; font-size: 0.95rem; line-height: 1.6;">
-          <i class="fas fa-circle-info" aria-hidden="true"></i>
-          <strong>Note technique :</strong> les spécifications techniques détaillées — plages de capacité, spécifications matériaux, exigences d'installation et paramètres de performance — sont disponibles sur demande pour les partenaires de projet qualifiés.
-        </p>
+    <!-- TECHNICAL CREDIBILITY -->
+    <section class="section technical-section" aria-labelledby="tech-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Engineering</span>
+          <h2 id="tech-heading">Engineering Principles</h2>
+          <p>Our systems are developed around four core design commitments.</p>
+        </div>
+        <div class="tech-grid fade-in">
+          <div class="tech-item">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="10" height="10" rx="2" stroke="#2D6A4F" stroke-width="1.5"/><rect x="18" y="4" width="10" height="10" rx="2" stroke="#52B788" stroke-width="1.5"/><rect x="4" y="18" width="10" height="10" rx="2" stroke="#52B788" stroke-width="1.5"/><rect x="18" y="18" width="10" height="10" rx="2" stroke="#2D6A4F" stroke-width="1.5" stroke-dasharray="3 2"/></svg>
+            <h4>Modular Architecture</h4>
+            <p>Each system is a self-contained module — scalable, replaceable, and adaptable to changing capacity needs.</p>
+          </div>
+          <div class="tech-item">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="#2D6A4F" stroke-width="1.5"/><path d="M12 16L15 19L20 13" stroke="#52B788" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h4>Low-Maintenance Design</h4>
+            <p>Conçu avec un minimum de pièces mobiles, réduisant la complexité de maintenance et prolongeant la durée de vie opérationnelle sur le terrain.</p>
+          </div>
+          <div class="tech-item">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#2D6A4F" stroke-width="1.5" stroke-dasharray="4 3"/><circle cx="16" cy="16" r="5" fill="rgba(82,183,136,0.2)" stroke="#52B788" stroke-width="1.5"/><path d="M4 16H11M21 16H28" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <h4>Off-Grid Capable</h4>
+            <p>Designed to operate without connection to grid utilities — suitable for remote, rural, and off-grid applications.</p>
+          </div>
+          <div class="tech-item">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4L4 10V22L16 28L28 22V10L16 4Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 4V28M4 10L28 22M28 10L4 22" stroke="#52B788" stroke-width="1" opacity="0.4"/></svg>
+            <h4>Weather-Resistant</h4>
+            <p>Constructed with materials selected for durability across variable climates, temperature ranges, and environmental conditions.</p>
+          </div>
+        </div>
+        <div class="tech-note fade-in">
+          <strong>Note:</strong> Detailed technical specifications — including capacity ranges, material specifications, installation requirements, and performance parameters — are available upon request for qualified project partners.
+        </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section aria-labelledby="faq-title" style="background: #fbfaf6; padding: 5rem 1.5rem;">
-      <div class="container" style="max-width: 1100px; margin: 0 auto;">
-        <div class="step-header">
-          <span class="eyebrow">Questions fréquentes</span>
-          <h2 id="faq-title">Avant l'installation</h2>
-          <p class="lead">Réponses aux interrogations courantes sur le fonctionnement, l'entretien et l'usage quotidien du système.</p>
+    <section class="section faq-section" aria-labelledby="faq-fw-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">FAQ</span>
+          <h2 id="faq-fw-heading">Common Questions</h2>
+          <p>Everything you need to know before getting started.</p>
         </div>
+        <div class="faq-grid">
 
-        <div class="faq-list">
-          <div class="faq-item open">
-            <button type="button" class="faq-question" aria-expanded="true">
-              Comment fonctionne concrètement le système ?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer">
-              La matière organique est introduite quotidiennement dans une chambre étanche. En l'absence d'oxygène, des micro-organismes décomposent cette matière et produisent un mélange gazeux riche en méthane. Ce biogaz est conduit vers un brûleur pour la cuisson, tandis que le résidu liquide-solide (digestat) est récupéré pour fertiliser les sols.
-            </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Comment fonctionne le système ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Les déchets organiques pénètrent par l’entrée et les bactéries anaérobies à l’intérieur de la poche scellée les décomposent sur 15 à 30 jours. Le biogaz riche en méthane monte vers le haut pour la cuisson ; du bio-engrais liquide s’écoule du robinet de sortie. Pas d’électricité, pas de produits chimiques — juste la biologie naturelle.</p></div>
           </div>
 
           <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              Quels types de déchets puis-je introduire ?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer">
-              Épluchures de légumes, restes cuits, pain rassis, riz, pâtes, fruits abîmés, marc de café, sachets de thé, petits os. Les éléments à éviter incluent les quantités importantes de produits laitiers, les huiles, les agrumes en grande proportion et tous les plastiques ou métaux.
-            </div>
+            <button class="faq-q" aria-expanded="false">What waste can I feed in?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Les restes alimentaires, épluchures de légumes, déchets de fruits, restes cuits et petites quantités de fumier animal fonctionnent tous bien. Évitez les grandes quantités d’huiles ou de viande. Plus l’apport quotidien est régulier, plus la production de gaz est stable.</p></div>
           </div>
 
           <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              Combien de temps avant que le gaz soit disponible ?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer">
-              Le système atteint son régime de production en quelques jours après la première charge. Au-delà de cette phase de démarrage, une production quotidienne stable de biogaz est observable tant que l'alimentation reste régulière.
-            </div>
+            <button class="faq-q" aria-expanded="false">How long before gas is produced?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>La colonie bactérienne a besoin de 2 à 3 semaines pour s’établir après le chargement initial. Une fois active, le système produit du biogaz en continu. Un apport quotidien équivaut à un gaz de cuisson quotidien — et le système peut supporter des interruptions ; vous n’avez pas besoin d’alimenter chaque jour.</p></div>
           </div>
 
           <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              Le processus dégage-t-il des odeurs ?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer">
-              Correctement utilisé et entretenu, le système reste inodore au quotidien. La digestion anaérobie est un processus fermé ; tant que la chambre reste étanche et que les résidus sont vidangés régulièrement, aucune odeur ne s'en échappe dans l'environnement.
-            </div>
+            <button class="faq-q" aria-expanded="false">Does it smell?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>No. The sealed, oxygen-free environment is what makes anaerobic digestion work — and what eliminates odour. There is no smell during normal operation. Any odour would indicate a seal issue, which is straightforward to diagnose and resolve.</p></div>
           </div>
 
           <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              Où placer l'unité ?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer">
-              Dans un espace abrité et ventilé — cuisine, buanderie, local technique, abri extérieur couvert. L'unité doit rester accessible pour le chargement quotidien et à proximité d'une sortie cuisine pour la conduite de gaz courte.
-            </div>
+            <button class="faq-q" aria-expanded="false">Où dois-je placer le système ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Outdoors in a sunny, sheltered spot is ideal — near a water source for easy feeding. It can also be placed inside a well-ventilated greenhouse. Choose a flat, stable surface. Biogas pipe runs of up to 50 m are possible with good pressure.</p></div>
           </div>
 
           <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              Comment utiliser le biofertilisant produit ?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer">
-              Le digestat liquide peut être appliqué directement sur les plantes, les cultures et les arbres fruitiers, idéalement dilué à 1:10 avec de l'eau pour les applications foliaires. Il est riche en azote, phosphore et potassium et remplace les engrais chimiques conventionnels.
-            </div>
+            <button class="faq-q" aria-expanded="false">Comment utiliser le bio-engrais ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Dilute at roughly 1:3 (fertiliser to water) before applying. It is richer than raw compost — packed with nitrogen, phosphorus, potassium, amino acids, and beneficial microorganisms that are immediately bioavailable to plants.</p></div>
           </div>
 
           <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              Le système a-t-il besoin d'une température ambiante particulière ?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer">
-              La digestion elle-même est maintenue à 35–40 °C, indépendamment de l'environnement. Le système fonctionne donc aussi bien dans des climats frais que chauds — le chauffage interne assure une activité microbienne stable.
-            </div>
+            <button class="faq-q" aria-expanded="false">What temperature does it need?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Meilleures performances au-dessus de 18 °C (64 °F). En dessous de 10 °C, l’activité ralentit considérablement. Dans les climats plus froids, isolez la poche ou placez-la dans une serre. Réduisez l’alimentation de moitié en hiver ; évitez d’alimenter si le système est gelé.</p></div>
           </div>
 
           <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              À quelle fréquence faut-il vider ou nettoyer ?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer">
-              Une vidange complète du digestat est généralement recommandée tous les 30 à 90 jours selon le volume traité. Un nettoyage léger des surfaces et un rinçage de la tuyauterie suffisent pour l'entretien courant, à fréquence hebdomadaire.
-            </div>
+            <button class="faq-q" aria-expanded="false">Does it need emptying or cleaning?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Aucun vidage nécessaire — le digestat liquide s’écoule en continu à mesure que vous ajoutez des déchets. L’intérieur ne nécessite pas de nettoyage. Remplacez le filtre à gaz tous les 6 à 12 mois. L’extérieur du système peut être nettoyé à l’eau uniquement. Durée de vie attendue : plus de 15 ans.</p></div>
           </div>
 
           <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              Faut-il un brûleur spécifique pour le biogaz ?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer">
-              Un brûleur à gaz standard, correctement dimensionné pour le débit de biogaz, convient. Pour une performance optimale, un brûleur à injecteur large ou spécialement adapté au biogaz est recommandé — disponible en option dans nos packs d'installation.
-            </div>
+            <button class="faq-q" aria-expanded="false">Can I use it with a dedicated biogas stove?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Yes — and we recommend using a stove designed for low-pressure biogas. The gas is uncompressed, so standard LPG appliances require a simple adaptor. The system produces enough gas for 1–3 hours of daily cooking depending on input volume.</p></div>
           </div>
 
           <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              Le système est-il sûr à utiliser à la maison ?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer">
-              Oui. La chambre de digestion est entièrement fermée, la conduite de gaz est hermétique et le brûleur fonctionne comme n'importe quelle installation de cuisson au gaz domestique. Le système est livré avec un manuel d'installation complet et des consignes de sécurité claires.
-            </div>
+            <button class="faq-q" aria-expanded="false">Is it safe?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Oui. Le biogaz est stocké à très basse pression, non comprimé. Étant plus léger que l’air, toute fuite se disperse vers le haut en toute sécurité plutôt que de s’accumuler au niveau du sol. La conception scellée empêche le risque de flamme nue au niveau de la poche. Le système respecte les normes internationales de sécurité du biogaz.</p></div>
           </div>
+
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="cta-band" aria-labelledby="cta-title" style="background: linear-gradient(135deg, #2b4a25, #466e3c); color: #fff; padding: 5rem 1.5rem; text-align: center;">
-      <div class="container" style="max-width: 800px; margin: 0 auto;">
-        <h2 id="cta-title" style="font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 1rem;">Discuter d'un système pour déchets alimentaires</h2>
-        <p style="color: rgba(255,255,255,0.9); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.6;">
-          Indiquez-nous votre volume quotidien de restes, votre contexte d'utilisation et vos contraintes d'installation. Nous dimensionnerons une proposition adaptée à votre projet.
-        </p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="contact.html" class="btn btn-primary" style="background: #fff; color: #2b4a25;">Demander un devis</a>
-          <a href="reseller-program.html" class="btn btn-ghost" style="border-color: rgba(255,255,255,0.6); color: #fff;">Devenir partenaire</a>
-        </div>
+    <section class="cta-section" aria-labelledby="cta-fw-heading">
+      <div class="container fade-in">
+        <span class="section-label" style="color:var(--primary-light);">Get in Touch</span>
+        <h2 id="cta-fw-heading">Discuss a Food Waste System</h2>
+        <p>Que vous planifiiez une installation ménagère ou un système à l’échelle communautaire, nous sommes prêts à explorer la bonne configuration avec vous.</p>
+        <a href="contact.html?interest=food-waste" class="btn btn-primary">Start a Conversation</a>
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="container">
-      <div class="footer-top">
+      <div class="footer-grid">
         <div class="footer-brand">
-          <img src="../images/logo.svg" alt="Logo Terra Digester" width="160" height="40" />
-          <p>Quatre lettres, un système : transformer les flux résiduels en ressources utiles, à l'échelle d'un foyer, d'une exploitation ou d'une institution.</p>
-          <p class="vision">« Transformer les résidus en or brun, brique après brique, foyer après foyer. »</p>
+          <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <span class="nav-logo-text">Terra<span>Digester</span></span>
+          </a>
+          <p>Waste into value. Systems for a circular future.</p>
+          <div class="location"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5C2.5 7.25 6 11 6 11C6 11 9.5 7.25 9.5 4.5C9.5 2.57 7.93 1 6 1Z" stroke="currentColor" stroke-width="1"/><circle cx="6" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1"/></svg> Brussels, Belgium</div>
         </div>
         <div class="footer-col">
-          <h4>Systèmes</h4>
+          <h4>Quick Links</h4>
           <ul>
-            <li><a href="food-waste-systems.html">Déchets alimentaires</a></li>
-            <li><a href="bio-toilet-solutions.html">Bio-toilettes</a></li>
-            <li><a href="dairy-farmers-system.html">Producteurs laitiers</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Société</h4>
-          <ul>
-            <li><a href="about.html">À propos</a></li>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="food-waste-systems.html">Systèmes de déchets alimentaires</a></li>
+            <li><a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a></li>
+            <li><a href="dairy-farmers-system.html">Système pour exploitations laitières</a></li>
+            <li><a href="buy-carbon.html">Acheter du carbone</a></li>
             <li><a href="technology.html">Technologie</a></li>
-            <li><a href="buy-carbon.html">Carbone</a></li>
-            <li><a href="reseller-program.html">Programme de distribution</a></li>
+            <li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="footer-col footer-contact">
           <h4>Contact</h4>
-          <address>
-            Bruxelles, Belgique<br />
-            <a href="mailto:hello@terradigester.com">hello@terradigester.com</a><br />
-            <a href="contact.html">Formulaire de contact</a>
-          </address>
+          <p><a href="mailto:info@terradigester.com">info@terradigester.com</a></p>
+          <p>Brussels, Belgium<br>European Union</p>
+        </div>
+        <div class="footer-col footer-vision">
+          <h4>Our Purpose</h4>
+          <p><strong>Building circular systems</strong>"Building circular systems for a resilient future — where organic waste becomes clean energy, fertile soil, and measurable climate value."</p>
         </div>
       </div>
       <div class="footer-bottom">
-        <small>&copy; <span id="year">2026</span> Terra Loop SRL — Terra Digester. Tous droits réservés.</small>
-        <ul class="footer-legal">
-          <li><a href="privacy-policy.html">Politique de confidentialité</a></li>
-          <li><a href="terms-of-use.html">Conditions d'utilisation</a></li>
-        </ul>
+        <p>© 2026 Terra Digester. All rights reserved.</p>
+        <div style="display:flex;gap:1.5rem;"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></div>
       </div>
     </div>
   </footer>
 
   <script>
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(btn => {
+    const mobileToggle=document.getElementById('mobileToggle'),mobileNav=document.getElementById('mobileNav'),mobileClose=document.getElementById('mobileClose');
+    mobileToggle.addEventListener('click',()=>{mobileNav.classList.add('open');document.body.style.overflow='hidden';});
+    mobileClose.addEventListener('click',()=>{mobileNav.classList.remove('open');document.body.style.overflow='';});
+    mobileNav.addEventListener('click',(e)=>{if(e.target===mobileNav){mobileNav.classList.remove('open');document.body.style.overflow='';}});
+    // --- Scroll fade-in ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.style.background = window.scrollY > 60 ? 'rgba(27,58,45,0.98)' : 'rgba(27,58,45,0.96)';
+    }, { passive: true });
+
+    // ══════════════════════════════════════════════
+    //  HOW IT WORKS — interactive 4-step stepper
+    // ══════════════════════════════════════════════
+    const STEP_LABELS = [
+      'Step 1 — Insert Waste',
+      'Step 2 — Anaerobic Digestion',
+      'Step 3 — Clean Cooking Gas',
+      'Step 4 — Liquid Bio-fertiliser'
+    ];
+
+    let currentStep = 0;
+    let autoTimer   = null;
+    const TOTAL     = 4;
+    const AUTO_MS   = 5000; // auto-advance every 5 s
+
+    const panels      = document.querySelectorAll('.how-panel');
+    const trackBtns   = document.querySelectorAll('.how-track-btn');
+    const lineFills   = document.querySelectorAll('.how-track-line-fill');
+    const prevBtn     = document.getElementById('howPrev');
+    const nextBtn     = document.getElementById('howNext');
+    const stepLabel   = document.getElementById('howStepLabel');
+
+    function goToStep(n, fromAuto) {
+      // Clamp
+      n = Math.max(0, Math.min(TOTAL - 1, n));
+      if (n === currentStep && !fromAuto) return;
+
+      // Hide current panel
+      panels[currentStep].classList.remove('active');
+      trackBtns[currentStep].classList.remove('active');
+      trackBtns[currentStep].setAttribute('aria-selected', 'false');
+
+      // Fill track lines up to (and including) previous segments
+      lineFills.forEach((lf, i) => {
+        lf.style.width = i < n ? '100%' : '0%';
+      });
+
+      currentStep = n;
+
+      // Show new panel
+      panels[currentStep].classList.add('active');
+      trackBtns[currentStep].classList.add('active');
+      trackBtns[currentStep].setAttribute('aria-selected', 'true');
+
+      // Prev / Next buttons
+      prevBtn.disabled = currentStep === 0;
+      nextBtn.textContent = currentStep === TOTAL - 1 ? '↩ Restart' : 'Next step →';
+      stepLabel.textContent = STEP_LABELS[currentStep];
+
+      // Re-trigger SVG draw-path animations by cloning the SVG
+      const activePanel = panels[currentStep];
+      activePanel.querySelectorAll('.draw-path').forEach(el => {
+        const clone = el.cloneNode(true);
+        el.parentNode.replaceChild(clone, el);
+      });
+    }
+
+    // Track buttons
+    trackBtns.forEach((btn, i) => {
       btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const open = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        });
-        if (!open) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
+        clearInterval(autoTimer);
+        goToStep(i);
+        startAuto();
       });
     });
 
-    // Process stepper with auto-advance
-    (function() {
-      const STAGES = document.querySelectorAll('.step-stage');
-      const PIPS = document.querySelectorAll('.step-progress .pip');
-      const prevBtn = document.querySelector('[data-action="prev"]');
-      const nextBtn = document.querySelector('[data-action="next"]');
-      const restartBtn = document.querySelector('[data-action="restart"]');
-      const autoBtn = document.querySelector('[data-action="auto"]');
-      const autoLabel = autoBtn.querySelector('.auto-label');
-      const AUTO_MS = 5000;
-      const STEP_LABELS_FR = [
-        'Étape 1 — Introduire les déchets',
-        'Étape 2 — Digestion anaérobie',
-        'Étape 3 — Biogaz de cuisson propre',
-        'Étape 4 — Biofertilisant liquide'
-      ];
-      let current = 1;
-      let autoTimer = null;
+    // Prev button
+    prevBtn.addEventListener('click', () => {
+      clearInterval(autoTimer);
+      goToStep(currentStep - 1);
+      startAuto();
+    });
 
-      function goToStep(n) {
-        if (n < 1 || n > STAGES.length) return;
-        current = n;
-        STAGES.forEach(s => s.classList.toggle('is-active', Number(s.dataset.step) === n));
-        PIPS.forEach((p, i) => p.classList.toggle('active', i === n - 1));
-        prevBtn.disabled = n === 1;
-        nextBtn.disabled = n === STAGES.length;
-        // restart button always visible, useful signal
-        restartBtn.setAttribute('aria-label', 'Recommencer depuis le début — ' + STEP_LABELS_FR[n - 1]);
+    // Next button
+    nextBtn.addEventListener('click', () => {
+      clearInterval(autoTimer);
+      if (currentStep === TOTAL - 1) {
+        goToStep(0);
+      } else {
+        goToStep(currentStep + 1);
       }
+      startAuto();
+    });
 
-      function next() { goToStep(current === STAGES.length ? 1 : current + 1); }
-      function prev() { goToStep(current === 1 ? STAGES.length : current - 1); }
-      function restart() { goToStep(1); if (autoTimer) restartAuto(); }
+    // Auto-advance when section is in view
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => {
+        goToStep(currentStep === TOTAL - 1 ? 0 : currentStep + 1, true);
+      }, AUTO_MS);
+    }
 
-      function startAuto() {
-        autoBtn.classList.remove('paused');
-        autoLabel.textContent = 'Lecture auto : activée';
-        autoTimer = setInterval(next, AUTO_MS);
-      }
-      function stopAuto() {
-        autoBtn.classList.add('paused');
-        autoLabel.textContent = 'Lecture auto : en pause';
-        clearInterval(autoTimer);
-        autoTimer = null;
-      }
-      function restartAuto() { stopAuto(); startAuto(); }
-
-      prevBtn.addEventListener('click', () => { if (autoTimer) stopAuto(); prev(); });
-      nextBtn.addEventListener('click', () => { if (autoTimer) stopAuto(); next(); });
-      restartBtn.addEventListener('click', restart);
-      autoBtn.addEventListener('click', () => { autoTimer ? stopAuto() : startAuto(); });
-
-      // Keyboard navigation
-      document.addEventListener('keydown', (e) => {
-        if (!document.querySelector('.process-stepper')) return;
-        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-        if (e.key === 'ArrowRight') { if (autoTimer) stopAuto(); next(); }
-        if (e.key === 'ArrowLeft')  { if (autoTimer) stopAuto(); prev(); }
-        if (e.key === ' ' || e.code === 'Space') { e.preventDefault(); autoTimer ? stopAuto() : startAuto(); }
+    // Only auto-play once the section enters the viewport
+    const howSection = document.getElementById('how-it-works');
+    let autoStarted  = false;
+    const howObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !autoStarted) {
+          autoStarted = true;
+          startAuto();
+        }
+        if (!entry.isIntersecting) {
+          clearInterval(autoTimer);
+          autoStarted = false;
+        }
       });
+    }, { threshold: 0.3 });
+    if (howSection) howObserver.observe(howSection);
 
-      // Mobile menu
-      const mobileToggle = document.querySelector('.mobile-toggle');
-      const primaryNav = document.querySelector('.primary-nav');
-      if (mobileToggle && primaryNav) {
-        mobileToggle.addEventListener('click', () => {
-          const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-          mobileToggle.setAttribute('aria-expanded', String(!expanded));
-          primaryNav.classList.toggle('open');
-        });
-      }
+    // Keyboard navigation (left/right arrows)
+    document.addEventListener('keydown', (e) => {
+      const inView = howSection && howSection.getBoundingClientRect().top < window.innerHeight;
+      if (!inView) return;
+      if (e.key === 'ArrowRight') { clearInterval(autoTimer); goToStep(currentStep + 1); startAuto(); }
+      if (e.key === 'ArrowLeft')  { clearInterval(autoTimer); goToStep(currentStep - 1); startAuto(); }
+    });
 
-      // Footer year
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    // Initialise
+    goToStep(0, true);
 
-      goToStep(1);
-    })();
+    // ── FAQ accordion ──
+    document.querySelectorAll('.faq-q').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item=btn.closest('.faq-item');
+        const isOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el=>{el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+        if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+      });
+    });
+  </script>
+
+  <script>
+  /* ── Dropdown: JS hover with delay to prevent flicker ── */
+  (function(){
+    document.querySelectorAll('.nav-dropdown').forEach(function(item){
+      var menu = item.querySelector('.dropdown-menu');
+      if(!menu) return;
+      var timer = null;
+      function show(){ clearTimeout(timer); menu.classList.add('open'); }
+      function hide(){ timer = setTimeout(function(){ menu.classList.remove('open'); }, 150); }
+      item.addEventListener('mouseenter', show);
+      item.addEventListener('mouseleave', hide);
+      menu.addEventListener('mouseenter', show);
+      menu.addEventListener('mouseleave', hide);
+    });
+  })();
   </script>
 </body>
 </html>

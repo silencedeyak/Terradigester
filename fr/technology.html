@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2352B788'/><path d='M16 4C16 4 8 8 8 14C8 17.3 10.7 20 16 20C19.3 20 22 17.3 22 14C22 8 16 4 16 4Z' stroke='%231B3A2D' stroke-width='1.5' fill='none'/></svg>" type="image/svg+xml">
-  <meta name="description" content="Technologie Terra Digester — la science et les principes d'ingénierie derrière nos systèmes de digestion anaérobie, des fondamentaux microbiologiques à la fiabilité terrain de long terme." />
-  <title>Technologie | Terra Digester — Systèmes de digestion anaérobie</title>
+  <meta name="description" content="Technologie Terra Digester — la science et les principes d'ingénierie derrière les systèmes de digestion anaérobie par biogaz, philosophie de conception, matériaux et fiabilité à long terme." />
+  <link rel="canonical" href="https://terradigester.com/fr/technology.html" />
+  <link rel="alternate" hreflang="en" href="https://terradigester.com/technology.html" />
+  <link rel="alternate" hreflang="fr" href="https://terradigester.com/fr/technology.html" />
+  <link rel="alternate" hreflang="de" href="https://terradigester.com/de/technology.html" />
+  <title>Technologie &amp; Ingénierie | Terra Digester — Systèmes de digestion anaérobie</title>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{--primary-dark:#1B3A2D;--primary:#2D6A4F;--primary-light:#52B788;--earth-brown:#7F5539;--earth-light:#DDB892;--neutral-900:#1A1A1A;--neutral-600:#6B7280;--neutral-200:#E5E7EB;--neutral-50:#F9FAFB;--white:#FFFFFF;--radius-sm:8px;--radius-md:12px;--radius-lg:20px;--transition:all 0.3s ease;--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 8px 25px rgba(0,0,0,0.10);}
+    :root{--primary-dark:#1B3A2D;--primary:#2D6A4F;--primary-light:#52B788;--earth-brown:#7F5539;--earth-light:#DDB892;--neutral-900:#1A1A1A;--neutral-600:#6B7280;--neutral-200:#E5E7EB;--neutral-50:#F9FAFB;--white:#FFFFFF;--radius-sm:8px;--radius-md:12px;--transition:all 0.3s ease;--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 8px 25px rgba(0,0,0,0.10);}
     html{scroll-behavior:smooth;}
     body{font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:1rem;line-height:1.7;color:var(--neutral-900);background:var(--white);overflow-x:hidden;}
     a{color:var(--primary);text-decoration:none;}a:hover{text-decoration:underline;}
@@ -26,8 +30,6 @@
     .btn{display:inline-block;padding:14px 32px;border-radius:var(--radius-sm);font-size:1rem;font-weight:500;cursor:pointer;border:2px solid transparent;transition:var(--transition);text-decoration:none;line-height:1;}
     .btn-primary{background:var(--primary);color:var(--white);border-color:var(--primary);}
     .btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(45,106,79,0.35);text-decoration:none;color:var(--white);}
-    .btn-outline-light{display:inline-block;padding:14px 32px;border:2px solid rgba(255,255,255,0.7);color:var(--white);border-radius:var(--radius-sm);font-weight:500;transition:var(--transition);text-decoration:none;}
-    .btn-outline-light:hover{background:rgba(255,255,255,0.12);border-color:var(--white);text-decoration:none;color:var(--white);}
 
     /* NAV */
     .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,58,45,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);}
@@ -46,13 +48,7 @@
     .dropdown-menu a:last-child{border-bottom:none;}
     .dropdown-menu a:hover{background:rgba(82,183,136,0.2);color:var(--white);}
     .dropdown-menu.open{display:block;}
-
-    /* ── LANGUAGE SWITCHER — desktop nav ── */
-    .nav-links .lang-switcher{display:flex;align-items:center;gap:0;margin-left:0.5rem;padding-left:0.75rem;border-left:1px solid rgba(255,255,255,0.15);}
-    .nav-links .lang-switcher a{padding:8px 10px;font-size:0.78rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.55);min-width:30px;text-align:center;border-radius:6px;}
-    .nav-links .lang-switcher a:hover{color:var(--white);background:rgba(255,255,255,0.08);text-decoration:none;}
-    .nav-links .lang-switcher a.active{color:var(--primary-dark);background:var(--primary-light);font-weight:700;}
-
+    .nav-cta{background:var(--primary-light)!important;color:var(--primary-dark)!important;font-weight:600!important;padding:8px 18px!important;}
     .nav-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
     .nav-mobile-toggle span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
     .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--primary-dark);z-index:999;padding:2rem;flex-direction:column;gap:1rem;overflow-y:auto;}
@@ -62,106 +58,131 @@
     .mobile-nav-links a{color:rgba(255,255,255,0.9);font-size:1.1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);text-decoration:none;}
     .mobile-nav-links a:hover{color:var(--primary-light);}
     .mobile-nav-links .sub-link{padding-left:1.25rem;font-size:1rem;color:rgba(255,255,255,0.7);}
-    .mobile-nav-links .lang-switcher{display:flex;gap:0.6rem;padding:14px 0 20px;border-bottom:1px solid rgba(255,255,255,0.1);}
-    .mobile-nav-links .lang-switcher a{padding:8px 16px;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;border:1px solid rgba(255,255,255,0.2);border-radius:6px;color:rgba(255,255,255,0.7);align-self:flex-start;}
-    .mobile-nav-links .lang-switcher a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary-light);}
-
     @media(max-width:1024px){.nav-links{display:none;}.nav-mobile-toggle{display:flex;}}
 
     /* HERO */
-    .hero{min-height:60vh;padding-top:120px;background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(45,106,79,0.5) 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 80% 20%,rgba(27,58,45,0.65) 0%,transparent 60%),linear-gradient(135deg,#0d2219 0%,#1B3A2D 40%,#142d22 100%);position:relative;overflow:hidden;}
-    .hero-two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;padding-bottom:5rem;}
-    .hero-content{position:relative;z-index:2;}
-    .hero h1{color:var(--white);max-width:600px;margin-bottom:1.25rem;}
+    .hero{min-height:55vh;display:flex;align-items:center;padding-top:72px;background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(45,106,79,0.5) 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 80% 20%,rgba(27,58,45,0.65) 0%,transparent 60%),linear-gradient(135deg,#0d2219 0%,#1B3A2D 40%,#142d22 100%);position:relative;overflow:hidden;}
+    .hero-content{padding-block:5rem 4rem;position:relative;z-index:2;}
+    .hero-two-col{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
+    .hero h1{color:var(--white);max-width:700px;margin-bottom:1.25rem;}
     .hero h1 em{font-style:normal;color:var(--primary-light);}
-    .hero-sub{color:rgba(255,255,255,0.75);font-size:clamp(1rem,1.6vw,1.15rem);max-width:520px;margin-bottom:2rem;}
+    .hero-sub{color:rgba(255,255,255,0.75);font-size:clamp(1rem,1.8vw,1.2rem);max-width:540px;margin-bottom:2rem;}
     .breadcrumb{display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;}
     .breadcrumb a{color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;}
     .breadcrumb a:hover{color:var(--primary-light);}
     .breadcrumb span{color:rgba(255,255,255,0.3);font-size:0.8rem;}
     .breadcrumb .current{color:var(--primary-light);font-size:0.8rem;}
+    /* Hero image — right column */
     .hero-img-wrap{position:relative;}
-    .hero-img-frame{border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(82,183,136,0.25);box-shadow:0 25px 70px rgba(0,0,0,0.4),0 0 0 4px rgba(82,183,136,0.1);}
-    .hero-img-frame img{width:100%;height:auto;display:block;aspect-ratio:3/2;object-fit:cover;}
-    .hero-img-caption{display:flex;align-items:center;gap:0.7rem;margin-top:1rem;padding:0.75rem 1rem;background:rgba(27,58,45,0.6);backdrop-filter:blur(10px);border-radius:10px;border:1px solid rgba(82,183,136,0.2);}
-    .badge-sm{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--primary-light);color:var(--primary-dark);padding:3px 9px;border-radius:4px;}
-    .hero-img-caption span:last-child{color:rgba(255,255,255,0.75);font-size:0.82rem;}
-    @media(max-width:900px){.hero-two-col{grid-template-columns:1fr;gap:2.5rem;}.hero-img-frame img{aspect-ratio:4/3;}}
+    .hero-img-frame{
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:
+        0 0 0 1px rgba(82,183,136,0.25),
+        0 0 32px rgba(82,183,136,0.18),
+        0 24px 56px rgba(0,0,0,0.55);
+      animation:techImgFloat 6s ease-in-out infinite;
+    }
+    .hero-img-frame img{width:100%;height:auto;display:block;border-radius:20px;}
+    .hero-img-frame::after{
+      content:'';
+      position:absolute;inset:0;
+      border-radius:20px;
+      background:linear-gradient(135deg,rgba(82,183,136,0.08) 0%,transparent 50%);
+      pointer-events:none;
+    }
+    .hero-img-caption{
+      margin-top:0.85rem;
+      display:flex;align-items:center;gap:0.6rem;
+      font-size:0.82rem;color:rgba(255,255,255,0.45);
+    }
+    .hero-img-caption .badge-sm{
+      background:rgba(82,183,136,0.15);
+      border:1px solid rgba(82,183,136,0.3);
+      color:var(--primary-light);
+      font-size:0.75rem;font-weight:600;
+      padding:0.2rem 0.65rem;
+      border-radius:20px;
+    }
+    @keyframes techImgFloat{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-7px);}
+    }
+    @media(max-width:900px){
+      .hero-two-col{grid-template-columns:1fr;gap:2rem;}
+      .hero-img-wrap{max-width:520px;margin-inline:auto;}
+    }
 
-    /* AD SECTION */
+    /* AD FUNDAMENTALS */
     .ad-section{background:var(--white);}
-    .ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-    .ad-text h2{margin-bottom:1.5rem;}
-    .ad-text p{color:var(--neutral-600);margin-bottom:1rem;font-size:1.05rem;line-height:1.8;}
-    .ad-text ul{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;}
-    .ad-text ul li{padding-left:1.75rem;position:relative;color:var(--neutral-600);font-size:0.95rem;line-height:1.7;}
-    .ad-text ul li::before{content:'—';position:absolute;left:0;color:var(--primary-light);font-weight:700;}
+    .ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    .ad-text h2{margin-bottom:1.25rem;}
+    .ad-text p{color:var(--neutral-600);margin-bottom:1rem;}
+    .ad-text ul{list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem;}
+    .ad-text ul li{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.95rem;color:var(--neutral-600);}
+    .ad-text ul li::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--primary-light);margin-top:0.6rem;flex-shrink:0;}
     .ad-diagram{background:var(--neutral-50);border-radius:var(--radius-md);padding:2rem;border:1px solid var(--neutral-200);}
-    .ad-stages{display:flex;flex-direction:column;gap:0.5rem;}
-    .ad-stage{display:flex;align-items:flex-start;gap:1rem;background:var(--white);padding:1rem;border-radius:var(--radius-sm);border:1px solid var(--neutral-200);}
-    .ad-stage-icon{width:40px;height:40px;flex-shrink:0;border-radius:8px;background:rgba(82,183,136,0.1);display:flex;align-items:center;justify-content:center;}
-    .ad-stage-text h4{font-size:0.95rem;font-weight:600;color:var(--primary-dark);margin-bottom:0.3rem;}
-    .ad-stage-text p{font-size:0.85rem;color:var(--neutral-600);line-height:1.6;}
-    .ad-arrow{text-align:center;color:var(--primary-light);font-size:1.2rem;font-weight:700;padding:0.25rem 0;}
-    .ad-outputs{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
-    .ad-output{padding:0.85rem 1rem;border-radius:var(--radius-sm);text-align:center;font-weight:600;font-size:0.95rem;}
-    .ad-output.biogas{background:rgba(45,106,79,0.1);color:var(--primary-dark);border:1px solid rgba(45,106,79,0.2);}
-    .ad-output.digestate{background:rgba(82,183,136,0.12);color:var(--primary-dark);border:1px solid rgba(82,183,136,0.25);}
-    @media(max-width:900px){.ad-grid{grid-template-columns:1fr;gap:3rem;}}
+    .ad-stages{display:flex;flex-direction:column;gap:0;}
+    .ad-stage{display:flex;align-items:center;gap:1.25rem;padding:1.25rem;background:var(--white);border-radius:var(--radius-sm);border:1px solid var(--neutral-200);margin-bottom:0;}
+    .ad-stage:nth-child(odd){border-left:3px solid var(--primary-light);}
+    .ad-stage:nth-child(even){border-left:3px solid var(--primary);}
+    .ad-stage-icon{width:40px;height:40px;border-radius:8px;background:rgba(82,183,136,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .ad-stage-text h4{font-size:0.9rem;font-weight:600;color:var(--primary-dark);margin-bottom:0.25rem;}
+    .ad-stage-text p{font-size:0.8rem;color:var(--neutral-600);}
+    .ad-arrow{text-align:center;color:var(--primary-light);font-size:1.25rem;padding:4px 0;}
+    .ad-outputs{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:1rem;}
+    .ad-output{padding:0.875rem;border-radius:var(--radius-sm);text-align:center;font-size:0.85rem;font-weight:600;}
+    .ad-output.biogas{background:rgba(45,106,79,0.08);border:1px solid rgba(45,106,79,0.2);color:var(--primary-dark);}
+    .ad-output.digestate{background:rgba(82,183,136,0.1);border:1px solid rgba(82,183,136,0.25);color:var(--primary);}
+    @media(max-width:768px){.ad-grid{grid-template-columns:1fr;gap:2rem;}.ad-outputs{grid-template-columns:1fr;}}
 
-    /* PHILOSOPHY */
+    /* DESIGN PHILOSOPHY */
     .philosophy-section{background:var(--neutral-50);}
-    .philosophy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
-    .philosophy-card{background:var(--white);border-radius:var(--radius-md);padding:2rem 1.75rem;border:1px solid var(--neutral-200);position:relative;transition:var(--transition);}
-    .philosophy-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
-    .philosophy-num{font-size:2.25rem;font-weight:800;color:var(--primary-light);line-height:1;margin-bottom:1rem;opacity:0.5;display:block;}
-    .philosophy-card h3{margin-bottom:0.75rem;color:var(--primary-dark);}
-    .philosophy-card p{font-size:0.9rem;color:var(--neutral-600);line-height:1.7;}
-    @media(max-width:1024px){.philosophy-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:600px){.philosophy-grid{grid-template-columns:1fr;}}
+    .philosophy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;}
+    .philosophy-card{background:var(--white);border-radius:var(--radius-md);padding:2.5rem;border:1px solid var(--neutral-200);box-shadow:var(--shadow-sm);transition:var(--transition);}
+    .philosophy-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);border-color:rgba(82,183,136,0.3);}
+    .philosophy-num{font-size:2.5rem;font-weight:800;color:rgba(82,183,136,0.2);line-height:1;margin-bottom:1rem;font-variant-numeric:tabular-nums;}
+    .philosophy-card h3{color:var(--primary-dark);margin-bottom:0.75rem;}
+    .philosophy-card p{color:var(--neutral-600);font-size:0.95rem;}
+    @media(max-width:768px){.philosophy-grid{grid-template-columns:1fr;}}
 
     /* MATERIALS & SAFETY */
     .materials-section{background:var(--white);}
-    .materials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;}
-    .material-item{background:var(--neutral-50);padding:1.5rem;border-radius:var(--radius-sm);border:1px solid var(--neutral-200);}
-    .material-item h4{font-size:0.95rem;font-weight:600;color:var(--primary-dark);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;}
-    .material-dot{width:8px;height:8px;border-radius:50%;background:var(--primary-light);}
-    .material-item p{font-size:0.875rem;color:var(--neutral-600);line-height:1.7;}
-    @media(max-width:900px){.materials-grid{grid-template-columns:1fr;}}
-    .safety-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;}
-    .safety-item{display:flex;align-items:flex-start;gap:1.25rem;padding:1.5rem;background:var(--white);border-radius:var(--radius-sm);border:1px solid var(--neutral-200);}
-    .safety-icon{width:44px;height:44px;flex-shrink:0;border-radius:10px;background:rgba(82,183,136,0.12);display:flex;align-items:center;justify-content:center;}
-    .safety-item h4{font-size:0.95rem;font-weight:600;color:var(--primary-dark);margin-bottom:0.4rem;}
-    .safety-item p{font-size:0.85rem;color:var(--neutral-600);line-height:1.6;}
-    @media(max-width:768px){.safety-grid{grid-template-columns:1fr;}}
+    .materials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem;}
+    .material-item{padding:1.75rem;border-radius:var(--radius-md);border:1px solid var(--neutral-200);background:var(--neutral-50);}
+    .material-item h4{font-size:1rem;font-weight:600;color:var(--primary-dark);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+    .material-dot{width:8px;height:8px;border-radius:50%;background:var(--primary-light);display:inline-block;flex-shrink:0;}
+    .material-item p{font-size:0.875rem;color:var(--neutral-600);}
+    .safety-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+    .safety-item{display:flex;gap:1rem;padding:1.5rem;background:linear-gradient(135deg,rgba(82,183,136,0.05),rgba(45,106,79,0.03));border-radius:var(--radius-md);border:1px solid rgba(82,183,136,0.2);}
+    .safety-icon{width:40px;height:40px;border-radius:8px;background:rgba(45,106,79,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .safety-item h4{font-size:0.9rem;font-weight:600;color:var(--primary-dark);margin-bottom:0.35rem;}
+    .safety-item p{font-size:0.85rem;color:var(--neutral-600);}
+    @media(max-width:768px){.materials-grid{grid-template-columns:1fr;}.safety-grid{grid-template-columns:1fr;}}
 
     /* RELIABILITY */
     .reliability-section{background:var(--neutral-50);}
-    .reliability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;}
-    .reliability-card{background:var(--white);border-radius:var(--radius-md);padding:2rem;border:1px solid var(--neutral-200);text-align:center;transition:var(--transition);}
-    .reliability-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
-    .reliability-icon{width:64px;height:64px;margin:0 auto 1rem;background:rgba(45,106,79,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;}
-    .reliability-card h3{margin-bottom:0.75rem;color:var(--primary-dark);}
-    .reliability-card p{font-size:0.875rem;color:var(--neutral-600);line-height:1.7;}
-    @media(max-width:900px){.reliability-grid{grid-template-columns:1fr;}}
+    .reliability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+    .reliability-card{background:var(--white);border-radius:var(--radius-md);padding:2rem;border:1px solid var(--neutral-200);text-align:center;box-shadow:var(--shadow-sm);}
+    .reliability-icon{width:60px;height:60px;border-radius:50%;margin:0 auto 1.25rem;background:linear-gradient(135deg,rgba(82,183,136,0.1),rgba(45,106,79,0.08));display:flex;align-items:center;justify-content:center;}
+    .reliability-card h3{color:var(--primary-dark);margin-bottom:0.75rem;}
+    .reliability-card p{font-size:0.875rem;color:var(--neutral-600);}
+    @media(max-width:768px){.reliability-grid{grid-template-columns:1fr;}}
 
-    /* IMPROVEMENT */
-    .improvement-section{background:linear-gradient(135deg,#1B3A2D 0%,#0d2219 100%);padding-block:clamp(4rem,8vw,7rem);color:var(--white);}
-    .improvement-inner{max-width:780px;margin-inline:auto;text-align:center;}
+    /* CONTINUOUS IMPROVEMENT */
+    .improvement-section{background:var(--primary-dark);color:rgba(255,255,255,0.85);padding-block:clamp(4rem,8vw,6rem);}
+    .improvement-inner{max-width:760px;margin-inline:auto;text-align:center;}
     .improvement-inner h2{color:var(--white);margin-bottom:1.5rem;}
-    .improvement-inner p{color:rgba(255,255,255,0.8);font-size:1.05rem;line-height:1.85;margin-bottom:1rem;}
-    .improvement-inner p strong{color:var(--primary-light);font-weight:600;}
-    .improvement-inner .btn-outline-light{margin-top:1.5rem;}
+    .improvement-inner p{font-size:clamp(1rem,1.6vw,1.15rem);line-height:1.8;color:rgba(255,255,255,0.75);margin-bottom:1rem;}
+    .improvement-inner p strong{color:var(--primary-light);}
+    .improvement-inner .btn-outline-light{display:inline-block;padding:14px 32px;border-radius:var(--radius-sm);font-size:1rem;font-weight:500;border:2px solid rgba(255,255,255,0.3);color:var(--white);transition:var(--transition);text-decoration:none;margin-top:1.5rem;}
+    .improvement-inner .btn-outline-light:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.6);text-decoration:none;}
 
     /* FOOTER */
-    .site-footer{background:var(--primary-dark);color:rgba(255,255,255,0.75);padding-block:clamp(3rem,6vw,5rem);}
+    .site-footer{background:var(--primary-dark);color:rgba(255,255,255,0.75);padding-block:clamp(3rem,6vw,5rem);border-top:1px solid rgba(255,255,255,0.08);}
     .footer-grid{display:grid;grid-template-columns:2fr 1.5fr 1.5fr 2fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.1);}
     .footer-brand p{font-size:0.875rem;line-height:1.7;margin-bottom:0.75rem;}
     .footer-brand .location{display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:rgba(255,255,255,0.5);}
-    .footer-lang-switcher{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;}
-    .footer-lang-switcher a{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;padding:5px 11px;border-radius:6px;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);text-decoration:none;transition:var(--transition);min-width:32px;text-align:center;}
-    .footer-lang-switcher a:hover{border-color:var(--primary-light);color:var(--primary-light);text-decoration:none;}
-    .footer-lang-switcher a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary-light);}
     .footer-col h4{color:var(--white);font-size:0.875rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.25rem;}
     .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
     .footer-col ul a{color:rgba(255,255,255,0.65);font-size:0.875rem;text-decoration:none;transition:var(--transition);}
@@ -183,36 +204,26 @@
   </style>
 </head>
 <body>
-  <!-- NAV -->
+  <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="container nav-inner" aria-label="Navigation principale">
-      <a href="index.html" class="nav-logo">
+      <a href="../index.html" class="nav-logo">
         <div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <span class="nav-logo-text">Terra<span>Digester</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
+        <li><a href="../index.html">Accueil</a></li>
         <li class="nav-dropdown"><a href="#">Solutions</a>
           <div class="dropdown-menu">
-            <a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a>
-            <a href="bio-toilet-solutions.html">Solutions bio-toilettes</a>
-            <a href="dairy-farmers-system.html">Système pour producteurs laitiers</a>
-            <a href="buy-carbon.html">Acheter des crédits carbone</a>
+            <a href="food-waste-systems.html">Systèmes de déchets alimentaires</a>
+            <a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a>
+            <a href="dairy-farmers-system.html">Système pour exploitations laitières</a>
+            <a href="buy-carbon.html">Acheter du carbone</a>
           </div>
         </li>
         <li><a href="technology.html" class="active">Technologie</a></li>
-        <li class="nav-dropdown"><a href="about.html">À propos</a>
-          <div class="dropdown-menu">
-            <a href="about.html">À propos de nous</a>
-            <a href="reseller-program.html">Programme de revente</a>
-          </div>
-        </li>
+        <li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
-        <li class="lang-switcher" aria-label="Sélecteur de langue">
-          <a href="../index.html" lang="en">EN</a>
-          <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
-          <a href="../de/index.html" lang="de">DE</a>
-        </li>
       </ul>
       <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Ouvrir la navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
@@ -220,45 +231,43 @@
   <div class="mobile-nav-overlay" id="mobileNav">
     <button class="mobile-nav-close" id="mobileClose">✕</button>
     <div class="mobile-nav-links">
-      <a href="index.html">Accueil</a>
-      <a href="food-waste-systems.html" class="sub-link">— Systèmes pour déchets alimentaires</a>
-      <a href="bio-toilet-solutions.html" class="sub-link">— Solutions bio-toilettes</a>
-      <a href="dairy-farmers-system.html" class="sub-link">— Système pour producteurs laitiers</a>
-      <a href="buy-carbon.html" class="sub-link">— Acheter des crédits carbone</a>
+      <a href="../index.html">Accueil</a>
+      <a href="food-waste-systems.html" class="sub-link">— Systèmes de déchets alimentaires</a>
+      <a href="bio-toilet-solutions.html" class="sub-link">— Solutions de bio-toilettes</a>
+      <a href="dairy-farmers-system.html" class="sub-link">— Système pour exploitations laitières</a>
+      <a href="buy-carbon.html" class="sub-link">— Acheter du carbone</a>
       <a href="technology.html">Technologie</a>
       <a href="about.html">À propos</a>
       <a href="reseller-program.html" class="sub-link">— Programme de revente</a>
       <a href="contact.html">Contact</a>
-      <div class="lang-switcher" aria-label="Sélecteur de langue">
-        <a href="../index.html" lang="en">EN</a>
-        <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
-        <a href="../de/index.html" lang="de">DE</a>
-      </div>
     </div>
   </div>
 
   <main>
     <!-- HERO -->
-    <section class="hero" aria-label="Bannière Technologie">
+    <section class="hero" aria-label="Héros technologie">
       <div class="container hero-content">
         <div class="hero-two-col">
+
+          <!-- Left: text -->
           <div>
             <div class="breadcrumb">
-              <a href="index.html">Accueil</a><span>/</span><span class="current">Technologie</span>
+              <a href="../index.html">Accueil</a><span>/</span><span class="current">Technologie</span>
             </div>
             <span class="section-label" style="color:var(--primary-light);">Ingénierie</span>
-            <h1>Concevoir des <em>systèmes circulaires</em></h1>
-            <p class="hero-sub">La science et les principes d'ingénierie derrière la biotechnologie Terra Digester — des fondamentaux de la digestion anaérobie jusqu'à la fiabilité terrain de long terme.</p>
-            <a href="contact.html" class="btn btn-primary">Parler à notre équipe</a>
+            <h1>Ingénierie des <em>systèmes circulaires</em></h1>
+            <p class="hero-sub">Les principes scientifiques et de conception derrière la biotechnologie Terra Digester — des fondamentaux de la digestion anaérobie à la fiabilité opérationnelle à long terme sur le terrain.</p>
+            <a href="contact.html" class="btn btn-primary">Parler avec notre équipe</a>
           </div>
+
+          <!-- Right: team photo -->
           <div class="hero-img-wrap fade-in fade-in-delay-1">
             <div class="hero-img-frame">
               <img
                 src="../images/technology-team.jpg"
-                alt="L'équipe d'ingénierie Terra Digester examine des plans de conception et des schémas de digestion anaérobie"
+                alt="Équipe d'ingénierie Terra Digester examinant les dessins de conception du système et les schémas de digestion anaérobie"
                 loading="eager"
                 width="640" height="427"
-                onerror="this.style.display='none';"
               />
             </div>
             <div class="hero-img-caption">
@@ -266,6 +275,7 @@
               <span>Équipe d'ingénierie — conception système &amp; validation terrain</span>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -276,18 +286,18 @@
         <div class="ad-grid">
           <div class="ad-text fade-in">
             <span class="section-label">La science</span>
-            <h2 id="ad-heading">La digestion anaérobie : le procédé central</h2>
-            <p>La digestion anaérobie (DA) est un processus biologique au cours duquel des micro-organismes décomposent des matières organiques en l'absence d'oxygène. C'est l'un des plus anciens cycles biochimiques de la nature — et l'une des méthodes les plus efficaces pour transformer les déchets organiques en énergie utilisable et en nutriments pour les plantes.</p>
-            <p>Le processus se déroule en quatre étapes biochimiques interconnectées, chacune portée par des communautés microbiennes spécialisées. La compréhension et la gestion de ces étapes sont au cœur d'un fonctionnement système stable et performant.</p>
+            <h2 id="ad-heading">Digestion anaérobie : le processus fondamental</h2>
+            <p>La digestion anaérobie (DA) est un processus biologique au cours duquel des microorganismes décomposent la matière organique en l'absence d'oxygène. C'est l'un des plus anciens cycles biochimiques naturels — et l'une des méthodes les plus efficaces pour convertir les déchets organiques en énergie utilisable et en nutriments pour les plantes.</p>
+            <p>Le processus se déroule en quatre étapes biochimiques interconnectées, chacune pilotée par des communautés microbiennes spécialisées. La compréhension et la gestion de ces étapes sont au cœur d'un fonctionnement système cohérent et performant.</p>
             <ul>
-              <li>La DA est pratiquée dans des systèmes industriels depuis plus d'un siècle, dans le traitement des eaux usées, la gestion des déchets agricoles et la transformation alimentaire.</li>
-              <li>Le processus est thermosensible : un fonctionnement mésophile (30–40 °C) convient à la plupart des applications à petite échelle.</li>
-              <li>La qualité de la matière entrante et le temps de rétention sont les principales variables qui déterminent le rendement en gaz et la qualité du digestat.</li>
-              <li>La composition du biogaz est typiquement de 50–70 % de méthane en volume, le reste étant principalement du dioxyde de carbone.</li>
+              <li>La DA est pratiquée dans des systèmes d'ingénierie depuis plus d'un siècle dans le traitement des eaux usées, la gestion des déchets agricoles et la transformation alimentaire.</li>
+              <li>Le processus est thermosensible : le fonctionnement mésophile (30–40 °C) convient à la plupart des applications à petite échelle.</li>
+              <li>La qualité du substrat et le temps de rétention sont les principales variables qui déterminent le rendement en gaz et la qualité du digestat.</li>
+              <li>La composition du biogaz est typiquement de 50 à 70 % de méthane en volume, le reste étant principalement du dioxyde de carbone.</li>
             </ul>
           </div>
-          <div class="ad-diagram fade-in fade-in-delay-1" aria-label="Schéma des étapes de la digestion anaérobie">
-            <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--neutral-600);margin-bottom:1.25rem;">Étapes du procédé DA</div>
+          <div class="ad-diagram fade-in fade-in-delay-1" aria-label="Diagramme des étapes de digestion anaérobie">
+            <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--neutral-600);margin-bottom:1.25rem;">Étapes du processus DA</div>
             <div class="ad-stages">
               <div class="ad-stage">
                 <div class="ad-stage-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 14C4 14 4 10 7 8C8.5 7 10 7 10 7" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/><path d="M10 7C10 7 12 6.5 14 8C16 9.5 16 13 16 13" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="5" r="2" stroke="#52B788" stroke-width="1.5"/></svg></div>
@@ -306,7 +316,7 @@
               <div class="ad-arrow" aria-hidden="true">↓</div>
               <div class="ad-stage">
                 <div class="ad-stage-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3C8 7 8 9 8 11C8 13.2 8.9 15 10 15C11.1 15 12 13.2 12 11C12 9 12 7 10 3Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="18" r="1.5" stroke="#52B788" stroke-width="1.5"/></svg></div>
-                <div class="ad-stage-text"><h4>4. Méthanogenèse</h4><p>Les archées méthanogènes convertissent l'acétate et l'hydrogène en méthane (CH₄) et CO₂ — produisant le biogaz.</p></div>
+                <div class="ad-stage-text"><h4>4. Méthanogenèse</h4><p>Les archées méthanogènes convertissent l'acétate et l'hydrogène en méthane (CH₄) et CO₂ — produisant la sortie de biogaz.</p></div>
               </div>
             </div>
             <div style="margin-top:1.25rem;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--neutral-600);margin-bottom:0.75rem;">Sorties du système</div>
@@ -319,59 +329,59 @@
       </div>
     </section>
 
-    <!-- PHILOSOPHIE DE CONCEPTION -->
+    <!-- PHILOSOPHIE DE CONCEPTION DU SYSTÈME -->
     <section class="section philosophy-section" aria-labelledby="philosophy-heading">
       <div class="container">
         <div class="section-header fade-in">
           <span class="section-label">Principes de conception</span>
-          <h2 id="philosophy-heading">Philosophie de conception système</h2>
-          <p>Quatre principes qui guident chaque système Terra Digester — de la conception initiale jusqu'à l'exploitation terrain.</p>
+          <h2 id="philosophy-heading">Philosophie de conception du système</h2>
+          <p>Quatre principes qui guident chaque système Terra Digester — de la conception initiale jusqu'au fonctionnement sur le terrain.</p>
         </div>
         <div class="philosophy-grid">
           <div class="philosophy-card fade-in fade-in-delay-1">
             <div class="philosophy-num">01</div>
             <h3>Modularité</h3>
-            <p>Chaque système est conçu comme un module discret et autonome. Les modules sont évolutifs — il est possible d'ajouter des unités supplémentaires à mesure que les volumes de matières entrantes augmentent. Les composants sont remplaçables sans nécessiter l'arrêt complet du système, et les unités sont conçues pour être transportables en vue d'une relocalisation ou d'un redéploiement.</p>
+            <p>Chaque système est conçu comme un module discret et autonome. Les modules sont évolutifs — des unités supplémentaires peuvent être ajoutées à mesure que les volumes de substrat augmentent. Les composants sont remplaçables sans nécessiter d'arrêt complet du système, et les unités sont conçues pour être transportables afin de permettre leur relocalisation ou redéploiement.</p>
           </div>
           <div class="philosophy-card fade-in fade-in-delay-2">
             <div class="philosophy-num">02</div>
             <h3>Simplicité</h3>
-            <p>Moins de pièces mobiles signifie une charge d'entretien réduite et une fiabilité opérationnelle accrue dans des environnements terrain exigeants. Notre processus de conception élimine activement la complexité — chaque composant doit justifier sa présence. La simplicité n'est pas un compromis ; c'est un choix d'ingénierie délibéré au service de la performance de long terme.</p>
+            <p>Moins de pièces mobiles signifie une charge de maintenance réduite et une fiabilité opérationnelle accrue dans des environnements de terrain exigeants. Notre processus de conception élimine activement la complexité — chaque composant doit justifier sa présence. La simplicité n'est pas un compromis ; c'est un choix d'ingénierie délibéré qui sert la performance à long terme.</p>
           </div>
           <div class="philosophy-card fade-in fade-in-delay-3">
             <div class="philosophy-num">03</div>
             <h3>Accessibilité</h3>
-            <p>Les systèmes doivent pouvoir être utilisés et entretenus par les utilisateurs locaux sans formation technique spécialisée. Les interfaces utilisateur sont intuitives. Les tâches de maintenance sont conçues pour être réalisées avec des outils disponibles localement. Les paramètres opérationnels sont communiqués en langage simple, et non en jargon d'ingénierie.</p>
+            <p>Les systèmes doivent être utilisables et entretenables par des utilisateurs locaux sans formation technique spécialisée. Les interfaces utilisateur sont intuitives. Les tâches de maintenance sont conçues pour être réalisées avec des outils disponibles localement. Les paramètres opérationnels sont communiqués en langage clair, pas en jargon d'ingénierie.</p>
           </div>
           <div class="philosophy-card fade-in fade-in-delay-4">
             <div class="philosophy-num">04</div>
             <h3>Résilience</h3>
-            <p>Conçus pour des environnements hostiles, une composition variable des intrants et des calendriers d'entretien irréguliers. Les systèmes sont dimensionnés avec des tolérances qui intègrent la variabilité du monde réel — et non les idéaux de laboratoire. L'ingénierie de la résilience reconnaît que les conditions terrain sont toujours plus exigeantes que les hypothèses de conception.</p>
+            <p>Conçus pour des environnements exigeants, des compositions de substrat variables et des calendriers de maintenance irréguliers. Les systèmes sont dimensionnés avec des tolérances qui intègrent la variation du monde réel, et non les idéaux de laboratoire. L'ingénierie de la résilience reconnaît que les conditions de terrain sont toujours plus difficiles que les hypothèses de conception.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- MATÉRIAUX ET SÉCURITÉ -->
+    <!-- MATÉRIAUX & SÉCURITÉ -->
     <section class="section materials-section" aria-labelledby="materials-heading">
       <div class="container">
         <div class="section-header fade-in">
           <span class="section-label">Matériaux &amp; sécurité</span>
           <h2 id="materials-heading">Sélection des matériaux &amp; ingénierie de la sécurité</h2>
-          <p>Les choix de matériaux impactent directement la durabilité, la sécurité et la performance environnementale. Nous appliquons des critères rigoureux.</p>
+          <p>Les choix de matériaux ont un impact direct sur la durabilité, la sécurité et la performance environnementale. Nous appliquons des critères de sélection rigoureux.</p>
         </div>
         <div class="materials-grid fade-in">
           <div class="material-item">
             <h4><span class="material-dot"></span> Construction résistant à la corrosion</h4>
-            <p>Les surfaces de contact sont spécifiées dans des matériaux présentant une résistance documentée à l'environnement corrosif de la digestion anaérobie — y compris les acides organiques, le sulfure d'hydrogène et les boues de digestat.</p>
+            <p>Les surfaces de contact sont spécifiées dans des matériaux offrant une résistance documentée à l'environnement corrosif de la digestion anaérobie — incluant les acides organiques, le sulfure d'hydrogène et les boues de digestat.</p>
           </div>
           <div class="material-item">
             <h4><span class="material-dot"></span> Normes de qualité alimentaire</h4>
-            <p>Lorsque les systèmes traitent des déchets organiques destinés à produire un biofertilisant pour des applications sur cultures alimentaires, les normes matériaux de qualité alimentaire sont appliquées pour éviter toute contamination du flux de sortie.</p>
+            <p>Lorsque les systèmes traitent des déchets organiques destinés à produire un biofertilisant pour des applications sur cultures vivrières, les normes de matériaux de qualité alimentaire sont appliquées pour prévenir la contamination du flux de sortie.</p>
           </div>
           <div class="material-item">
-            <h4><span class="material-dot"></span> Résistance aux UV &amp; aux intempéries</h4>
-            <p>Les composants exposés à l'extérieur sont spécifiés pour la stabilité aux UV et la résistance aux intempéries, adaptées au climat de déploiement visé — des conditions tropicales aux conditions arides ou tempérées.</p>
+            <h4><span class="material-dot"></span> Résistance UV &amp; aux intempéries</h4>
+            <p>Les composants exposés en extérieur sont spécifiés pour leur stabilité UV et leur résistance aux intempéries adaptées au climat de déploiement prévu — des conditions tropicales à arides en passant par tempérées.</p>
           </div>
         </div>
         <div style="font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--neutral-600);margin-bottom:1.25rem;" class="fade-in">Mesures de sécurité gaz</div>
@@ -380,59 +390,59 @@
             <div class="safety-icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#2D6A4F" stroke-width="1.5"/><path d="M11 7V12M11 14.5V15" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
-            <div><h4>Conception avec limiteur de pression</h4><p>Les systèmes intègrent des mécanismes calibrés de décharge de pression pour éviter toute surpression, garantissant un fonctionnement sûr même dans des conditions atypiques de production de gaz.</p></div>
+            <div><h4>Conception avec soupape de sûreté</h4><p>Les systèmes intègrent des mécanismes calibrés de décharge de pression pour prévenir la surpression, garantissant un fonctionnement sûr même dans des conditions atypiques de production de gaz.</p></div>
           </div>
           <div class="safety-item">
             <div class="safety-icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11C4 11 4 7 7 5C9 4 11 4 11 4" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/><path d="M11 4C11 4 14 4 16 6C18 8 18 11 18 11" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/><path d="M7 18C9 19 13 19 15 18" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/><path d="M11 11V16" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
-            <div><h4>Architecture anti-fuite</h4><p>Les canalisations de gaz sont conçues avec la prévention des fuites comme exigence première — joints étanches, connexions testées et protocoles d'installation qui réduisent au minimum les points de défaillance.</p></div>
+            <div><h4>Architecture anti-fuite</h4><p>Les chemins de gaz sont conçus avec la prévention des fuites comme exigence primaire — en utilisant des joints étanches, des connexions testées et des protocoles d'installation qui réduisent les points de défaillance.</p></div>
           </div>
           <div class="safety-item">
             <div class="safety-icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="4" y="4" width="14" height="14" rx="2" stroke="#2D6A4F" stroke-width="1.5"/><path d="M8 11L10 13L14 9" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <div><h4>Conception orientée conformité</h4><p>Les systèmes sont développés en tenant compte des normes internationales de sécurité applicables aux installations de biogaz, accompagnant le processus de mise en conformité pour les permis et le déploiement local.</p></div>
+            <div><h4>Conception orientée conformité</h4><p>Les conceptions de systèmes sont développées en tenant compte des normes internationales de sécurité applicables aux systèmes de biogaz, facilitant le processus de conformité pour les permis locaux et le déploiement.</p></div>
           </div>
           <div class="safety-item">
             <div class="safety-icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3L4 7V12C4 15.8 7 19.2 11 20C15 19.2 18 15.8 18 12V7L11 3Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 11L10 13L14 9" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <div><h4>Documentation de sécurité pour l'utilisateur final</h4><p>Tous les systèmes sont accompagnés de guides d'installation et d'exploitation en langage clair, couvrant les procédures de démarrage en sécurité, les paramètres de fonctionnement normaux et les protocoles de réponse aux situations anormales.</p></div>
+            <div><h4>Documentation sécurité utilisateur final</h4><p>Tous les systèmes sont accompagnés de guides d'installation et d'exploitation en langage clair, couvrant les procédures sûres de démarrage, les paramètres normaux et les protocoles de réponse aux conditions anormales.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FIABILITÉ DE LONG TERME -->
+    <!-- FIABILITÉ À LONG TERME -->
     <section class="section reliability-section" aria-labelledby="reliability-heading">
       <div class="container">
         <div class="section-header fade-in">
           <span class="section-label">Fiabilité</span>
-          <h2 id="reliability-heading">Conçu pour la performance de long terme</h2>
-          <p>Un système qui tombe en panne après deux ans n'apporte aucune valeur sur la durée. Notre ingénierie de fiabilité commence dès l'étape de conception.</p>
+          <h2 id="reliability-heading">Conçus pour une performance à long terme</h2>
+          <p>Un système qui tombe en panne après deux ans n'apporte aucune valeur à long terme. Notre ingénierie de fiabilité commence dès la phase de conception.</p>
         </div>
         <div class="reliability-grid">
           <div class="reliability-card fade-in fade-in-delay-1">
             <div class="reliability-icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="#2D6A4F" stroke-width="1.5"/><path d="M14 8V14L18 18" stroke="#52B788" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3>Durée de vie visée</h3>
-            <p>Les systèmes sont conçus avec une durée de service cible qui justifie l'investissement pour l'opérateur. Les composants structurels critiques sont surdimensionnés par rapport aux charges de service attendues pour offrir une marge opérationnelle.</p>
+            <h3>Durée de vie utile visée</h3>
+            <p>Les systèmes sont conçus avec une durée de service cible qui justifie l'investissement pour l'opérateur. Les composants structurels critiques sont surdimensionnés par rapport aux charges attendues pour offrir une marge opérationnelle.</p>
           </div>
           <div class="reliability-card fade-in fade-in-delay-2">
             <div class="reliability-icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M8 14H20M14 8V20" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="10" stroke="#52B788" stroke-width="1.5" stroke-dasharray="3 4"/></svg>
             </div>
             <h3>Philosophie de maintenance préventive</h3>
-            <p>Les exigences de maintenance sont conçues pour être périodiques, simples et réalisables sans équipement spécialisé. Les contrôles de routine se concentrent sur les quelques paramètres qui comptent le plus pour la santé du système, en évitant une complexité de maintenance qui décourage un entretien régulier.</p>
+            <p>Les besoins de maintenance sont conçus pour être périodiques, simples et réalisables sans équipement spécialisé. Les vérifications de routine se concentrent sur les quelques paramètres qui comptent le plus pour la santé du système, en évitant une complexité dissuasive.</p>
           </div>
           <div class="reliability-card fade-in fade-in-delay-3">
             <div class="reliability-icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 14C5 14 8 10 14 10C20 10 23 14 23 14C23 14 20 18 14 18C8 18 5 14 5 14Z" stroke="#2D6A4F" stroke-width="1.5"/><circle cx="14" cy="14" r="3" fill="rgba(82,183,136,0.2)" stroke="#52B788" stroke-width="1.5"/></svg>
             </div>
             <h3>Réparable par conception</h3>
-            <p>Les composants d'usure sont choisis pour être compatibles avec les pièces standard disponibles sur nos marchés principaux (comme l'Europe) lorsque cela est possible, réduisant la dépendance à des chaînes d'approvisionnement spécialisées dans ces régions. Les procédures de remplacement sont documentées dans des guides de maintenance conçus pour des non-spécialistes techniquement compétents. Pour les clients hors de ces régions, les composants clés peuvent être fournis via notre réseau mondial de logistique afin d'assurer la réparabilité.</p>
+            <p>Les composants d'usure sont sélectionnés pour être compatibles avec les pièces standard disponibles dans nos marchés principaux (tels que l'Europe) chaque fois que possible, réduisant la dépendance à des chaînes d'approvisionnement spécialisées. Les procédures de remplacement sont documentées dans des guides de maintenance destinés à des non-spécialistes techniquement compétents. Pour les clients hors de ces régions, les composants clés peuvent être fournis via notre réseau mondial de logistique.</p>
           </div>
         </div>
       </div>
@@ -444,7 +454,7 @@
         <div class="improvement-inner fade-in">
           <span class="section-label" style="color:var(--primary-light);">Pratique en évolution</span>
           <h2 id="improvement-heading">L'ingénierie est une pratique continue</h2>
-          <p>Nos systèmes évoluent. Nous intégrons <strong>l'apprentissage terrain, les retours utilisateurs et les avancées en science des matériaux</strong> dans chaque itération de nos conceptions. Un système livré aujourd'hui reflète la connaissance accumulée des déploiements précédents — et les enseignements d'aujourd'hui amélioreront les systèmes de demain.</p>
+          <p>Nos systèmes évoluent. Nous intégrons <strong>les retours de terrain, les retours utilisateurs et les connaissances actualisées en science des matériaux</strong> dans chaque itération de nos conceptions. Un système livré aujourd'hui reflète la connaissance accumulée des déploiements précédents — et les apprentissages d'aujourd'hui amélioreront les systèmes de demain.</p>
           <p>Nous ne considérons aucune conception comme définitive. En ingénierie, comme en biologie, l'adaptation est la survie.</p>
           <a href="contact.html" class="btn-outline-light">Explorer un partenariat technique</a>
         </div>
@@ -457,18 +467,13 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="nav-logo-text">Terra<span>Digester</span></span></a>
+          <a href="../index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="nav-logo-text">Terra<span>Digester</span></span></a>
           <p>Du déchet à la valeur. Des systèmes pour un avenir circulaire.</p>
           <div class="location"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5C2.5 7.25 6 11 6 11C6 11 9.5 7.25 9.5 4.5C9.5 2.57 7.93 1 6 1Z" stroke="currentColor" stroke-width="1"/><circle cx="6" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1"/></svg> Bruxelles, Belgique</div>
-          <div class="footer-lang-switcher" aria-label="Sélecteur de langue">
-            <a href="../index.html" lang="en">EN</a>
-            <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
-            <a href="../de/index.html" lang="de">DE</a>
-          </div>
         </div>
-        <div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a></li><li><a href="bio-toilet-solutions.html">Solutions bio-toilettes</a></li><li><a href="dairy-farmers-system.html">Système pour producteurs laitiers</a></li><li><a href="buy-carbon.html">Acheter des crédits carbone</a></li><li><a href="technology.html">Technologie</a></li><li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="food-waste-systems.html">Systèmes de déchets alimentaires</a></li><li><a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a></li><li><a href="dairy-farmers-system.html">Système pour exploitations laitières</a></li><li><a href="buy-carbon.html">Acheter du carbone</a></li><li><a href="technology.html">Technologie</a></li><li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li><li><a href="contact.html">Contact</a></li></ul></div>
         <div class="footer-col footer-contact"><h4>Contact</h4><p><a href="mailto:info@terradigester.com">info@terradigester.com</a></p><p>Bruxelles, Belgique<br>Union européenne</p></div>
-        <div class="footer-col footer-vision"><h4>Notre raison d'être</h4><p><strong>Construire des systèmes circulaires</strong>« Construire des systèmes circulaires pour un avenir résilient — où les déchets organiques deviennent énergie propre, sol fertile et valeur climatique mesurable. »</p></div>
+        <div class="footer-col footer-vision"><h4>Notre raison d'être</h4><p><strong>Construire des systèmes circulaires</strong>"Construire des systèmes circulaires pour un avenir résilient — où les déchets organiques deviennent énergie propre, sol fertile et valeur climática mesurable."</p></div>
       </div>
       <div class="footer-bottom"><p>© 2026 Terra Digester. Tous droits réservés.</p><div style="display:flex;gap:1.5rem;"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms-of-use.html">Conditions d'utilisation</a></div></div>
     </div>
@@ -486,6 +491,7 @@
   </script>
 
   <script>
+  /* ── Dropdown : survol JS avec délai anti-scintillement ── */
   (function(){
     document.querySelectorAll('.nav-dropdown').forEach(function(item){
       var menu = item.querySelector('.dropdown-menu');
@@ -501,4 +507,6 @@
   })();
   </script>
 </body>
+</html>
+
 </html>

@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2352B788'/><path d='M16 4C16 4 8 8 8 14C8 17.3 10.7 20 16 20C19.3 20 22 17.3 22 14C22 8 16 4 16 4Z' stroke='%231B3A2D' stroke-width='1.5' fill='none'/></svg>" type="image/svg+xml">
-  <meta name="description" content="Contactez Terra Digester — discutez de systèmes pour déchets alimentaires, de solutions bio-toilettes, de biogaz pour producteurs laitiers, de crédits carbone ou de partenariats. Réponse sous 48 heures." />
+  <meta name="description" content="Contactez Terra Digester — discutez des systèmes de déchets alimentaires, solutions de bio-toilettes, biogaz laitier, crédits carbone ou opportunités de partenariat. Nous répondons sous 48 heures." />
+  <link rel="canonical" href="https://terradigester.com/fr/contact.html" />
+  <link rel="alternate" hreflang="en" href="https://terradigester.com/contact.html" />
+  <link rel="alternate" hreflang="fr" href="https://terradigester.com/fr/contact.html" />
+  <link rel="alternate" hreflang="de" href="https://terradigester.com/de/contact.html" />
   <title>Contact | Terra Digester — Systèmes de digestion anaérobie</title>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -41,13 +45,6 @@
     .dropdown-menu a:hover{background:rgba(82,183,136,0.2);color:var(--white);}
     .dropdown-menu.open{display:block;}
     .nav-cta{background:var(--primary-light)!important;color:var(--primary-dark)!important;font-weight:600!important;padding:8px 18px!important;}
-
-    /* ── LANGUAGE SWITCHER (desktop) ── */
-    .nav-links .lang-switcher{display:flex;align-items:center;gap:0;margin-left:0.5rem;padding-left:0.75rem;border-left:1px solid rgba(255,255,255,0.15);}
-    .nav-links .lang-switcher a{padding:8px 10px;font-size:0.78rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.55);min-width:30px;text-align:center;border-radius:6px;}
-    .nav-links .lang-switcher a:hover{color:var(--white);background:rgba(255,255,255,0.08);text-decoration:none;}
-    .nav-links .lang-switcher a.active{color:var(--primary-dark);background:var(--primary-light);font-weight:700;}
-
     .nav-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
     .nav-mobile-toggle span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
     .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--primary-dark);z-index:999;padding:2rem;flex-direction:column;gap:1rem;overflow-y:auto;}
@@ -57,13 +54,9 @@
     .mobile-nav-links a{color:rgba(255,255,255,0.9);font-size:1.1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);text-decoration:none;}
     .mobile-nav-links a:hover{color:var(--primary-light);}
     .mobile-nav-links .sub-link{padding-left:1.25rem;font-size:1rem;color:rgba(255,255,255,0.7);}
-    .mobile-nav-links .lang-switcher{display:flex;gap:0.6rem;padding:14px 0 20px;border-bottom:1px solid rgba(255,255,255,0.1);}
-    .mobile-nav-links .lang-switcher a{padding:8px 16px;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;border:1px solid rgba(255,255,255,0.2);border-radius:6px;color:rgba(255,255,255,0.7);align-self:flex-start;}
-    .mobile-nav-links .lang-switcher a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary-light);}
-
     @media(max-width:1024px){.nav-links{display:none;}.nav-mobile-toggle{display:flex;}}
 
-    /* HERO — specific to contact, softer feel */
+    /* HERO — contact-specific, softer */
     .hero{min-height:45vh;display:flex;align-items:center;padding-top:72px;background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(45,106,79,0.45) 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 80% 20%,rgba(27,58,45,0.65) 0%,transparent 60%),linear-gradient(135deg,#0d2219 0%,#1B3A2D 40%,#142d22 100%);position:relative;overflow:hidden;}
     .hero-content{padding-block:4.5rem 3.5rem;position:relative;z-index:2;}
     .hero h1{color:var(--white);max-width:680px;margin-bottom:1rem;}
@@ -96,24 +89,29 @@
     .form-control::placeholder{color:var(--neutral-600);opacity:0.7;}
     textarea.form-control{resize:vertical;min-height:130px;}
 
+    /* Checkboxes */
     .checkbox-group{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.25rem;}
     .checkbox-item{display:flex;align-items:center;gap:0.6rem;}
     .checkbox-item input[type="checkbox"]{width:18px;height:18px;border:1.5px solid var(--neutral-200);border-radius:4px;cursor:pointer;accent-color:var(--primary);flex-shrink:0;}
     .checkbox-item label{font-size:0.875rem;font-weight:400;color:var(--neutral-600);cursor:pointer;}
 
+    /* Error messages */
     .field-error{font-size:0.8rem;color:var(--error);margin-top:0.25rem;display:none;}
     .field-error.visible{display:block;}
 
+    /* Submit button */
     .btn-submit{width:100%;padding:16px 32px;background:var(--primary);color:var(--white);border:none;border-radius:var(--radius-sm);font-size:1rem;font-weight:600;cursor:pointer;transition:var(--transition);font-family:inherit;margin-top:2rem;}
     .btn-submit:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(45,106,79,0.35);}
     .btn-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
 
+    /* Success state */
     .form-success{display:none;text-align:center;padding:3rem 2rem;}
     .form-success.visible{display:block;}
     .form-success-icon{width:72px;height:72px;border-radius:50%;background:rgba(22,163,74,0.1);border:2px solid rgba(22,163,74,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;}
     .form-success h3{color:var(--primary-dark);margin-bottom:0.75rem;}
     .form-success p{color:var(--neutral-600);font-size:0.95rem;}
 
+    /* CONTACT SIDEBAR */
     .contact-sidebar{display:flex;flex-direction:column;gap:1.5rem;}
     .contact-info-card{background:var(--white);border-radius:var(--radius-md);padding:2rem;border:1px solid var(--neutral-200);}
     .contact-info-card h3{font-size:1.05rem;color:var(--primary-dark);margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:1px solid var(--neutral-200);}
@@ -136,6 +134,7 @@
     .quick-link-item a{color:var(--primary);font-weight:500;flex-grow:1;}
     .quick-link-item a:hover{text-decoration:underline;}
 
+    /* CLOSING MESSAGE */
     .closing-section{background:var(--white);padding-block:clamp(3rem,6vw,5rem);}
     .closing-inner{max-width:760px;margin-inline:auto;text-align:center;}
     .closing-inner h2{margin-bottom:1.25rem;}
@@ -150,10 +149,6 @@
     .footer-grid{display:grid;grid-template-columns:2fr 1.5fr 1.5fr 2fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.1);}
     .footer-brand p{font-size:0.875rem;line-height:1.7;margin-bottom:0.75rem;}
     .footer-brand .location{display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:rgba(255,255,255,0.5);}
-    .footer-lang-switcher{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;}
-    .footer-lang-switcher a{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;padding:5px 11px;border-radius:6px;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);text-decoration:none;transition:var(--transition);min-width:32px;text-align:center;}
-    .footer-lang-switcher a:hover{border-color:var(--primary-light);color:var(--primary-light);text-decoration:none;}
-    .footer-lang-switcher a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary-light);}
     .footer-col h4{color:var(--white);font-size:0.875rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.25rem;}
     .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
     .footer-col ul a{color:rgba(255,255,255,0.65);font-size:0.875rem;text-decoration:none;transition:var(--transition);}
@@ -178,28 +173,23 @@
   <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="container nav-inner" aria-label="Navigation principale">
-      <a href="index.html" class="nav-logo">
+      <a href="../index.html" class="nav-logo">
         <div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <span class="nav-logo-text">Terra<span>Digester</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
+        <li><a href="../index.html">Accueil</a></li>
         <li class="nav-dropdown"><a href="#">Solutions</a>
           <div class="dropdown-menu">
-            <a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a>
-            <a href="bio-toilet-solutions.html">Solutions bio-toilettes</a>
-            <a href="dairy-farmers-system.html">Système pour producteurs laitiers</a>
-            <a href="buy-carbon.html">Acheter des crédits carbone</a>
+            <a href="food-waste-systems.html">Systèmes de déchets alimentaires</a>
+            <a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a>
+            <a href="dairy-farmers-system.html">Système pour exploitations laitières</a>
+            <a href="buy-carbon.html">Acheter du carbone</a>
           </div>
         </li>
         <li><a href="technology.html">Technologie</a></li>
         <li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li>
         <li><a href="contact.html" class="nav-cta active">Contact</a></li>
-        <li class="lang-switcher" aria-label="Sélecteur de langue">
-          <a href="../index.html" lang="en">EN</a>
-          <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
-          <a href="../de/index.html" lang="de">DE</a>
-        </li>
       </ul>
       <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Ouvrir la navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
@@ -207,33 +197,28 @@
   <div class="mobile-nav-overlay" id="mobileNav">
     <button class="mobile-nav-close" id="mobileClose">✕</button>
     <div class="mobile-nav-links">
-      <a href="index.html">Accueil</a>
-      <a href="food-waste-systems.html" class="sub-link">— Systèmes pour déchets alimentaires</a>
-      <a href="bio-toilet-solutions.html" class="sub-link">— Solutions bio-toilettes</a>
-      <a href="dairy-farmers-system.html" class="sub-link">— Système pour producteurs laitiers</a>
-      <a href="buy-carbon.html" class="sub-link">— Acheter des crédits carbone</a>
+      <a href="index.html">Home</a>
+      <a href="food-waste-systems.html" class="sub-link">— Systèmes de déchets alimentaires</a>
+      <a href="bio-toilet-solutions.html" class="sub-link">— Solutions de bio-toilettes</a>
+      <a href="dairy-farmers-system.html" class="sub-link">— Système pour exploitations laitières</a>
+      <a href="buy-carbon.html" class="sub-link">— Acheter du carbone</a>
       <a href="technology.html">Technologie</a>
       <a href="about.html">À propos</a>
       <a href="reseller-program.html" class="sub-link">— Programme de revente</a>
       <a href="contact.html">Contact</a>
-      <div class="lang-switcher" aria-label="Sélecteur de langue">
-        <a href="../index.html" lang="en">EN</a>
-        <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
-        <a href="../de/index.html" lang="de">DE</a>
-      </div>
     </div>
   </div>
 
   <main>
     <!-- HERO -->
-    <section class="hero" aria-label="Bannière Contact">
+    <section class="hero" aria-label="Contact — section héro">
       <div class="container hero-content">
         <div class="breadcrumb">
-          <a href="index.html">Accueil</a><span>/</span><span class="current">Contact</span>
+          <a href="index.html">Home</a><span>/</span><span class="current">Contact</span>
         </div>
-        <span class="section-label" style="color:var(--primary-light);">Nous contacter</span>
-        <h1>Démarrer une <em>conversation</em></h1>
-        <p class="hero-sub">Que vous exploriez les options ou que vous soyez prêt à discuter d'un projet précis — nous sommes là pour vous aider. Chaque demande reçoit une réponse réfléchie et concrète.</p>
+        <span class="section-label" style="color:var(--primary-light);">Prenez contact</span>
+        <h1>Commencez une <em>conversation</em></h1>
+        <p class="hero-sub">Que vous exploriez les options ou que vous soyez prêt à discuter d’un projet spécifique — nous sommes là pour aider. Chaque demande reçoit une réponse réfléchie et substantielle.</p>
       </div>
     </section>
 
@@ -244,9 +229,10 @@
 
           <!-- FORM -->
           <div class="contact-form-wrapper fade-in" role="main">
+            <!-- Form view -->
             <div id="formView">
-              <h2 id="contact-heading">Envoyer une demande</h2>
-              <p class="form-intro">Remplissez le formulaire ci-dessous et nous vous répondrons sous 48 heures ouvrées. Tous les champs marqués d'un <abbr title="obligatoire">*</abbr> sont requis.</p>
+              <h2 id="contact-heading">Envoyez une demande</h2>
+              <p class="form-intro">Complétez le formulaire ci-dessous et nous répondrons sous 48 heures ouvrées. Tous les champs marqués d' <abbr title="required">*</abbr> are required.</p>
 
               <form id="contactForm" novalidate action="#" method="post">
 
@@ -257,8 +243,8 @@
                     <span class="field-error" id="fullNameError" role="alert">Veuillez saisir votre nom complet.</span>
                   </div>
                   <div class="form-group">
-                    <label for="organisation">Organisation <span class="optional">(facultatif)</span></label>
-                    <input type="text" id="organisation" name="organisation" class="form-control" placeholder="Nom de l'entreprise ou de l'organisation" autocomplete="organization" />
+                    <label for="organisation">Organisation <span class="optional">(optional)</span></label>
+                    <input type="text" id="organisation" name="organisation" class="form-control" placeholder="Nom de l’entreprise ou de l’organisation" autocomplete="organization" />
                   </div>
                 </div>
 
@@ -269,25 +255,25 @@
                     <span class="field-error" id="emailError" role="alert">Veuillez saisir une adresse e-mail valide.</span>
                   </div>
                   <div class="form-group">
-                    <label for="phone">Téléphone <span class="optional">(facultatif)</span></label>
-                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Format +32 ou international" autocomplete="tel" />
+                    <label for="phone">Téléphone <span class="optional">(optional)</span></label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="+32 ou format international" autocomplete="tel" />
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label>Domaine d'intérêt <span class="optional">(choix multiples possibles)</span></label>
-                  <div class="checkbox-group" role="group" aria-label="Domaines d'intérêt">
+                  <label>Domaine d’intérêt <span class="optional">(select all that apply)</span></label>
+                  <div class="checkbox-group" role="group" aria-label="Domaines d’intérêt">
                     <div class="checkbox-item">
                       <input type="checkbox" id="interest_food" name="interest" value="food-waste" />
-                      <label for="interest_food">Systèmes pour déchets alimentaires</label>
+                      <label for="interest_food">Systèmes de déchets alimentaires</label>
                     </div>
                     <div class="checkbox-item">
                       <input type="checkbox" id="interest_bio" name="interest" value="bio-toilet" />
-                      <label for="interest_bio">Solutions bio-toilettes</label>
+                      <label for="interest_bio">Solutions de bio-toilettes</label>
                     </div>
                     <div class="checkbox-item">
                       <input type="checkbox" id="interest_dairy" name="interest" value="dairy-farmers" />
-                      <label for="interest_dairy">Système pour producteurs laitiers</label>
+                      <label for="interest_dairy">Système pour exploitations laitières</label>
                     </div>
                     <div class="checkbox-item">
                       <input type="checkbox" id="interest_carbon" name="interest" value="carbon-credits" />
@@ -305,14 +291,14 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="location">Localisation / Région du projet <span class="optional">(facultatif)</span></label>
-                  <input type="text" id="location" name="location" class="form-control" placeholder="ex. : Kenya, Belgique, Asie du Sud-Est…" />
+                  <label for="location">Lieu du projet / Région <span class="optional">(optional)</span></label>
+                  <input type="text" id="location" name="location" class="form-control" placeholder="ex. Kenya, Belgique, Asie du Sud-Est…" />
                 </div>
 
                 <div class="form-group">
                   <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
-                  <textarea id="message" name="message" class="form-control" placeholder="Parlez-nous de votre projet, de votre contexte ou de vos questions. Plus vous nous donnerez de détails, plus notre réponse sera utile." required aria-required="true" minlength="20"></textarea>
-                  <span class="field-error" id="messageError" role="alert">Veuillez saisir un message (au moins 20 caractères).</span>
+                  <textarea id="message" name="message" class="form-control" placeholder="Parlez-nous de votre projet, de votre contexte ou de vos questions. Plus vous partagez de détails, plus notre réponse sera utile." required aria-required="true" minlength="20"></textarea>
+                  <span class="field-error" id="messageError" role="alert">Veuillez saisir un message (minimum 20 caractères).</span>
                 </div>
 
                 <button type="submit" class="btn-submit" id="submitBtn">
@@ -323,21 +309,22 @@
               </form>
             </div>
 
-            <!-- Success state -->
+            <!-- Success state (hidden until form submitted) -->
             <div class="form-success" id="formSuccess" aria-live="polite">
               <div class="form-success-icon" aria-hidden="true">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M7 16L12 21L25 10" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <h3>Demande reçue</h3>
-              <p>Merci de nous avoir contactés. Nous avons bien reçu votre message et y répondrons sous <strong>48 heures ouvrées</strong>.</p>
-              <p style="margin-top:0.75rem;">Nous nous réjouissons d'avance de cette conversation.</p>
-              <a href="index.html" style="display:inline-block;margin-top:1.5rem;color:var(--primary);font-weight:600;text-decoration:none;">← Retour à l'accueil</a>
+              <p>Merci de nous avoir contactés. Nous avons reçu votre message et y répondrons sous <strong>48 heures ouvrées</strong>.</p>
+              <p style="margin-top:0.75rem;">Nous attendons avec intérêt une conversation productive.</p>
+              <a href="index.html" style="display:inline-block;margin-top:1.5rem;color:var(--primary);font-weight:600;text-decoration:none;">← Retour à l’accueil</a>
             </div>
           </div>
 
           <!-- SIDEBAR -->
           <div class="contact-sidebar fade-in fade-in-delay-1">
 
+            <!-- Contact Info -->
             <div class="contact-info-card">
               <h3>Contact direct</h3>
               <div class="contact-item">
@@ -354,8 +341,8 @@
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C6.2 2 4 4.2 4 7C4 10.5 9 16 9 16C9 16 14 10.5 14 7C14 4.2 11.8 2 9 2Z" stroke="#2D6A4F" stroke-width="1.5"/><circle cx="9" cy="7" r="2" stroke="#2D6A4F" stroke-width="1.5"/></svg>
                 </div>
                 <div class="contact-item-text">
-                  <strong>Localisation</strong>
-                  <span>Bruxelles, Belgique<br>Union européenne</span>
+                  <strong>Adresse</strong>
+                  <span>Brussels, Belgium<br>European Union</span>
                 </div>
               </div>
               <div class="contact-item">
@@ -369,28 +356,30 @@
               </div>
             </div>
 
+            <!-- Response Time -->
             <div class="response-card">
               <h4>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#2D6A4F" stroke-width="1.5"/><path d="M8 5V8L10 10" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 Délai de réponse
               </h4>
-              <p>Nous répondons à toutes les demandes sous <strong>48 heures ouvrées</strong>. Nous accordons de la valeur à chaque échange — qu'il mène à un projet aujourd'hui ou à un partenariat demain.</p>
+              <p>Nous répondons à toutes les demandes sous <strong>48 heures ouvrées</strong>. Nous valorisons chaque conversation — qu’elle aboutisse à un projet aujourd’hui ou à un partenariat à l’avenir.</p>
             </div>
 
+            <!-- Quick Solution Links -->
             <div class="solutions-quick">
               <h3>Explorer les solutions</h3>
               <div class="quick-links-list">
                 <div class="quick-link-item">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M8 4L11 7L8 10" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a>
+                  <a href="food-waste-systems.html">Systèmes de déchets alimentaires</a>
                 </div>
                 <div class="quick-link-item">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M8 4L11 7L8 10" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <a href="bio-toilet-solutions.html">Solutions bio-toilettes</a>
+                  <a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a>
                 </div>
                 <div class="quick-link-item">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M8 4L11 7L8 10" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <a href="dairy-farmers-system.html">Système pour producteurs laitiers</a>
+                  <a href="dairy-farmers-system.html">Système pour exploitations laitières</a>
                 </div>
                 <div class="quick-link-item">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M8 4L11 7L8 10" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -398,7 +387,7 @@
                 </div>
                 <div class="quick-link-item">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M8 4L11 7L8 10" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <a href="technology.html">Aperçu de la technologie</a>
+                  <a href="technology.html">Aperçu technologique</a>
                 </div>
               </div>
             </div>
@@ -412,9 +401,9 @@
     <section class="closing-section" aria-labelledby="closing-heading">
       <div class="container">
         <div class="closing-inner fade-in">
-          <span class="section-label">Notre engagement</span>
+          <span class="section-label">Our Commitment</span>
           <h2 id="closing-heading">Chaque conversation compte</h2>
-          <p>Nous répondons à toutes les demandes sous <strong>48 heures ouvrées</strong>. Nous accordons de la valeur à chaque échange — qu'il aboutisse à un projet aujourd'hui ou à un partenariat demain. Un engagement précoce est la manière dont nous apprenons ce que nos systèmes doivent faire, et dont nous trouvons les partenaires qui partagent notre engagement à construire des infrastructures circulaires qui fonctionnent réellement.</p>
+          <p>Nous répondons à toutes les demandes sous <strong>48 heures ouvrées</strong>. Nous valorisons chaque conversation — qu’elle aboutisse à un projet aujourd’hui ou à un partenariat à l’avenir. L’engagement précoce est la manière dont nous apprenons ce que nos systèmes doivent faire, et dont nous trouvons les partenaires qui partagent notre engagement à construire une infrastructure circulaire qui fonctionne vraiment. Early-stage engagement is how we learn what our systems must do, and how we find the partners who share our commitment to building circular infrastructure that actually works.</p>
         </div>
       </div>
     </section>
@@ -425,18 +414,13 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="nav-logo-text">Terra<span>Digester</span></span></a>
+          <a href="../index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="nav-logo-text">Terra<span>Digester</span></span></a>
           <p>Du déchet à la valeur. Des systèmes pour un avenir circulaire.</p>
           <div class="location"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5C2.5 7.25 6 11 6 11C6 11 9.5 7.25 9.5 4.5C9.5 2.57 7.93 1 6 1Z" stroke="currentColor" stroke-width="1"/><circle cx="6" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1"/></svg> Bruxelles, Belgique</div>
-          <div class="footer-lang-switcher" aria-label="Sélecteur de langue">
-            <a href="../index.html" lang="en">EN</a>
-            <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
-            <a href="../de/index.html" lang="de">DE</a>
-          </div>
         </div>
-        <div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a></li><li><a href="bio-toilet-solutions.html">Solutions bio-toilettes</a></li><li><a href="dairy-farmers-system.html">Système pour producteurs laitiers</a></li><li><a href="buy-carbon.html">Acheter des crédits carbone</a></li><li><a href="technology.html">Technologie</a></li><li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="food-waste-systems.html">Systèmes de déchets alimentaires</a></li><li><a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a></li><li><a href="dairy-farmers-system.html">Système pour exploitations laitières</a></li><li><a href="buy-carbon.html">Acheter du carbone</a></li><li><a href="technology.html">Technologie</a></li><li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li><li><a href="contact.html">Contact</a></li></ul></div>
         <div class="footer-col footer-contact"><h4>Contact</h4><p><a href="mailto:info@terradigester.com">info@terradigester.com</a></p><p>Bruxelles, Belgique<br>Union européenne</p></div>
-        <div class="footer-col footer-vision"><h4>Notre raison d'être</h4><p><strong>Construire des systèmes circulaires</strong>« Construire des systèmes circulaires pour un avenir résilient — où les déchets organiques deviennent énergie propre, sol fertile et valeur climatique mesurable. »</p></div>
+        <div class="footer-col footer-vision"><h4>Notre raison d’être</h4><p><strong>Construire des systèmes circulaires</strong>« Construire des systèmes circulaires pour un avenir résilient — où les déchets organiques deviennent énergie propre, sol fertile et valeur climatique mesurable. »</p></div>
       </div>
       <div class="footer-bottom"><p>© 2026 Terra Digester. Tous droits réservés.</p><div style="display:flex;gap:1.5rem;"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms-of-use.html">Conditions d'utilisation</a></div></div>
     </div>
@@ -508,6 +492,7 @@
       return valid;
     }
 
+    // Clear errors on input
     ['fullName', 'email', 'message'].forEach(id => {
       document.getElementById(id).addEventListener('input', () => {
         const errorId = id + 'Error';
@@ -519,6 +504,7 @@
       e.preventDefault();
 
       if (!validateForm()) {
+        // Scroll to first error
         const firstError = form.querySelector('.form-control.error');
         if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
@@ -526,13 +512,32 @@
 
       const btn = document.getElementById('submitBtn');
       btn.disabled = true;
-      btn.textContent = 'Envoi en cours…';
+      btn.textContent = 'Sending…';
 
+      // Simulate submission (replace with real endpoint)
       setTimeout(() => {
         formView.style.display = 'none';
         formSuccess.classList.add('visible');
-      }, 800);
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 1200);
     });
+  </script>
+
+  <script>
+  /* ── Dropdown: JS hover with delay to prevent flicker ── */
+  (function(){
+    document.querySelectorAll('.nav-dropdown').forEach(function(item){
+      var menu = item.querySelector('.dropdown-menu');
+      if(!menu) return;
+      var timer = null;
+      function show(){ clearTimeout(timer); menu.classList.add('open'); }
+      function hide(){ timer = setTimeout(function(){ menu.classList.remove('open'); }, 150); }
+      item.addEventListener('mouseenter', show);
+      item.addEventListener('mouseleave', hide);
+      menu.addEventListener('mouseenter', show);
+      menu.addEventListener('mouseleave', hide);
+    });
+  })();
   </script>
 </body>
 </html>
