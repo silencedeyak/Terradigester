@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2352B788'/><path d='M16 4C16 4 8 8 8 14C8 17.3 10.7 20 16 20C19.3 20 22 17.3 22 14C22 8 16 4 16 4Z' stroke='%231B3A2D' stroke-width='1.5' fill='none'/></svg>" type="image/svg+xml">
+  <meta name="description" content="Système Terra Digester pour producteurs laitiers — unités de biogaz à petite échelle conçues pour les fermes laitières avec deux bovins ou plus, convertissant la bouse de vache en gaz de cuisson quotidien et en biofertilisant organique." />
+  <title>Système pour producteurs laitiers | Terra Digester — Systèmes de digestion anaérobie</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--primary-dark:#1B3A2D;--primary:#2D6A4F;--primary-light:#52B788;--earth-brown:#7F5539;--earth-light:#DDB892;--neutral-900:#1A1A1A;--neutral-600:#6B7280;--neutral-200:#E5E7EB;--neutral-50:#F9FAFB;--white:#FFFFFF;--radius-sm:8px;--radius-md:12px;--transition:all 0.3s ease;--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 8px 25px rgba(0,0,0,0.10);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:1rem;line-height:1.7;color:var(--neutral-900);background:var(--white);overflow-x:hidden;}
+    a{color:var(--primary);text-decoration:none;}a:hover{text-decoration:underline;}
+    .container{width:100%;max-width:1200px;margin-inline:auto;padding-inline:clamp(1rem,4vw,2rem);}
+    h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:700;line-height:1.1;}
+    h2{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:600;line-height:1.2;}
+    h3{font-size:1.25rem;font-weight:600;line-height:1.3;}
+    .section{padding-block:clamp(4rem,8vw,8rem);}
+    .section-header{text-align:center;margin-bottom:3rem;}
+    .section-header p{max-width:640px;margin-inline:auto;margin-top:1rem;color:var(--neutral-600);}
+    .section-label{display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary-light);margin-bottom:0.75rem;}
+    .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+    .fade-in-delay-1{transition-delay:0.1s;}.fade-in-delay-2{transition-delay:0.2s;}.fade-in-delay-3{transition-delay:0.3s;}.fade-in-delay-4{transition-delay:0.4s;}
+    .btn{display:inline-block;padding:14px 32px;border-radius:var(--radius-sm);font-size:1rem;font-weight:500;cursor:pointer;border:2px solid transparent;transition:var(--transition);text-decoration:none;line-height:1;}
+    .btn-primary{background:var(--primary);color:var(--white);border-color:var(--primary);}
+    .btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(45,106,79,0.35);text-decoration:none;color:var(--white);}
+
+    /* NAV */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,58,45,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:2rem;}
+    .nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;flex-shrink:0;}
+    .nav-logo-mark{width:36px;height:36px;border-radius:8px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;}
+    .nav-logo-text{font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:-0.01em;}
+    .nav-logo-text span{color:var(--primary-light);}
+    .nav-links{display:flex;align-items:center;gap:0.25rem;list-style:none;}
+    .nav-links a{display:block;padding:8px 14px;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;border-radius:6px;transition:var(--transition);text-decoration:none;}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,0.1);}
+    .nav-dropdown{position:relative;}
+    .nav-dropdown>a::after{content:' ▾';font-size:0.75rem;opacity:0.7;}
+    .dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--primary-dark);border-radius:var(--radius-sm);min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);z-index:100;}
+    .dropdown-menu a{padding:10px 18px;display:block;color:rgba(255,255,255,0.85);font-size:0.875rem;border-radius:0;border-bottom:1px solid rgba(255,255,255,0.06);transition:var(--transition);}
+    .dropdown-menu a:last-child{border-bottom:none;}
+    .dropdown-menu a:hover{background:rgba(82,183,136,0.2);color:var(--white);}
+    .dropdown-menu.open{display:block;}
+    .nav-cta{background:var(--primary-light)!important;color:var(--primary-dark)!important;font-weight:600!important;padding:8px 18px!important;}
+    .nav-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .nav-mobile-toggle span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--primary-dark);z-index:999;padding:2rem;flex-direction:column;gap:1rem;overflow-y:auto;}
+    .mobile-nav-overlay.open{display:flex;}
+    .mobile-nav-close{align-self:flex-end;background:none;border:none;color:var(--white);font-size:1.75rem;cursor:pointer;}
+    .mobile-nav-links{display:flex;flex-direction:column;gap:0.25rem;margin-top:1rem;}
+    .mobile-nav-links a{color:rgba(255,255,255,0.9);font-size:1.1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);text-decoration:none;}
+    .mobile-nav-links a:hover{color:var(--primary-light);}
+    .mobile-nav-links .sub-link{padding-left:1.25rem;font-size:1rem;color:rgba(255,255,255,0.7);}
+    @media(max-width:1024px){.nav-links{display:none;}.nav-mobile-toggle{display:flex;}}
+
+    /* Language switcher */
+    .lang-switcher{position:relative;margin-left:0.5rem;}
+    .lang-switcher > a{display:flex;align-items:center;gap:0.35rem;padding:8px 12px;color:rgba(255,255,255,0.9);font-size:0.85rem;font-weight:600;border-radius:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);transition:all 0.25s ease;text-decoration:none;cursor:pointer;}
+    .lang-switcher > a:hover{background:rgba(255,255,255,0.14);color:var(--white);}
+    .lang-switcher > a.active{background:rgba(82,183,136,0.18);border-color:rgba(82,183,136,0.4);color:var(--white);}
+    .lang-switcher .caret{font-size:0.7rem;opacity:0.7;}
+    .lang-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--primary-dark);border-radius:var(--radius-sm);min-width:160px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);z-index:200;list-style:none;padding:0.35rem 0;}
+    .lang-menu.open{display:block;}
+    .lang-menu li{margin:0;}
+    .lang-menu a{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;color:rgba(255,255,255,0.85);font-size:0.875rem;font-weight:500;text-decoration:none;border-radius:0;border-bottom:1px solid rgba(255,255,255,0.06);transition:all 0.2s ease;}
+    .lang-menu li:last-child a{border-bottom:none;}
+    .lang-menu a:hover{background:rgba(82,183,136,0.2);color:var(--white);}
+    .lang-menu a.active{background:rgba(82,183,136,0.15);color:var(--primary-light);font-weight:600;}
+    .lang-menu a .lang-code{font-size:0.7rem;color:rgba(255,255,255,0.5);font-weight:500;}
+
+    /* HERO - earth tones for farm context */
+    .hero{min-height:60vh;display:flex;align-items:center;padding-top:72px;background:radial-gradient(ellipse 70% 60% at 30% 60%,rgba(127,85,57,0.25) 0%,transparent 65%),radial-gradient(ellipse 60% 80% at 75% 20%,rgba(27,58,45,0.7) 0%,transparent 60%),linear-gradient(135deg,#0d2219 0%,#1B3A2D 35%,#2a1a0e 100%);position:relative;overflow:hidden;}
+    .hero-content{padding-block:5rem 4rem;position:relative;z-index:2;}
+    .hero h1{color:var(--white);max-width:700px;margin-bottom:1.25rem;}
+    .hero h1 em{font-style:normal;color:var(--earth-light);}
+    .hero-sub{color:rgba(255,255,255,0.75);font-size:clamp(1rem,1.8vw,1.2rem);max-width:560px;margin-bottom:2rem;}
+    .breadcrumb{display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;}
+    .breadcrumb a{color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;}
+    .breadcrumb a:hover{color:var(--primary-light);}
+    .breadcrumb span{color:rgba(255,255,255,0.3);font-size:0.8rem;}
+    .breadcrumb .current{color:var(--primary-light);font-size:0.8rem;}
+
+    /* FOR SMALL FARMERS */
+    .farmers-section{background:var(--white);}
+    .farmers-intro{max-width:800px;margin-inline:auto;text-align:center;}
+    .farmers-intro h2{margin-bottom:1.25rem;}
+    .farmers-intro .large-quote{font-size:clamp(1.1rem,1.8vw,1.25rem);color:var(--neutral-600);line-height:1.8;font-style:italic;border-left:4px solid var(--earth-light);padding-left:1.5rem;text-align:left;margin-top:2rem;}
+    .farmers-intro .large-quote strong{color:var(--primary-dark);font-style:normal;}
+
+    /* ── FARM HOW IT WORKS DIAGRAM ── */
+    .farm-how-section{background:var(--primary-dark);position:relative;overflow:hidden;}
+    .farm-how-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 40%,rgba(127,85,57,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 70% at 80% 70%,rgba(45,106,79,0.25) 0%,transparent 55%);pointer-events:none;}
+    .farm-how-section .section-header h2{color:var(--white);}
+    .farm-how-section .section-header p{color:rgba(255,255,255,0.65);}
+
+    /* Progress track */
+    .farm-step-track{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:3rem;position:relative;z-index:2;}
+    .farm-step-btn{display:flex;flex-direction:column;align-items:center;gap:0.5rem;cursor:pointer;border:none;background:none;padding:0 1.5rem;position:relative;}
+    .farm-step-num{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:0.95rem;font-weight:700;color:rgba(255,255,255,0.4);transition:all 0.4s ease;position:relative;z-index:2;background:rgba(27,58,45,0.6);}
+    .farm-step-btn.active .farm-step-num{background:var(--earth-light);border-color:var(--earth-light);color:var(--primary-dark);}
+    .farm-step-btn.done .farm-step-num{background:var(--primary-light);border-color:var(--primary-light);color:var(--primary-dark);}
+    .farm-step-lbl{font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);transition:color 0.4s ease;white-space:nowrap;}
+    .farm-step-btn.active .farm-step-lbl,.farm-step-btn.done .farm-step-lbl{color:rgba(255,255,255,0.85);}
+    .farm-track-line{flex:1;height:2px;background:rgba(255,255,255,0.1);position:relative;max-width:80px;}
+    .farm-track-fill{position:absolute;top:0;left:0;height:100%;width:0%;background:var(--primary-light);transition:width 0.6s ease;}
+
+    /* Step panel */
+    .farm-steps-wrap{position:relative;z-index:2;}
+    .farm-step-panel{display:none;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    .farm-step-panel.active{display:grid;animation:farmPanelIn 0.5s ease both;}
+    @keyframes farmPanelIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+    /* SVG illustration side */
+    .farm-svg-stage{background:rgba(255,255,255,0.04);border-radius:20px;border:1px solid rgba(255,255,255,0.08);padding:2.5rem;display:flex;align-items:center;justify-content:center;min-height:320px;position:relative;overflow:hidden;}
+    .farm-svg-stage::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(82,183,136,0.06) 0%,transparent 70%);pointer-events:none;}
+
+    /* Text side */
+    .farm-step-content{display:flex;flex-direction:column;gap:1.25rem;}
+    .farm-step-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:24px;padding:6px 14px;width:fit-content;}
+    .farm-step-badge-num{font-size:0.75rem;font-weight:700;color:var(--earth-light);}
+    .farm-step-badge-lbl{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+    .farm-step-content h3{font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:700;color:var(--white);line-height:1.25;}
+    .farm-step-content h3 em{font-style:normal;color:var(--earth-light);}
+    .farm-step-content p{font-size:1rem;color:rgba(255,255,255,0.68);line-height:1.75;}
+    .farm-step-metrics{display:flex;gap:1.5rem;margin-top:0.5rem;flex-wrap:wrap;}
+    .farm-metric{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:0.9rem 1.25rem;}
+    .farm-metric-val{font-size:1.3rem;font-weight:700;color:var(--earth-light);}
+    .farm-metric-lbl{font-size:0.72rem;color:rgba(255,255,255,0.5);margin-top:0.15rem;}
+
+    /* Nav buttons */
+    .farm-step-nav{display:flex;justify-content:center;gap:1rem;margin-top:2.5rem;position:relative;z-index:2;}
+    .farm-nav-btn{padding:10px 28px;border-radius:8px;border:2px solid rgba(255,255,255,0.18);background:transparent;color:rgba(255,255,255,0.7);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;}
+    .farm-nav-btn:hover{background:rgba(255,255,255,0.1);color:var(--white);border-color:rgba(255,255,255,0.35);}
+    .farm-nav-btn:disabled{opacity:0.35;cursor:not-allowed;}
+    .farm-nav-btn.primary{background:var(--primary);border-color:var(--primary);color:var(--white);}
+    .farm-nav-btn.primary:hover{background:var(--primary-light);border-color:var(--primary-light);}
+
+    /* SVG Animations */
+    @keyframes dungFall{0%{transform:translateY(-30px);opacity:0;}60%{opacity:1;}100%{transform:translateY(0);opacity:1;}}
+    @keyframes dungDrop{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+    @keyframes funnelFlow{0%{opacity:0;transform:scaleY(0);}100%{opacity:1;transform:scaleY(1);}}
+    @keyframes bacteriaFloat{0%,100%{transform:translate(0,0) rotate(0deg);}33%{transform:translate(3px,-4px) rotate(15deg);}66%{transform:translate(-2px,3px) rotate(-10deg);}}
+    @keyframes bubbleUp{0%{transform:translateY(0);opacity:0.6;}100%{transform:translateY(-40px);opacity:0;}}
+    @keyframes bagPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.025);}}
+    @keyframes flameFlicker{0%,100%{transform:scaleY(1) scaleX(1);}25%{transform:scaleY(1.08) scaleX(0.94);}75%{transform:scaleY(0.93) scaleX(1.05);}}
+    @keyframes flameSway{0%,100%{transform:rotate(-4deg);}50%{transform:rotate(4deg);}}
+    @keyframes heatRise{0%{transform:translateY(0);opacity:0.5;}100%{transform:translateY(-22px) scaleX(0.6);opacity:0;}}
+    @keyframes tapDrip{0%{r:0;opacity:0;}40%{r:4;opacity:0.9;}70%{r:5;opacity:0.8;}100%{r:0;opacity:0;transform:translateY(18px);}}
+    @keyframes plantGrow{0%{transform:scaleY(0);transform-origin:bottom;}100%{transform:scaleY(1);transform-origin:bottom;}}
+    @keyframes digestGlow{0%,100%{opacity:0.4;}50%{opacity:0.9;}}
+    @keyframes arrowDraw{0%{stroke-dashoffset:200;}100%{stroke-dashoffset:0;}}
+    @keyframes cowRock{0%,100%{transform:rotate(-2deg);}50%{transform:rotate(2deg);}}
+    @keyframes pipeFlow{0%{stroke-dashoffset:60;}100%{stroke-dashoffset:0;}}
+
+    @media(max-width:768px){
+      .farm-step-panel.active{grid-template-columns:1fr;gap:2rem;}
+      .farm-svg-stage{min-height:220px;padding:1.5rem;}
+      .farm-step-track{gap:0;}
+      .farm-step-btn{padding:0 0.6rem;}
+      .farm-step-lbl{display:none;}
+      .farm-track-line{max-width:30px;}
+    }
+
+    /* BENEFITS */
+    .benefits-section{background:var(--white);}
+    .benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;}
+    .benefit-card{padding:2rem;border-radius:var(--radius-md);background:var(--neutral-50);border:1px solid var(--neutral-200);transition:var(--transition);display:flex;gap:1.25rem;}
+    .benefit-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);border-color:rgba(82,183,136,0.3);}
+    .benefit-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .benefit-icon.gas{background:rgba(45,106,79,0.1);}
+    .benefit-icon.fert{background:rgba(82,183,136,0.12);}
+    .benefit-icon.hygiene{background:rgba(127,85,57,0.1);}
+    .benefit-icon.fuel{background:rgba(221,184,146,0.25);}
+    .benefit-text h3{margin-bottom:0.5rem;}
+    .benefit-text p{font-size:0.9rem;color:var(--neutral-600);}
+    @media(max-width:768px){.benefits-grid{grid-template-columns:1fr;}.benefit-card{flex-direction:column;}}
+
+    /* SCALABILITY */
+    .scale-section{background:var(--neutral-50);}
+    .scale-inner{max-width:900px;margin-inline:auto;}
+    .scale-visual{display:flex;align-items:flex-end;justify-content:center;gap:1.5rem;margin-block:3rem;flex-wrap:wrap;}
+    .scale-unit{display:flex;flex-direction:column;align-items:center;gap:0.75rem;}
+    .scale-bar{border-radius:8px 8px 0 0;background:linear-gradient(180deg,var(--primary-light),var(--primary));display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;position:relative;transition:var(--transition);}
+    .scale-bar:hover{filter:brightness(1.1);}
+    .scale-bar span{font-size:0.7rem;font-weight:700;color:var(--white);text-align:center;}
+    .scale-label{font-size:0.8rem;color:var(--neutral-600);text-align:center;font-weight:500;}
+    .scale-cows{font-size:0.75rem;color:var(--primary);font-weight:600;}
+    .scale-text{text-align:center;margin-top:1rem;}
+    .scale-text p{max-width:640px;margin-inline:auto;color:var(--neutral-600);}
+
+    /* FAQ */
+    .faq-section{background:var(--neutral-50);}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0;}
+    .faq-item{background:var(--white);border:1px solid var(--neutral-200);border-radius:var(--radius-md);overflow:hidden;transition:box-shadow 0.25s ease;}
+    .faq-item:hover{box-shadow:var(--shadow-md);}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;background:none;border:none;cursor:pointer;text-align:left;font-size:0.95rem;font-weight:600;color:var(--primary-dark);line-height:1.4;}
+    .faq-q .faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(82,183,136,0.12);border:1.5px solid rgba(82,183,136,0.3);display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;font-size:1rem;line-height:1;color:var(--primary-light);}
+    .faq-item.open .faq-icon{background:var(--primary-light);border-color:var(--primary-light);color:var(--primary-dark);transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s ease;padding:0 1.4rem;}
+    .faq-item.open .faq-a{max-height:300px;padding:0 1.4rem 1.2rem;}
+    .faq-a p{font-size:0.9rem;color:var(--neutral-600);line-height:1.7;}
+    @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,var(--primary-dark) 0%,#142d22 100%);padding-block:clamp(3rem,6vw,5rem);text-align:center;}
+    .cta-section h2{color:var(--white);margin-bottom:1rem;}
+    .cta-section p{color:rgba(255,255,255,0.7);max-width:560px;margin-inline:auto;margin-bottom:2rem;}
+
+    /* FOOTER */
+    .site-footer{background:var(--primary-dark);color:rgba(255,255,255,0.75);padding-block:clamp(3rem,6vw,5rem);}
+    .footer-grid{display:grid;grid-template-columns:2fr 1.5fr 1.5fr 2fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .footer-brand p{font-size:0.875rem;line-height:1.7;margin-bottom:0.75rem;}
+    .footer-brand .location{display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:rgba(255,255,255,0.5);}
+    .footer-col h4{color:var(--white);font-size:0.875rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.25rem;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+    .footer-col ul a{color:rgba(255,255,255,0.65);font-size:0.875rem;text-decoration:none;transition:var(--transition);}
+    .footer-col ul a:hover{color:var(--primary-light);}
+    .footer-contact p{font-size:0.875rem;line-height:1.7;margin-bottom:0.5rem;}
+    .footer-contact a{color:var(--primary-light);}
+    .footer-vision p{font-size:1rem;font-style:italic;color:rgba(255,255,255,0.6);line-height:1.8;}
+    .footer-vision p strong{display:block;font-style:normal;color:var(--primary-light);font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+    .footer-bottom{padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+    .footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.4);}
+    .footer-bottom a{color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;}
+    .footer-bottom a:hover{color:var(--primary-light);}
+    .footer-brand .nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;margin-bottom:1rem;}
+    .footer-brand .nav-logo-mark{width:36px;height:36px;border-radius:8px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;}
+    .footer-brand .nav-logo-text{font-size:1.1rem;font-weight:700;color:var(--white);}
+    .footer-brand .nav-logo-text span{color:var(--primary-light);}
+    @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem;}.footer-bottom{flex-direction:column;text-align:center;}}
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="container nav-inner" aria-label="Navigation principale">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span class="nav-logo-text">Terra<span>Digester</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown"><a href="#" class="active">Solutions</a>
+          <div class="dropdown-menu">
+            <a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a>
+            <a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a>
+            <a href="dairy-farmers-system.html">Système pour producteurs laitiers</a>
+            <a href="buy-carbon.html">Acheter du carbone</a>
+          </div>
+        </li>
+        <li><a href="technology.html">Technologie</a></li>
+        <li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revendeurs</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        <li class="lang-switcher">
+          <a href="#" class="active" aria-haspopup="true" aria-expanded="false">FR <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="lang-menu" role="menu" aria-label="Sélecteur de langue">
+            <li role="none"><a href="../dairy-farmers-system.html" role="menuitem" lang="en"><span>English</span><span class="lang-code">EN</span></a></li>
+            <li role="none"><a href="dairy-farmers-system.html" role="menuitem" lang="fr" class="active" aria-current="true"><span>Français</span><span class="lang-code">FR</span></a></li>
+            <li role="none"><a href="../de/dairy-farmers-system.html" role="menuitem" lang="de"><span>Deutsch</span><span class="lang-code">DE</span></a></li>
+          </ul>
+        </li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Ouvrir la navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose">✕</button>
+    <div class="mobile-nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="food-waste-systems.html" class="sub-link">— Systèmes pour déchets alimentaires</a>
+      <a href="bio-toilet-solutions.html" class="sub-link">— Solutions de bio-toilettes</a>
+      <a href="dairy-farmers-system.html" class="sub-link">— Système pour producteurs laitiers</a>
+      <a href="buy-carbon.html" class="sub-link">— Acheter du carbone</a>
+      <a href="technology.html">Technologie</a>
+      <a href="about.html">À propos</a>
+      <a href="reseller-program.html" class="sub-link">— Programme de revendeurs</a>
+      <a href="contact.html">Contact</a>
+      <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.15);">
+        <a href="../dairy-farmers-system.html" lang="en" style="font-size:0.95rem;">English (EN)</a>
+        <a href="dairy-farmers-system.html" lang="fr" style="font-size:0.95rem;color:var(--primary-light);" aria-current="true">Français (FR)</a>
+        <a href="../de/dairy-farmers-system.html" lang="de" style="font-size:0.95rem;">Deutsch (DE)</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Section d'accueil Système pour producteurs laitiers">
+      <div class="container hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Accueil</a><span>/</span><span class="current">Système pour producteurs laitiers</span>
+        </div>
+        <span class="section-label" style="color:var(--earth-light);">Solutions</span>
+        <h1>De la bouse de vache à <em>l'énergie quotidienne</em></h1>
+        <p class="hero-sub">Systèmes de biogaz spécialement conçus pour les petites fermes laitières avec deux bovins ou plus — transformant un fardeau quotidien de déchets en combustible de cuisine quotidien et en ressource pour les sols.</p>
+        <a href="contact.html?interest=dairy-farmers" class="btn btn-primary">Discuter d'un système pour votre ferme</a>
+      </div>
+    </section>
+
+    <!-- FOR SMALL FARMERS -->
+    <section class="section farmers-section" aria-labelledby="farmers-heading">
+      <div class="container">
+        <div class="farmers-intro fade-in">
+          <span class="section-label">Conçu pour</span>
+          <h2 id="farmers-heading">Pensé pour les petits producteurs laitiers</h2>
+          <p style="color:var(--neutral-600);max-width:700px;margin-inline:auto;margin-top:1rem;">Dans le monde entier, de nombreux producteurs laitiers gèrent entre deux et vingt bovins — une échelle qui génère d'importants déchets quotidiens sans l'infrastructure nécessaire pour les transformer en valeur. Les systèmes Terra Digester sont précisément conçus pour ce contexte.</p>
+          <blockquote class="large-quote">
+            "Les petits producteurs laitiers gèrent des déchets chaque jour. Nos systèmes sont conçus pour transformer ce <strong>fardeau quotidien en ressource quotidienne</strong> — du gaz de cuisson propre et un biofertilisant organique. Les mêmes déchets qui nécessitaient autrefois d'être éliminés produisent maintenant le combustible du matin pour la cuisine et la nutrition pour les champs."
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS — DAIRY FARM SYSTEM -->
+    <section class="section farm-how-section" aria-labelledby="farm-how-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Comment ça fonctionne</span>
+          <h2 id="farm-how-heading">Des déjections à <em style="font-style:normal;color:var(--earth-light);">l'énergie quotidienne</em></h2>
+          <p>Quatre étapes. Un système scellé. Du gaz de cuisson quotidien et un biofertilisant gratuit — tous les jours.</p>
+        </div>
+
+        <!-- Step progress track -->
+        <div class="farm-step-track" role="tablist" aria-label="Étapes du processus du système pour ferme laitière">
+          <button class="farm-step-btn active" id="farm-btn-0" role="tab" aria-selected="true" aria-controls="farm-panel-0" onclick="farmGoTo(0)">
+            <div class="farm-step-num">1</div>
+            <div class="farm-step-lbl">Charger</div>
+          </button>
+          <div class="farm-track-line"><div class="farm-track-fill" id="farm-fill-0"></div></div>
+          <button class="farm-step-btn" id="farm-btn-1" role="tab" aria-selected="false" aria-controls="farm-panel-1" onclick="farmGoTo(1)">
+            <div class="farm-step-num">2</div>
+            <div class="farm-step-lbl">Digérer</div>
+          </button>
+          <div class="farm-track-line"><div class="farm-track-fill" id="farm-fill-1"></div></div>
+          <button class="farm-step-btn" id="farm-btn-2" role="tab" aria-selected="false" aria-controls="farm-panel-2" onclick="farmGoTo(2)">
+            <div class="farm-step-num">3</div>
+            <div class="farm-step-lbl">Cuire</div>
+          </button>
+          <div class="farm-track-line"><div class="farm-track-fill" id="farm-fill-2"></div></div>
+          <button class="farm-step-btn" id="farm-btn-3" role="tab" aria-selected="false" aria-controls="farm-panel-3" onclick="farmGoTo(3)">
+            <div class="farm-step-num">4</div>
+            <div class="farm-step-lbl">Fertiliser</div>
+          </button>
+        </div>
+
+        <!-- Step panels -->
+        <div class="farm-steps-wrap">
+
+          <!-- STEP 1: Load Livestock Manure -->
+          <div class="farm-step-panel active" id="farm-panel-0" role="tabpanel" aria-labelledby="farm-btn-0">
+            <div class="farm-svg-stage" aria-label="Illustration du chargement de bouse de vache dans l'entrée du Terra Digester">
+              <svg viewBox="0 0 380 280" width="100%" height="100%" style="max-width:380px;" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Ground line -->
+                <rect x="0" y="240" width="380" height="40" fill="rgba(82,183,136,0.07)" rx="4"/>
+                <line x1="0" y1="240" x2="380" y2="240" stroke="rgba(82,183,136,0.18)" stroke-width="1.5"/>
+
+                <!-- COW — small, left side -->
+                <g transform="translate(-4, 138) scale(0.22)" style="animation:cowRock 3.5s ease-in-out infinite;transform-origin:240px 150px;">
+                  <path d="M 108 178 C 88 168 72 148 78 128 C 84 110 72 100 62 90" fill="none" stroke="#C9956A" stroke-width="6" stroke-linecap="round"/>
+                  <ellipse cx="58" cy="85" rx="14" ry="10" fill="#C08050"/>
+                  <ellipse cx="50" cy="80" rx="9"  ry="7"  fill="#A87040"/>
+                  <ellipse cx="66" cy="80" rx="8"  ry="6"  fill="#A87040"/>
+                  <ellipse cx="58" cy="77" rx="7"  ry="5"  fill="#906030"/>
+                  <rect x="132" y="210" width="36" height="68" rx="16" fill="#D4A574"/>
+                  <rect x="182" y="210" width="36" height="68" rx="16" fill="#C9956A"/>
+                  <rect x="132" y="252" width="36" height="28" rx="12" fill="#5A3520"/>
+                  <rect x="182" y="252" width="36" height="28" rx="12" fill="#5A3520"/>
+                  <ellipse cx="280" cy="175" rx="178" ry="108" fill="#D4A574"/>
+                  <ellipse cx="280" cy="228" rx="120" ry="50" fill="#E8C49A"/>
+                  <path d="M 132 118 C 152 85 205 90 225 122 C 238 144 222 178 196 182 C 168 186 118 166 118 142 C 116 132 124 122 132 118Z" fill="#2A1508" opacity="0.85"/>
+                  <path d="M 255 100 C 278 82 318 88 328 112 C 336 130 320 158 300 160 C 280 162 250 142 255 100Z" fill="#2A1508" opacity="0.80"/>
+                  <path d="M 368 118 C 384 102 414 110 418 132 C 422 150 406 168 390 166 C 372 164 356 146 368 118Z" fill="#2A1508" opacity="0.76"/>
+                  <ellipse cx="204" cy="268" rx="56" ry="32" fill="#E8AFA0"/>
+                  <ellipse cx="180" cy="274" rx="28" ry="20" fill="#EEBAAC"/>
+                  <ellipse cx="228" cy="274" rx="28" ry="20" fill="#EEBAAC"/>
+                  <ellipse cx="170" cy="290" rx="7" ry="9"  fill="#D09080"/>
+                  <ellipse cx="192" cy="295" rx="7" ry="9"  fill="#D09080"/>
+                  <ellipse cx="216" cy="295" rx="7" ry="9"  fill="#D09080"/>
+                  <ellipse cx="238" cy="290" rx="7" ry="9"  fill="#D09080"/>
+                  <rect x="326" y="250" width="36" height="48" rx="16" fill="#D4A574"/>
+                  <rect x="376" y="250" width="36" height="48" rx="16" fill="#C9956A"/>
+                  <rect x="326" y="280" width="36" height="20" rx="10" fill="#5A3520"/>
+                  <rect x="376" y="280" width="36" height="20" rx="10" fill="#5A3520"/>
+                  <ellipse cx="418" cy="148" rx="38" ry="52" fill="#D4A574"/>
+                  <circle cx="432" cy="100" r="72" fill="#D4A574"/>
+                  <path d="M 396 56 C 412 36 456 38 468 62 C 476 80 460 106 438 108 C 414 110 384 86 396 56Z" fill="#2A1508" opacity="0.78"/>
+                  <ellipse cx="374" cy="54" rx="24" ry="14" fill="#D4A574" transform="rotate(-38 374 54)"/>
+                  <ellipse cx="374" cy="54" rx="14" ry="8"  fill="#E8B4A0" transform="rotate(-38 374 54)"/>
+                  <ellipse cx="492" cy="52" rx="24" ry="14" fill="#D4A574" transform="rotate(30 492 52)"/>
+                  <ellipse cx="492" cy="52" rx="14" ry="8"  fill="#E8B4A0" transform="rotate(30 492 52)"/>
+                  <path d="M 388 58 C 374 36 366 20 378 14 C 388 9 396 24 388 58Z" fill="#EDE0A8"/>
+                  <path d="M 474 55 C 492 33 500 18 488 13 C 478 8 470 24 474 55Z" fill="#EDE0A8"/>
+                  <ellipse cx="468" cy="118" rx="36" ry="26" fill="#C9956A"/>
+                  <ellipse cx="468" cy="118" rx="26" ry="19" fill="#D8AA80"/>
+                  <ellipse cx="458" cy="120" rx="8"  ry="7"  fill="#7A4828"/>
+                  <ellipse cx="478" cy="120" rx="8"  ry="7"  fill="#7A4828"/>
+                  <circle  cx="455" cy="117" r="2.5" fill="rgba(255,255,255,0.35)"/>
+                  <circle  cx="475" cy="117" r="2.5" fill="rgba(255,255,255,0.35)"/>
+                  <ellipse cx="406" cy="90"  rx="17" ry="14" fill="white"/>
+                  <circle  cx="408" cy="92"  r="10"  fill="#3D8B7A"/>
+                  <circle  cx="409" cy="93"  r="6.5" fill="#181818"/>
+                  <circle  cx="404" cy="88"  r="3.2" fill="white"/>
+                  <circle  cx="412" cy="93"  r="1.5" fill="white" opacity="0.55"/>
+                  <path d="M 390 82 C 400 74 422 76 424 86" fill="#B87848" opacity="0.5"/>
+                  <ellipse cx="392" cy="79"  rx="2"  ry="4"  fill="#7A4828" transform="rotate(-20 392 79)"/>
+                  <ellipse cx="404" cy="75"  rx="2"  ry="4"  fill="#7A4828" transform="rotate( -5 404 75)"/>
+                  <ellipse cx="416" cy="77"  rx="2"  ry="4"  fill="#7A4828" transform="rotate( 15 416 77)"/>
+                  <path d="M 454 132 C 462 140 476 140 484 132" fill="none" stroke="#8B5030" stroke-width="3" stroke-linecap="round"/>
+                </g>
+
+                <!-- Dung drops animated -->
+                <circle cx="108" cy="228" r="5"   fill="#7F5539" opacity="0.85" style="animation:dungDrop 1.6s ease-in-out infinite;"/>
+                <circle cx="100" cy="218" r="3.5" fill="#7F5539" opacity="0.60" style="animation:dungDrop 1.6s ease-in-out infinite 0.5s;"/>
+                <circle cx="114" cy="222" r="2.5" fill="#7F5539" opacity="0.50" style="animation:dungDrop 1.6s ease-in-out infinite 1s;"/>
+
+                <!-- Arrow: vache → entonnoir -->
+                <path d="M 122 224 Q 148 210 175 200" stroke="rgba(82,183,136,0.65)" stroke-width="2.5" stroke-dasharray="6 4" fill="none" stroke-linecap="round" style="animation:arrowDraw 1.5s linear infinite;stroke-dashoffset:0;"/>
+                <polygon points="175,195 182,200 175,206" fill="rgba(82,183,136,0.65)"/>
+
+                <!-- ENTONNOIR / ENTRÉE -->
+                <g transform="translate(175, 68)">
+                  <text x="42" y="-8" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="12" font-weight="600" font-family="system-ui" letter-spacing="0.5">Entrée</text>
+                  <ellipse cx="42" cy="14" rx="42" ry="12" fill="rgba(45,106,79,0.35)" stroke="#52B788" stroke-width="2"/>
+                  <path d="M0 14 L18 62 L66 62 L84 14" fill="rgba(18,46,32,0.82)" stroke="#52B788" stroke-width="2"/>
+                  <ellipse cx="42" cy="35" rx="18" ry="6" fill="rgba(82,183,136,0.22)"/>
+                  <ellipse cx="42" cy="50" rx="10" ry="4" fill="rgba(82,183,136,0.16)"/>
+                  <rect x="28" y="62" width="28" height="38" rx="6" fill="rgba(18,46,32,0.9)" stroke="#52B788" stroke-width="2"/>
+                  <rect x="25" y="95" width="34" height="8" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <circle cx="42" cy="72" r="4" fill="rgba(127,85,57,0.6)" style="animation:dungDrop 1.4s ease-in-out infinite 0.2s;"/>
+                  <circle cx="42" cy="84" r="3" fill="rgba(127,85,57,0.4)" style="animation:dungDrop 1.4s ease-in-out infinite 0.7s;"/>
+                </g>
+
+                <!-- TERRA DIGESTER BAG -->
+                <g transform="translate(248, 42)">
+                  <ellipse cx="62" cy="108" rx="62" ry="95" fill="rgba(45,106,79,0.12)" style="animation:digestGlow 3.5s ease-in-out infinite;"/>
+                  <path d="M 12 24
+                            C  8 50  4 90  7 130
+                            C  9 162 22 185 62 185
+                            C 102 185 115 162 117 130
+                            C 120 90 116 50 112 24
+                            C 100  8  80  2  62  2
+                            C  44  2  24  8  12 24 Z"
+                        fill="rgba(11,28,20,0.92)" stroke="#52B788" stroke-width="2.5"/>
+                  <path d="M 18 30 C 14 58 11 95 14 128" stroke="rgba(82,183,136,0.40)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M 106 35 C 109 63 110 98 107 128" stroke="rgba(82,183,136,0.15)" stroke-width="3" stroke-linecap="round"/>
+                  <ellipse cx="62" cy="50" rx="44" ry="20" fill="rgba(45,106,79,0.20)" style="animation:bagPulse 3.5s ease-in-out infinite;"/>
+                  <text x="62" y="102" text-anchor="middle" fill="rgba(82,183,136,0.85)" font-size="12" font-weight="700" font-family="system-ui" letter-spacing="1.5">TERRA</text>
+                  <text x="62" y="120" text-anchor="middle" fill="rgba(82,183,136,0.85)" font-size="12" font-weight="700" font-family="system-ui" letter-spacing="1.5">DIGESTER</text>
+                  <line x1="34" y1="127" x2="90" y2="127" stroke="rgba(82,183,136,0.25)" stroke-width="1"/>
+                  <text x="62" y="142" text-anchor="middle" fill="rgba(82,183,136,0.50)" font-size="9" font-family="system-ui" letter-spacing="0.5">Digestion anaérobie</text>
+                  <rect x="50" y="-14" width="24" height="22" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="2"/>
+                  <rect x="44" y="-18" width="36" height="9" rx="5" fill="#52B788"/>
+                  <circle cx="62" cy="-22" r="5" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="1.5" style="animation:bubbleUp 2s ease-in infinite;"/>
+                  <rect x="-22" y="96" width="22" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <rect x="108" y="140" width="18" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <rect x="120" y="135" width="10" height="8" rx="3" fill="#DDB892" stroke="rgba(127,85,57,0.7)" stroke-width="1"/>
+                </g>
+
+                <!-- Étiquette mélange eau -->
+                <g transform="translate(175, 200)">
+                  <rect x="0" y="0" width="86" height="24" rx="8" fill="rgba(45,106,79,0.30)" stroke="rgba(82,183,136,0.40)" stroke-width="1.2"/>
+                  <text x="43" y="15.5" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10" font-weight="500" font-family="system-ui">+ Mélange eau</text>
+                </g>
+
+                <!-- Étiquette apport quotidien -->
+                <g transform="translate(4,120)">
+                  <rect x="0" y="0" width="76" height="18" rx="6" fill="rgba(127,85,57,0.25)" stroke="rgba(127,85,57,0.35)" stroke-width="1"/>
+                  <text x="38" y="12" text-anchor="middle" fill="rgba(221,184,146,0.85)" font-size="8.5" font-weight="600" font-family="system-ui">Apport quotidien</text>
+                </g>
+
+              </svg>
+            </div>
+            <div class="farm-step-content">
+              <div class="farm-step-badge"><span class="farm-step-badge-num">Étape 01</span><span class="farm-step-badge-lbl">Chargement quotidien</span></div>
+              <h3>Charger le fumier<br><em>de bétail chaque jour</em></h3>
+              <p>La bouse de vache fraîche est collectée à la ferme et mélangée à de l'eau pour créer un lisier. Ce lisier organique est introduit dans le Terra Digester par l'entrée scellée — une tâche quotidienne simple qui ne prend que quelques minutes. Deux à vingt bovins génèrent suffisamment d'apport pour faire fonctionner le système en continu.</p>
+              <div class="farm-step-metrics">
+                <div class="farm-metric"><div class="farm-metric-val">2–20</div><div class="farm-metric-lbl">Bovins pris en charge</div></div>
+                <div class="farm-metric"><div class="farm-metric-val">~5 min</div><div class="farm-metric-lbl">Temps de chargement quotidien</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Anaerobic Digestion -->
+          <div class="farm-step-panel" id="farm-panel-1" role="tabpanel" aria-labelledby="farm-btn-1">
+            <div class="farm-svg-stage" aria-label="Illustration de la digestion anaérobie à l'intérieur de la poche gonflable Terra Digester">
+              <svg viewBox="0 0 380 280" width="100%" height="100%" style="max-width:380px;" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(80,20)">
+                  <ellipse cx="110" cy="135" rx="105" ry="105" fill="rgba(45,106,79,0.1)" style="animation:digestGlow 3s ease-in-out infinite;"/>
+                  <path d="M20 40C15 70 10 110 15 155C18 185 40 210 110 210C180 210 202 185 205 155C210 110 205 70 200 40C190 20 160 10 110 10C60 10 30 20 20 40Z" fill="rgba(13,33,24,0.9)" stroke="#52B788" stroke-width="2.5"/>
+                  <path d="M30 45C26 75 22 115 27 155" stroke="rgba(82,183,136,0.3)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M185 50C188 80 190 118 186 155" stroke="rgba(82,183,136,0.15)" stroke-width="3" stroke-linecap="round"/>
+                  <ellipse cx="110" cy="175" rx="80" ry="28" fill="rgba(127,85,57,0.35)" style="animation:bagPulse 4s ease-in-out infinite;"/>
+                  <g style="animation:bacteriaFloat 3.5s ease-in-out infinite;">
+                    <ellipse cx="80" cy="130" rx="10" ry="5" fill="rgba(82,183,136,0.7)" stroke="rgba(82,183,136,0.9)" stroke-width="1"/>
+                    <circle cx="72" cy="130" r="3" fill="rgba(82,183,136,0.6)"/>
+                    <circle cx="91" cy="130" r="3" fill="rgba(82,183,136,0.6)"/>
+                  </g>
+                  <g style="animation:bacteriaFloat 3.5s ease-in-out infinite 0.8s;">
+                    <ellipse cx="130" cy="110" rx="9" ry="4.5" fill="rgba(82,183,136,0.65)" stroke="rgba(82,183,136,0.85)" stroke-width="1"/>
+                    <circle cx="122" cy="110" r="2.8" fill="rgba(82,183,136,0.55)"/>
+                    <circle cx="139" cy="110" r="2.8" fill="rgba(82,183,136,0.55)"/>
+                  </g>
+                  <g style="animation:bacteriaFloat 3.5s ease-in-out infinite 1.6s;">
+                    <ellipse cx="100" cy="95" rx="8" ry="4" fill="rgba(82,183,136,0.6)" stroke="rgba(82,183,136,0.8)" stroke-width="1"/>
+                    <circle cx="93" cy="95" r="2.5" fill="rgba(82,183,136,0.5)"/>
+                    <circle cx="108" cy="95" r="2.5" fill="rgba(82,183,136,0.5)"/>
+                  </g>
+                  <g style="animation:bacteriaFloat 3.5s ease-in-out infinite 2.4s;">
+                    <ellipse cx="145" cy="145" rx="9" ry="4.5" fill="rgba(82,183,136,0.6)" stroke="rgba(82,183,136,0.8)" stroke-width="1"/>
+                    <circle cx="137" cy="145" r="2.8" fill="rgba(82,183,136,0.5)"/>
+                    <circle cx="154" cy="145" r="2.8" fill="rgba(82,183,136,0.5)"/>
+                  </g>
+                  <circle cx="95" cy="160" r="5" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="1.5" style="animation:bubbleUp 2.2s ease-in infinite;"/>
+                  <circle cx="125" cy="155" r="4" fill="none" stroke="rgba(82,183,136,0.45)" stroke-width="1.5" style="animation:bubbleUp 2.2s ease-in infinite 0.6s;"/>
+                  <circle cx="110" cy="165" r="3" fill="none" stroke="rgba(82,183,136,0.4)" stroke-width="1.5" style="animation:bubbleUp 2.2s ease-in infinite 1.2s;"/>
+                  <circle cx="80" cy="152" r="3.5" fill="none" stroke="rgba(82,183,136,0.4)" stroke-width="1.5" style="animation:bubbleUp 2.2s ease-in infinite 1.8s;"/>
+                  <text x="110" y="60" text-anchor="middle" fill="rgba(82,183,136,0.55)" font-size="9" font-weight="bold" font-family="system-ui" letter-spacing="1">TERRA DIGESTER</text>
+                  <rect x="98" y="-5" width="24" height="18" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <rect x="93" y="-8" width="34" height="8" rx="4" fill="#52B788"/>
+                  <rect x="18" y="180" width="16" height="30" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5" transform="rotate(-20 26 195)"/>
+                  <rect x="186" y="180" width="16" height="30" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5" transform="rotate(20 194 195)"/>
+                </g>
+
+                <!-- Étiquette scellé / sans oxygène -->
+                <g transform="translate(10,220)">
+                  <rect x="0" y="0" width="130" height="22" rx="8" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+                  <text x="65" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="9.5" font-family="system-ui">🔒 Scellé · Sans oxygène</text>
+                </g>
+                <!-- Étiquette biogaz -->
+                <g transform="translate(250,10)">
+                  <rect x="0" y="0" width="110" height="22" rx="8" fill="rgba(45,106,79,0.3)" stroke="rgba(82,183,136,0.35)" stroke-width="1"/>
+                  <text x="55" y="14.5" text-anchor="middle" fill="rgba(82,183,136,0.95)" font-size="9.5" font-family="system-ui">Biogaz s'accumule ↑</text>
+                </g>
+              </svg>
+            </div>
+            <div class="farm-step-content">
+              <div class="farm-step-badge"><span class="farm-step-badge-num">Étape 02</span><span class="farm-step-badge-lbl">Processus biologique</span></div>
+              <h3>Digestion anaérobie<br><em>à l'intérieur de la poche</em></h3>
+              <p>À l'intérieur de la vessie scellée du Terra Digester, des bactéries anaérobies naturellement présentes décomposent le lisier organique dans un environnement totalement exempt d'oxygène. Sur une durée de rétention de 15 à 30 jours, les micro-organismes transforment la matière organique en biogaz riche en méthane qui s'accumule en haut de la poche, et en digestat riche en nutriments qui se dépose au fond.</p>
+              <div class="farm-step-metrics">
+                <div class="farm-metric"><div class="farm-metric-val">15–30 j</div><div class="farm-metric-lbl">Temps de rétention</div></div>
+                <div class="farm-metric"><div class="farm-metric-val">60–70 %</div><div class="farm-metric-lbl">Teneur en méthane</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: Clean Cooking Gas -->
+          <div class="farm-step-panel" id="farm-panel-2" role="tabpanel" aria-labelledby="farm-btn-2">
+            <div class="farm-svg-stage" aria-label="Illustration du biogaz circulant dans une conduite jusqu'au réchaud de cuisine avec flamme">
+              <svg viewBox="0 0 380 280" width="100%" height="100%" style="max-width:380px;" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(10,30)">
+                  <path d="M10 20C8 50 6 90 10 130C12 155 25 175 60 175C95 175 108 155 110 130C114 90 112 50 110 20C100 5 80 0 60 0C40 0 20 5 10 20Z" fill="rgba(13,33,24,0.85)" stroke="#52B788" stroke-width="2"/>
+                  <path d="M20 25C17 55 15 92 19 128" stroke="rgba(82,183,136,0.3)" stroke-width="3" stroke-linecap="round"/>
+                  <text x="60" y="90" text-anchor="middle" fill="rgba(82,183,136,0.55)" font-size="8" font-weight="bold" font-family="system-ui">TERRA</text>
+                  <text x="60" y="101" text-anchor="middle" fill="rgba(82,183,136,0.55)" font-size="8" font-weight="bold" font-family="system-ui">DIGESTER</text>
+                  <ellipse cx="60" cy="35" rx="42" ry="18" fill="rgba(45,106,79,0.3)" style="animation:bagPulse 3s ease-in-out infinite;"/>
+                  <text x="60" y="38" text-anchor="middle" fill="rgba(82,183,136,0.8)" font-size="8" font-family="system-ui">Biogaz</text>
+                  <rect x="51" y="-8" width="18" height="15" rx="3" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                </g>
+
+                <g>
+                  <rect x="125" y="88" width="100" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5" style="animation:pipeFlow 2s linear infinite;stroke-dasharray:12 6;stroke-dashoffset:0;"/>
+                  <circle cx="140" cy="93" r="3" fill="rgba(82,183,136,0.7)" style="animation:bubbleUp 1.5s ease-in infinite;"/>
+                  <circle cx="170" cy="93" r="3" fill="rgba(82,183,136,0.65)" style="animation:bubbleUp 1.5s ease-in infinite 0.5s;"/>
+                  <circle cx="200" cy="93" r="3" fill="rgba(82,183,136,0.6)" style="animation:bubbleUp 1.5s ease-in infinite 1s;"/>
+                  <circle cx="185" cy="93" r="10" fill="rgba(27,58,45,0.9)" stroke="#52B788" stroke-width="1.5"/>
+                  <text x="185" y="96.5" text-anchor="middle" fill="rgba(82,183,136,0.9)" font-size="8" font-family="system-ui">⊕</text>
+                </g>
+
+                <g transform="translate(220,60)">
+                  <rect x="-10" y="110" width="140" height="12" rx="4" fill="rgba(127,85,57,0.3)" stroke="rgba(127,85,57,0.5)" stroke-width="1"/>
+                  <rect x="0" y="60" width="120" height="52" rx="8" fill="rgba(27,58,45,0.9)" stroke="#52B788" stroke-width="1.5"/>
+                  <circle cx="60" cy="84" r="32" fill="none" stroke="rgba(82,183,136,0.4)" stroke-width="2"/>
+                  <circle cx="60" cy="84" r="22" fill="none" stroke="rgba(82,183,136,0.5)" stroke-width="2"/>
+                  <circle cx="60" cy="84" r="10" fill="rgba(45,106,79,0.4)" stroke="#52B788" stroke-width="1.5"/>
+                  <g style="transform-origin:60px 74px;animation:flameFlicker 0.18s ease-in-out infinite;">
+                    <path d="M47 74C44 68 46 62 53 58C51 65 55 68 57 64C59 70 57 72 55 74Z" fill="#52B788" opacity="0.7" style="animation:flameSway 0.22s ease-in-out infinite alternate;"/>
+                    <path d="M73 74C76 68 74 62 67 58C69 65 65 68 63 64C61 70 63 72 65 74Z" fill="#52B788" opacity="0.7" style="animation:flameSway 0.22s ease-in-out infinite alternate-reverse;"/>
+                    <path d="M55 74C53 68 54 60 60 55C66 60 67 68 65 74Z" fill="#DDB892" opacity="0.85" style="animation:flameFlicker 0.15s ease-in-out infinite alternate;"/>
+                    <path d="M58 74C57 70 58 65 60 62C62 65 63 70 62 74Z" fill="white" opacity="0.6"/>
+                  </g>
+                  <path d="M56 54C57 46 58 40 60 36" stroke="rgba(221,184,146,0.25)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 1.2s ease-out infinite;"/>
+                  <path d="M63 54C64 46 65 40 67 36" stroke="rgba(221,184,146,0.2)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 1.2s ease-out infinite 0.4s;"/>
+                  <circle cx="20" cy="84" r="8" fill="rgba(82,183,136,0.2)" stroke="#52B788" stroke-width="1.5"/>
+                  <circle cx="20" cy="84" r="3" fill="#52B788"/>
+                  <rect x="-20" y="86" width="22" height="8" rx="4" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                </g>
+
+                <g transform="translate(244,10)">
+                  <ellipse cx="36" cy="52" rx="30" ry="9" fill="rgba(127,85,57,0.5)" stroke="rgba(127,85,57,0.8)" stroke-width="1.5"/>
+                  <path d="M6 52 Q3 75 8 85 Q18 95 36 95 Q54 95 64 85 Q69 75 66 52" fill="rgba(127,85,57,0.35)" stroke="rgba(127,85,57,0.6)" stroke-width="1.5"/>
+                  <path d="M24 50C22 42 25 35 23 28" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 1.8s ease-out infinite;"/>
+                  <path d="M36 49C35 41 38 33 36 26" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 1.8s ease-out infinite 0.6s;"/>
+                  <path d="M48 50C47 42 50 35 48 28" stroke="rgba(255,255,255,0.18)" stroke-width="2" stroke-linecap="round" style="animation:heatRise 1.8s ease-out infinite 1.2s;"/>
+                </g>
+
+                <!-- Étiquettes -->
+                <g transform="translate(10,240)">
+                  <rect x="0" y="0" width="110" height="22" rx="8" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+                  <text x="55" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="9.5" font-family="system-ui">🔥 Cuisson sans fumée</text>
+                </g>
+                <g transform="translate(240,240)">
+                  <rect x="0" y="0" width="120" height="22" rx="8" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+                  <text x="60" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="9.5" font-family="system-ui">Sans GPL · Sans bois de chauffe</text>
+                </g>
+              </svg>
+            </div>
+            <div class="farm-step-content">
+              <div class="farm-step-badge"><span class="farm-step-badge-num">Étape 03</span><span class="farm-step-badge-lbl">Production d'énergie</span></div>
+              <h3>Gaz de cuisson<br><em>propre chaque jour</em></h3>
+              <p>Le biogaz se collecte en haut de la vessie du Terra Digester et s'écoule par une simple conduite jusqu'au réchaud de la cuisine. Il brûle avec une flamme bleue propre — sans fumée, inodore, et remplaçant directement les coûteuses bouteilles de GPL ou le bois de chauffe nocif. Une ferme de quatre bovins peut produire suffisamment de gaz pour les besoins quotidiens de cuisson d'une famille.</p>
+              <div class="farm-step-metrics">
+                <div class="farm-metric"><div class="farm-metric-val">4 bovins</div><div class="farm-metric-lbl">= besoins quotidiens famille</div></div>
+                <div class="farm-metric"><div class="farm-metric-val">0 fumée</div><div class="farm-metric-lbl">Combustion propre</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: Nutrient-rich Digestate -->
+          <div class="farm-step-panel" id="farm-panel-3" role="tabpanel" aria-labelledby="farm-btn-3">
+            <div class="farm-svg-stage" aria-label="Illustration du digestat liquide s'écoulant du robinet de sortie vers les cultures de la ferme">
+              <svg viewBox="0 0 380 280" width="100%" height="100%" style="max-width:380px;" xmlns="http://www.w3.org/2000/svg">
+                <rect x="160" y="195" width="220" height="55" rx="4" fill="rgba(45,106,79,0.12)"/>
+                <line x1="160" y1="195" x2="380" y2="195" stroke="rgba(82,183,136,0.25)" stroke-width="1.5"/>
+
+                <g transform="translate(10,20)">
+                  <path d="M10 25C7 55 5 100 8 145C10 170 25 188 62 188C99 188 113 170 115 145C118 100 116 55 113 25C103 8 83 2 62 2C41 2 20 8 10 25Z" fill="rgba(13,33,24,0.85)" stroke="#52B788" stroke-width="2"/>
+                  <path d="M20 30C17 60 15 100 18 140" stroke="rgba(82,183,136,0.3)" stroke-width="3" stroke-linecap="round"/>
+                  <text x="62" y="100" text-anchor="middle" fill="rgba(82,183,136,0.5)" font-size="8" font-weight="bold" font-family="system-ui">TERRA</text>
+                  <text x="62" y="112" text-anchor="middle" fill="rgba(82,183,136,0.5)" font-size="8" font-weight="bold" font-family="system-ui">DIGESTER</text>
+                  <ellipse cx="62" cy="158" rx="44" ry="22" fill="rgba(127,85,57,0.4)" style="animation:bagPulse 4s ease-in-out infinite;"/>
+                  <text x="62" y="161" text-anchor="middle" fill="rgba(221,184,146,0.8)" font-size="8" font-family="system-ui">Digestat</text>
+                </g>
+
+                <g transform="translate(122,155)">
+                  <rect x="0" y="0" width="55" height="10" rx="5" fill="#2D6A4F" stroke="#52B788" stroke-width="1.5"/>
+                  <rect x="45" y="-6" width="20" height="22" rx="4" fill="rgba(27,58,45,0.9)" stroke="#52B788" stroke-width="1.5"/>
+                  <rect x="50" y="-12" width="10" height="10" rx="3" fill="#DDB892" stroke="rgba(127,85,57,0.8)" stroke-width="1.5"/>
+                  <circle cx="55" cy="30" r="4.5" fill="rgba(127,85,57,0.75)" style="animation:tapDrip 1.8s ease-in infinite;"/>
+                  <circle cx="55" cy="30" r="3.5" fill="rgba(127,85,57,0.6)" style="animation:tapDrip 1.8s ease-in infinite 0.6s;"/>
+                  <circle cx="55" cy="30" r="3" fill="rgba(127,85,57,0.5)" style="animation:tapDrip 1.8s ease-in infinite 1.2s;"/>
+                </g>
+
+                <g transform="translate(170,185)">
+                  <ellipse cx="28" cy="8" rx="28" ry="8" fill="rgba(127,85,57,0.4)" stroke="rgba(127,85,57,0.7)" stroke-width="1.5"/>
+                  <path d="M0 8 Q-3 45 2 55 Q10 65 28 65 Q46 65 54 55 Q59 45 56 8" fill="rgba(127,85,57,0.3)" stroke="rgba(127,85,57,0.6)" stroke-width="1.5"/>
+                  <ellipse cx="28" cy="48" rx="22" ry="10" fill="rgba(127,85,57,0.5)"/>
+                  <text x="28" y="37" text-anchor="middle" fill="rgba(221,184,146,0.7)" font-size="8" font-family="system-ui">Digestat</text>
+                </g>
+
+                <path d="M228 218 Q248 218 258 210" stroke="rgba(82,183,136,0.5)" stroke-width="2" stroke-dasharray="5 4" fill="none" stroke-linecap="round" style="animation:arrowDraw 1.8s linear infinite;"/>
+
+                <g transform="translate(255,120)">
+                  <ellipse cx="60" cy="78" rx="58" ry="10" fill="rgba(45,106,79,0.2)" stroke="rgba(82,183,136,0.2)" stroke-width="1"/>
+                  <g style="animation:plantGrow 1.5s ease-out both 0.3s;">
+                    <line x1="30" y1="78" x2="30" y2="30" stroke="#52B788" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M30 55C30 55 20 45 14 38" stroke="#52B788" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="11" cy="36" rx="10" ry="6" fill="rgba(82,183,136,0.7)" transform="rotate(-30 11 36)"/>
+                    <path d="M30 42C30 42 40 33 47 27" stroke="#52B788" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="50" cy="25" rx="10" ry="6" fill="rgba(82,183,136,0.65)" transform="rotate(25 50 25)"/>
+                    <ellipse cx="30" cy="26" rx="8" ry="5" fill="rgba(82,183,136,0.85)"/>
+                  </g>
+                  <g style="animation:plantGrow 1.5s ease-out both 0.6s;">
+                    <line x1="60" y1="78" x2="60" y2="38" stroke="#52B788" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M60 58C60 58 50 49 45 43" stroke="#52B788" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="43" cy="41" rx="8" ry="5" fill="rgba(82,183,136,0.6)" transform="rotate(-25 43 41)"/>
+                    <path d="M60 47C60 47 69 40 74 35" stroke="#52B788" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="76" cy="33" rx="8" ry="5" fill="rgba(82,183,136,0.55)" transform="rotate(20 76 33)"/>
+                    <ellipse cx="60" cy="35" rx="7" ry="4.5" fill="rgba(82,183,136,0.8)"/>
+                  </g>
+                  <g style="animation:plantGrow 1.5s ease-out both 0.9s;">
+                    <line x1="90" y1="78" x2="90" y2="50" stroke="#52B788" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M90 65C90 65 82 58 78 53" stroke="#52B788" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="76" cy="51" rx="7" ry="4.5" fill="rgba(82,183,136,0.55)" transform="rotate(-20 76 51)"/>
+                    <ellipse cx="90" cy="47" rx="6" ry="4" fill="rgba(82,183,136,0.75)"/>
+                  </g>
+                  <text x="60" y="96" text-anchor="middle" fill="rgba(82,183,136,0.7)" font-size="9" font-family="system-ui">+ Nutriments</text>
+                </g>
+
+                <g transform="translate(10,248)">
+                  <rect x="0" y="0" width="130" height="22" rx="8" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+                  <text x="65" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="9.5" font-family="system-ui">🌱 100 % biofertilisant</text>
+                </g>
+                <g transform="translate(230,248)">
+                  <rect x="0" y="0" width="130" height="22" rx="8" fill="rgba(45,106,79,0.25)" stroke="rgba(82,183,136,0.3)" stroke-width="1"/>
+                  <text x="65" y="14.5" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="9.5" font-family="system-ui">Coût zéro pour l'agriculteur</text>
+                </g>
+              </svg>
+            </div>
+            <div class="farm-step-content">
+              <div class="farm-step-badge"><span class="farm-step-badge-num">Étape 04</span><span class="farm-step-badge-lbl">Production de fertilisant</span></div>
+              <h3>Biofertilisant<br><em>liquide riche en nutriments</em></h3>
+              <p>Au fur et à mesure que du lisier frais entre chaque jour dans le système, l'effluent digéré s'écoule par la sortie sous forme d'un digestat liquide riche en nutriments. Ce biofertilisant — riche en azote, phosphore et potassium — s'applique directement aux champs, aux pâturages et aux jardins potagers. Il remplace les coûteux fertilisants synthétiques par une production quotidienne entièrement gratuite issue des mêmes déchets qui ont alimenté le réchaud.</p>
+              <div class="farm-step-metrics">
+                <div class="farm-metric"><div class="farm-metric-val">N·P·K</div><div class="farm-metric-lbl">Nutriments riches</div></div>
+                <div class="farm-metric"><div class="farm-metric-val">Gratuit</div><div class="farm-metric-lbl">Production quotidienne</div></div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /farm-steps-wrap -->
+
+        <!-- Boutons de navigation -->
+        <div class="farm-step-nav">
+          <button class="farm-nav-btn" id="farm-prev-btn" onclick="farmPrev()" aria-label="Étape précédente">← Précédent</button>
+          <button class="farm-nav-btn primary" id="farm-next-btn" onclick="farmNext()" aria-label="Étape suivante">Étape suivante →</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BENEFITS FOR FARMERS -->
+    <section class="section benefits-section" aria-labelledby="benefits-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Avantages</span>
+          <h2 id="benefits-heading">Ce que le système apporte aux agriculteurs</h2>
+          <p>Quatre résultats quotidiens tangibles issus d'un système conçu pour le contexte de la petite ferme.</p>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card fade-in fade-in-delay-1">
+            <div class="benefit-icon gas" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3C11 7 11 9 11 11C11 13.2 11.9 15 13 15C14.1 15 15 13.2 15 11C15 9 15 7 13 3Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/><circle cx="13" cy="20" r="2.5" stroke="#2D6A4F" stroke-width="1.5"/><path d="M13 15V17.5" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="benefit-text">
+              <h3>Gaz de cuisson quotidien</h3>
+              <p>Le système produit du biogaz en continu, fournissant une source quotidienne fiable de combustible pour la cuisine et le chauffage — réduisant la dépendance au GPL acheté, au bois de chauffe ou au charbon.</p>
+            </div>
+          </div>
+          <div class="benefit-card fade-in fade-in-delay-2">
+            <div class="benefit-icon fert" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3C13 3 7 6 7 11C7 14.3 9.7 17 13 17C16.3 17 19 14.3 19 11C19 6 13 3 13 3Z" stroke="#52B788" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 22C9.5 20 11 19 13 19C15 19 16.5 20 18 22" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="benefit-text">
+              <h3>Biofertilisant organique gratuit</h3>
+              <p>Le digestat — le sous-produit riche en nutriments de la digestion anaérobie — sert de biofertilisant organique efficace pour les pâturages, les cultures et les jardins potagers, réduisant les dépenses en intrants synthétiques.</p>
+            </div>
+          </div>
+          <div class="benefit-card fade-in fade-in-delay-3">
+            <div class="benefit-icon hygiene" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="9" stroke="#7F5539" stroke-width="1.5"/><path d="M9 13L11 15L16 10" stroke="#7F5539" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="benefit-text">
+              <h3>Gestion hygiénique des déchets</h3>
+              <p>Le système scellé contient les déjections et les odeurs associées dans un processus géré, améliorant l'hygiène de la ferme et réduisant le travail manuel lié à la manipulation et à l'élimination quotidienne du fumier.</p>
+            </div>
+          </div>
+          <div class="benefit-card fade-in fade-in-delay-4">
+            <div class="benefit-icon fuel" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="5" y="10" width="16" height="12" rx="2" stroke="#7F5539" stroke-width="1.5"/><path d="M9 10V8C9 6.3 10.3 5 12 5H14C15.7 5 17 6.3 17 8V10" stroke="#7F5539" stroke-width="1.5"/><path d="M9 15H17M13 12V18" stroke="#7F5539" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="benefit-text">
+              <h3>Dépendance réduite aux combustibles</h3>
+              <p>Le remplacement des combustibles achetés par la production de biogaz à la ferme réduit les dépenses ménagères et protège les agriculteurs de la volatilité des prix de l'énergie — un avantage important dans les contextes ruraux et hors réseau.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCALABILITY -->
+    <section class="section scale-section" aria-labelledby="scale-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Modularité</span>
+          <h2 id="scale-heading">Des systèmes qui grandissent avec votre ferme</h2>
+        </div>
+        <div class="scale-inner fade-in">
+          <div class="scale-visual" aria-label="Graphique de modularité montrant des systèmes pour 2 à plus de 20 bovins">
+            <div class="scale-unit">
+              <div class="scale-bar" style="width:60px;height:60px;"><span>S</span></div>
+              <div class="scale-label">Démarrage</div>
+              <div class="scale-cows">2–4 bovins</div>
+            </div>
+            <div class="scale-unit">
+              <div class="scale-bar" style="width:60px;height:90px;"><span>M</span></div>
+              <div class="scale-label">Moyen</div>
+              <div class="scale-cows">5–9 bovins</div>
+            </div>
+            <div class="scale-unit">
+              <div class="scale-bar" style="width:60px;height:130px;"><span>L</span></div>
+              <div class="scale-label">Grand</div>
+              <div class="scale-cows">10–19 bovins</div>
+            </div>
+            <div class="scale-unit">
+              <div class="scale-bar" style="width:60px;height:170px;background:linear-gradient(180deg,var(--earth-light),var(--earth-brown));"><span>XL</span></div>
+              <div class="scale-label">Évolué</div>
+              <div class="scale-cows">20+ bovins</div>
+            </div>
+          </div>
+          <div class="scale-text">
+            <p>Les systèmes sont conçus avec une extension modulaire à l'esprit. À mesure que votre troupeau grandit, le système peut grandir avec lui — de deux bovins à vingt et au-delà. Chaque module supplémentaire s'intègre à l'installation existante, protégeant votre investissement initial tout en augmentant proportionnellement la production de gaz et de biofertilisant.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" aria-labelledby="faq-df-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">FAQ</span>
+          <h2 id="faq-df-heading">Questions fréquentes</h2>
+          <p>Tout ce que les producteurs laitiers demandent avant de se lancer dans la biodigestion.</p>
+        </div>
+        <div class="faq-grid">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Comment fonctionne le système avec le fumier de vache ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Le fumier de vache est chargé dans l'entrée, mélangé à de l'eau, et introduit dans la poche scellée du digesteur. Les bactéries anaérobies décomposent la matière organique sur 15 à 30 jours, capturant le méthane pour le gaz de cuisson et libérant un biofertilisant liquide depuis la sortie — riche en azote, phosphore et potassium.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quels types de fumier accepte-t-il ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Le fumier de vache, de porc et de cheval fonctionnent tous bien. Le fumier de vache laitière est particulièrement efficace en raison de sa forte teneur en matière organique et de la présence naturelle de bactéries anaérobies. Le système traite jusqu'à 50 litres de lisier par jour à l'échelle de la ferme.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Combien de temps avant que le gaz commence à circuler ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Après la charge initiale — typiquement du fumier mélangé à de l'eau — le système nécessite 2 à 3 semaines pour que la colonie bactérienne s'établisse pleinement. Aucun apport supplémentaire n'est nécessaire pendant cette période. Une fois actif, le gaz est produit quotidiennement tant que du fumier est ajouté régulièrement.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quelle quantité de gaz puis-je attendre chaque jour ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Les systèmes à l'échelle de la ferme produisent suffisamment de biogaz pour jusqu'à 6 heures de cuisson par jour selon la taille de l'unité et le volume de fumier. La production de gaz évolue avec la quantité de matière organique introduite — un apport quotidien régulier signifie un gaz quotidien régulier.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Le biofertilisant est-il meilleur que le fumier brut ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Oui. La digestion anaérobie ne détruit pas les nutriments — elle les concentre. Le digestat liquide est enrichi en acides aminés, biostimulants, minéraux et micro-organismes bénéfiques immédiatement biodisponibles pour les cultures. Il surpasse le fumier de ferme brut en termes d'efficacité d'absorption par les plantes.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quelle quantité de biofertilisant est produite ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Les systèmes à la ferme produisent 50 à 150 litres de fertilisant liquide par jour, soit plus de 30 000 litres par an. Diluez à 1:3 (fertilisant dans eau) avant application. L'impact de stockage est minime — le fertilisant conserve sa qualité pendant au moins une semaine après la collecte.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Où le système doit-il être installé ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Choisissez une zone plane et ensoleillée à moins de 50 m de la cuisine ou du point d'utilisation du gaz. Le système se pose au-dessus du sol et ne nécessite aucun génie civil ni fosse. Maintenez le parcours de conduite de biogaz sous 50 m pour une pression optimale. L'installation prend généralement une journée.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quelle maintenance nécessite-t-il ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Très peu. Remplacez le filtre à gaz tous les 8 à 12 mois. Nettoyez uniquement l'extérieur avec de l'eau. La poche n'a pas besoin d'être vidée — le digestat s'écoule continuellement à mesure que du nouveau fumier est ajouté. La durée de vie prévue du système est de plus de 10 ans.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">De quelle température a-t-il besoin ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Les digesteurs de fumier fonctionnent bien à partir d'environ 10 °C (50 °F). En dessous, réduisez l'apport de moitié pour suivre l'activité bactérienne diminuée. Dans les climats plus froids, isolez la poche ou abritez-la du vent pour maintenir des températures stables et une production régulière.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Capture-t-il les émissions de méthane ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Oui — et c'est l'un de ses avantages environnementaux les plus importants. Le fumier de vache stocké dans des lagunes ouvertes libère du méthane directement dans l'atmosphère. Le Terra Digester capture 100 % de ce méthane et le convertit en énergie de cuisson utilisable, réduisant significativement l'empreinte climatique de votre ferme.</p></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="container fade-in">
+        <span class="section-label" style="color:var(--primary-light);">Entrer en contact</span>
+        <h2 id="cta-heading">Discuter d'un système pour producteurs laitiers</h2>
+        <p>Parlez-nous de votre ferme — taille du troupeau, localisation et situation énergétique actuelle — et nous vous proposerons la configuration de système adaptée à votre contexte.</p>
+        <a href="contact.html?interest=dairy-farmers" class="btn btn-primary">Démarrer une conversation</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="nav-logo-text">Terra<span>Digester</span></span></a>
+          <p>Déchets transformés en valeur. Systèmes pour un avenir circulaire.</p>
+          <div class="location"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5C2.5 7.25 6 11 6 11C6 11 9.5 7.25 9.5 4.5C9.5 2.57 7.93 1 6 1Z" stroke="currentColor" stroke-width="1"/><circle cx="6" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1"/></svg> Bruxelles, Belgique</div>
+        </div>
+        <div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a></li><li><a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a></li><li><a href="dairy-farmers-system.html">Système pour producteurs laitiers</a></li><li><a href="buy-carbon.html">Acheter du carbone</a></li><li><a href="technology.html">Technologie</a></li><li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revendeurs</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col footer-contact"><h4>Contact</h4><p><a href="mailto:info@terradigester.com">info@terradigester.com</a></p><p>Bruxelles, Belgique<br>Union européenne</p></div>
+        <div class="footer-col footer-vision"><h4>Notre mission</h4><p><strong>Bâtir des systèmes circulaires</strong>"Bâtir des systèmes circulaires pour un avenir résilient — où les déchets organiques deviennent énergie propre, sol fertile et valeur climatique mesurable."</p></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Terra Digester. Tous droits réservés.</p><div style="display:flex;gap:1.5rem;"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms-of-use.html">Conditions d'utilisation</a></div></div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileToggle=document.getElementById('mobileToggle'),mobileNav=document.getElementById('mobileNav'),mobileClose=document.getElementById('mobileClose');
+    mobileToggle.addEventListener('click',()=>{mobileNav.classList.add('open');document.body.style.overflow='hidden';});
+    mobileClose.addEventListener('click',()=>{mobileNav.classList.remove('open');document.body.style.overflow='';});
+    mobileNav.addEventListener('click',(e)=>{if(e.target===mobileNav){mobileNav.classList.remove('open');document.body.style.overflow='';}});
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+    const header=document.querySelector('.site-header');
+    window.addEventListener('scroll',()=>{header.style.background=window.scrollY>60?'rgba(27,58,45,0.98)':'rgba(27,58,45,0.96)';},{passive:true});
+
+    /* ── FAQ ACCORDION ── */
+    document.querySelectorAll('.faq-q').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item=btn.closest('.faq-item');
+        const isOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el=>{el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+        if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+      });
+    });
+
+    /* ── LANGUAGE SWITCHER DROPDOWN ── */
+    (function(){
+      const sw=document.querySelector('.lang-switcher');
+      if(!sw)return;
+      const trig=sw.querySelector('a[aria-haspopup]');
+      const menu=sw.querySelector('.lang-menu');
+      let timer=null;
+      function show(){clearTimeout(timer);menu.classList.add('open');trig.setAttribute('aria-expanded','true');}
+      function hide(){timer=setTimeout(()=>{menu.classList.remove('open');trig.setAttribute('aria-expanded','false');},150);}
+      sw.addEventListener('mouseenter',show);
+      sw.addEventListener('mouseleave',hide);
+      trig.addEventListener('click',e=>{e.preventDefault();menu.classList.contains('open')?hide():show();});
+      sw.addEventListener('keydown',e=>{if(e.key==='Escape'){hide();trig.focus();}});
+    })();
+
+    /* ── FARM HOW IT WORKS STEPPER ── */
+    (function(){
+      const TOTAL=4;
+      let current=0;
+      let autoTimer=null;
+      let paused=false;
+
+      function farmGoTo(idx){
+        if(idx<0||idx>=TOTAL)return;
+        document.querySelectorAll('.farm-step-panel').forEach((p,i)=>{
+          p.classList.toggle('active',i===idx);
+        });
+        document.querySelectorAll('.farm-step-btn').forEach((b,i)=>{
+          b.classList.toggle('active',i===idx);
+          b.classList.toggle('done',i<idx);
+          b.setAttribute('aria-selected',i===idx?'true':'false');
+        });
+        document.querySelectorAll('.farm-track-fill').forEach((f,i)=>{
+          f.style.width=i<idx?'100%':'0%';
+        });
+        document.getElementById('farm-prev-btn').disabled=idx===0;
+        document.getElementById('farm-next-btn').textContent=idx===TOTAL-1?'Recommencer ↺':'Étape suivante →';
+        current=idx;
+      }
+      window.farmGoTo=farmGoTo;
+
+      function farmNext(){
+        if(current===TOTAL-1){farmGoTo(0);}else{farmGoTo(current+1);}
+        resetAuto();
+      }
+      function farmPrev(){
+        if(current>0){farmGoTo(current-1);}
+        resetAuto();
+      }
+      window.farmNext=farmNext;
+      window.farmPrev=farmPrev;
+
+      function startAuto(){
+        autoTimer=setInterval(()=>{if(!paused){farmGoTo((current+1)%TOTAL);}},5500);
+      }
+      function resetAuto(){clearInterval(autoTimer);startAuto();}
+
+      const section=document.querySelector('.farm-how-section');
+      if(section){
+        const io=new IntersectionObserver(entries=>{
+          entries.forEach(e=>{
+            paused=!e.isIntersecting;
+            if(e.isIntersecting&&!autoTimer)startAuto();
+            if(!e.isIntersecting){clearInterval(autoTimer);autoTimer=null;}
+          });
+        },{threshold:0.3});
+        io.observe(section);
+      }
+
+      document.addEventListener('keydown',e=>{
+        if(!section)return;
+        const r=section.getBoundingClientRect();
+        if(r.top>window.innerHeight||r.bottom<0)return;
+        if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();farmNext();}
+        if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();farmPrev();}
+      });
+
+      farmGoTo(0);
+    })();
+  </script>
+
+  <script>
+  /* ── Dropdown: JS hover with delay to prevent flicker ── */
+  (function(){
+    document.querySelectorAll('.nav-dropdown').forEach(function(item){
+      var menu = item.querySelector('.dropdown-menu');
+      if(!menu) return;
+      var timer = null;
+      function show(){ clearTimeout(timer); menu.classList.add('open'); }
+      function hide(){ timer = setTimeout(function(){ menu.classList.remove('open'); }, 150); }
+      item.addEventListener('mouseenter', show);
+      item.addEventListener('mouseleave', hide);
+      menu.addEventListener('mouseenter', show);
+      menu.addEventListener('mouseleave', hide);
+    });
+  })();
+  </script>
+</body>
+</html>

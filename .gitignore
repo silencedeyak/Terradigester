@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build / runtime
+.wrangler/
+dist/
+build/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+
+# PM2 / logs
+.pm2/
+*.log
+logs/
+pids/
+
+# Backups+zips
+*.zip
+*.tar.gz
+*.bak
+*.backup
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~

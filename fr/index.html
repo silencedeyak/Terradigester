@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2352B788'/><path d='M16 4C16 4 8 8 8 14C8 17.3 10.7 20 16 20C19.3 20 22 17.3 22 14C22 8 16 4 16 4Z' stroke='%231B3A2D' stroke-width='1.5' fill='none'/></svg>" type="image/svg+xml">
+  <meta name="description" content="Terra Digester conçoit des systèmes biotechnologiques intégrés qui transforment les déchets organiques en biogaz, en énergie propre et en digestat riche en nutriments. Basé à Bruxelles, Belgique." />
+  <title>Accueil | Terra Digester — Systèmes de digestion anaérobie</title>
+  <style>
+    /* ============================================================
+       DESIGN TOKENS & RESET
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary-dark:  #1B3A2D;
+      --primary:       #2D6A4F;
+      --primary-light: #52B788;
+      --earth-brown:   #7F5539;
+      --earth-light:   #DDB892;
+      --neutral-900:   #1A1A1A;
+      --neutral-600:   #6B7280;
+      --neutral-200:   #E5E7EB;
+      --neutral-50:    #F9FAFB;
+      --white:         #FFFFFF;
+
+      --radius-sm:   8px;
+      --radius-md:   12px;
+      --radius-lg:   20px;
+      --transition:  all 0.3s ease;
+      --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md:   0 8px 25px rgba(0,0,0,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--neutral-900);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2rem);
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; }
+    h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; line-height: 1.2; }
+    h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+    p  { font-size: 1rem; line-height: 1.7; }
+
+    .text-small { font-size: 0.875rem; color: var(--neutral-600); }
+    .text-muted  { color: var(--neutral-600); }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+      text-decoration: none;
+      line-height: 1;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(45,106,79,0.35);
+      text-decoration: none;
+      color: var(--white);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.7);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--white);
+      transform: translateY(-1px);
+      text-decoration: none;
+      color: var(--white);
+    }
+    .btn-outline-green {
+      background: transparent;
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-outline-green:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    /* ============================================================
+       CARDS
+    ============================================================ */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid var(--neutral-200);
+    }
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    /* ============================================================
+       SECTION WRAPPER
+    ============================================================ */
+    .section {
+      padding-block: clamp(4rem, 8vw, 8rem);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-header p {
+      max-width: 640px;
+      margin-inline: auto;
+      margin-top: 1rem;
+      color: var(--neutral-600);
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ============================================================
+       FADE-IN ANIMATION (IntersectionObserver)
+    ============================================================ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(27, 58, 45, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: var(--transition);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 2rem;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-logo-mark {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--primary-light);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo-text span { color: var(--primary-light); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+    .nav-links a {
+      display: block;
+      padding: 8px 14px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.1); }
+
+    /* Dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a::after {
+      content: ' ▾';
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      background: var(--primary-dark);
+      border-radius: var(--radius-sm);
+      min-width: 220px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 100;
+    }
+    .dropdown-menu a {
+      padding: 10px 18px;
+      display: block;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.875rem;
+      font-weight: 400;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: var(--transition);
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: rgba(82,183,136,0.2); color: var(--white); }
+    .dropdown-menu.open { display: block; }
+
+    .nav-cta {
+      background: var(--primary-light) !important;
+      color: var(--primary-dark) !important;
+      font-weight: 600 !important;
+      padding: 8px 18px !important;
+    }
+    .nav-cta:hover { background: var(--white) !important; }
+
+    /* Language switcher */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-left: 0.5rem;
+      padding-left: 0.75rem;
+      border-left: 1px solid rgba(255,255,255,0.15);
+    }
+    .lang-switcher a {
+      display: block;
+      padding: 6px 8px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .lang-switcher a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .lang-switcher a.active { color: var(--primary-light); background: rgba(82,183,136,0.15); }
+
+    /* Mobile nav */
+    .nav-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      aria-label: "Basculer la navigation";
+    }
+    .nav-mobile-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--primary-dark);
+      z-index: 999;
+      padding: 2rem;
+      flex-direction: column;
+      gap: 1rem;
+      overflow-y: auto;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-close {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.75rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .mobile-nav-links { display: flex; flex-direction: column; gap: 0.25rem; margin-top: 1rem; }
+    .mobile-nav-links a {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+    }
+    .mobile-nav-links a:hover { color: var(--primary-light); }
+    .mobile-nav-links .sub-link {
+      padding-left: 1.25rem;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .mobile-lang-switcher {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-lang-switcher a {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+    }
+    .mobile-lang-switcher a.active {
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      border-color: var(--primary-light);
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: flex; }
+    }
+
+    /* ============================================================
+       HERO SECTION — SPLIT TWO-COLUMN WITH PRODUCT PHOTO
+    ============================================================ */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 70% 80% at 0% 50%,  rgba(45,106,79,0.50) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 70% at 100% 10%, rgba(27,58,45,0.65) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 60% 100%, rgba(82,183,136,0.07) 0%, transparent 55%),
+        linear-gradient(135deg, #0d2219 0%, #1B3A2D 45%, #142d22 100%);
+    }
+
+    /* ── Atmospheric noise layer ── */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 85%, rgba(82,183,136,0.12) 0%, transparent 35%),
+        radial-gradient(circle at 85% 15%, rgba(127,85,57,0.08) 0%, transparent 30%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ── Decorative SVG orbit rings ── */
+    .hero-deco {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .hero-deco svg { position: absolute; }
+    .hero-deco svg.circle-1 {
+      top: 5%; right: -60px; width: 500px;
+      opacity: 0.05;
+      animation: rotateSlow 60s linear infinite;
+    }
+    .hero-deco svg.circle-2 {
+      bottom: -40px; left: -100px; width: 380px;
+      opacity: 0.04;
+      animation: rotateSlow 80s linear infinite reverse;
+    }
+    .hero-deco svg.circle-3 {
+      top: 40%; left: 40%; width: 220px;
+      opacity: 0.035;
+      animation: rotateSlow 45s linear infinite;
+    }
+
+    @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    /* ── Two-column grid ── */
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+      padding-top: clamp(6rem, 10vw, 9rem);
+      padding-bottom: clamp(5rem, 8vw, 8rem);
+      width: 100%;
+    }
+
+    /* ── LEFT — Text column ── */
+    .hero-text { display: flex; flex-direction: column; align-items: flex-start; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(82,183,136,0.15);
+      border: 1px solid rgba(82,183,136,0.3);
+      color: var(--primary-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+      animation: fadeSlideUp 0.7s ease both;
+    }
+    .hero-badge svg { flex-shrink: 0; }
+
+    .hero h1 {
+      color: var(--white);
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+      animation: fadeSlideUp 0.7s 0.15s ease both;
+    }
+    .hero h1 em { font-style: normal; color: var(--primary-light); }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.72);
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+      animation: fadeSlideUp 0.7s 0.3s ease both;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      animation: fadeSlideUp 0.7s 0.45s ease both;
+    }
+
+    /* ── Hero stat chips (beneath CTAs) ── */
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+      animation: fadeSlideUp 0.7s 0.6s ease both;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .hero-stat .stat-val {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      line-height: 1;
+    }
+    .hero-stat .stat-lbl {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .hero-stat-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.12);
+      align-self: center;
+    }
+
+    /* ── RIGHT — Product visual column ── */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeSlideRight 0.9s 0.2s ease both;
+    }
+
+    /* Outer glow halo */
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      width: 88%;
+      height: 88%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(82,183,136,0.22) 0%, transparent 72%);
+      filter: blur(40px);
+      animation: glowPulse 4s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { transform: scale(1);   opacity: 0.7; }
+      50%       { transform: scale(1.12); opacity: 1;   }
+    }
+
+    /* Spinning orbit ring */
+    .hero-orbit {
+      position: absolute;
+      width: 105%;
+      height: 105%;
+      border-radius: 50%;
+      border: 1.5px solid rgba(82,183,136,0.18);
+      border-top-color: rgba(82,183,136,0.55);
+      border-left-color: rgba(82,183,136,0.35);
+      animation: orbitSpin 12s linear infinite;
+      z-index: 1;
+    }
+    .hero-orbit-2 {
+      position: absolute;
+      width: 118%;
+      height: 118%;
+      border-radius: 50%;
+      border: 1px solid rgba(82,183,136,0.1);
+      border-bottom-color: rgba(82,183,136,0.35);
+      border-right-color: rgba(82,183,136,0.2);
+      animation: orbitSpin 20s linear infinite reverse;
+      z-index: 1;
+    }
+    @keyframes orbitSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    /* Orbit dots */
+    .orbit-dot {
+      position: absolute;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      box-shadow: 0 0 12px rgba(82,183,136,0.8);
+      z-index: 3;
+    }
+    /* placed on the orbit ring via transform-origin */
+    .orbit-dot-1 { top: -4px; left: calc(50% - 4px); }
+    .orbit-dot-2 { bottom: -4px; right: calc(50% - 4px); }
+    .orbit-dot-3 { top: calc(50% - 4px); right: -4px; width: 6px; height: 6px; opacity: 0.6; }
+
+    /* Product image wrapper — floating
+       The Terra Digester product photo has a white studio background.
+       We use mix-blend-mode: multiply so the white disappears into the
+       dark hero background, leaving only the product visible.
+    */
+    .hero-product-wrap {
+      position: relative;
+      z-index: 2;
+      width: clamp(280px, 42vw, 560px);
+      aspect-ratio: 4 / 3;         /* landscape product shot ratio */
+      border-radius: 28px;
+      overflow: visible;            /* allow glow to bleed out */
+      animation: heroFloat 6s ease-in-out infinite;
+      background: transparent;      /* no background — white removed via blend */
+      filter: drop-shadow(0 28px 55px rgba(0,0,0,0.7))
+              drop-shadow(0 0 60px rgba(82,183,136,0.22));
+    }
+
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0px)   rotate(0.3deg); }
+      33%       { transform: translateY(-14px) rotate(-0.3deg); }
+      66%       { transform: translateY(-7px)  rotate(0.5deg); }
+    }
+
+    /* Actual product image */
+    .hero-product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;          /* show full product, no crop */
+      object-position: center;
+      display: block;
+      border-radius: 20px;
+      mix-blend-mode: multiply;     /* removes white background */
+      transition: transform 0.6s ease, filter 0.4s ease;
+    }
+    .hero-product-wrap:hover .hero-product-img {
+      transform: scale(1.05);
+      filter: brightness(1.08);
+    }
+
+    /* Subtle gradient overlay (bottom) for label chip */
+    .hero-product-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(13,33,24,0.65) 100%
+      );
+      z-index: 1;
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    /* Label chip inside the image */
+    .hero-product-label {
+      position: absolute;
+      bottom: -1.5rem;             /* float just below the product image */
+      left: 50%;
+      transform: translateX(-50%);
+      width: max-content;
+      max-width: 90%;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(27,58,45,0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(82,183,136,0.3);
+      border-radius: 12px;
+      padding: 10px 14px;
+    }
+    .hero-product-label-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 8px rgba(74,222,128,0.8);
+      animation: dotPulse 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes dotPulse {
+      0%, 100% { box-shadow: 0 0 8px rgba(74,222,128,0.7); }
+      50%       { box-shadow: 0 0 18px rgba(74,222,128,1); }
+    }
+    .hero-product-label-text {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.02em;
+    }
+    .hero-product-label-sub {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      font-weight: 400;
+    }
+
+    /* Floating spec badges around the product image */
+    .hero-spec-badge {
+      position: absolute;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(27,58,45,0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(82,183,136,0.28);
+      border-radius: 50px;
+      padding: 8px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.88);
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+    .hero-spec-badge svg { flex-shrink: 0; color: var(--primary-light); }
+    .hero-spec-badge.badge-top-left {
+      top: 8%;
+      left: -5%;
+      animation: badgeFloat1 5s ease-in-out infinite;
+    }
+    .hero-spec-badge.badge-top-right {
+      top: 22%;
+      right: -8%;
+      animation: badgeFloat2 6s 0.5s ease-in-out infinite;
+    }
+    .hero-spec-badge.badge-bottom-left {
+      bottom: 20%;
+      left: -8%;
+      animation: badgeFloat3 5.5s 1s ease-in-out infinite;
+    }
+
+    @keyframes badgeFloat1 {
+      0%, 100% { transform: translateY(0px);   }
+      50%       { transform: translateY(-8px);  }
+    }
+    @keyframes badgeFloat2 {
+      0%, 100% { transform: translateY(0px);   }
+      50%       { transform: translateY(-10px); }
+    }
+    @keyframes badgeFloat3 {
+      0%, 100% { transform: translateY(0px);  }
+      50%       { transform: translateY(-6px); }
+    }
+
+    /* Entry animations */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+    @keyframes fadeSlideRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0);    }
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .scroll-indicator span {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .scroll-chevron {
+      width: 22px; height: 22px;
+      border-right: 2px solid rgba(255,255,255,0.3);
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+      transform: rotate(45deg);
+      animation: chevronBounce 1.8s ease-in-out infinite;
+    }
+    @keyframes chevronBounce {
+      0%, 100% { transform: rotate(45deg) translateY(0);   opacity: 0.35; }
+      50%       { transform: rotate(45deg) translateY(6px); opacity: 0.9;  }
+    }
+
+    /* ── Responsive hero ── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 4rem; padding-top: 8rem; padding-bottom: 5rem; }
+      .hero-visual { justify-content: center; padding-bottom: 2rem; }
+      .hero-product-wrap { width: clamp(280px, 72vw, 520px); }
+      .hero-spec-badge.badge-top-left  { left: 0; }
+      .hero-spec-badge.badge-top-right { right: 0; }
+      .hero-spec-badge.badge-bottom-left { left: 0; }
+      .hero h1 { max-width: 100%; }
+      .hero-sub { max-width: 100%; }
+    }
+    @media (max-width: 768px) {
+      .hero-product-wrap { width: clamp(260px, 88vw, 420px); }
+      .hero-spec-badge { display: none; }
+      .hero-stats { gap: 1rem; }
+    }
+    @media (max-width: 375px) {
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; text-align: center; }
+      .hero-stats { flex-direction: column; gap: 0.75rem; }
+      .hero-stat-divider { display: none; }
+    }
+
+    /* ── CSS Fallback visual when product image is absent ── */
+    .hero-product-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #1a3d2e 0%, #0d2118 60%, #152b1e 100%);
+      position: relative;
+    }
+    /* Show fallback only when image errors */
+    .hero-product-wrap.no-image .hero-product-fallback {
+      display: block;
+    }
+    .hero-product-fallback::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 35%, rgba(82,183,136,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 70% 70%, rgba(45,106,79,0.15) 0%, transparent 50%);
+    }
+    /* Stylised device outline as fallback */
+    .hero-product-fallback::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -55%);
+      width: 140px; height: 190px;
+      border: 2px solid rgba(82,183,136,0.4);
+      border-radius: 20px;
+      box-shadow:
+        0 0 40px rgba(82,183,136,0.15),
+        inset 0 0 30px rgba(82,183,136,0.05);
+      background: linear-gradient(180deg, rgba(82,183,136,0.07) 0%, transparent 100%);
+    }
+
+    /* ============================================================
+       MISSION SECTION
+    ============================================================ */
+    .mission-section {
+      background: var(--white);
+      padding-block: clamp(4rem, 8vw, 7rem);
+      text-align: center;
+    }
+    .mission-text {
+      max-width: 800px;
+      margin-inline: auto;
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      line-height: 1.75;
+      color: var(--neutral-900);
+      font-weight: 400;
+    }
+    .mission-text strong { color: var(--primary); font-weight: 600; }
+
+    /* ============================================================
+       SOLUTIONS GRID
+    ============================================================ */
+    .solutions-section {
+      background: var(--neutral-50);
+    }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .solution-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--neutral-200);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .solution-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      border-color: rgba(82,183,136,0.3);
+    }
+    .solution-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(82,183,136,0.15) 0%, rgba(45,106,79,0.1) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .solution-icon svg { color: var(--primary); }
+    .solution-card h3 { color: var(--neutral-900); }
+    .solution-card p { color: var(--neutral-600); font-size: 0.95rem; flex-grow: 1; }
+    .solution-card .learn-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .solution-card .learn-more:hover { gap: 0.7rem; text-decoration: none; }
+    .solution-card .learn-more svg { transition: var(--transition); }
+
+    /* ============================================================
+       VIDEO SECTION
+    ============================================================ */
+    .video-section { background: var(--neutral-50); }
+
+    .video-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Outer frame: accent border + glow */
+    .video-frame-outer {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 4px;
+      background: linear-gradient(135deg, #52B788 0%, #2D6A4F 50%, #1B3A2D 100%);
+      box-shadow: 0 20px 60px rgba(45,106,79,0.25), 0 4px 20px rgba(0,0,0,0.12);
+    }
+    .video-frame-outer::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: calc(var(--radius-lg) + 8px);
+      background: radial-gradient(ellipse at 50% 50%, rgba(82,183,136,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Inner iframe container — forces 16:9 ratio */
+    .video-frame-inner {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 */
+      border-radius: calc(var(--radius-lg) - 4px);
+      overflow: hidden;
+      background: #000;
+    }
+    .video-frame-inner iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* Side info panel */
+    .video-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 0.5rem 0;
+    }
+    .video-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .video-info-icon {
+      width: 44px; height: 44px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(82,183,136,0.12);
+      border: 1px solid rgba(82,183,136,0.25);
+      border-radius: 10px;
+    }
+    .video-info-item strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+    .video-info-item span {
+      font-size: 0.82rem;
+      color: var(--neutral-600);
+      line-height: 1.5;
+    }
+
+    /* Responsive: stack on smaller screens */
+    @media (max-width: 900px) {
+      .video-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .video-info {
+        gap: 1.2rem;
+      }
+    }
+
+    /* ============================================================
+       CIRCULAR ECONOMY COMPARISON
+    ============================================================ */
+    .circular-section { background: var(--white); }
+    .circular-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .economy-column {
+      padding: 2.5rem;
+      border-radius: var(--radius-md);
+    }
+    .economy-column.linear {
+      background: var(--neutral-50);
+      border: 1px solid var(--neutral-200);
+    }
+    .economy-column.circular {
+      background: linear-gradient(135deg, rgba(45,106,79,0.06) 0%, rgba(82,183,136,0.08) 100%);
+      border: 1px solid rgba(82,183,136,0.25);
+    }
+    .economy-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .economy-column.linear .economy-title { color: var(--neutral-600); }
+    .economy-column.circular .economy-title { color: var(--primary); }
+
+    .flow-steps { display: flex; flex-direction: column; gap: 0; }
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .flow-step-box {
+      flex: 1;
+      padding: 0.875rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+    .economy-column.linear .flow-step-box {
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      color: var(--neutral-600);
+    }
+    .economy-column.circular .flow-step-box {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(82,183,136,0.3);
+      color: var(--primary-dark);
+    }
+    .flow-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 28px;
+      color: var(--neutral-400);
+    }
+    .flow-endpoint {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .economy-column.linear .flow-endpoint {
+      background: rgba(127,85,57,0.08);
+      border: 1px solid rgba(127,85,57,0.2);
+      color: var(--earth-brown);
+    }
+    .economy-column.circular .flow-endpoint {
+      background: rgba(45,106,79,0.08);
+      border: 1px solid rgba(45,106,79,0.2);
+      color: var(--primary-dark);
+    }
+
+    .circular-quote {
+      max-width: 820px;
+      margin-inline: auto;
+      text-align: center;
+      padding: 2rem;
+      background: var(--neutral-50);
+      border-left: 4px solid var(--primary-light);
+      border-radius: var(--radius-md);
+    }
+    .circular-quote strong {
+      display: block;
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      color: var(--primary-dark);
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .circular-quote {
+      font-size: 0.95rem;
+      color: var(--neutral-600);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       TRANSPARENCY SECTION
+    ============================================================ */
+    .transparency-section {
+      background: linear-gradient(135deg, rgba(45,106,79,0.04), rgba(82,183,136,0.06));
+      border-top: 1px solid var(--neutral-200);
+      border-bottom: 1px solid var(--neutral-200);
+    }
+    .transparency-inner {
+      max-width: 820px;
+      margin-inline: auto;
+      text-align: center;
+    }
+    .transparency-inner h2 { margin-bottom: 1.25rem; }
+    .transparency-inner p {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: var(--neutral-600);
+      line-height: 1.8;
+    }
+    .transparency-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      margin-right: 0.5rem;
+      animation: dotPulse 2s ease-in-out infinite;
+      vertical-align: middle;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .site-footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.75);
+      padding-block: clamp(3rem, 6vw, 5rem);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1fr 2fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand .nav-logo { margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.875rem; line-height: 1.7; margin-bottom: 0.75rem; }
+    .footer-brand .location {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul a {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--primary-light); }
+
+    .footer-contact p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+    .footer-contact a { color: var(--primary-light); }
+    .footer-contact a:hover { text-decoration: underline; }
+
+    .footer-vision p {
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+    }
+    .footer-vision p strong {
+      display: block;
+      font-style: normal;
+      color: var(--primary-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    .footer-bottom a { color: rgba(255,255,255,0.5); font-size: 0.8rem; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--primary-light); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .circular-grid { gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .solutions-grid { grid-template-columns: 1fr; }
+      .circular-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="site-header" role="banner">
+    <nav class="container nav-inner" aria-label="Navigation principale">
+      <a href="index.html" class="nav-logo" aria-label="Terra Digester accueil">
+        <div class="nav-logo-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/>
+            <path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="nav-logo-text">Terra<span>Digester</span></span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
+        <li class="nav-dropdown">
+          <a href="#" aria-haspopup="true">Solutions</a>
+          <div class="dropdown-menu" role="menu">
+            <a href="food-waste-systems.html" role="menuitem">Systèmes pour déchets alimentaires</a>
+            <a href="bio-toilet-solutions.html" role="menuitem">Solutions de bio-toilettes</a>
+            <a href="dairy-farmers-system.html" role="menuitem">Système pour producteurs laitiers</a>
+            <a href="buy-carbon.html" role="menuitem">Acheter des crédits carbone</a>
+          </div>
+        </li>
+        <li><a href="technology.html">Technologie</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="reseller-program.html">Programme de revente</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        <li class="lang-switcher" aria-label="Sélecteur de langue">
+          <a href="../index.html" lang="en">EN</a>
+          <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
+          <a href="../de/index.html" lang="de">DE</a>
+        </li>
+      </ul>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Ouvrir la navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation mobile">
+    <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer la navigation">✕</button>
+    <div class="mobile-nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="food-waste-systems.html" class="sub-link">— Systèmes pour déchets alimentaires</a>
+      <a href="bio-toilet-solutions.html" class="sub-link">— Solutions de bio-toilettes</a>
+      <a href="dairy-farmers-system.html" class="sub-link">— Système pour producteurs laitiers</a>
+      <a href="buy-carbon.html" class="sub-link">— Acheter des crédits carbone</a>
+      <a href="technology.html">Technologie</a>
+      <a href="about.html">À propos</a>
+      <a href="reseller-program.html" class="sub-link">— Programme de revente</a>
+      <a href="contact.html">Contact</a>
+      <div class="mobile-lang-switcher" aria-label="Sélecteur de langue">
+        <a href="../index.html" lang="en">English</a>
+        <a href="index.html" class="active" lang="fr" aria-current="true">Français</a>
+        <a href="../de/index.html" lang="de">Deutsch</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="hero" id="hero" aria-label="Section principale">
+
+      <!-- ── Anneaux orbitaux décoratifs atmosphériques ── -->
+      <div class="hero-deco" aria-hidden="true">
+        <svg class="circle-1" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" stroke="#52B788" stroke-width="1.5" stroke-dasharray="8 6"/>
+          <circle cx="200" cy="200" r="130" stroke="#52B788" stroke-width="1" stroke-dasharray="4 10"/>
+          <circle cx="200" cy="200" r="80"  stroke="#52B788" stroke-width="1.5"/>
+          <path d="M200 20 L214 50 L200 45 L186 50 Z" fill="#52B788"/>
+          <path d="M380 200 L350 186 L355 200 L350 214 Z" fill="#52B788"/>
+        </svg>
+        <svg class="circle-2" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="150" r="130" stroke="#52B788" stroke-width="1.5" stroke-dasharray="6 8"/>
+          <circle cx="150" cy="150" r="90"  stroke="#2D6A4F" stroke-width="1"   stroke-dasharray="3 12"/>
+          <circle cx="150" cy="150" r="45"  stroke="#52B788" stroke-width="1.5"/>
+        </svg>
+        <svg class="circle-3" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="85" stroke="#52B788" stroke-width="1"   stroke-dasharray="5 7"/>
+          <circle cx="100" cy="100" r="55" stroke="#52B788" stroke-width="1.5" stroke-dasharray="3 5"/>
+        </svg>
+      </div>
+
+      <!-- ── Mise en page principale à deux colonnes ── -->
+      <div class="container">
+        <div class="hero-inner">
+
+          <!-- GAUCHE : Colonne de texte -->
+          <div class="hero-text">
+            <div class="hero-badge">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M7 1L8.5 5H13L9.5 7.5L11 11.5L7 9L3 11.5L4.5 7.5L1 5H5.5L7 1Z" fill="#52B788"/>
+              </svg>
+              Biotechnologie · Économie circulaire · Énergie issue des déchets
+            </div>
+
+            <h1>Technologie verte<br>pour un <em>avenir&nbsp;circulaire</em></h1>
+
+            <p class="hero-sub">
+              Conçue pour transformer les déchets organiques en biogaz, bioénergie et digestat
+              riche en nutriments — refermer la boucle des déchets organiques, un système à la fois.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#solutions" class="btn btn-primary">Découvrir nos solutions</a>
+              <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+            </div>
+
+            <!-- Indicateurs clés -->
+            <div class="hero-stats" aria-label="Indicateurs clés">
+              <div class="hero-stat">
+                <span class="stat-val">2–5 h/jour</span>
+                <span class="stat-lbl">Gaz de cuisson quotidien</span>
+              </div>
+              <div class="hero-stat-divider" aria-hidden="true"></div>
+              <div class="hero-stat">
+                <span class="stat-val">1–2 t CO₂/an</span>
+                <span class="stat-lbl">Émissions évitées</span>
+              </div>
+              <div class="hero-stat-divider" aria-hidden="true"></div>
+              <div class="hero-stat">
+                <span class="stat-val">15+ ans</span>
+                <span class="stat-lbl">Durée de vie du système</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DROITE : Visuel du produit -->
+          <div class="hero-visual" aria-label="Système de digestion anaérobie Terra Digester">
+
+            <!-- Anneaux orbitaux autour du produit -->
+            <div class="hero-orbit"  aria-hidden="true">
+              <span class="orbit-dot orbit-dot-1"></span>
+              <span class="orbit-dot orbit-dot-2"></span>
+            </div>
+            <div class="hero-orbit-2" aria-hidden="true">
+              <span class="orbit-dot orbit-dot-3"></span>
+            </div>
+
+            <!-- Badges techniques flottants -->
+            <div class="hero-spec-badge badge-top-left" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M7 1L8.5 4.5H12.5L9.3 6.7L10.5 10.5L7 8.3L3.5 10.5L4.7 6.7L1.5 4.5H5.5Z" fill="#52B788"/>
+              </svg>
+              Digestion anaérobie
+            </div>
+
+            <div class="hero-spec-badge badge-top-right" aria-hidden="true">
+              <!-- Icône flamme -->
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M7 1C7 1 4 4 4 7C4 8.66 5.34 10 7 10C8.66 10 10 8.66 10 7C10 5.5 9 4 8 3C8 4.5 7.5 5 7 5C6.5 5 6 4.5 6 3.5C6 2.5 7 1 7 1Z" fill="#52B788"/>
+                <path d="M7 10V13M5.5 13H8.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              Gaz de cuisson &amp; biofertilisant
+            </div>
+
+            <div class="hero-spec-badge badge-bottom-left" aria-hidden="true">
+              <!-- Icône éclair -->
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M8.5 1.5L3.5 7.5H7L5.5 12.5L10.5 6.5H7L8.5 1.5Z" fill="#52B788" stroke="#52B788" stroke-width="0.5" stroke-linejoin="round"/>
+              </svg>
+              Déchet alimentaire = Énergie
+            </div>
+
+            <!-- Carte d'image du produit -->
+            <figure class="hero-product-wrap" aria-label="Unité de digestion anaérobie Terra Digester">
+              <!--
+                INTÉGRATION DE LA PHOTO DU PRODUIT :
+                Placez votre image produit à : images/product-hero.jpg
+                Taille recommandée : 600×660px ou ratio portrait similaire
+                L'image sera affichée avec une animation flottante + halo
+              -->
+              <img
+                src="../images/product-hero.jpg"
+                alt="Unité de digestion anaérobie Terra Digester — transforme les déchets organiques en biogaz et digestat"
+                class="hero-product-img"
+                loading="eager"
+                onerror="this.src='../images/product-hero.svg'; this.onerror=null;"
+              />
+              <!-- Repli CSS en cas d'absence d'image -->
+              <div class="hero-product-fallback" aria-hidden="true"></div>
+              <!-- Dégradé de superposition -->
+              <div class="hero-product-overlay" aria-hidden="true"></div>
+              <!-- Badge d'état -->
+              <div class="hero-product-label">
+                <div class="hero-product-label-dot" aria-hidden="true"></div>
+                <div>
+                  <span class="hero-product-label-text">Terra Digester</span>
+                  <span class="hero-product-label-sub">Actif — digestion anaérobie en cours</span>
+                </div>
+              </div>
+            </figure>
+
+          </div><!-- /.hero-visual -->
+
+        </div><!-- /.hero-inner -->
+      </div><!-- /.container -->
+
+      <!-- Indicateur de défilement -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Défiler</span>
+        <div class="scroll-chevron"></div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         DÉCLARATION DE MISSION
+    ============================================================ -->
+    <section class="mission-section fade-in" aria-labelledby="mission-heading">
+      <div class="container">
+        <span class="section-label">Notre mission</span>
+        <p class="mission-text">
+          Le gaspillage alimentaire, les lacunes d'assainissement, l'inefficacité agricole et les émissions de carbone ne sont pas des problèmes distincts — ce sont les symptômes d'une <strong>économie linéaire</strong>. Terra Digester conçoit des systèmes biotechnologiques intégrés qui les traitent comme <strong>un défi unique et connecté</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUATRE SOLUTIONS PRINCIPALES
+    ============================================================ -->
+    <section class="section solutions-section" id="solutions" aria-labelledby="solutions-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Ce que nous construisons</span>
+          <h2 id="solutions-heading">Quatre systèmes. Un seul objectif.</h2>
+          <p>Biotechnologie conçue sur mesure pour la valorisation des déchets organiques, l'énergie propre et la responsabilité climatique.</p>
+        </div>
+        <div class="solutions-grid">
+          <!-- Carte 1 : Déchets alimentaires -->
+          <div class="solution-card fade-in fade-in-delay-1">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4C14 4 8 7 8 12C8 15.3 10.7 18 14 18C17.3 18 20 15.3 20 12C20 7 14 4 14 4Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M14 18V22" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 22H18" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M6 10C4 10 3 11.5 3 13C3 14.5 4 16 6 16" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M22 10C24 10 25 11.5 25 13C25 14.5 24 16 22 16" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Systèmes pour déchets alimentaires</h3>
+              <p>Systèmes modulaires de digestion anaérobie qui transforment les déchets organiques en biogaz et biofertilisant — conçus pour les communautés, les écoles et les éco-lodges.</p>
+            </div>
+            <a href="food-waste-systems.html" class="learn-more" aria-label="En savoir plus sur les systèmes pour déchets alimentaires">
+              En savoir plus
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- Carte 2 : Bio-toilettes -->
+          <div class="solution-card fade-in fade-in-delay-2">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 3C16.5 7 17 9 17 11C17 13.8 15.7 16 14 16C12.3 16 11 13.8 11 11C11 9 11.5 7 14 3Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M8 14C8 14 6 15 6 17C6 19.2 7.8 21 10 21" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M20 14C20 14 22 15 22 17C22 19.2 20.2 21 18 21" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="14" cy="24" r="2" stroke="#2D6A4F" stroke-width="1.5"/>
+                <path d="M10 21Q14 23 18 21" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Solutions de bio-toilettes</h3>
+              <p>Systèmes d'assainissement sans eau conçus pour les sites isolés, transformant les déchets humains en énergie — aucune infrastructure d'égouts requise.</p>
+            </div>
+            <a href="bio-toilet-solutions.html" class="learn-more" aria-label="En savoir plus sur les solutions de bio-toilettes">
+              En savoir plus
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- Carte 3 : Producteurs laitiers -->
+          <div class="solution-card fade-in fade-in-delay-3">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="13" cy="17" rx="8" ry="6" stroke="#2D6A4F" stroke-width="1.5"/>
+                <path d="M5 17C5 17 4 15 5 13C6 11 8 10 13 10C18 10 20 11 21 13C22 15 21 17 21 17" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M9 10C9 10 10 7 13 7C16 7 17 10 17 10" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M21 14C21 14 23 13 24 15C24.5 16 24 17 23 17" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M22 8C22 8 22 6 23 5C24 4.5 25 6 24.5 8" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Système pour producteurs laitiers</h3>
+              <p>Unités de biogaz à petite échelle conçues pour les éleveurs laitiers détenant deux bovins ou plus — transformant les déchets quotidiens en gaz de cuisine et fertilisant.</p>
+            </div>
+            <a href="dairy-farmers-system.html" class="learn-more" aria-label="En savoir plus sur le système pour producteurs laitiers">
+              En savoir plus
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- Carte 4 : Carbone -->
+          <div class="solution-card fade-in fade-in-delay-4">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="10" r="5" stroke="#2D6A4F" stroke-width="1.5"/>
+                <text x="11.5" y="13.5" font-size="5" fill="#2D6A4F" font-family="sans-serif">CO₂</text>
+                <path d="M14 15V22" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 19L14 23L18 19" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 22H21" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Acheter des crédits carbone</h3>
+              <p>Achats de crédits carbone transparents et vérifiés liés à de réels projets de valorisation des déchets en énergie — avec une documentation claire et un impact mesurable.</p>
+            </div>
+            <a href="buy-carbon.html" class="learn-more" aria-label="En savoir plus sur les crédits carbone">
+              En savoir plus
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4L13 8L9 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION VIDÉO — VOIR EN ACTION
+    ============================================================ -->
+    <section class="section video-section fade-in" aria-labelledby="video-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Voir en action</span>
+          <h2 id="video-heading">Des déchets à l'énergie — Découvrez comment ça fonctionne</h2>
+          <p>Un aperçu concret de notre système de digestion anaérobie transformant les déchets organiques en biogaz propre et biofertilisant.</p>
+        </div>
+
+        <div class="video-wrapper fade-in">
+          <div class="video-frame-outer">
+            <div class="video-frame-inner">
+              <iframe
+                src="https://www.youtube.com/embed/pcUhxi6tqaM?rel=0&modestbranding=1&color=white"
+                title="Terra Digester — Système de digestion anaérobie en action"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Panneau d'informations latéral -->
+          <div class="video-info">
+            <div class="video-info-item">
+              <div class="video-info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2C10 2 5 5 5 9C5 11.76 7.24 14 10 14C12.76 14 15 11.76 15 9C15 5 10 2 10 2Z" stroke="#52B788" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M10 14V17M7.5 17H12.5" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Production de biogaz</strong>
+                <span>Gaz de cuisson continu à partir des déchets organiques quotidiens</span>
+              </div>
+            </div>
+            <div class="video-info-item">
+              <div class="video-info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="7" stroke="#52B788" stroke-width="1.5"/>
+                  <path d="M10 6V10L13 12" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>2 à 5 heures par jour</strong>
+                <span>Production moyenne de gaz de cuisson par ménage</span>
+              </div>
+            </div>
+            <div class="video-info-item">
+              <div class="video-info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 16L7 10L10 13L13 7L16 4" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4 16H16" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>1–2 t CO₂/an</strong>
+                <span>Émissions évitées mesurables par système</span>
+              </div>
+            </div>
+            <div class="video-info-item">
+              <div class="video-info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2L11.8 7H17L12.6 10.1L14.4 15L10 11.9L5.6 15L7.4 10.1L3 7H8.2L10 2Z" stroke="#52B788" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Plus de 15 ans de durée de vie</strong>
+                <span>Conception durable et nécessitant peu d'entretien</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary" style="margin-top:0.5rem;align-self:flex-start;">
+              Demander une démonstration
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="margin-left:6px"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ÉCONOMIE LINÉAIRE VS CIRCULAIRE
+    ============================================================ -->
+    <section class="section circular-section" aria-labelledby="circular-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Pensée systémique</span>
+          <h2 id="circular-heading">Économie linéaire vs économie circulaire</h2>
+          <p>La différence n'est pas philosophique — elle est structurelle. L'une se termine en déchets ; l'autre crée de la valeur.</p>
+        </div>
+
+        <div class="circular-grid fade-in">
+          <!-- Économie linéaire -->
+          <div class="economy-column linear">
+            <div class="economy-title">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3L11 11M11 3L3 11" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Économie linéaire
+            </div>
+            <div class="flow-steps">
+              <div class="flow-step">
+                <div class="flow-step-box">Extraire</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Produire</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Consommer</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Éliminer</div>
+              </div>
+            </div>
+            <div class="flow-endpoint">⚠ Décharge · Pollution · Émissions</div>
+          </div>
+
+          <!-- Économie circulaire -->
+          <div class="economy-column circular">
+            <div class="economy-title">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2C4.2 2 2 4.2 2 7C2 9.8 4.2 12 7 12C9.8 12 12 9.8 12 7" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/><path d="M10 4L12 7L14 4" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Économie circulaire
+            </div>
+            <div class="flow-steps">
+              <div class="flow-step">
+                <div class="flow-step-box">Collecter</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Traiter</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Valoriser</div>
+              </div>
+              <div class="flow-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-box">Restituer</div>
+              </div>
+            </div>
+            <div class="flow-endpoint">✓ Énergie · Nutriments · Valeur carbone</div>
+          </div>
+        </div>
+
+        <blockquote class="circular-quote fade-in">
+          <strong>« L'économie circulaire n'est pas une aspiration — c'est une discipline d'ingénierie. »</strong><br>
+          Terra Digester construit l'infrastructure pour la rendre opérationnelle — à l'échelle du ménage, de l'exploitation agricole et de la communauté.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BANDEAU TRANSPARENCE
+    ============================================================ -->
+    <section class="section transparency-section fade-in" aria-labelledby="transparency-heading">
+      <div class="container">
+        <div class="transparency-inner">
+          <span class="section-label"><span class="transparency-dot"></span>Où nous en sommes</span>
+          <h2 id="transparency-heading">Bâtir sur la transparence</h2>
+          <p>
+            Terra Digester en est à sa phase opérationnelle initiale. Nos systèmes sont conçus, testés et prêts pour des partenariats de déploiement. Nous choisissons la transparence, car la confiance se construit sur des années, pas à travers des slogans. Nous construisons activement les partenariats qui apporteront ces systèmes aux communautés et aux secteurs qui en ont le plus besoin.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       PIED DE PAGE
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Colonne 1 : Marque -->
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span class="nav-logo-text">Terra<span>Digester</span></span>
+          </a>
+          <p>Du déchet à la valeur. Des systèmes pour un avenir circulaire.</p>
+          <p>Biotechnologie pionnière pour la valorisation des déchets organiques, l'énergie propre et les cycles de nutriments circulaires.</p>
+          <div class="location">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5C2.5 7.25 6 11 6 11C6 11 9.5 7.25 9.5 4.5C9.5 2.57 7.93 1 6 1Z" stroke="currentColor" stroke-width="1"/><circle cx="6" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1"/></svg>
+            Bruxelles, Belgique
+          </div>
+        </div>
+
+        <!-- Colonne 2 : Liens rapides -->
+        <div class="footer-col">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a></li>
+            <li><a href="bio-toilet-solutions.html">Solutions de bio-toilettes</a></li>
+            <li><a href="dairy-farmers-system.html">Système pour producteurs laitiers</a></li>
+            <li><a href="buy-carbon.html">Acheter des crédits carbone</a></li>
+            <li><a href="technology.html">Technologie</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="reseller-program.html">Programme de revente</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 3 : Contact -->
+        <div class="footer-col footer-contact">
+          <h4>Contact</h4>
+          <p>
+            <a href="mailto:info@terradigester.com">info@terradigester.com</a>
+          </p>
+          <p>Bruxelles, Belgique<br>Union européenne</p>
+          <p style="margin-top:1rem;">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Terra Digester sur LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="display:inline;vertical-align:middle;margin-right:6px"><rect x="1" y="1" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M5 7V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="5" cy="5" r="0.8" fill="currentColor"/><path d="M8 10C8 8.5 9 7.5 10.5 7.5C12 7.5 13 8.5 13 10V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 7.5V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              LinkedIn
+            </a>
+          </p>
+          <div class="footer-lang" style="margin-top:1.5rem; display:flex; gap:0.5rem;">
+            <a href="../index.html" lang="en" style="color:rgba(255,255,255,0.55); font-size:0.75rem; font-weight:600; letter-spacing:0.05em; padding:4px 8px; border:1px solid rgba(255,255,255,0.2); border-radius:4px;">EN</a>
+            <a href="index.html" lang="fr" style="color:var(--primary-light); font-size:0.75rem; font-weight:600; letter-spacing:0.05em; padding:4px 8px; border:1px solid var(--primary-light); border-radius:4px;">FR</a>
+            <a href="../de/index.html" lang="de" style="color:rgba(255,255,255,0.55); font-size:0.75rem; font-weight:600; letter-spacing:0.05em; padding:4px 8px; border:1px solid rgba(255,255,255,0.2); border-radius:4px;">DE</a>
+          </div>
+        </div>
+
+        <!-- Colonne 4 : Vision -->
+        <div class="footer-col footer-vision">
+          <h4>Notre raison d'être</h4>
+          <p>
+            <strong>Construire des systèmes circulaires</strong>
+            « Construire des systèmes circulaires pour un avenir résilient — où les déchets organiques deviennent énergie propre, sol fertile et valeur climatique mesurable. De Bruxelles aux communautés du monde entier. »
+          </p>
+        </div>
+      </div>
+
+      <!-- Pied de page — bas -->
+      <div class="footer-bottom">
+        <p>© 2026 Terra Digester. Tous droits réservés.</p>
+        <div style="display:flex;gap:1.5rem;">
+          <a href="privacy-policy.html">Politique de confidentialité</a>
+          <a href="terms-of-use.html">Conditions d'utilisation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // --- Bascule de la navigation mobile ---
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileNav    = document.getElementById('mobileNav');
+    const mobileClose  = document.getElementById('mobileClose');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileNav.classList.add('open');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    });
+
+    mobileClose.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+
+    // Fermer en cliquant à l'extérieur
+    mobileNav.addEventListener('click', (e) => {
+      if (e.target === mobileNav) {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // --- Apparition au défilement via IntersectionObserver ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // --- Défilement fluide pour le CTA du héros ---
+    const solLink = document.querySelector('a[href="#solutions"]');
+    if (solLink) {
+      solLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById('solutions');
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    // --- Effet de rétrécissement de l'en-tête au défilement ---
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        header.style.background = 'rgba(27, 58, 45, 0.98)';
+        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.25)';
+      } else {
+        header.style.background = 'rgba(27, 58, 45, 0.96)';
+        header.style.boxShadow = 'none';
+      }
+    }, { passive: true });
+
+    // --- Inclinaison parallaxe de l'image produit au mouvement de la souris ---
+    const heroVisual = document.querySelector('.hero-visual');
+    const productWrap = document.querySelector('.hero-product-wrap');
+    if (heroVisual && productWrap) {
+      heroVisual.addEventListener('mousemove', (e) => {
+        const rect = heroVisual.getBoundingClientRect();
+        const cx   = rect.left + rect.width  / 2;
+        const cy   = rect.top  + rect.height / 2;
+        const dx   = (e.clientX - cx) / rect.width;
+        const dy   = (e.clientY - cy) / rect.height;
+        const rx   = dy * -10;
+        const ry   = dx *  10;
+        productWrap.style.transition = 'transform 0.1s linear, box-shadow 0.3s ease';
+        productWrap.style.transform  =
+          `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-7px) scale(1.02)`;
+        productWrap.style.boxShadow  =
+          `${-ry * 2}px ${rx * 2 + 30}px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(82,183,136,0.25)`;
+      });
+      heroVisual.addEventListener('mouseleave', () => {
+        productWrap.style.transition = 'transform 0.6s cubic-bezier(.25,.8,.25,1), box-shadow 0.6s ease';
+        productWrap.style.transform  = '';
+        productWrap.style.boxShadow  = '';
+      });
+    }
+
+    // --- Apparition décalée des badges techniques du héros ---
+    document.querySelectorAll('.hero-spec-badge').forEach((badge, i) => {
+      badge.style.opacity = '0';
+      badge.style.transform = 'translateY(12px)';
+      badge.style.transition = `opacity 0.5s ${0.8 + i * 0.15}s ease, transform 0.5s ${0.8 + i * 0.15}s ease`;
+      setTimeout(() => {
+        badge.style.opacity = '1';
+        badge.style.transform = '';
+      }, 100);
+    });
+  </script>
+
+  <script>
+  /* ── Menu déroulant : survol JS avec délai pour éviter le clignotement ── */
+  (function(){
+    document.querySelectorAll('.nav-dropdown').forEach(function(item){
+      var menu = item.querySelector('.dropdown-menu');
+      if(!menu) return;
+      var timer = null;
+      function show(){ clearTimeout(timer); menu.classList.add('open'); }
+      function hide(){ timer = setTimeout(function(){ menu.classList.remove('open'); }, 150); }
+      item.addEventListener('mouseenter', show);
+      item.addEventListener('mouseleave', hide);
+      menu.addEventListener('mouseenter', show);
+      menu.addEventListener('mouseleave', hide);
+    });
+  })();
+  </script>
+</body>
+</html>

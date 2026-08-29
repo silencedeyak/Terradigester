@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2352B788'/><path d='M16 4C16 4 8 8 8 14C8 17.3 10.7 20 16 20C19.3 20 22 17.3 22 14C22 8 16 4 16 4Z' stroke='%231B3A2D' stroke-width='1.5' fill='none'/></svg>" type="image/svg+xml">
+  <meta name="description" content="À propos de Terra Digester — notre vision, notre histoire fondatrice, notre philosophie de conception et les quatre R de la gestion circulaire des déchets. Construire des infrastructures circulaires depuis Bruxelles." />
+  <title>À propos | Terra Digester — Systèmes de digestion anaérobie</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--primary-dark:#1B3A2D;--primary:#2D6A4F;--primary-light:#52B788;--earth-brown:#7F5539;--earth-light:#DDB892;--neutral-900:#1A1A1A;--neutral-600:#6B7280;--neutral-200:#E5E7EB;--neutral-50:#F9FAFB;--white:#FFFFFF;--radius-sm:8px;--radius-md:12px;--transition:all 0.3s ease;--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 8px 25px rgba(0,0,0,0.10);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:1rem;line-height:1.7;color:var(--neutral-900);background:var(--white);overflow-x:hidden;}
+    a{color:var(--primary);text-decoration:none;}a:hover{text-decoration:underline;}
+    .container{width:100%;max-width:1200px;margin-inline:auto;padding-inline:clamp(1rem,4vw,2rem);}
+    h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:700;line-height:1.1;}
+    h2{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:600;line-height:1.2;}
+    h3{font-size:1.25rem;font-weight:600;line-height:1.3;}
+    .section{padding-block:clamp(4rem,8vw,8rem);}
+    .section-header{text-align:center;margin-bottom:3rem;}
+    .section-header p{max-width:640px;margin-inline:auto;margin-top:1rem;color:var(--neutral-600);}
+    .section-label{display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary-light);margin-bottom:0.75rem;}
+    .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+    .fade-in-delay-1{transition-delay:0.1s;}.fade-in-delay-2{transition-delay:0.2s;}.fade-in-delay-3{transition-delay:0.3s;}.fade-in-delay-4{transition-delay:0.4s;}
+    .btn{display:inline-block;padding:14px 32px;border-radius:var(--radius-sm);font-size:1rem;font-weight:500;cursor:pointer;border:2px solid transparent;transition:var(--transition);text-decoration:none;line-height:1;}
+    .btn-primary{background:var(--primary);color:var(--white);border-color:var(--primary);}
+    .btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(45,106,79,0.35);text-decoration:none;color:var(--white);}
+
+    /* NAV */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,58,45,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:2rem;}
+    .nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;flex-shrink:0;}
+    .nav-logo-mark{width:36px;height:36px;border-radius:8px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;}
+    .nav-logo-text{font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:-0.01em;}
+    .nav-logo-text span{color:var(--primary-light);}
+    .nav-links{display:flex;align-items:center;gap:0.25rem;list-style:none;}
+    .nav-links a{display:block;padding:8px 14px;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;border-radius:6px;transition:var(--transition);text-decoration:none;}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,0.1);}
+    .nav-dropdown{position:relative;}
+    .nav-dropdown>a::after{content:' ▾';font-size:0.75rem;opacity:0.7;}
+    .dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--primary-dark);border-radius:var(--radius-sm);min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);z-index:100;}
+    .dropdown-menu a{padding:10px 18px;display:block;color:rgba(255,255,255,0.85);font-size:0.875rem;border-radius:0;border-bottom:1px solid rgba(255,255,255,0.06);transition:var(--transition);}
+    .dropdown-menu a:last-child{border-bottom:none;}
+    .dropdown-menu a:hover{background:rgba(82,183,136,0.2);color:var(--white);}
+    .dropdown-menu.open{display:block;}
+    .nav-cta{background:var(--primary-light)!important;color:var(--primary-dark)!important;font-weight:600!important;padding:8px 18px!important;}
+
+    /* ── LANGUAGE SWITCHER — desktop nav ── */
+    .nav-links .lang-switcher{display:flex;align-items:center;gap:0;margin-left:0.5rem;padding-left:0.75rem;border-left:1px solid rgba(255,255,255,0.15);}
+    .nav-links .lang-switcher a{padding:8px 10px;font-size:0.78rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.55);min-width:30px;text-align:center;border-radius:6px;}
+    .nav-links .lang-switcher a:hover{color:var(--white);background:rgba(255,255,255,0.08);text-decoration:none;}
+    .nav-links .lang-switcher a.active{color:var(--primary-dark);background:var(--primary-light);font-weight:700;}
+    .nav-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .nav-mobile-toggle span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--primary-dark);z-index:999;padding:2rem;flex-direction:column;gap:1rem;overflow-y:auto;}
+    .mobile-nav-overlay.open{display:flex;}
+    .mobile-nav-close{align-self:flex-end;background:none;border:none;color:var(--white);font-size:1.75rem;cursor:pointer;}
+    .mobile-nav-links{display:flex;flex-direction:column;gap:0.25rem;margin-top:1rem;}
+    .mobile-nav-links a{color:rgba(255,255,255,0.9);font-size:1.1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);text-decoration:none;}
+    .mobile-nav-links a:hover{color:var(--primary-light);}
+    .mobile-nav-links .sub-link{padding-left:1.25rem;font-size:1rem;color:rgba(255,255,255,0.7);}
+
+    /* ── LANGUAGE SWITCHER — mobile nav ── */
+    .mobile-nav-links .lang-switcher{display:flex;gap:0.6rem;padding:14px 0 20px;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .mobile-nav-links .lang-switcher a{padding:8px 16px;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;border:1px solid rgba(255,255,255,0.2);border-radius:6px;color:rgba(255,255,255,0.7);align-self:flex-start;}
+    .mobile-nav-links .lang-switcher a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary-light);}
+
+    @media(max-width:1024px){.nav-links{display:none;}.nav-mobile-toggle{display:flex;}}
+
+    /* HERO */
+    .hero{min-height:55vh;display:flex;align-items:center;padding-top:72px;background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(45,106,79,0.5) 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 80% 20%,rgba(27,58,45,0.65) 0%,transparent 60%),linear-gradient(135deg,#0d2219 0%,#1B3A2D 40%,#142d22 100%);position:relative;overflow:hidden;}
+    .hero-content{padding-block:5rem 4rem;position:relative;z-index:2;}
+    .hero h1{color:var(--white);max-width:700px;margin-bottom:1.25rem;}
+    .hero h1 em{font-style:normal;color:var(--primary-light);}
+    .hero-sub{color:rgba(255,255,255,0.75);font-size:clamp(1rem,1.8vw,1.2rem);max-width:580px;margin-bottom:2rem;}
+    .breadcrumb{display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;}
+    .breadcrumb a{color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;}
+    .breadcrumb a:hover{color:var(--primary-light);}
+    .breadcrumb span{color:rgba(255,255,255,0.3);font-size:0.8rem;}
+    .breadcrumb .current{color:var(--primary-light);font-size:0.8rem;}
+
+    /* VISION */
+    .vision-section{background:var(--white);}
+    .vision-inner{max-width:900px;margin-inline:auto;text-align:center;}
+    .vision-inner h2{margin-bottom:1.5rem;}
+    .vision-quote{font-size:clamp(1.1rem,1.8vw,1.3rem);color:var(--neutral-600);line-height:1.85;font-style:italic;border-top:1px solid var(--neutral-200);padding-top:2rem;margin-top:1.5rem;}
+    .vision-quote strong{color:var(--primary-dark);font-style:normal;}
+
+    /* WHY WE STARTED */
+    .why-section{background:var(--neutral-50);}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+    .why-text h2{margin-bottom:1.5rem;}
+    .why-text p{color:var(--neutral-600);margin-bottom:1rem;font-size:1.05rem;line-height:1.8;}
+    .why-visual{display:flex;flex-direction:column;gap:1.25rem;}
+    .why-stat{background:var(--white);border-radius:var(--radius-md);padding:1.75rem;border:1px solid var(--neutral-200);display:flex;align-items:center;gap:1.25rem;box-shadow:var(--shadow-sm);}
+    .why-stat-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .why-stat-icon.brussels{background:rgba(45,106,79,0.1);}
+    .why-stat-icon.tech{background:rgba(82,183,136,0.12);}
+    .why-stat-icon.global{background:rgba(127,85,57,0.1);}
+    .why-stat-text strong{display:block;font-size:1rem;font-weight:600;color:var(--primary-dark);}
+    .why-stat-text span{font-size:0.85rem;color:var(--neutral-600);}
+    @media(max-width:768px){.why-grid{grid-template-columns:1fr;gap:2rem;}}
+
+    /* FOUR R's */
+    .fours-section{background:var(--white);}
+    .fours-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+    .four-card{border-radius:var(--radius-md);padding:2rem 1.75rem;text-align:center;position:relative;overflow:hidden;transition:var(--transition);}
+    .four-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+    .four-card:nth-child(1){background:rgba(45,106,79,0.05);border:1px solid rgba(45,106,79,0.15);}
+    .four-card:nth-child(1)::before{background:var(--primary);}
+    .four-card:nth-child(2){background:rgba(82,183,136,0.05);border:1px solid rgba(82,183,136,0.2);}
+    .four-card:nth-child(2)::before{background:var(--primary-light);}
+    .four-card:nth-child(3){background:rgba(127,85,57,0.05);border:1px solid rgba(127,85,57,0.15);}
+    .four-card:nth-child(3)::before{background:var(--earth-brown);}
+    .four-card:nth-child(4){background:rgba(221,184,146,0.1);border:1px solid rgba(221,184,146,0.3);}
+    .four-card:nth-child(4)::before{background:var(--earth-light);}
+    .four-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+    .four-r{font-size:2.5rem;font-weight:800;margin-bottom:0.5rem;line-height:1;}
+    .four-card:nth-child(1) .four-r{color:var(--primary);}
+    .four-card:nth-child(2) .four-r{color:var(--primary-light);}
+    .four-card:nth-child(3) .four-r{color:var(--earth-brown);}
+    .four-card:nth-child(4) .four-r{color:var(--earth-brown);}
+    .four-word{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:1rem;color:var(--neutral-600);}
+    .four-card h3{font-size:1.05rem;margin-bottom:0.75rem;color:var(--primary-dark);}
+    .four-card p{font-size:0.875rem;color:var(--neutral-600);}
+    @media(max-width:1024px){.fours-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){.fours-grid{grid-template-columns:1fr;}}
+
+    /* EARLY STAGE */
+    .early-section{background:var(--neutral-50);border-top:1px solid var(--neutral-200);border-bottom:1px solid var(--neutral-200);}
+    .early-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    .early-text h2{margin-bottom:1.25rem;}
+    .early-text p{color:var(--neutral-600);margin-bottom:1rem;font-size:1.05rem;}
+    .early-principles{display:flex;flex-direction:column;gap:1rem;}
+    .early-principle{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--white);border-radius:var(--radius-sm);border:1px solid var(--neutral-200);}
+    .early-principle-icon{width:36px;height:36px;border-radius:8px;background:rgba(82,183,136,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .early-principle h4{font-size:0.9rem;font-weight:600;color:var(--primary-dark);margin-bottom:0.2rem;}
+    .early-principle p{font-size:0.85rem;color:var(--neutral-600);}
+    @media(max-width:768px){.early-grid{grid-template-columns:1fr;gap:2rem;}}
+
+    /* TEAM NOTE */
+    .team-section{background:var(--white);}
+    .team-inner{max-width:840px;margin-inline:auto;text-align:center;}
+    .team-inner h2{margin-bottom:1.5rem;}
+    .team-inner p{color:var(--neutral-600);font-size:1.05rem;margin-bottom:1rem;}
+    .hq-badge{display:inline-flex;align-items:center;gap:0.75rem;background:rgba(45,106,79,0.06);border:1px solid rgba(45,106,79,0.15);padding:1rem 2rem;border-radius:var(--radius-md);margin-top:2rem;}
+    .hq-badge-icon{width:40px;height:40px;background:rgba(45,106,79,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+    .hq-badge-text{text-align:left;}
+    .hq-badge-text strong{display:block;font-size:0.9rem;color:var(--primary-dark);}
+    .hq-badge-text span{font-size:0.8rem;color:var(--neutral-600);}
+    .cta-inline{margin-top:2.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;}
+
+    /* FOOTER */
+    .site-footer{background:var(--primary-dark);color:rgba(255,255,255,0.75);padding-block:clamp(3rem,6vw,5rem);}
+    .footer-grid{display:grid;grid-template-columns:2fr 1.5fr 1.5fr 2fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .footer-brand p{font-size:0.875rem;line-height:1.7;margin-bottom:0.75rem;}
+    .footer-brand .location{display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:rgba(255,255,255,0.5);}
+    .footer-col h4{color:var(--white);font-size:0.875rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.25rem;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+    .footer-col ul a{color:rgba(255,255,255,0.65);font-size:0.875rem;text-decoration:none;transition:var(--transition);}
+    .footer-col ul a:hover{color:var(--primary-light);}
+    .footer-contact p{font-size:0.875rem;line-height:1.7;margin-bottom:0.5rem;}
+    .footer-contact a{color:var(--primary-light);}
+    .footer-vision p{font-size:1rem;font-style:italic;color:rgba(255,255,255,0.6);line-height:1.8;}
+    .footer-vision p strong{display:block;font-style:normal;color:var(--primary-light);font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+    .footer-bottom{padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+    .footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.4);}
+    .footer-bottom a{color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;}
+    .footer-bottom a:hover{color:var(--primary-light);}
+    .footer-brand .nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;margin-bottom:1rem;}
+    .footer-brand .nav-logo-mark{width:36px;height:36px;border-radius:8px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;}
+    .footer-brand .nav-logo-text{font-size:1.1rem;font-weight:700;color:var(--white);}
+    .footer-brand .nav-logo-text span{color:var(--primary-light);}
+
+    /* ── LANGUAGE SWITCHER — footer column ── */
+    .footer-lang-switcher{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;}
+    .footer-lang-switcher a{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;padding:5px 11px;border-radius:6px;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);text-decoration:none;transition:var(--transition);min-width:32px;text-align:center;}
+    .footer-lang-switcher a:hover{border-color:var(--primary-light);color:var(--primary-light);text-decoration:none;}
+    .footer-lang-switcher a.active{background:var(--primary-light);color:var(--primary-dark);border-color:var(--primary-light);}
+
+    @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem;}.footer-bottom{flex-direction:column;text-align:center;}}
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="container nav-inner" aria-label="Navigation principale">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span class="nav-logo-text">Terra<span>Digester</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown"><a href="#">Solutions</a>
+          <div class="dropdown-menu">
+            <a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a>
+            <a href="bio-toilet-solutions.html">Solutions bio-toilettes</a>
+            <a href="dairy-farmers-system.html">Système pour producteurs laitiers</a>
+            <a href="buy-carbon.html">Acheter des crédits carbone</a>
+          </div>
+        </li>
+        <li><a href="technology.html">Technologie</a></li>
+        <li class="nav-dropdown"><a href="about.html" class="active">À propos</a>
+          <div class="dropdown-menu">
+            <a href="about.html">À propos de nous</a>
+            <a href="reseller-program.html">Programme de revente</a>
+          </div>
+        </li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        <li class="lang-switcher" aria-label="Sélecteur de langue">
+          <a href="../index.html" lang="en">EN</a>
+          <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
+          <a href="../de/index.html" lang="de">DE</a>
+        </li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Ouvrir la navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose">✕</button>
+    <div class="mobile-nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="food-waste-systems.html" class="sub-link">— Systèmes pour déchets alimentaires</a>
+      <a href="bio-toilet-solutions.html" class="sub-link">— Solutions bio-toilettes</a>
+      <a href="dairy-farmers-system.html" class="sub-link">— Système pour producteurs laitiers</a>
+      <a href="buy-carbon.html" class="sub-link">— Acheter des crédits carbone</a>
+      <a href="technology.html">Technologie</a>
+      <a href="about.html">À propos</a>
+      <a href="reseller-program.html" class="sub-link">— Programme de revente</a>
+      <a href="contact.html">Contact</a>
+      <div class="lang-switcher" aria-label="Sélecteur de langue">
+        <a href="../index.html" lang="en">EN</a>
+        <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
+        <a href="../de/index.html" lang="de">DE</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="À propos de Terra Digester — bannière">
+      <div class="container hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Accueil</a><span>/</span><span class="current">À propos</span>
+        </div>
+        <span class="section-label" style="color:var(--primary-light);">Notre histoire</span>
+        <h1>Bâtir des <em>infrastructures circulaires</em></h1>
+        <p class="hero-sub">De Bruxelles aux communautés du monde entier — concevoir des solutions concrètes pour les déchets organiques, l'énergie propre et un assainissement durable.</p>
+        <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+      </div>
+    </section>
+
+    <!-- NOTRE VISION -->
+    <section class="section vision-section" aria-labelledby="vision-heading">
+      <div class="container">
+        <div class="vision-inner fade-in">
+          <span class="section-label">Vision</span>
+          <h2 id="vision-heading">Ce vers quoi nous travaillons</h2>
+          <p style="color:var(--neutral-600);max-width:700px;margin-inline:auto;font-size:1.05rem;">Le travail de Terra Digester est guidé par une vision pratique, claire et de long terme — et non par une aspiration abstraite.</p>
+          <blockquote class="vision-quote">
+            « Nous envisageons un monde où <strong>les déchets organiques ne sont jamais perdus</strong>. Où chaque foyer, chaque exploitation agricole, chaque collectivité a accès à des systèmes qui convertissent les déchets biologiques en énergie et en nutriments. Où <strong>l'assainissement ne dépend ni de l'abondance d'eau ni d'infrastructures urbaines</strong>. Où la valeur enfermée dans les matières organiques est systématiquement récupérée — plutôt que rejetée dans des décharges ou relâchée dans l'atmosphère sous forme de méthane. »
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- POURQUOI NOUS AVONS COMMENCÉ -->
+    <section class="section why-section" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="why-grid">
+          <div class="why-text fade-in">
+            <span class="section-label">Notre origine</span>
+            <h2 id="why-heading">Pourquoi nous avons commencé</h2>
+            <p>Terra Digester a été fondée à Bruxelles autour d'un constat clair : la technologie pour la gestion circulaire des déchets existe — et existe depuis des décennies — mais il manque des systèmes accessibles et déployables, adaptés à des contextes variés.</p>
+            <p>Les installations industrielles de digestion anaérobie desservent les grands services urbains. Mais l'éleveur avec quelques bovins, la cantine scolaire qui génère chaque jour des déchets alimentaires, l'écolodge sans accès au réseau d'assainissement, la communauté rurale sans infrastructure hydraulique — ces contextes manquent cruellement de systèmes conçus spécifiquement pour eux.</p>
+            <p>Nous nous sommes donné pour mission de combler ce fossé. Non pas par une nouvelle découverte scientifique, mais par une ingénierie solide appliquée à un problème de déploiement : comment rendre la biotechnologie éprouvée accessible, fiable et économiquement viable à petite et moyenne échelle ?</p>
+            <p>Cette question reste au cœur de tout ce que nous construisons.</p>
+          </div>
+          <div class="why-visual fade-in fade-in-delay-1">
+            <div class="why-stat">
+              <div class="why-stat-icon brussels" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 17L12 22L22 17" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12L12 17L22 12" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="why-stat-text"><strong>Fondée à Bruxelles, en Belgique</strong><span>Au cœur de la politique européenne, de l'innovation et de la connectivité internationale.</span></div>
+            </div>
+            <div class="why-stat">
+              <div class="why-stat-icon tech" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#52B788" stroke-width="1.5"/><path d="M12 2V6M12 18V22M2 12H6M18 12H22" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/><path d="M5.6 5.6L8.5 8.5M15.5 15.5L18.4 18.4M18.4 5.6L15.5 8.5M8.5 15.5L5.6 18.4" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="why-stat-text"><strong>Biotechnologie · Économie circulaire · Biogaz</strong><span>Des disciplines complémentaires appliquées à un défi commun : la valorisation des déchets organiques.</span></div>
+            </div>
+            <div class="why-stat">
+              <div class="why-stat-icon global" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#7F5539" stroke-width="1.5"/><path d="M3 12H21M12 3C10 6 9 9 9 12C9 15 10 18 12 21M12 3C14 6 15 9 15 12C15 15 14 18 12 21" stroke="#7F5539" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="why-stat-text"><strong>Défi mondial, solutions locales</strong><span>Des systèmes conçus pour être déployés dans des contextes variés — et non des produits universels à taille unique.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LES QUATRE R -->
+    <section class="section fours-section" aria-labelledby="fours-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Notre approche</span>
+          <h2 id="fours-heading">Les quatre R</h2>
+          <p>Quatre principes qui définissent notre vision des déchets organiques — et la conception des systèmes pour les traiter.</p>
+        </div>
+        <div class="fours-grid">
+          <div class="four-card fade-in fade-in-delay-1">
+            <div class="four-r" aria-hidden="true">R</div>
+            <div class="four-word">Repenser</div>
+            <h3>Repenser le déchet</h3>
+            <p>Remettre en cause l'idée qu'une matière organique, après usage, n'a aucune valeur. Le déchet est une ressource mal placée — la première étape consiste à faire évoluer notre manière de définir et de catégoriser les matières organiques en fin de cycle d'usage principal.</p>
+          </div>
+          <div class="four-card fade-in fade-in-delay-2">
+            <div class="four-r" aria-hidden="true">R</div>
+            <div class="four-word">Réduire</div>
+            <h3>Réduire à la source</h3>
+            <p>Réduire la production de déchets en amont de la phase de valorisation. La pensée systémique commence en amont — dans les décisions d'approvisionnement, la planification alimentaire et la gestion opérationnelle. Moins de déchets générés, c'est moins de récupération à assurer.</p>
+          </div>
+          <div class="four-card fade-in fade-in-delay-3">
+            <div class="four-r" aria-hidden="true">R</div>
+            <div class="four-word">Réutiliser</div>
+            <h3>Réutiliser les ressources organiques</h3>
+            <p>Récupérer efficacement l'énergie, les nutriments et la valeur des flux organiques. La digestion anaérobie est le mécanisme principal — elle convertit ce qui subsiste après la réduction en biogaz et en biofertilisant, pour des applications concrètes immédiates.</p>
+          </div>
+          <div class="four-card fade-in fade-in-delay-4">
+            <div class="four-r" aria-hidden="true">R</div>
+            <div class="four-word">Restaurer</div>
+            <h3>Restaurer la santé des sols</h3>
+            <p>Restituer les nutriments au sol. Boucler la boucle biologique en réinjectant la matière organique récupérée dans les systèmes agricoles — restaurer la fertilité des sols, réduire la dépendance aux engrais de synthèse et séquestrer du carbone dans les sols vivants.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHASE DE DÉMARRAGE -->
+    <section class="section early-section" aria-labelledby="early-heading">
+      <div class="container">
+        <div class="early-grid">
+          <div class="early-text fade-in">
+            <span class="section-label">Où nous en sommes</span>
+            <h2 id="early-heading">Phase de démarrage. Pilotée par l'ingénierie.</h2>
+            <p>Nous sommes volontairement en phase opérationnelle précoce. Nous sommes convaincus qu'il faut d'abord construire des systèmes qui fonctionnent avant de construire des systèmes qui passent à l'échelle. La pression pour croître rapidement peut compromettre l'intégrité d'ingénierie, et nous refusons ce compromis.</p>
+            <p>Notre priorité est d'atteindre l'intégrité d'ingénierie, la validation terrain et des partenariats transparents avant de rechercher la montée en charge. Chaque partenariat de déploiement est une occasion d'apprendre, d'affiner et d'améliorer. Nous choisissons cette voie parce que c'est la seule qui produit des systèmes qui fonctionnent encore en année dix.</p>
+            <p>Terra Digester est en phase opérationnelle précoce. Nos systèmes sont conçus, testés et prêts pour des partenariats de déploiement. Nous choisissons la transparence parce que la confiance se construit sur des années, pas sur des slogans.</p>
+          </div>
+          <div class="fade-in fade-in-delay-1">
+            <div class="early-principles">
+              <div class="early-principle">
+                <div class="early-principle-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9L7 12L14 5" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div><h4>L'intégrité d'ingénierie d'abord</h4><p>Les systèmes sont validés par des essais avant tout déploiement. Aucune affirmation de performance sans élément probant.</p></div>
+              </div>
+              <div class="early-principle">
+                <div class="early-principle-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9L7 12L14 5" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div><h4>La validation terrain plutôt que les résultats de laboratoire</h4><p>Les conditions réelles de déploiement sont l'épreuve ultime. Nous privilégions l'apprentissage de terrain aux métriques de performance théoriques.</p></div>
+              </div>
+              <div class="early-principle">
+                <div class="early-principle-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9L7 12L14 5" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div><h4>Partenariats transparents</h4><p>Nous partageons ce que nous savons — y compris ce que nous sommes encore en train d'apprendre. Un partenariat suppose une communication honnête sur les capacités comme sur les limites.</p></div>
+              </div>
+              <div class="early-principle">
+                <div class="early-principle-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9L7 12L14 5" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div><h4>Une croissance méthodique, jamais précipitée</h4><p>Nous grandissons au rythme de notre confiance technique — et non au rythme des cycles de financement ou de la pression du marché.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÉQUIPE -->
+    <section class="section team-section" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="team-inner fade-in">
+          <span class="section-label">Notre équipe</span>
+          <h2 id="team-heading">Les visages derrière Terra Digester</h2>
+          <p>Notre équipe combine des expertises en biotechnologie, en ingénierie environnementale et en conception d'économie circulaire. Nous sommes praticiens et ingénieurs — pas seulement stratèges — et nous construisons les systèmes que nous concevons.</p>
+          <p>Basés à Bruxelles, au cœur de la politique et de l'innovation européennes, nous collaborons avec les écosystèmes réglementaires, techniques et commerciaux qui façonnent le développement d'infrastructures durables, en Europe comme à l'international.</p>
+          <p style="color:var(--neutral-600);font-size:0.9rem;font-style:italic;">Des profils détaillés des membres de l'équipe sont disponibles sur demande pour les partenaires et collaborateurs potentiels.</p>
+          <div style="display:flex;justify-content:center;">
+            <div class="hq-badge">
+              <div class="hq-badge-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2C8 2 5.5 4.5 5.5 7.5C5.5 12 11 20 11 20C11 20 16.5 12 16.5 7.5C16.5 4.5 14 2 11 2Z" stroke="#2D6A4F" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11" cy="7.5" r="2.5" stroke="#2D6A4F" stroke-width="1.5"/></svg>
+              </div>
+              <div class="hq-badge-text">
+                <strong>Siège : Bruxelles, Belgique</strong>
+                <span>Union européenne · Cœur de la politique internationale et de l'innovation en économie circulaire</span>
+              </div>
+            </div>
+          </div>
+          <div class="cta-inline">
+            <a href="contact.html" class="btn btn-primary">Démarrer une conversation</a>
+            <a href="technology.html" class="btn" style="background:var(--neutral-50);color:var(--primary);border:2px solid var(--neutral-200);">Découvrir notre technologie</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="nav-logo-text">Terra<span>Digester</span></span></a>
+          <p>Du déchet à la valeur. Des systèmes pour un avenir circulaire.</p>
+          <div class="location"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5C2.5 7.25 6 11 6 11C6 11 9.5 7.25 9.5 4.5C9.5 2.57 7.93 1 6 1Z" stroke="currentColor" stroke-width="1"/><circle cx="6" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1"/></svg> Bruxelles, Belgique</div>
+          <div class="footer-lang-switcher" aria-label="Sélecteur de langue">
+            <a href="../index.html" lang="en">EN</a>
+            <a href="index.html" class="active" lang="fr" aria-current="true">FR</a>
+            <a href="../de/index.html" lang="de">DE</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="food-waste-systems.html">Systèmes pour déchets alimentaires</a></li><li><a href="bio-toilet-solutions.html">Solutions bio-toilettes</a></li><li><a href="dairy-farmers-system.html">Système pour producteurs laitiers</a></li><li><a href="buy-carbon.html">Acheter des crédits carbone</a></li><li><a href="technology.html">Technologie</a></li><li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col footer-contact"><h4>Contact</h4><p><a href="mailto:info@terradigester.com">info@terradigester.com</a></p><p>Bruxelles, Belgique<br>Union européenne</p></div>
+        <div class="footer-col footer-vision"><h4>Notre raison d'être</h4><p><strong>Construire des systèmes circulaires</strong>« Construire des systèmes circulaires pour un avenir résilient — où les déchets organiques deviennent énergie propre, sol fertile et valeur climatique mesurable. »</p></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Terra Digester. Tous droits réservés.</p><div style="display:flex;gap:1.5rem;"><a href="privacy-policy.html">Politique de confidentialité</a><a href="terms-of-use.html">Conditions d'utilisation</a></div></div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileToggle=document.getElementById('mobileToggle'),mobileNav=document.getElementById('mobileNav'),mobileClose=document.getElementById('mobileClose');
+    mobileToggle.addEventListener('click',()=>{mobileNav.classList.add('open');document.body.style.overflow='hidden';});
+    mobileClose.addEventListener('click',()=>{mobileNav.classList.remove('open');document.body.style.overflow='';});
+    mobileNav.addEventListener('click',(e)=>{if(e.target===mobileNav){mobileNav.classList.remove('open');document.body.style.overflow='';}});
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+    const header=document.querySelector('.site-header');
+    window.addEventListener('scroll',()=>{header.style.background=window.scrollY>60?'rgba(27,58,45,0.98)':'rgba(27,58,45,0.96)';},{passive:true});
+  </script>
+
+  <script>
+  /* ── Dropdown: JS hover with delay to prevent flicker ── */
+  (function(){
+    document.querySelectorAll('.nav-dropdown').forEach(function(item){
+      var menu = item.querySelector('.dropdown-menu');
+      if(!menu) return;
+      var timer = null;
+      function show(){ clearTimeout(timer); menu.classList.add('open'); }
+      function hide(){ timer = setTimeout(function(){ menu.classList.remove('open'); }, 150); }
+      item.addEventListener('mouseenter', show);
+      item.addEventListener('mouseleave', hide);
+      menu.addEventListener('mouseenter', show);
+      menu.addEventListener('mouseleave', hide);
+    });
+  })();
+  </script>
+</body>
+</html>
