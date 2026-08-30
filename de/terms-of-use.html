@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2352B788'/><path d='M16 4C16 4 8 8 8 14C8 17.3 10.7 20 16 20C19.3 20 22 17.3 22 14C22 8 16 4 16 4Z' stroke='%231B3A2D' stroke-width='1.5' fill='none'/></svg>" type="image/svg+xml">
+  <meta name="description" content="Terra Digester Nutzungsbedingungen — governing your use of our website, information about our products, shipping, warranty, and returns. Based in Brussels, Belgium." />
+  <title>Nutzungsbedingungen | Terra Digester — Anaerobic Digestion Systems</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --primary-dark:#1B3A2D;--primary:#2D6A4F;--primary-light:#52B788;
+      --neutral-900:#1A1A1A;--neutral-700:#374151;--neutral-600:#6B7280;
+      --neutral-200:#E5E7EB;--neutral-100:#F3F4F6;--neutral-50:#F9FAFB;--white:#FFFFFF;
+      --radius-sm:8px;--radius-md:12px;--radius-lg:20px;
+      --transition:all 0.3s ease;
+      --shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 8px 25px rgba(0,0,0,0.10);
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:1rem;line-height:1.75;color:var(--neutral-900);background:var(--white);overflow-x:hidden;}
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .container{width:100%;max-width:1200px;margin-inline:auto;padding-inline:clamp(1rem,4vw,2rem);}
+
+    /* FADE-IN */
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+
+    /* NAV */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,58,45,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:2rem;}
+    .nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;flex-shrink:0;}
+    .nav-logo-mark{width:36px;height:36px;border-radius:8px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;}
+    .nav-logo-text{font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:-0.01em;}
+    .nav-logo-text span{color:var(--primary-light);}
+    .nav-links{display:flex;align-items:center;gap:0.25rem;list-style:none;}
+    .nav-links a{display:block;padding:8px 14px;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;border-radius:6px;transition:var(--transition);text-decoration:none;}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,0.1);}
+    .nav-dropdown{position:relative;}
+    .nav-dropdown>a::after{content:' ▾';font-size:0.75rem;opacity:0.7;}
+    .dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--primary-dark);border-radius:var(--radius-sm);min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);z-index:100;}
+    .dropdown-menu a{padding:10px 18px;display:block;color:rgba(255,255,255,0.85);font-size:0.875rem;border-radius:0;border-bottom:1px solid rgba(255,255,255,0.06);transition:var(--transition);}
+    .dropdown-menu a:last-child{border-bottom:none;}
+    .dropdown-menu a:hover{background:rgba(82,183,136,0.2);color:var(--white);}
+    .dropdown-menu.open{display:block;}
+    .nav-cta{background:var(--primary-light)!important;color:var(--primary-dark)!important;font-weight:600!important;padding:8px 18px!important;}
+    .nav-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .nav-mobile-toggle span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--primary-dark);z-index:999;padding:2rem;flex-direction:column;gap:1rem;overflow-y:auto;}
+    .mobile-nav-overlay.open{display:flex;}
+    .mobile-nav-close{align-self:flex-end;background:none;border:none;color:var(--white);font-size:1.75rem;cursor:pointer;}
+    .mobile-nav-links{display:flex;flex-direction:column;gap:0.25rem;margin-top:1rem;}
+    .mobile-nav-links a{color:rgba(255,255,255,0.9);font-size:1.1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);text-decoration:none;}
+    .mobile-nav-links a:hover{color:var(--primary-light);}
+    .mobile-nav-links .sub-link{padding-left:1.25rem;font-size:1rem;color:rgba(255,255,255,0.7);}
+    @media(max-width:1024px){.nav-links{display:none;}.nav-mobile-toggle{display:flex;}}
+
+    /* HERO */
+    .hero{
+      padding-top:72px;
+      min-height:38vh;
+      display:flex;align-items:center;
+      background:
+        radial-gradient(ellipse 80% 60% at 80% 50%,rgba(45,106,79,0.45) 0%,transparent 70%),
+        radial-gradient(ellipse 60% 80% at 20% 20%,rgba(27,58,45,0.65) 0%,transparent 60%),
+        linear-gradient(135deg,#0d2219 0%,#1B3A2D 40%,#142d22 100%);
+      position:relative;overflow:hidden;
+    }
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 85%,rgba(82,183,136,0.08) 0%,transparent 35%),radial-gradient(circle at 15% 15%,rgba(127,85,57,0.06) 0%,transparent 30%);pointer-events:none;}
+    .hero-content{position:relative;z-index:2;padding-block:clamp(3rem,6vw,5rem);}
+    .breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1.5rem;}
+    .breadcrumb a{color:rgba(255,255,255,0.55);text-decoration:none;}
+    .breadcrumb a:hover{color:var(--primary-light);}
+    .breadcrumb span{color:rgba(255,255,255,0.3);}
+    .breadcrumb .current{color:rgba(255,255,255,0.75);}
+    .section-label{display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary-light);margin-bottom:0.75rem;}
+    .hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.15;color:var(--white);margin-bottom:1rem;}
+    .hero h1 em{font-style:normal;color:var(--primary-light);}
+    .hero-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:1.25rem;}
+    .hero-meta span{font-size:0.82rem;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:0.4rem;}
+
+    /* PAGE LAYOUT */
+    .page-layout{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:3rem;
+      align-items:start;
+      padding-block:clamp(3rem,6vw,5rem);
+    }
+    @media(max-width:900px){.page-layout{grid-template-columns:1fr;}}
+
+    /* TABLE OF CONTENTS */
+    .toc{
+      position:sticky;
+      top:calc(72px + 2rem);
+      background:var(--neutral-50);
+      border:1px solid var(--neutral-200);
+      border-radius:var(--radius-md);
+      padding:1.5rem;
+    }
+    .toc-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--neutral-600);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+    .toc ul{list-style:none;display:flex;flex-direction:column;gap:0.25rem;}
+    .toc ul li a{display:block;padding:6px 10px;border-radius:6px;font-size:0.82rem;color:var(--neutral-600);text-decoration:none;transition:var(--transition);border-left:2px solid transparent;}
+    .toc ul li a:hover{color:var(--primary);background:rgba(45,106,79,0.06);border-left-color:var(--primary-light);}
+    @media(max-width:900px){.toc{position:static;}}
+
+    /* CONTENT AREA */
+    .policy-content{min-width:0;}
+    .policy-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--neutral-200);}
+    .policy-section:last-child{border-bottom:none;margin-bottom:0;}
+    .policy-section h2{font-size:1.35rem;font-weight:700;color:var(--primary-dark);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;}
+    .policy-section h2 .sec-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:rgba(82,183,136,0.15);color:var(--primary);font-size:0.75rem;font-weight:700;flex-shrink:0;}
+    .policy-section h3{font-size:1rem;font-weight:600;color:var(--neutral-900);margin:1.25rem 0 0.5rem;}
+    .policy-section p{color:var(--neutral-700);line-height:1.8;margin-bottom:0.75rem;}
+    .policy-section p:last-child{margin-bottom:0;}
+    .policy-section ul,.policy-section ol{padding-left:1.25rem;margin-bottom:0.75rem;color:var(--neutral-700);}
+    .policy-section li{margin-bottom:0.4rem;line-height:1.7;}
+    .policy-section strong{color:var(--neutral-900);}
+
+    /* Info box */
+    .info-box{background:rgba(82,183,136,0.08);border:1px solid rgba(82,183,136,0.25);border-left:3px solid var(--primary-light);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin:1rem 0;font-size:0.9rem;color:var(--neutral-700);}
+    .info-box strong{color:var(--primary-dark);}
+
+    /* Warning box */
+    .warn-box{background:rgba(127,85,57,0.07);border:1px solid rgba(127,85,57,0.22);border-left:3px solid #7F5539;border-radius:var(--radius-sm);padding:1rem 1.25rem;margin:1rem 0;font-size:0.9rem;color:var(--neutral-700);}
+    .warn-box strong{color:#5a3c25;}
+
+    /* Shipping table */
+    .shipping-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.88rem;}
+    .shipping-table th{background:var(--primary-dark);color:var(--white);text-align:left;padding:10px 14px;font-size:0.78rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;}
+    .shipping-table th:first-child{border-radius:6px 0 0 0;}
+    .shipping-table th:last-child{border-radius:0 6px 0 0;}
+    .shipping-table td{padding:10px 14px;border-bottom:1px solid var(--neutral-200);color:var(--neutral-700);}
+    .shipping-table tr:last-child td{border-bottom:none;}
+    .shipping-table tr:nth-child(even) td{background:var(--neutral-50);}
+
+    /* Steps list */
+    .steps-list{list-style:none;padding:0;margin:1rem 0;display:flex;flex-direction:column;gap:0.75rem;}
+    .steps-list li{display:flex;align-items:flex-start;gap:0.75rem;padding:0.875rem 1rem;background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-sm);}
+    .step-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--primary);color:var(--white);font-size:0.72rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+
+    /* Contact CTA box */
+    .contact-cta{background:linear-gradient(135deg,var(--primary-dark) 0%,#142d22 100%);border-radius:var(--radius-md);padding:2rem;margin-top:1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+    .contact-cta p{color:rgba(255,255,255,0.8);font-size:0.9rem;line-height:1.6;flex:1;margin:0;}
+    .contact-cta a.btn-cta{display:inline-block;padding:10px 22px;background:var(--primary-light);color:var(--primary-dark);font-weight:600;font-size:0.88rem;border-radius:var(--radius-sm);text-decoration:none;white-space:nowrap;transition:var(--transition);flex-shrink:0;}
+    .contact-cta a.btn-cta:hover{background:var(--white);text-decoration:none;}
+
+    /* FOOTER */
+    .site-footer{background:var(--primary-dark);color:rgba(255,255,255,0.75);padding-block:clamp(3rem,6vw,5rem);}
+    .footer-grid{display:grid;grid-template-columns:2fr 1.5fr 1.5fr 2fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .footer-brand .nav-logo{margin-bottom:1rem;}
+    .footer-brand p{font-size:0.875rem;line-height:1.7;margin-bottom:0.75rem;}
+    .footer-brand .location{display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:rgba(255,255,255,0.5);}
+    .footer-col h4{color:var(--white);font-size:0.875rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.25rem;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+    .footer-col ul a{color:rgba(255,255,255,0.65);font-size:0.875rem;text-decoration:none;transition:var(--transition);}
+    .footer-col ul a:hover{color:var(--primary-light);}
+    .footer-contact p{font-size:0.875rem;line-height:1.7;margin-bottom:0.5rem;}
+    .footer-contact a{color:var(--primary-light);}
+    .footer-contact a:hover{text-decoration:underline;}
+    .footer-vision p{font-size:1rem;font-style:italic;color:rgba(255,255,255,0.6);line-height:1.8;}
+    .footer-vision p strong{display:block;font-style:normal;color:var(--primary-light);font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+    .footer-bottom{padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+    .footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.4);}
+    .footer-bottom a{color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;}
+    .footer-bottom a:hover{color:var(--primary-light);}
+    @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem;}.footer-bottom{flex-direction:column;text-align:center;}}
+  
+      /* ── LANGUAGE SWITCHER (EN | FR | DE) ── */
+      .nav-lang-switch,
+      .mobile-lang-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: inherit;          /* inherit nav font-size */
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        margin-left: 0.5rem;
+      }
+      .mobile-lang-switch {
+        margin: 1.25rem 0 0.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        gap: 0.75rem;
+      }
+      .nav-lang-switch .ls-lang,
+      .mobile-lang-switch .ls-lang {
+        color: rgba(255,255,255,0.55);  /* muted glass, matches nav over hero */
+        text-decoration: none;
+        transition: color 0.2s ease, opacity 0.2s ease;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+      /* On non-hero (white) sections, the nav wrapper shifts tone via the
+         existing .scrolled-past-hero class; we mirror that with explicit
+         muted text that lifts on hover. */
+      .nav-lang-switch .ls-lang:hover,
+      .mobile-lang-switch .ls-lang:hover {
+        color: var(--primary-light);
+        text-decoration: none;
+        opacity: 1;
+      }
+      .nav-lang-switch .ls-lang.active,
+      .mobile-lang-switch .ls-lang.active {
+        color: var(--primary-light);
+        font-weight: 700;
+        opacity: 1;
+        cursor: default;
+      }
+      .nav-lang-switch .ls-lang.active:hover,
+      .mobile-lang-switch .ls-lang.active:hover {
+        color: var(--primary-light);
+      }
+    </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="container nav-inner" aria-label="Hauptnavigation">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span class="nav-logo-text">Terra<span>Digester</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Startseite</a></li>
+        <li class="nav-dropdown"><a href="#">Lösungen</a>
+          <div class="dropdown-menu">
+            <a href="../food-waste-systems.html">Lebensmittelabfall-Systeme</a>
+            <a href="../bio-toilet-solutions.html">Bio-Toiletten-Lösungen</a>
+            <a href="../dairy-farmers-system.html">Milchbauern-System</a>
+            <a href="../buy-carbon.html">CO₂-Zertifikate kaufen</a>
+          </div>
+        </li>
+        <li><a href="../technology.html">Technologie</a></li>
+        <li><a href="../about.html">Über uns</a></li><li><a href="../reseller-program.html">Wiederverkäufer-Programm</a></li>
+        <li class="nav-lang-switch" aria-label="Sprache wechseln" data-lang-switch="lang-switcher-en-fr-de"><a href="../terms-of-use.html" class="ls-lang" hreflang="en" lang="en">EN</a> <a href="../fr/terms-of-use.html" class="ls-lang" hreflang="fr" lang="fr">FR</a> <a href="terms-of-use.html" class="ls-lang active" hreflang="de" lang="de">DE</a></li>
+      
+        <li><a href="../contact.html" class="nav-cta">Kontakt</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Navigation öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose">✕</button>
+    <div class="mobile-nav-links">
+      <a href="../index.html">Startseite</a>
+      <a href="../food-waste-systems.html" class="sub-link">— Lebensmittelabfall-Systeme</a>
+      <a href="../bio-toilet-solutions.html" class="sub-link">— Bio-Toiletten-Lösungen</a>
+      <a href="../dairy-farmers-system.html" class="sub-link">— Milchbauern-System</a>
+      <a href="../buy-carbon.html" class="sub-link">— CO₂-Zertifikate kaufen</a>
+      <a href="../technology.html">Technologie</a>
+      <a href="../about.html">Über uns</a>
+      <a href="../reseller-program.html" class="sub-link">— Wiederverkäufer-Programm</a>
+      <a href="../contact.html">Kontakt</a>
+      <div class="mobile-lang-switch" data-lang-switch="lang-switcher-en-fr-de"><a href="../terms-of-use.html" class="ls-lang" hreflang="en" lang="en">EN</a> <a href="../fr/terms-of-use.html" class="ls-lang" hreflang="fr" lang="fr">FR</a> <a href="terms-of-use.html" class="ls-lang active" hreflang="de" lang="de">DE</a></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Nutzungsbedingungen hero">
+      <div class="container hero-content">
+        <div class="breadcrumb">
+          <a href="../index.html">Startseite</a><span>/</span><span class="current">Nutzungsbedingungen</span>
+        </div>
+        <span class="section-label">Legal &amp; Compliance</span>
+        <h1>Terms <em>of Use</em></h1>
+        <div class="hero-meta">
+          <span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4.5V7L8.5 8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Last updated: June 2026
+          </span>
+          <span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C5.07 1 3.5 2.57 3.5 4.5C3.5 7.25 7 11 7 11C7 11 10.5 7.25 10.5 4.5C10.5 2.57 8.93 1 7 1Z" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1.2"/></svg>
+            Terra Digester — Brussels, Belgium
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="container">
+      <div class="page-layout">
+
+        <!-- TABLE OF CONTENTS -->
+        <aside class="toc fade-in" aria-label="Table of contents">
+          <div class="toc-title">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3.5H12M2 7H9M2 10.5H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Contents
+          </div>
+          <ul>
+            <li><a href="#acceptance">Acceptance of Terms</a></li>
+            <li><a href="#use-of-site">Use of This Website</a></li>
+            <li><a href="#intellectual-property">Intellectual Property</a></li>
+            <li><a href="#products-services">Products &amp; Services</a></li>
+            <li><a href="#shipping">Shipping &amp; Delivery</a></li>
+            <li><a href="#warranty">Warranty</a></li>
+            <li><a href="#returns">Returns &amp; Cancellations</a></li>
+            <li><a href="#refunds">Refunds</a></li>
+            <li><a href="#disclaimer">Disclaimers</a></li>
+            <li><a href="#limitation">Limitation of Liability</a></li>
+            <li><a href="#indemnification">Indemnification</a></li>
+            <li><a href="#governing-law">Governing Law</a></li>
+            <li><a href="#changes">Changes to Terms</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+          </ul>
+        </aside>
+
+        <!-- TERMS CONTENT -->
+        <article class="policy-content">
+
+          <!-- Acceptance -->
+          <section class="policy-section fade-in" id="acceptance">
+            <h2><span class="sec-num">—</span>Acceptance of Terms</h2>
+            <div class="info-box">
+              By accessing or using the Terra Digester website at <a href="https://www.terradigester.com">www.terradigester.com</a> (the "<strong>Website</strong>"), or by enquiring about, ordering, or using any of our products or services, you agree to be bound by these Nutzungsbedingungen ("<strong>Terms</strong>"). Please read them carefully before proceeding.
+            </div>
+            <p>These Terms constitute a legally binding agreement between you ("<strong>you</strong>", "<strong>your</strong>", the "<strong>User</strong>") and <strong>Terra Digester</strong> ("<strong>we</strong>", "<strong>our</strong>", "<strong>us</strong>"), a biotechnology company incorporated and operating from Brussels, Belgium.</p>
+            <p>If you do not agree to these Terms, please discontinue your use of this Website. We reserve the right to update these Terms at any time. Continued use of the Website after changes have been posted constitutes your acceptance of the revised Terms.</p>
+          </section>
+
+          <!-- Use of Site -->
+          <section class="policy-section fade-in" id="use-of-site">
+            <h2><span class="sec-num">1</span>Use of This Website</h2>
+            <p>You may use this Website for lawful purposes only and in accordance with these Terms. By using this Website, you agree that you will <strong>not</strong>:</p>
+            <ul>
+              <li>Use the Website in any way that violates applicable local, national, or international law or regulation</li>
+              <li>Transmit any unsolicited or unauthorised advertising, promotional material, or spam</li>
+              <li>Attempt to gain unauthorised access to any part of the Website, server, or database</li>
+              <li>Introduce viruses, trojans, worms, or other malicious or harmful code</li>
+              <li>Scrape, extract, or systematically collect data from the Website by automated means without our express written permission</li>
+              <li>Impersonate Terra Digester, our staff, or any other person or entity</li>
+              <li>Reproduce, duplicate, or exploit any portion of the Website for commercial purposes without our authorisation</li>
+            </ul>
+            <p>We reserve the right to suspend or terminate access to the Website at our sole discretion, without notice, for conduct that we believe violates these Terms or is harmful to other users, us, third parties, or the public.</p>
+          </section>
+
+          <!-- Intellectual Property -->
+          <section class="policy-section fade-in" id="intellectual-property">
+            <h2><span class="sec-num">2</span>Intellectual Property</h2>
+            <p>All content published on this Website — including but not limited to text, graphics, logos, icons, images, flow diagrams, videos, and technical documentation — is the property of Terra Digester or its licensors and is protected by applicable intellectual property laws.</p>
+            <p>You are granted a limited, non-exclusive, non-transferable licence to access and use the Website content for personal, non-commercial informational purposes only. This licence does not include:</p>
+            <ul>
+              <li>Resale or commercial use of any Website content</li>
+              <li>Reproduction, duplication, or copying of materials for redistribution</li>
+              <li>Use of data mining, robots, or similar automated tools to extract content</li>
+              <li>Downloading or copying of account information for another entity's benefit</li>
+            </ul>
+            <p>Any unauthorised use terminates the permission or licence granted by Terra Digester. The Terra Digester name, logo, and product names are trademarks of Terra Digester. Nothing in these Terms grants you any right to use them without our prior written consent.</p>
+          </section>
+
+          <!-- Products & Services -->
+          <section class="policy-section fade-in" id="products-services">
+            <h2><span class="sec-num">3</span>Products &amp; Services</h2>
+            <p>Terra Digester provides integrated biotechnology systems for anaerobic digestion, including Lebensmittelabfall-Systeme, Bio-Toiletten-Lösungen, Milchbauern-Systems, and Carbon Credit programmes. Information provided on this Website is for general informational purposes and is subject to change without notice.</p>
+            <h3>Accuracy of Information</h3>
+            <p>We take reasonable steps to ensure the accuracy of product descriptions, performance data, and technical specifications published on this Website. However, we do not warrant that all information is complete, current, or error-free. Technical performance outcomes (e.g. biogas output, CO₂ reductions) represent typical values and may vary depending on installation conditions, waste inputs, climate, and usage patterns.</p>
+            <h3>Enquiries &amp; Orders</h3>
+            <p>Product enquiries, partnership applications, and deployment requests submitted via our Website or by email are treated as expressions of interest and do not constitute binding commercial agreements until confirmed in writing by Terra Digester. We reserve the right to decline any order or request at our discretion.</p>
+            <div class="info-box">
+              <strong>Custom deployments:</strong> Many of our systems are engineered and deployed through bespoke partnership arrangements. Commercial terms for such projects are agreed separately and supersede these general Nutzungsbedingungen.
+            </div>
+          </section>
+
+          <!-- Shipping -->
+          <section class="policy-section fade-in" id="shipping">
+            <h2><span class="sec-num">4</span>Shipping &amp; Delivery</h2>
+            <p>For product orders confirmed through Terra Digester, the following shipping terms apply unless otherwise specified in your order confirmation:</p>
+
+            <div class="warn-box">
+              <strong>International Orders:</strong> For all international shipments, it is the customer's responsibility to pay all applicable import taxes, customs duties, and any other charges levied by the destination country. Products are shipped under <strong>DAP (Delivered at Place)</strong> terms — Terra Digester is responsible for delivery to the named destination; the buyer bears all costs and risks upon arrival.
+            </div>
+
+            <table class="shipping-table" aria-label="Estimated shipping times by region">
+              <thead>
+                <tr>
+                  <th>Region</th>
+                  <th>Order Processing</th>
+                  <th>Estimated Delivery*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Europe</td>
+                  <td>Up to 10 business days</td>
+                  <td>Up to 20 business days</td>
+                </tr>
+                <tr>
+                  <td>United States</td>
+                  <td>Up to 10 business days</td>
+                  <td>Up to 20 business days</td>
+                </tr>
+                <tr>
+                  <td>Australia &amp; Pacific</td>
+                  <td>Up to 10 business days</td>
+                  <td>Up to 25 business days</td>
+                </tr>
+                <tr>
+                  <td>Africa &amp; Asia</td>
+                  <td>Up to 10 business days</td>
+                  <td>Up to 25 business days</td>
+                </tr>
+                <tr>
+                  <td>Rest of World</td>
+                  <td>Up to 10 business days</td>
+                  <td>Up to 30 business days</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><em>* Delivery times refer to arrival at the destination country, <strong>not including</strong> customs clearance procedures. As the importer of record, you are responsible for ensuring availability for customs procedures and any related delays or costs.</em></p>
+            <p>Actual delivery times may vary due to carrier delays, customs processing, or circumstances beyond our control. We will provide shipment tracking information where available.</p>
+          </section>
+
+          <!-- Warranty -->
+          <section class="policy-section fade-in" id="warranty">
+            <h2><span class="sec-num">5</span>Warranty</h2>
+            <p>Terra Digester warrants that, for a period of <strong>24 months</strong> from the date of delivery, each product will be free from defects in materials and workmanship under normal use conditions.</p>
+            <p>During the warranty period, we will provide — free of charge — replacement of any component that is confirmed to be faulty or has failed as a result of a manufacturing defect. This warranty covers:</p>
+            <ul>
+              <li>Structural components and tanks forming part of the digester system</li>
+              <li>Gas collection and piping components supplied with the system</li>
+              <li>Mechanical parts included in the original product delivery</li>
+            </ul>
+
+            <h3>Warranty Exclusions</h3>
+            <p>This warranty does <strong>not</strong> cover:</p>
+            <ul>
+              <li>Damage resulting from improper installation, misuse, or neglect</li>
+              <li>Damage caused by accident, natural disaster, or external factors outside normal operating conditions</li>
+              <li>Modifications or repairs carried out without authorisation from Terra Digester</li>
+              <li>Normal wear and tear, consumable parts, or components not supplied by Terra Digester</li>
+              <li>Performance variations due to suboptimal waste inputs, climate conditions, or incorrect operation</li>
+            </ul>
+
+            <div class="info-box">
+              To initiate a warranty claim, please contact us at <a href="mailto:info@terradigester.com">info@terradigester.com</a> with your order number, a description of the defect, and supporting photographs where possible. We will assess your claim and respond within 10 business days.
+            </div>
+          </section>
+
+          <!-- Returns -->
+          <section class="policy-section fade-in" id="returns">
+            <h2><span class="sec-num">6</span>Returns &amp; Cancellations</h2>
+            <p>Terra Digester is committed to customer satisfaction. We understand that circumstances can change, and we have established the following return and cancellation policy to be fair to both parties.</p>
+
+            <h3>Cancellation Before Dispatch</h3>
+            <p>If you wish to cancel your order, you must contact us <strong>within 3 calendar days</strong> of receiving your written order confirmation. Cancellations received within this window are eligible for a <strong>full refund minus a 5% administrative and payment processing fee</strong>.</p>
+
+            <h3>No Returns After Dispatch</h3>
+            <div class="warn-box">
+              <strong>Important:</strong> Due to the nature of our products — which are custom-configured biotechnology systems requiring careful preparation and logistics — <strong>all sales are final once the product has been dispatched</strong>. We are unable to accept returns or issue refunds after dispatch under any circumstances, other than valid warranty claims as described above.
+            </div>
+
+            <p>We strongly encourage all customers to:</p>
+            <ul>
+              <li>Carefully review product specifications and suitability before placing an order</li>
+              <li>Contact us with any technical questions prior to confirming your purchase</li>
+              <li>Ensure that site conditions, infrastructure requirements, and local regulations permit installation before ordering</li>
+            </ul>
+
+            <h3>How to Initiate a Cancellation</h3>
+            <ol class="steps-list">
+              <li><span class="step-num">1</span><span>Email <a href="mailto:info@terradigester.com">info@terradigester.com</a> within 3 days of your order confirmation</span></li>
+              <li><span class="step-num">2</span><span>Include your full name and order reference number</span></li>
+              <li><span class="step-num">3</span><span>We will confirm receipt and process your cancellation request within 3 business days</span></li>
+            </ol>
+          </section>
+
+          <!-- Refunds -->
+          <section class="policy-section fade-in" id="refunds">
+            <h2><span class="sec-num">7</span>Refunds</h2>
+            <p>Once a valid cancellation request is received and approved (within the 3-day window), we will initiate the refund process. You will receive an email confirming receipt of your request and the outcome of our review.</p>
+            <p>Approved refunds are processed back to the original payment method and typically appear within <strong>2–10 business days</strong>, depending on your bank or payment provider.</p>
+
+            <h3>If You Have Not Received Your Refund</h3>
+            <p>If you believe your refund is delayed, please follow these steps before contacting us:</p>
+            <ol>
+              <li>Check your bank account or payment provider statement</li>
+              <li>Contact your credit card company or bank — processing times can vary by institution</li>
+              <li>Allow up to 10 business days from the date of our refund confirmation email</li>
+            </ol>
+            <p>If you have completed the above steps and still have not received your refund, please contact us at <a href="mailto:info@terradigester.com">info@terradigester.com</a> with your order number and we will investigate promptly.</p>
+          </section>
+
+          <!-- Disclaimers -->
+          <section class="policy-section fade-in" id="disclaimer">
+            <h2><span class="sec-num">8</span>Disclaimers</h2>
+            <p>This Website and its content are provided on an "<strong>as is</strong>" and "<strong>as available</strong>" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+            <p>Terra Digester does not warrant that:</p>
+            <ul>
+              <li>The Website will be uninterrupted, error-free, or secure at all times</li>
+              <li>Any errors or defects in the Website will be corrected</li>
+              <li>The Website or the server that makes it available are free of viruses or other harmful components</li>
+              <li>Results obtained from using the Website or our products will meet your specific requirements or expectations</li>
+            </ul>
+            <p>Performance figures and case study data published on this Website represent indicative outcomes based on typical conditions and should not be construed as guaranteed results for any specific installation.</p>
+          </section>
+
+          <!-- Limitation of Liability -->
+          <section class="policy-section fade-in" id="limitation">
+            <h2><span class="sec-num">9</span>Limitation of Liability</h2>
+            <p>To the fullest extent permitted by applicable law, Terra Digester, its directors, employees, agents, licensors, and service providers shall not be liable for any indirect, incidental, special, consequential, or punitive damages — including but not limited to loss of profits, data, revenue, goodwill, or business — arising out of or in connection with:</p>
+            <ul>
+              <li>Your use of, or inability to use, this Website</li>
+              <li>Any information obtained from this Website</li>
+              <li>Unauthorised access to or alteration of your data</li>
+              <li>Statements or conduct of any third party on the Website</li>
+              <li>Any other matter relating to our products or services</li>
+            </ul>
+            <p>Our total aggregate liability to you for any claim arising out of or in connection with these Terms or your use of the Website shall not exceed the amount paid by you to Terra Digester in the 12 months preceding the claim, or €100, whichever is greater.</p>
+            <p>Nothing in these Terms limits or excludes liability for death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be limited under applicable Belgian or EU law.</p>
+          </section>
+
+          <!-- Indemnification -->
+          <section class="policy-section fade-in" id="indemnification">
+            <h2><span class="sec-num">10</span>Indemnification</h2>
+            <p>You agree to defend, indemnify, and hold harmless Terra Digester, its affiliates, officers, directors, employees, and agents from and against any claims, damages, obligations, losses, liabilities, costs, and expenses (including legal fees) arising from:</p>
+            <ul>
+              <li>Your use of, or access to, this Website</li>
+              <li>Your violation of these Nutzungsbedingungen</li>
+              <li>Your violation of any third-party rights, including intellectual property or privacy rights</li>
+              <li>Any content you submit, post, or transmit through the Website</li>
+            </ul>
+          </section>
+
+          <!-- Governing Law -->
+          <section class="policy-section fade-in" id="governing-law">
+            <h2><span class="sec-num">11</span>Governing Law &amp; Jurisdiction</h2>
+            <p>These Nutzungsbedingungen shall be governed by and construed in accordance with the laws of <strong>Belgium</strong>, without giving effect to any conflict of law provisions.</p>
+            <p>Any dispute, controversy, or claim arising out of or relating to these Terms, or the breach, termination, or invalidity thereof, shall be subject to the exclusive jurisdiction of the competent courts of <strong>Brussels, Belgium</strong>.</p>
+            <p>If you are a consumer based in the European Union, you also benefit from the mandatory consumer protection laws of your country of residence. Nothing in these Terms affects your rights as an EU consumer.</p>
+            <div class="info-box">
+              <strong>EU Online Dispute Resolution:</strong> The European Commission provides an Online Dispute Resolution (ODR) platform for resolving consumer disputes: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.
+            </div>
+          </section>
+
+          <!-- Changes -->
+          <section class="policy-section fade-in" id="changes">
+            <h2><span class="sec-num">12</span>Changes to These Terms</h2>
+            <p>We reserve the right to revise, amend, or modify these Nutzungsbedingungen at any time. Changes will take effect immediately upon posting to this page, with the "Last updated" date revised accordingly.</p>
+            <p>It is your responsibility to review these Terms periodically. Your continued use of the Website following any changes constitutes your acceptance of those changes. If you do not agree to any modifications, you should discontinue use of the Website.</p>
+          </section>
+
+          <!-- Contact -->
+          <section class="policy-section fade-in" id="contact-us">
+            <h2><span class="sec-num">13</span>Contact Us</h2>
+            <p>If you have any questions about these Nutzungsbedingungen, wish to raise a concern, or need assistance with a product order, cancellation, warranty, or refund, please contact us:</p>
+            <div class="contact-cta">
+              <p>
+                <strong style="color:var(--white);display:block;margin-bottom:0.4rem;">Terra Digester</strong>
+                Brussels, Belgium — European Union<br>
+                Email: <a href="mailto:info@terradigester.com" style="color:var(--primary-light);">info@terradigester.com</a>
+              </p>
+              <a href="../contact.html" class="btn-cta">Get in Touch</a>
+            </div>
+            <p style="margin-top:1.25rem;font-size:0.875rem;color:var(--neutral-600);">We aim to respond to all enquiries within 3 business days. For urgent warranty or order matters, please indicate the nature of your request in the subject line of your email.</p>
+          </section>
+
+        </article>
+      </div><!-- /.page-layout -->
+    </div><!-- /.container -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="nav-logo-text">Terra<span>Digester</span></span></a>
+          <p>Waste into value. Systems for a circular future.</p>
+          <p>Pioneering biotechnology for organic waste recovery, clean energy, and circular nutrient cycles.</p>
+          <div class="location"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5C2.5 7.25 6 11 6 11C6 11 9.5 7.25 9.5 4.5C9.5 2.57 7.93 1 6 1Z" stroke="currentColor" stroke-width="1"/><circle cx="6" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1"/></svg> Brussels, Belgium</div>
+        </div>
+        <div class="footer-col"><h4>Schnellzugriff</h4><ul><li><a href="../index.html">Startseite</a></li><li><a href="../food-waste-systems.html">Lebensmittelabfall-Systeme</a></li><li><a href="../bio-toilet-solutions.html">Bio-Toiletten-Lösungen</a></li><li><a href="../dairy-farmers-system.html">Milchbauern-System</a></li><li><a href="../buy-carbon.html">CO₂-Zertifikate kaufen</a></li><li><a href="../technology.html">Technologie</a></li><li><a href="../about.html">Über uns</a></li><li><a href="../reseller-program.html">Wiederverkäufer-Programm</a></li><li><a href="../contact.html">Kontakt</a></li></ul></div>
+        <div class="footer-col footer-contact"><h4>Contact</h4><p><a href="mailto:info@terradigester.com">info@terradigester.com</a></p><p>Brussels, Belgium<br>European Union</p></div>
+        <div class="footer-col footer-vision"><h4>Our Purpose</h4><p><strong>Building circular systems</strong>"Building circular systems for a resilient future — where organic waste becomes clean energy, fertile soil, and measurable climate value. From Brussels to communities worldwide."</p></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Terra Digester. Alle Rechte vorbehalten.</p>
+        <div style="display:flex;gap:1.5rem;">
+          <a href="../privacy-policy.html">Datenschutzerklärung</a>
+          <a href="terms-of-use.html" style="color:var(--primary-light);">Nutzungsbedingungen</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileToggle=document.getElementById('mobileToggle'),mobileNav=document.getElementById('mobileNav'),mobileClose=document.getElementById('mobileClose');
+    mobileToggle.addEventListener('click',()=>{mobileNav.classList.add('open');document.body.style.overflow='hidden';});
+    mobileClose.addEventListener('click',()=>{mobileNav.classList.remove('open');document.body.style.overflow='';});
+    mobileNav.addEventListener('click',(e)=>{if(e.target===mobileNav){mobileNav.classList.remove('open');document.body.style.overflow='';}});
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+    const header=document.querySelector('.site-header');
+    window.addEventListener('scroll',()=>{header.style.background=window.scrollY>60?'rgba(27,58,45,0.98)':'rgba(27,58,45,0.96)';},{passive:true});
+  </script>
+  <script>
+  (function(){
+    document.querySelectorAll('.nav-dropdown').forEach(function(item){
+      var menu=item.querySelector('.dropdown-menu');
+      if(!menu)return;
+      var timer=null;
+      function show(){clearTimeout(timer);menu.classList.add('open');}
+      function hide(){timer=setTimeout(function(){menu.classList.remove('open');},150);}
+      item.addEventListener('mouseenter',show);item.addEventListener('mouseleave',hide);
+      menu.addEventListener('mouseenter',show);menu.addEventListener('mouseleave',hide);
+    });
+  })();
+  </script>
+</body>
+</html>

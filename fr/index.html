@@ -1089,7 +1089,53 @@
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
-  </style>
+  
+      /* ── LANGUAGE SWITCHER (EN | FR | DE) ── */
+      .nav-lang-switch,
+      .mobile-lang-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: inherit;          /* inherit nav font-size */
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        margin-left: 0.5rem;
+      }
+      .mobile-lang-switch {
+        margin: 1.25rem 0 0.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        gap: 0.75rem;
+      }
+      .nav-lang-switch .ls-lang,
+      .mobile-lang-switch .ls-lang {
+        color: rgba(255,255,255,0.55);  /* muted glass, matches nav over hero */
+        text-decoration: none;
+        transition: color 0.2s ease, opacity 0.2s ease;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+      /* On non-hero (white) sections, the nav wrapper shifts tone via the
+         existing .scrolled-past-hero class; we mirror that with explicit
+         muted text that lifts on hover. */
+      .nav-lang-switch .ls-lang:hover,
+      .mobile-lang-switch .ls-lang:hover {
+        color: var(--primary-light);
+        text-decoration: none;
+        opacity: 1;
+      }
+      .nav-lang-switch .ls-lang.active,
+      .mobile-lang-switch .ls-lang.active {
+        color: var(--primary-light);
+        font-weight: 700;
+        opacity: 1;
+        cursor: default;
+      }
+      .nav-lang-switch .ls-lang.active:hover,
+      .mobile-lang-switch .ls-lang.active:hover {
+        color: var(--primary-light);
+      }
+    </style>
 </head>
 <body>
 
@@ -1121,6 +1167,8 @@
         </li>
         <li><a href="technology.html">Technologie</a></li>
         <li><a href="about.html">À propos</a></li><li><a href="reseller-program.html">Programme de revente</a></li>
+        <li class="nav-lang-switch" aria-label="Switch language" data-lang-switch="lang-switcher-en-fr-de"><a href="../index.html" class="ls-lang" hreflang="en" lang="en">EN</a> <a href="index.html" class="ls-lang active" hreflang="fr" lang="fr">FR</a> <a href="../de/index.html" class="ls-lang" hreflang="de" lang="de">DE</a></li>
+      
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
 
@@ -1143,6 +1191,7 @@
       <a href="about.html">À propos</a>
       <a href="reseller-program.html" class="sub-link">— Programme de revente</a>
       <a href="contact.html">Contact</a>
+      <div class="mobile-lang-switch" data-lang-switch="lang-switcher-en-fr-de"><a href="../index.html" class="ls-lang" hreflang="en" lang="en">EN</a> <a href="index.html" class="ls-lang active" hreflang="fr" lang="fr">FR</a> <a href="../de/index.html" class="ls-lang" hreflang="de" lang="de">DE</a></div>
     </div>
   </div>
 

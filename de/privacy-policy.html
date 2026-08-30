@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2352B788'/><path d='M16 4C16 4 8 8 8 14C8 17.3 10.7 20 16 20C19.3 20 22 17.3 22 14C22 8 16 4 16 4Z' stroke='%231B3A2D' stroke-width='1.5' fill='none'/></svg>" type="image/svg+xml">
+  <meta name="description" content="Terra Digester Datenschutzerklärung — how we collect, use, and protect your personal data. Based in Brussels, Belgium." />
+  <title>Datenschutzerklärung | Terra Digester — Anaerobic Digestion Systems</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --primary-dark:#1B3A2D;--primary:#2D6A4F;--primary-light:#52B788;
+      --neutral-900:#1A1A1A;--neutral-700:#374151;--neutral-600:#6B7280;
+      --neutral-200:#E5E7EB;--neutral-100:#F3F4F6;--neutral-50:#F9FAFB;--white:#FFFFFF;
+      --radius-sm:8px;--radius-md:12px;--radius-lg:20px;
+      --transition:all 0.3s ease;
+      --shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 8px 25px rgba(0,0,0,0.10);
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:1rem;line-height:1.75;color:var(--neutral-900);background:var(--white);overflow-x:hidden;}
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .container{width:100%;max-width:1200px;margin-inline:auto;padding-inline:clamp(1rem,4vw,2rem);}
+
+    /* FADE-IN */
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+
+    /* NAV */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,58,45,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:2rem;}
+    .nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;flex-shrink:0;}
+    .nav-logo-mark{width:36px;height:36px;border-radius:8px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;}
+    .nav-logo-text{font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:-0.01em;}
+    .nav-logo-text span{color:var(--primary-light);}
+    .nav-links{display:flex;align-items:center;gap:0.25rem;list-style:none;}
+    .nav-links a{display:block;padding:8px 14px;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;border-radius:6px;transition:var(--transition);text-decoration:none;}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,0.1);}
+    .nav-dropdown{position:relative;}
+    .nav-dropdown>a::after{content:' ▾';font-size:0.75rem;opacity:0.7;}
+    .dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--primary-dark);border-radius:var(--radius-sm);min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);z-index:100;}
+    .dropdown-menu a{padding:10px 18px;display:block;color:rgba(255,255,255,0.85);font-size:0.875rem;border-radius:0;border-bottom:1px solid rgba(255,255,255,0.06);transition:var(--transition);}
+    .dropdown-menu a:last-child{border-bottom:none;}
+    .dropdown-menu a:hover{background:rgba(82,183,136,0.2);color:var(--white);}
+    .dropdown-menu.open{display:block;}
+    .nav-cta{background:var(--primary-light)!important;color:var(--primary-dark)!important;font-weight:600!important;padding:8px 18px!important;}
+    .nav-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .nav-mobile-toggle span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--primary-dark);z-index:999;padding:2rem;flex-direction:column;gap:1rem;overflow-y:auto;}
+    .mobile-nav-overlay.open{display:flex;}
+    .mobile-nav-close{align-self:flex-end;background:none;border:none;color:var(--white);font-size:1.75rem;cursor:pointer;}
+    .mobile-nav-links{display:flex;flex-direction:column;gap:0.25rem;margin-top:1rem;}
+    .mobile-nav-links a{color:rgba(255,255,255,0.9);font-size:1.1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);text-decoration:none;}
+    .mobile-nav-links a:hover{color:var(--primary-light);}
+    .mobile-nav-links .sub-link{padding-left:1.25rem;font-size:1rem;color:rgba(255,255,255,0.7);}
+    @media(max-width:1024px){.nav-links{display:none;}.nav-mobile-toggle{display:flex;}}
+
+    /* HERO */
+    .hero{
+      padding-top:72px;
+      min-height:38vh;
+      display:flex;align-items:center;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%,rgba(45,106,79,0.45) 0%,transparent 70%),
+        radial-gradient(ellipse 60% 80% at 80% 20%,rgba(27,58,45,0.65) 0%,transparent 60%),
+        linear-gradient(135deg,#0d2219 0%,#1B3A2D 40%,#142d22 100%);
+      position:relative;overflow:hidden;
+    }
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 85%,rgba(82,183,136,0.08) 0%,transparent 35%),radial-gradient(circle at 85% 15%,rgba(127,85,57,0.06) 0%,transparent 30%);pointer-events:none;}
+    .hero-content{position:relative;z-index:2;padding-block:clamp(3rem,6vw,5rem);}
+    .breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1.5rem;}
+    .breadcrumb a{color:rgba(255,255,255,0.55);text-decoration:none;}
+    .breadcrumb a:hover{color:var(--primary-light);}
+    .breadcrumb span{color:rgba(255,255,255,0.3);}
+    .breadcrumb .current{color:rgba(255,255,255,0.75);}
+    .section-label{display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary-light);margin-bottom:0.75rem;}
+    .hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.15;color:var(--white);margin-bottom:1rem;}
+    .hero h1 em{font-style:normal;color:var(--primary-light);}
+    .hero-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:1.25rem;}
+    .hero-meta span{font-size:0.82rem;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:0.4rem;}
+
+    /* PAGE LAYOUT — two-column: TOC + content */
+    .page-layout{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:3rem;
+      align-items:start;
+      padding-block:clamp(3rem,6vw,5rem);
+    }
+    @media(max-width:900px){.page-layout{grid-template-columns:1fr;}}
+
+    /* TABLE OF CONTENTS — sticky sidebar */
+    .toc{
+      position:sticky;
+      top:calc(72px + 2rem);
+      background:var(--neutral-50);
+      border:1px solid var(--neutral-200);
+      border-radius:var(--radius-md);
+      padding:1.5rem;
+    }
+    .toc-title{
+      font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+      color:var(--neutral-600);margin-bottom:1rem;
+      display:flex;align-items:center;gap:0.5rem;
+    }
+    .toc ul{list-style:none;display:flex;flex-direction:column;gap:0.25rem;}
+    .toc ul li a{
+      display:block;padding:6px 10px;border-radius:6px;
+      font-size:0.82rem;color:var(--neutral-600);text-decoration:none;
+      transition:var(--transition);border-left:2px solid transparent;
+    }
+    .toc ul li a:hover{color:var(--primary);background:rgba(45,106,79,0.06);border-left-color:var(--primary-light);}
+    @media(max-width:900px){.toc{position:static;}}
+
+    /* CONTENT AREA */
+    .policy-content{min-width:0;}
+    .policy-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--neutral-200);}
+    .policy-section:last-child{border-bottom:none;margin-bottom:0;}
+
+    .policy-section h2{
+      font-size:1.35rem;font-weight:700;color:var(--primary-dark);
+      margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;
+    }
+    .policy-section h2 .sec-num{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:28px;height:28px;border-radius:6px;
+      background:rgba(82,183,136,0.15);color:var(--primary);
+      font-size:0.75rem;font-weight:700;flex-shrink:0;
+    }
+    .policy-section h3{font-size:1rem;font-weight:600;color:var(--neutral-900);margin:1.25rem 0 0.5rem;}
+    .policy-section p{color:var(--neutral-700);line-height:1.8;margin-bottom:0.75rem;}
+    .policy-section p:last-child{margin-bottom:0;}
+    .policy-section ul,.policy-section ol{padding-left:1.25rem;margin-bottom:0.75rem;color:var(--neutral-700);}
+    .policy-section li{margin-bottom:0.4rem;line-height:1.7;}
+    .policy-section strong{color:var(--neutral-900);}
+
+    /* Highlighted info box */
+    .info-box{
+      background:rgba(82,183,136,0.08);border:1px solid rgba(82,183,136,0.25);
+      border-left:3px solid var(--primary-light);
+      border-radius:var(--radius-sm);padding:1rem 1.25rem;margin:1rem 0;
+      font-size:0.9rem;color:var(--neutral-700);
+    }
+    .info-box strong{color:var(--primary-dark);}
+
+    /* Rights grid */
+    .rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+    @media(max-width:640px){.rights-grid{grid-template-columns:1fr;}}
+    .right-card{background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-sm);padding:1rem;}
+    .right-card h4{font-size:0.88rem;font-weight:600;color:var(--primary-dark);margin-bottom:0.35rem;display:flex;align-items:center;gap:0.5rem;}
+    .right-card h4 svg{flex-shrink:0;}
+    .right-card p{font-size:0.82rem;color:var(--neutral-600);line-height:1.6;margin:0;}
+
+    /* Contact CTA box */
+    .contact-cta{
+      background:linear-gradient(135deg,var(--primary-dark) 0%,#142d22 100%);
+      border-radius:var(--radius-md);padding:2rem;margin-top:1.5rem;
+      display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;
+    }
+    .contact-cta p{color:rgba(255,255,255,0.8);font-size:0.9rem;line-height:1.6;flex:1;margin:0;}
+    .contact-cta a.btn-cta{
+      display:inline-block;padding:10px 22px;background:var(--primary-light);
+      color:var(--primary-dark);font-weight:600;font-size:0.88rem;
+      border-radius:var(--radius-sm);text-decoration:none;white-space:nowrap;
+      transition:var(--transition);flex-shrink:0;
+    }
+    .contact-cta a.btn-cta:hover{background:var(--white);text-decoration:none;}
+
+    /* FOOTER */
+    .site-footer{background:var(--primary-dark);color:rgba(255,255,255,0.75);padding-block:clamp(3rem,6vw,5rem);}
+    .footer-grid{display:grid;grid-template-columns:2fr 1.5fr 1.5fr 2fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .footer-brand .nav-logo{margin-bottom:1rem;}
+    .footer-brand p{font-size:0.875rem;line-height:1.7;margin-bottom:0.75rem;}
+    .footer-brand .location{display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:rgba(255,255,255,0.5);}
+    .footer-col h4{color:var(--white);font-size:0.875rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.25rem;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+    .footer-col ul a{color:rgba(255,255,255,0.65);font-size:0.875rem;text-decoration:none;transition:var(--transition);}
+    .footer-col ul a:hover{color:var(--primary-light);}
+    .footer-contact p{font-size:0.875rem;line-height:1.7;margin-bottom:0.5rem;}
+    .footer-contact a{color:var(--primary-light);}
+    .footer-contact a:hover{text-decoration:underline;}
+    .footer-vision p{font-size:1rem;font-style:italic;color:rgba(255,255,255,0.6);line-height:1.8;}
+    .footer-vision p strong{display:block;font-style:normal;color:var(--primary-light);font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+    .footer-bottom{padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+    .footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.4);}
+    .footer-bottom a{color:rgba(255,255,255,0.5);font-size:0.8rem;text-decoration:none;}
+    .footer-bottom a:hover{color:var(--primary-light);}
+    @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem;}.footer-bottom{flex-direction:column;text-align:center;}}
+  
+      /* ── LANGUAGE SWITCHER (EN | FR | DE) ── */
+      .nav-lang-switch,
+      .mobile-lang-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: inherit;          /* inherit nav font-size */
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        margin-left: 0.5rem;
+      }
+      .mobile-lang-switch {
+        margin: 1.25rem 0 0.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        gap: 0.75rem;
+      }
+      .nav-lang-switch .ls-lang,
+      .mobile-lang-switch .ls-lang {
+        color: rgba(255,255,255,0.55);  /* muted glass, matches nav over hero */
+        text-decoration: none;
+        transition: color 0.2s ease, opacity 0.2s ease;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+      /* On non-hero (white) sections, the nav wrapper shifts tone via the
+         existing .scrolled-past-hero class; we mirror that with explicit
+         muted text that lifts on hover. */
+      .nav-lang-switch .ls-lang:hover,
+      .mobile-lang-switch .ls-lang:hover {
+        color: var(--primary-light);
+        text-decoration: none;
+        opacity: 1;
+      }
+      .nav-lang-switch .ls-lang.active,
+      .mobile-lang-switch .ls-lang.active {
+        color: var(--primary-light);
+        font-weight: 700;
+        opacity: 1;
+        cursor: default;
+      }
+      .nav-lang-switch .ls-lang.active:hover,
+      .mobile-lang-switch .ls-lang.active:hover {
+        color: var(--primary-light);
+      }
+    </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="container nav-inner" aria-label="Hauptnavigation">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span class="nav-logo-text">Terra<span>Digester</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Startseite</a></li>
+        <li class="nav-dropdown"><a href="#">Lösungen</a>
+          <div class="dropdown-menu">
+            <a href="../food-waste-systems.html">Lebensmittelabfall-Systeme</a>
+            <a href="../bio-toilet-solutions.html">Bio-Toiletten-Lösungen</a>
+            <a href="../dairy-farmers-system.html">Milchbauern-System</a>
+            <a href="../buy-carbon.html">CO₂-Zertifikate kaufen</a>
+          </div>
+        </li>
+        <li><a href="../technology.html">Technologie</a></li>
+        <li><a href="../about.html">Über uns</a></li><li><a href="../reseller-program.html">Wiederverkäufer-Programm</a></li>
+        <li class="nav-lang-switch" aria-label="Sprache wechseln" data-lang-switch="lang-switcher-en-fr-de"><a href="../privacy-policy.html" class="ls-lang" hreflang="en" lang="en">EN</a> <a href="../fr/privacy-policy.html" class="ls-lang" hreflang="fr" lang="fr">FR</a> <a href="privacy-policy.html" class="ls-lang active" hreflang="de" lang="de">DE</a></li>
+      
+        <li><a href="../contact.html" class="nav-cta">Kontakt</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Navigation öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose">✕</button>
+    <div class="mobile-nav-links">
+      <a href="../index.html">Startseite</a>
+      <a href="../food-waste-systems.html" class="sub-link">— Lebensmittelabfall-Systeme</a>
+      <a href="../bio-toilet-solutions.html" class="sub-link">— Bio-Toiletten-Lösungen</a>
+      <a href="../dairy-farmers-system.html" class="sub-link">— Milchbauern-System</a>
+      <a href="../buy-carbon.html" class="sub-link">— CO₂-Zertifikate kaufen</a>
+      <a href="../technology.html">Technologie</a>
+      <a href="../about.html">Über uns</a>
+      <a href="../reseller-program.html" class="sub-link">— Wiederverkäufer-Programm</a>
+      <a href="../contact.html">Kontakt</a>
+      <div class="mobile-lang-switch" data-lang-switch="lang-switcher-en-fr-de"><a href="../privacy-policy.html" class="ls-lang" hreflang="en" lang="en">EN</a> <a href="../fr/privacy-policy.html" class="ls-lang" hreflang="fr" lang="fr">FR</a> <a href="privacy-policy.html" class="ls-lang active" hreflang="de" lang="de">DE</a></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Datenschutzerklärung hero">
+      <div class="container hero-content">
+        <div class="breadcrumb">
+          <a href="../index.html">Startseite</a><span>/</span><span class="current">Datenschutzerklärung</span>
+        </div>
+        <span class="section-label">Legal &amp; Compliance</span>
+        <h1>Privacy <em>Policy</em></h1>
+        <div class="hero-meta">
+          <span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4.5V7L8.5 8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Last updated: June 2026
+          </span>
+          <span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C5.07 1 3.5 2.57 3.5 4.5C3.5 7.25 7 11 7 11C7 11 10.5 7.25 10.5 4.5C10.5 2.57 8.93 1 7 1Z" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1.2"/></svg>
+            Terra Digester — Brussels, Belgium
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="container">
+      <div class="page-layout">
+
+        <!-- TABLE OF CONTENTS -->
+        <aside class="toc fade-in" aria-label="Table of contents">
+          <div class="toc-title">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3.5H12M2 7H9M2 10.5H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Contents
+          </div>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#collecting">Information We Collect</a></li>
+            <li><a href="#use">How We Use Your Data</a></li>
+            <li><a href="#disclosure">Disclosure &amp; Transfers</a></li>
+            <li><a href="#rights">Your Rights (GDPR)</a></li>
+            <li><a href="#cookies">Cookies</a></li>
+            <li><a href="#security">Data Security</a></li>
+            <li><a href="#retention">Data Retention</a></li>
+            <li><a href="#children">Children's Privacy</a></li>
+            <li><a href="#links">Third-Party Links</a></li>
+            <li><a href="#changes">Policy Changes</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+          </ul>
+        </aside>
+
+        <!-- POLICY CONTENT -->
+        <article class="policy-content">
+
+          <!-- Overview -->
+          <section class="policy-section fade-in" id="overview">
+            <h2><span class="sec-num">—</span>Overview</h2>
+            <div class="info-box">
+              <strong>Terra Digester</strong> ("<strong>we</strong>", "<strong>our</strong>", "<strong>us</strong>") is committed to protecting the privacy of all visitors to our website and anyone who contacts us in connection with our biotechnology products and services. This Datenschutzerklärung explains what personal data we collect, why we collect it, how we use and protect it, and what rights you have over your information.
+            </div>
+            <p>By using our website at <a href="https://www.terradigester.com">www.terradigester.com</a> (the "<strong>Website</strong>"), you agree to the practices described in this Datenschutzerklärung. If you do not agree, please discontinue use of the Website.</p>
+            <p>Terra Digester provides integrated biotechnology systems that convert organic waste into biogas, clean energy, and nutrient-rich digestate — serving communities, farms, hospitality, municipal bodies, and industrial sectors worldwide. The Website is designed to provide information about our systems, facilitate partnership inquiries, and support our commercial and sustainability mission.</p>
+          </section>
+
+          <!-- Collecting Information -->
+          <section class="policy-section fade-in" id="collecting">
+            <h2><span class="sec-num">1</span>Information We Collect</h2>
+            <p>We collect two categories of information: information you provide voluntarily, and information collected automatically when you visit our Website.</p>
+
+            <h3>A. Information You Provide Voluntarily</h3>
+            <p>Personal information is only collected when you choose to interact with us. This may include your <strong>full name, email address, phone number, company name, country, and the subject of your inquiry</strong>. We collect this information in the following circumstances:</p>
+            <ul>
+              <li><strong>Contact &amp; Enquiries:</strong> When you complete our contact form or send us a direct message regarding our systems, deployment partnerships, or general queries.</li>
+              <li><strong>Partnership &amp; Distributor Applications:</strong> If you express interest in becoming a regional partner or distributor, we collect company details, your role, and information about your intended market or territory.</li>
+              <li><strong>Carbon Credit Purchases:</strong> If you engage with our carbon credit programme, we may collect contact and payment-related details as required to process your transaction via a third-party payment processor.</li>
+              <li><strong>Newsletter &amp; Updates:</strong> If you choose to subscribe to our communications, we collect your email address for that purpose only.</li>
+            </ul>
+
+            <h3>B. Information Collected Automatically</h3>
+            <p>When you visit our Website, certain non-personal information may be collected automatically via cookies and server logs, including:</p>
+            <ul>
+              <li>Browser type and version, operating system</li>
+              <li>Pages visited, time spent on pages, navigation paths</li>
+              <li>Referring website address</li>
+              <li>Approximate geographic location (country/region level)</li>
+              <li>Device type (desktop, tablet, mobile)</li>
+            </ul>
+            <p>This technical information is used in aggregate to improve Website performance and user experience. It is not used to personally identify individual visitors unless combined with information you have provided voluntarily.</p>
+          </section>
+
+          <!-- Use of Information -->
+          <section class="policy-section fade-in" id="use">
+            <h2><span class="sec-num">2</span>How We Use Your Data</h2>
+            <p>We process personal data only for clearly defined purposes. One or more of the following may apply to any information we hold about you:</p>
+
+            <h3>1. Responding to Enquiries &amp; Providing Services</h3>
+            <p>We use your contact details to respond to your questions, process partnership applications, and provide you with technical or commercial information about our systems and solutions. This processing is necessary for the performance of a pre-contractual or contractual relationship.</p>
+
+            <h3>2. Improving Our Website &amp; Systems</h3>
+            <p>We use aggregated, anonymised data to understand how our Website is used, identify areas for improvement, and develop better content and user experiences. This processing is based on our <strong>legitimate interests</strong> in improving our services.</p>
+
+            <h3>3. Security &amp; Fraud Prevention</h3>
+            <p>We may use information to detect and prevent fraudulent activity, unauthorised access, or abuse of our Website. This processing is based on our legitimate interests in maintaining a safe and secure digital environment for all users.</p>
+
+            <h3>4. Communications &amp; Marketing</h3>
+            <p>With your consent, we may send updates, product news, or information about our services. You may withdraw your consent at any time by emailing <a href="mailto:info@terradigester.com">info@terradigester.com</a> or using the unsubscribe link included in any email we send.</p>
+
+            <div class="info-box">
+              <strong>Our commitment:</strong> We do not sell, rent, or trade your personal data to third parties for their marketing purposes. Your information is used solely in connection with our legitimate business activities.
+            </div>
+          </section>
+
+          <!-- Disclosure -->
+          <section class="policy-section fade-in" id="disclosure">
+            <h2><span class="sec-num">3</span>Disclosure &amp; Transfers of Data</h2>
+            <p>We do not share your personal data with third parties except in the following limited circumstances:</p>
+            <ul>
+              <li><strong>Service Providers:</strong> We may engage trusted third-party processors (e.g., website hosting, analytics, email delivery, payment processing) who act on our instructions and are bound by appropriate data protection obligations.</li>
+              <li><strong>Legal Obligations:</strong> We may disclose information where required by law, regulation, court order, or in response to a lawful request by a public authority.</li>
+              <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or transfer of assets, personal data may be transferred as part of that transaction. We will notify you before your data is subject to a new privacy policy.</li>
+              <li><strong>Protection of Rights:</strong> We may disclose information where necessary to protect the rights, property, or safety of Terra Digester, our users, or the public.</li>
+            </ul>
+            <p>Where data is transferred to service providers outside the European Economic Area (EEA), we ensure appropriate safeguards are in place in accordance with GDPR requirements, including Standard Contractual Clauses where applicable.</p>
+          </section>
+
+          <!-- Your Rights -->
+          <section class="policy-section fade-in" id="rights">
+            <h2><span class="sec-num">4</span>Your Rights (GDPR)</h2>
+            <p>As a resident of the European Union or European Economic Area, you are entitled to the following rights under the <strong>General Data Protection Regulation (GDPR)</strong>. These rights also apply broadly to all users of our Website, regardless of location.</p>
+
+            <div class="rights-grid">
+              <div class="right-card">
+                <h4>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L8.5 5H13L9.5 7.5L11 11.5L7 9L3 11.5L4.5 7.5L1 5H5.5L7 1Z" fill="#52B788"/></svg>
+                  Right of Access
+                </h4>
+                <p>Request a copy of the personal data we hold about you and information about how it is used.</p>
+              </div>
+              <div class="right-card">
+                <h4>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7L5 10L12 3" stroke="#52B788" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Right of Rectification
+                </h4>
+                <p>Request correction of inaccurate or incomplete personal data we hold about you.</p>
+              </div>
+              <div class="right-card">
+                <h4>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3L11 11M11 3L3 11" stroke="#52B788" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  Right to Erasure
+                </h4>
+                <p>Request deletion of your personal data where there is no compelling reason for us to retain it ("right to be forgotten").</p>
+              </div>
+              <div class="right-card">
+                <h4>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#52B788" stroke-width="1.2"/><path d="M7 5V7.5M7 9.5V9.4" stroke="#52B788" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  Right to Object
+                </h4>
+                <p>Object to processing based on legitimate interests or for direct marketing purposes.</p>
+              </div>
+              <div class="right-card">
+                <h4>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="2" stroke="#52B788" stroke-width="1.2"/><path d="M5 7L6.5 8.5L9 5.5" stroke="#52B788" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Right to Portability
+                </h4>
+                <p>Receive your personal data in a structured, machine-readable format, or request transfer to another controller.</p>
+              </div>
+              <div class="right-card">
+                <h4>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4 1.5 1.5 4 1.5 7S4 12.5 7 12.5 12.5 10 12.5 7 10 1.5 7 1.5Z" stroke="#52B788" stroke-width="1.2"/><path d="M7 5V7L9 9" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Restrict Processing
+                </h4>
+                <p>Request that we temporarily limit how we use your data while a dispute or review is in progress.</p>
+              </div>
+            </div>
+
+            <p style="margin-top:1.25rem;">To exercise any of these rights, please contact us at <a href="mailto:info@terradigester.com">info@terradigester.com</a>. We will respond within 30 days. If you are not satisfied with our response, you have the right to lodge a complaint with the <strong>Belgian Data Protection Authority (Autorité de protection des données / Gegevensbeschermingsautoriteit)</strong> at <a href="https://www.dataprotectionauthority.be" target="_blank" rel="noopener">www.dataprotectionauthority.be</a>.</p>
+          </section>
+
+          <!-- Cookies -->
+          <section class="policy-section fade-in" id="cookies">
+            <h2><span class="sec-num">5</span>Cookies</h2>
+            <p>Our Website may use cookies and similar technologies to enhance user experience and collect anonymised usage statistics. Cookies are small text files stored on your device by your browser.</p>
+            <p>We use the following types of cookies:</p>
+            <ul>
+              <li><strong>Essential Cookies:</strong> Required for basic Website functionality. These cannot be disabled without affecting core features.</li>
+              <li><strong>Analytics Cookies:</strong> Used to understand how visitors interact with our Website (e.g., which pages are most visited). Data is aggregated and anonymised.</li>
+              <li><strong>Preference Cookies:</strong> Allow us to remember your preferences and settings for a better browsing experience.</li>
+            </ul>
+            <p>You can manage or disable cookies through your browser settings at any time. Please note that disabling certain cookies may affect Website functionality. For more information about cookies, visit <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener">www.allaboutcookies.org</a>.</p>
+            <div class="info-box">
+              <strong>Cloudflare:</strong> Our Website is served through Cloudflare's global network, which may set technical cookies essential to security and performance. These are governed by <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's Datenschutzerklärung</a>.
+            </div>
+          </section>
+
+          <!-- Security -->
+          <section class="policy-section fade-in" id="security">
+            <h2><span class="sec-num">6</span>Data Security</h2>
+            <p>We implement industry-standard technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure, or destruction. These measures include:</p>
+            <ul>
+              <li>HTTPS encryption for all data transmitted to and from our Website</li>
+              <li>Access controls limiting data access to authorised personnel only</li>
+              <li>Regular review and testing of security infrastructure</li>
+              <li>Cloudflare's edge security layer protecting against common web threats</li>
+            </ul>
+            <p>While we take all reasonable precautions, no method of transmission over the internet or electronic storage is completely secure. We cannot guarantee the absolute security of data transmitted to our Website, and transmission is at your own risk.</p>
+            <p>In the event of a data breach that is likely to affect your rights and freedoms, we will notify the relevant supervisory authority and affected individuals in accordance with GDPR obligations and applicable timelines.</p>
+          </section>
+
+          <!-- Retention -->
+          <section class="policy-section fade-in" id="retention">
+            <h2><span class="sec-num">7</span>Data Retention</h2>
+            <p>We retain personal data only for as long as necessary to fulfil the purposes for which it was collected or as required by applicable law. In practice:</p>
+            <ul>
+              <li><strong>Contact enquiries:</strong> Retained for up to 3 years to manage ongoing correspondence and demonstrate compliance.</li>
+              <li><strong>Partnership records:</strong> Retained for the duration of the partnership relationship and up to 5 years after.</li>
+              <li><strong>Marketing consents:</strong> Retained until you withdraw consent or we determine contact is no longer active.</li>
+              <li><strong>Analytics data:</strong> Retained in anonymised, aggregated form for up to 26 months.</li>
+            </ul>
+            <p>When your personal data is no longer required, it will be securely deleted or anonymised. You may request deletion at any time by contacting us at <a href="mailto:info@terradigester.com">info@terradigester.com</a>.</p>
+          </section>
+
+          <!-- Children -->
+          <section class="policy-section fade-in" id="children">
+            <h2><span class="sec-num">8</span>Children's Privacy</h2>
+            <p>Our Website is not directed to, nor intended for use by, children under the age of 16. We do not knowingly collect personal data from children under 16. If you are a parent or guardian and believe that your child has provided personal information to us, please contact us immediately at <a href="mailto:info@terradigester.com">info@terradigester.com</a> so we can take appropriate action to remove that information.</p>
+          </section>
+
+          <!-- Third Party Links -->
+          <section class="policy-section fade-in" id="links">
+            <h2><span class="sec-num">9</span>Third-Party Links</h2>
+            <p>Our Website may contain links to third-party websites, including partners, research institutions, or external resources. We are not responsible for the privacy practices or content of those websites. We encourage you to review the privacy policies of any third-party sites you visit via links from our Website.</p>
+          </section>
+
+          <!-- Changes -->
+          <section class="policy-section fade-in" id="changes">
+            <h2><span class="sec-num">10</span>Policy Changes</h2>
+            <p>We reserve the right to update or modify this Datenschutzerklärung at any time to reflect changes in our practices, legal requirements, or operational needs. When we make material changes, we will update the "Last updated" date at the top of this page.</p>
+            <p>We encourage you to review this page periodically. Your continued use of our Website after any changes constitutes your acceptance of the updated Datenschutzerklärung.</p>
+          </section>
+
+          <!-- Contact -->
+          <section class="policy-section fade-in" id="contact-us">
+            <h2><span class="sec-num">11</span>Contact Us</h2>
+            <p>Terra Digester is the <strong>Data Controller</strong> for the personal information collected through this Website. If you have any questions about this Datenschutzerklärung, wish to exercise your data rights, or wish to file a complaint, please contact us:</p>
+            <div class="contact-cta">
+              <p>
+                <strong style="color:var(--white);display:block;margin-bottom:0.4rem;">Terra Digester</strong>
+                Brussels, Belgium — European Union<br>
+                Email: <a href="mailto:info@terradigester.com" style="color:var(--primary-light);">info@terradigester.com</a>
+              </p>
+              <a href="../contact.html" class="btn-cta">Send a Message</a>
+            </div>
+          </section>
+
+        </article>
+      </div><!-- /.page-layout -->
+    </div><!-- /.container -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/><path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="nav-logo-text">Terra<span>Digester</span></span></a>
+          <p>Waste into value. Systems for a circular future.</p>
+          <p>Pioneering biotechnology for organic waste recovery, clean energy, and circular nutrient cycles.</p>
+          <div class="location"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5C2.5 7.25 6 11 6 11C6 11 9.5 7.25 9.5 4.5C9.5 2.57 7.93 1 6 1Z" stroke="currentColor" stroke-width="1"/><circle cx="6" cy="4.5" r="1.2" stroke="currentColor" stroke-width="1"/></svg> Brussels, Belgium</div>
+        </div>
+        <div class="footer-col"><h4>Schnellzugriff</h4><ul><li><a href="../index.html">Startseite</a></li><li><a href="../food-waste-systems.html">Lebensmittelabfall-Systeme</a></li><li><a href="../bio-toilet-solutions.html">Bio-Toiletten-Lösungen</a></li><li><a href="../dairy-farmers-system.html">Milchbauern-System</a></li><li><a href="../buy-carbon.html">CO₂-Zertifikate kaufen</a></li><li><a href="../technology.html">Technologie</a></li><li><a href="../about.html">Über uns</a></li><li><a href="../reseller-program.html">Wiederverkäufer-Programm</a></li><li><a href="../contact.html">Kontakt</a></li></ul></div>
+        <div class="footer-col footer-contact"><h4>Contact</h4><p><a href="mailto:info@terradigester.com">info@terradigester.com</a></p><p>Brussels, Belgium<br>European Union</p></div>
+        <div class="footer-col footer-vision"><h4>Our Purpose</h4><p><strong>Building circular systems</strong>"Building circular systems for a resilient future — where organic waste becomes clean energy, fertile soil, and measurable climate value. From Brussels to communities worldwide."</p></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Terra Digester. Alle Rechte vorbehalten.</p>
+        <div style="display:flex;gap:1.5rem;">
+          <a href="privacy-policy.html" style="color:var(--primary-light);">Datenschutzerklärung</a>
+          <a href="../terms-of-use.html">Nutzungsbedingungen</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileToggle=document.getElementById('mobileToggle'),mobileNav=document.getElementById('mobileNav'),mobileClose=document.getElementById('mobileClose');
+    mobileToggle.addEventListener('click',()=>{mobileNav.classList.add('open');document.body.style.overflow='hidden';});
+    mobileClose.addEventListener('click',()=>{mobileNav.classList.remove('open');document.body.style.overflow='';});
+    mobileNav.addEventListener('click',(e)=>{if(e.target===mobileNav){mobileNav.classList.remove('open');document.body.style.overflow='';}});
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+    const header=document.querySelector('.site-header');
+    window.addEventListener('scroll',()=>{header.style.background=window.scrollY>60?'rgba(27,58,45,0.98)':'rgba(27,58,45,0.96)';},{passive:true});
+  </script>
+  <script>
+  (function(){
+    document.querySelectorAll('.nav-dropdown').forEach(function(item){
+      var menu=item.querySelector('.dropdown-menu');
+      if(!menu)return;
+      var timer=null;
+      function show(){clearTimeout(timer);menu.classList.add('open');}
+      function hide(){timer=setTimeout(function(){menu.classList.remove('open');},150);}
+      item.addEventListener('mouseenter',show);item.addEventListener('mouseleave',hide);
+      menu.addEventListener('mouseenter',show);menu.addEventListener('mouseleave',hide);
+    });
+  })();
+  </script>
+</body>
+</html>
