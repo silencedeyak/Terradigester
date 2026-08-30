@@ -1394,22 +1394,16 @@
             <figure class="hero-product-wrap" aria-label="Terra Digester anaerobic digestion unit">
               <!--
                 PRODUCT PHOTO INTEGRATION:
-                Place your product image at: images/product-hero.jpg
-                Recommended size: 600×660px or similar portrait ratio
-                The image will be displayed with a floating + glow animation
-              -->
-              <!--
-                DROP YOUR PRODUCT PHOTO HERE:
-                Replace images/product-hero.jpg with your actual product photo
-                Recommended: 600×660px portrait, JPG/WebP, high quality
-                The SVG illustration (images/product-hero.svg) is shown until the real photo is provided
+                Place your product image at: images/product-hero.jpg (600×660px)
+                Note: this page lives under /de/, so it references ../images/.
+                The image will be displayed with a floating + glow animation.
               -->
               <img
-                src="images/product-hero.jpg"
-                alt="Terra Digester Terra Digester anaerobic digestion unit — converts organic waste into biogas and digestate"
+                src="../images/product-hero.jpg"
+                alt="Terra Digester — anaerobic digestion unit converting organic waste into biogas and digestate"
                 class="hero-product-img"
                 loading="eager"
-                onerror="this.src='images/product-hero.svg'; this.onerror=null;"
+                onerror="this.src='../images/product-hero.svg'; this.onerror=null;"
               />
               <!-- CSS fallback when image is absent -->
               <div class="hero-product-fallback" aria-hidden="true"></div>
