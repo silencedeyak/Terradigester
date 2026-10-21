@@ -277,7 +277,9 @@
               <h2 id="contact-heading">Eine Anfrage senden</h2>
               <p class="form-intro">Füllen Sie das untenstehende Formular aus und wir antworten innerhalb von 48 Arbeitsstunden. Alle mit <abbr title="erforderlich">*</abbr> markierten Felder sind Pflichtfelder.</p>
 
-              <form id="contactForm" novalidate action="#" method="post">
+              <form id="contactForm" action="https://formspree.io/f/xgaogpkl" method="POST" novalidate>
+                <input type="hidden" name="_subject" value="Neue Anfrage — Terra Digester Webseite" />
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
 
                 <div class="form-row">
                   <div class="form-group">
@@ -545,25 +547,17 @@
     });
 
     form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
       if (!validateForm()) {
         // Scroll to first error
+        e.preventDefault();
         const firstError = form.querySelector('.form-control.error');
         if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
-
       const btn = document.getElementById('submitBtn');
       btn.disabled = true;
       btn.textContent = 'Sending…';
-
-      // Simulate submission (replace with real endpoint)
-      setTimeout(() => {
-        formView.style.display = 'none';
-        formSuccess.classList.add('visible');
-        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 1200);
+      // Native POST to Formspree endpoint (action attr). No preventDefault → browser submits.
     });
   </script>
 
