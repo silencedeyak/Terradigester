@@ -278,10 +278,9 @@
               <h2 id="contact-heading">Eine Anfrage senden</h2>
               <p class="form-intro">Füllen Sie das untenstehende Formular aus und wir antworten innerhalb von 48 Arbeitsstunden. Alle mit <abbr title="erforderlich">*</abbr> markierten Felder sind Pflichtfelder.</p>
 
-              <form id="contactForm" action="https://formspree.io/f/xgaogpkl" method="POST" novalidate>
+              <form id="contactForm" action="https://formspree.io/f/xgaogpkl" method="POST" novalidate data-thanks-url="/de/danke.html">
                 <input type="hidden" name="_subject" value="Neue Anfrage — Terra Digester Webseite" />
                 <input type="hidden" name="_language" value="de" />
-                <input type="hidden" name="_next" value="https://www.terradigester.com/de/danke.html" />
                 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
 
                 <div class="form-row">
@@ -557,10 +556,34 @@
         if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
+      e.preventDefault();
       const btn = document.getElementById('submitBtn');
       btn.disabled = true;
-      btn.textContent = 'Sending…';
-      // Native POST to Formspree endpoint (action attr). No preventDefault → browser submits.
+      btn.textContent = 'Wird gesendet…';
+
+      // Robust submit: fetch() with Accept: application/json so Formspree returns
+      // JSON {"ok": true} instead of an HTML redirect to formspree.io/thanks.
+      // We then redirect the browser to the localized thank-you page ourselves.
+      // (Formspree's _next parameter is ignored on custom-domain targets that
+      //  are not whitelisted in the form's Allowed Origins.)
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          window.location.href = form.dataset.thanksUrl;
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Anfrage senden';
+          alert('Entschuldigung — Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an info@terradigester.com.');
+        }
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Anfrage senden';
+        alert('Netzwerkfehler. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an info@terradigester.com.');
+      });
     });
   </script>
 

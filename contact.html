@@ -278,10 +278,9 @@
               <h2 id="contact-heading">Send an Enquiry</h2>
               <p class="form-intro">Complete the form below and we will respond within 48 working hours. All fields marked with <abbr title="required">*</abbr> are required.</p>
 
-              <form id="contactForm" action="https://formspree.io/f/xgaogpkl" method="POST" novalidate>
+              <form id="contactForm" action="https://formspree.io/f/xgaogpkl" method="POST" novalidate data-thanks-url="/thank-you.html">
                 <input type="hidden" name="_subject" value="New enquiry — Terra Digester website" />
                 <input type="hidden" name="_language" value="en" />
-                <input type="hidden" name="_next" value="https://www.terradigester.com/thank-you.html" />
                 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
 
                 <div class="form-row">
@@ -557,10 +556,34 @@
         if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
+      e.preventDefault();
       const btn = document.getElementById('submitBtn');
       btn.disabled = true;
       btn.textContent = 'Sending…';
-      // Native POST to Formspree endpoint (action attr). No preventDefault → browser submits.
+
+      // Robust submit: fetch() with Accept: application/json so Formspree returns
+      // JSON {"ok": true} instead of an HTML redirect to formspree.io/thanks.
+      // We then redirect the browser to the localized thank-you page ourselves.
+      // (Formspree's _next parameter is ignored on custom-domain targets that
+      //  are not whitelisted in the form's Allowed Origins.)
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          window.location.href = form.dataset.thanksUrl;
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Send Enquiry';
+          alert('Sorry — your message could not be sent. Please try again or email us directly at info@terradigester.com.');
+        }
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Send Enquiry';
+        alert('Network error. Please try again or email us directly at info@terradigester.com.');
+      });
     });
   </script>
 
