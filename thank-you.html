@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="canonical" href="https://terradigester.com/thank-you.html" />
+  <link rel="alternate" hreflang="en" href="https://terradigester.com/thank-you.html" />
+  <link rel="alternate" hreflang="fr" href="https://terradigester.com/fr/merci.html" />
+  <link rel="alternate" hreflang="de" href="https://terradigester.com/de/danke.html" />
+  <title>Thank You | Terra Digester</title>
+  <meta name="description" content="Your enquiry has been received. The Terra Digester team will respond within 48 working hours." />
+  <meta name="robots" content="noindex" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #1B3A2D;
+      --primary-light: #4A8C5F;
+      --neutral-50: #F5EFE6;
+      --neutral-200: #E8DECC;
+      --neutral-700: #4B4B4B;
+      --white: #ffffff;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+    }
+    html, body { height: 100%; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--neutral-700); background: var(--neutral-50); -webkit-font-smoothing: antialiased; line-height: 1.55; }
+    a { color: var(--primary-light); text-decoration: none; }
+    a:hover { color: var(--primary); text-decoration: underline; }
+    .container { width: min(720px, 92%); margin: 0 auto; }
+
+    /* Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(27,58,45,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 2rem; max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--white); flex-shrink: 0; }
+    .nav-logo-mark { width: 32px; height: 32px; display: grid; place-items: center; background: var(--neutral-50); border-radius: 8px; }
+    .nav-logo-text { font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
+    .nav-logo-text span { font-weight: 400; opacity: 0.8; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,0.85); font-size: 0.95rem; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--white); text-decoration: none; }
+    .nav-links a.nav-cta { background: var(--primary-light); padding: 0.55rem 1.1rem; border-radius: 999px; font-weight: 600; color: var(--white); }
+    .nav-links a.nav-cta:hover { background: #5FA976; }
+    .lang-switch { display: inline-flex; gap: 0.4rem; margin-left: 0.5rem; }
+    .lang-switch a { color: rgba(255,255,255,0.55); font-size: 0.85rem; padding: 0.25rem 0.5rem; border-radius: 6px; }
+    .lang-switch a.active { color: var(--primary-light); font-weight: 700; }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav-mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; }
+
+    /* Thank-You card */
+    main { padding-top: 132px; padding-bottom: 4rem; min-height: calc(100vh - 80px); display: flex; align-items: center; }
+    .thanks-card { background: var(--white); border-radius: var(--radius-lg); padding: 3rem 2.5rem; box-shadow: 0 8px 30px rgba(27,58,45,0.08); text-align: center; border: 1px solid var(--neutral-200); }
+    .thanks-icon { width: 72px; height: 72px; border-radius: 50%; background: var(--primary); color: var(--white); display: grid; place-items: center; margin: 0 auto 1.5rem; }
+    .thanks-icon svg { width: 36px; height: 36px; }
+    .section-label { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary-light); margin-bottom: 0.75rem; }
+    .thanks-card h1 { font-size: 2.2rem; line-height: 1.2; color: var(--primary); margin-bottom: 1rem; font-weight: 700; letter-spacing: -0.02em; }
+    .thanks-card p.lede { font-size: 1.1rem; color: var(--neutral-700); margin-bottom: 1.25rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .thanks-card p.detail { font-size: 0.95rem; color: #6b6b6b; margin-bottom: 2rem; }
+    .thanks-card .divider { height: 1px; background: var(--neutral-200); margin: 2rem auto; max-width: 480px; }
+    .thanks-card .next-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary-light); margin-bottom: 1rem; }
+    .cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--primary); color: var(--white); padding: 0.85rem 1.6rem; border-radius: 999px; font-weight: 600; font-size: 0.95rem; transition: background 0.15s; }
+    .btn-primary:hover { background: #244a3a; text-decoration: none; }
+    .btn-secondary { background: transparent; color: var(--primary); padding: 0.85rem 1.6rem; border-radius: 999px; font-weight: 600; font-size: 0.95rem; border: 1px solid var(--primary); transition: background 0.15s; }
+    .btn-secondary:hover { background: rgba(27,58,45,0.06); text-decoration: none; }
+
+    /* Footer */
+    footer { background: var(--primary); color: rgba(255,255,255,0.7); padding: 2rem 0; text-align: center; font-size: 0.85rem; }
+    footer a { color: rgba(255,255,255,0.85); }
+    footer a:hover { color: var(--white); }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: block; }
+      main { padding-top: 96px; }
+      .thanks-card { padding: 2rem 1.5rem; }
+      .thanks-card h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a href="/index.html" class="nav-logo">
+        <span class="nav-logo-mark">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 2C10 2 4 5 4 10C4 13.31 6.69 16 10 16C13.31 16 16 13.31 16 10C16 7 13 4 10 2Z" stroke="#1B3A2D" stroke-width="1.5" fill="rgba(27,58,45,0.3)"/>
+            <path d="M10 16V18M7 18H13" stroke="#1B3A2D" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="nav-logo-text">Terra<span>Digester</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/food-waste-systems.html">Solutions</a></li>
+        <li><a href="/technology.html">Technology</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li class="lang-switch">
+          <a href="/thank-you.html" class="active">EN</a>
+          <a href="/fr/merci.html">FR</a>
+          <a href="/de/danke.html">DE</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="thanks-card" role="status" aria-live="polite">
+        <div class="thanks-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <span class="section-label">Enquiry received</span>
+        <h1>Thank you for reaching out</h1>
+        <p class="lede">Your message is now in the Terra Digester team's inbox. We respond to every enquiry — usually within 48 working hours.</p>
+        <p class="detail">A confirmation copy has been sent to your email address. If you do not see it within 15 minutes, please check your spam folder.</p>
+        <div class="divider"></div>
+        <p class="next-label">While you wait, explore</p>
+        <div class="cta-row">
+          <a href="/food-waste-systems.html" class="btn-primary">Food Waste Systems</a>
+          <a href="/bio-toilet-solutions.html" class="btn-secondary">Bio-toilet Solutions</a>
+          <a href="/dairy-farmers-system.html" class="btn-secondary">Dairy Farmers System</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 TerraLoop SRL &middot; Brussels &middot; <a href="/contact.html">Contact</a> &middot; <a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a></p>
+    </div>
+  </footer>
+</body>
+</html>
